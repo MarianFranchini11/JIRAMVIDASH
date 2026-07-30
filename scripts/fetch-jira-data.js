@@ -100,12 +100,6 @@ async function getIssuesForProject(projectKey) {
     if (nextPageToken) payload.nextPageToken = nextPageToken;
 
     const body = await jiraPost("/search/jql", payload);
-    console.log(
-      `  [debug] JQL "${payload.jql}" -> issues.length=${body.issues ? body.issues.length : "undefined"}, keys=${Object.keys(body).join(",")}`
-    );
-    if (!body.issues || body.issues.length === 0) {
-      console.log(`  [debug] raw response: ${JSON.stringify(body).slice(0, 500)}`);
-    }
 
     for (const issue of body.issues) {
       issues.push({
@@ -157,36 +151,6 @@ function summarizeByStatusCategory(issues) {
 
 async function main() {
   console.log(`Fetching projects from ${DOMAIN} ...`);
-
-  // ---- Temporary diagnostics: remove once the real issue is found ----
-  console.log("  [diag] Testing /myself ...");
-  try {
-    const me = await jiraGet("/myself");
-    console.log(`  [diag] Authenticated as: ${me.emailAddress || me.accountId}`);
-  } catch (err) {
-    console.log(`  [diag] /myself failed: ${err.message}`);
-  }
-
-  for (const testJql of [
-    'project = SCAN',
-    'key = SCAN-6067',
-    'project in (SCAN)',
-  ]) {
-    try {
-      const testBody = await jiraPost("/search/jql", {
-        jql: testJql,
-        maxResults: 5,
-        fields: ["summary"],
-      });
-      console.log(
-        `  [diag] JQL "${testJql}" -> issues.length=${testBody.issues.length}`
-      );
-    } catch (err) {
-      console.log(`  [diag] JQL "${testJql}" failed: ${err.message}`);
-    }
-  }
-  // ---- End diagnostics ----
-
   const projects = await getProjects();
   console.log(`Found ${projects.length} project(s).`);
 
