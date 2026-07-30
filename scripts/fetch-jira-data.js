@@ -40,6 +40,42 @@ async function jiraGet(urlPath) {
   return res.json();
 }
 
+// Jira custom fields are exposed by internal id (e.g. "customfield_10102"),
+// not by their visible name. Resolve the ids we care about once, by name.
+const CUSTOM_FIELD_NAMES = ["MDS Territory", "ScanTo Service"];
+
+async function resolveCustomFieldIds() {
+  const allFields = await jiraGet("/field");
+  const byName = {};
+  for (const f of allFields) {
+    byName[f.name.trim().toLowerCase()] = f.id;
+  }
+  const resolved = {};
+  for (const name of CUSTOM_FIELD_NAMES) {
+    const id = byName[name.trim().toLowerCase()];
+    if (id) {
+      resolved[name] = id;
+    } else {
+      console.log(`  [warn] Custom field "${name}" not found -- skipping.`);
+    }
+  }
+  return resolved;
+}
+
+// Custom field values come back in different shapes depending on field
+// type: plain strings/numbers for text fields, {value: "..."} for single
+// select, arrays for multi-select, etc. Normalize to a plain string.
+function extractFieldValue(raw) {
+  if (raw === null || raw === undefined) return null;
+  if (Array.isArray(raw)) {
+    return raw.map(extractFieldValue).filter(Boolean).join(", ") || null;
+  }
+  if (typeof raw === "object") {
+    return raw.value ?? raw.name ?? null;
+  }
+  return String(raw);
+}
+
 // Determine which projects to sync: either an explicit list from
 // JIRA_PROJECT_KEYS (comma-separated, e.g. "SCAN,ABC"), or -- if that's not
 // set -- fall back to auto-discovering every project visible to the account.
@@ -85,10 +121,18 @@ async function getProjects() {
 // Uses the current /search/jql endpoint. Pagination is token-based
 // (nextPageToken), not offset-based -- the old startAt/search endpoint
 // was fully removed by Atlassian.
-async function getIssuesForProject(projectKey) {
+async function getIssuesForProject(projectKey, customFieldIds) {
   const issues = [];
   const maxResults = 100;
-  const fields = ["summary", "status", "assignee", "priority", "updated", "issuetype"];
+  const fields = [
+    "summary",
+    "status",
+    "assignee",
+    "priority",
+    "updated",
+    "issuetype",
+    ...Object.values(customFieldIds),
+  ];
   let nextPageToken = undefined;
 
   while (true) {
@@ -102,6 +146,8 @@ async function getIssuesForProject(projectKey) {
     const body = await jiraPost("/search/jql", payload);
 
     for (const issue of body.issues) {
+      const territoryId = customFieldIds["MDS Territory"];
+      const serviceId = customFieldIds["ScanTo Service"];
       issues.push({
         key: issue.key,
         summary: issue.fields.summary,
@@ -113,11 +159,13 @@ async function getIssuesForProject(projectKey) {
         priority: issue.fields.priority ? issue.fields.priority.name : null,
         type: issue.fields.issuetype ? issue.fields.issuetype.name : null,
         updated: issue.fields.updated,
+        territory: territoryId ? extractFieldValue(issue.fields[territoryId]) : null,
+        serviceType: serviceId ? extractFieldValue(issue.fields[serviceId]) : null,
       });
     }
 
     nextPageToken = body.nextPageToken;
-    if (!nextPageToken || issues.length >= 2000) break;
+    if (!nextPageToken) break;
   }
   return issues;
 }
@@ -154,6 +202,10 @@ async function main() {
   const projects = await getProjects();
   console.log(`Found ${projects.length} project(s).`);
 
+  console.log("Resolving custom field ids...");
+  const customFieldIds = await resolveCustomFieldIds();
+  console.log(`  Resolved: ${JSON.stringify(customFieldIds)}`);
+
   const result = {
     generatedAt: new Date().toISOString(),
     domain: DOMAIN,
@@ -164,7 +216,7 @@ async function main() {
     console.log(`  -> ${project.key} (${project.name})`);
     let issues = [];
     try {
-      issues = await getIssuesForProject(project.key);
+      issues = await getIssuesForProject(project.key, customFieldIds);
     } catch (err) {
       console.error(`     Failed to fetch issues for ${project.key}: ${err.message}`);
       continue;

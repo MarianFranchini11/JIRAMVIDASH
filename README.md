@@ -75,32 +75,6 @@ Argentina). Para no esperar hasta la próxima corrida automática:
 Si algo falla, el log de esa corrida en la pestaña Actions te va a decir
 exactamente qué pasó (token inválido, dominio mal escrito, etc.).
 
-## Sobre el passcode
-
-El passcode por defecto es **`multivista2026`**. **Cambialo** antes de
-compartir el link — funciona así:
-
-1. Elegí un passcode nuevo
-2. Generá su hash SHA-256. En una terminal (Mac/Linux):
-   ```bash
-   echo -n "tu-passcode-nuevo" | sha256sum
-   ```
-   En Windows (PowerShell):
-   ```powershell
-   $h = [System.Security.Cryptography.SHA256]::Create()
-   $b = $h.ComputeHash([System.Text.Encoding]::UTF8.GetBytes("tu-passcode-nuevo"))
-   ($b | ForEach-Object { $_.ToString("x2") }) -join ""
-   ```
-3. Copiá el resultado (una cadena larga de letras y números)
-4. En `script.js`, reemplazá el valor de `PASSCODE_HASH_HEX` por ese resultado
-5. Subí el cambio (`git add script.js && git commit -m "cambiar passcode" && git push`)
-
-**Importante:** esto filtra el acceso casual, pero no es seguridad real —
-el archivo `script.js` es público, así que alguien con conocimientos
-técnicos podría intentar forzarlo. No lo uses para datos verdaderamente
-sensibles. Si en algún momento necesitás login real por usuario, hay que
-sumar un backend (te lo puedo armar aparte).
-
 ## Ajustar la frecuencia de sincronización
 
 En `.github/workflows/update-data.yml`, la línea:
@@ -120,9 +94,12 @@ semana los lunes a la misma hora:
 
 ```
 jira-dashboard/
-├── index.html                     # estructura de la página
+├── index.html                     # Dashboard page (KPIs + charts by territory)
+├── issues.html                    # Issues List page (filterable table)
+├── shared.js                      # shared data loading + sync status
+├── dashboard.js                   # Dashboard page logic (Chart.js)
+├── list.js                        # Issues List page logic
 ├── style.css                      # estilos
-├── script.js                      # passcode gate + render del dashboard
 ├── data/
 │   └── data.json                  # snapshot de datos (se sobrescribe solo)
 ├── scripts/

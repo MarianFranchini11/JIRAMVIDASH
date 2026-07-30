@@ -1,87 +1,80 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Panel de Proyectos · Multivista</title>
+<title>Dashboard · Hexagon Multivista</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="style.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 </head>
 <body>
 
-  <!-- Main dashboard -->
   <div id="app" class="app">
 
     <header class="topbar">
       <div class="brand">
         <span class="brand-mark">MV</span>
-        <span class="brand-name">Panel de Proyectos</span>
+        <span class="brand-name">Hexagon Multivista</span>
+        <span class="brand-sub">Project Dashboard</span>
       </div>
+      <nav class="mainnav">
+        <a href="index.html" class="nav-link active">Dashboard</a>
+        <a href="issues.html" class="nav-link">Issues</a>
+      </nav>
       <div class="sync-status" id="sync-status">
         <span class="pulse" id="pulse"></span>
-        <span id="sync-text">Cargando estado de sincronización…</span>
+        <span id="sync-text">Loading sync status&hellip;</span>
       </div>
     </header>
 
     <main class="content">
 
-      <section class="overview">
-        <div class="overview-head">
-          <h2>Proyectos</h2>
-          <span class="overview-count" id="project-count">—</span>
-        </div>
-        <div class="project-grid" id="project-grid">
-          <!-- project cards injected by script.js -->
+      <section class="kpi-section">
+        <div class="kpi-grid" id="kpi-grid">
+          <!-- KPI cards injected by dashboard.js -->
         </div>
       </section>
 
-      <section class="issues-section">
-        <div class="issues-head">
-          <h2>Tickets</h2>
-          <div class="filters">
-            <select id="project-filter">
-              <option value="">Todos los proyectos</option>
-            </select>
-            <select id="status-filter">
-              <option value="">Todos los estados</option>
-              <option value="To Do">Por hacer</option>
-              <option value="In Progress">En curso</option>
-              <option value="Done">Terminado</option>
-            </select>
-            <input type="text" id="search-filter" placeholder="Buscar por texto o clave…" />
+      <section class="charts-section">
+        <div class="chart-panel chart-panel-wide">
+          <div class="panel-head">
+            <h2>Issues by Territory</h2>
+          </div>
+          <div class="chart-wrap chart-wrap-tall">
+            <canvas id="territory-chart"></canvas>
           </div>
         </div>
-
-        <div class="table-wrap">
-          <table id="issues-table">
-            <thead>
-              <tr>
-                <th>Clave</th>
-                <th>Resumen</th>
-                <th>Estado</th>
-                <th>Prioridad</th>
-                <th>Asignado</th>
-                <th>Actualizado</th>
-              </tr>
-            </thead>
-            <tbody id="issues-body">
-              <!-- rows injected by script.js -->
-            </tbody>
-          </table>
+        <div class="chart-panel">
+          <div class="panel-head">
+            <h2>Status Breakdown</h2>
+          </div>
+          <div class="chart-wrap chart-wrap-tall">
+            <canvas id="status-chart"></canvas>
+          </div>
         </div>
-        <p id="empty-state" class="empty-state" hidden>No se encontraron tickets con esos filtros.</p>
+      </section>
+
+      <section class="breakdown-section">
+        <div class="panel-head">
+          <h2>Territory Detail</h2>
+        </div>
+        <div id="territory-breakdown" class="territory-list">
+          <!-- rows injected by dashboard.js -->
+        </div>
       </section>
 
     </main>
 
     <footer class="footer">
-      Datos sincronizados automáticamente desde Jira. Este panel no permite editar información en Jira.
+      Data syncs automatically from Jira. This dashboard does not allow editing Jira data.
     </footer>
 
   </div>
 
-  <script src="script.js"></script>
+  <script src="shared.js"></script>
+  <script src="dashboard.js"></script>
 </body>
 </html>

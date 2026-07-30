@@ -1,18 +1,21 @@
 /* ===== Design tokens ===== */
+/* Palette aligned with multivistaservices.hexagon.com:
+   brand blue #005198, deep navy #00284C, neutral gray #CFCFD2.
+   Status colors (amber/moss) stay semantic, not brand-derived. */
 :root {
-  --ink: #0F1B2D;
-  --ink-soft: #17273D;
-  --canvas: #F6F4EF;
+  --ink: #00284C;
+  --ink-soft: #063a63;
+  --canvas: #F7F7F8;
   --paper: #FFFFFF;
-  --line: #E4E0D4;
-  --steel: #3B6E8F;
-  --steel-dark: #2A5470;
+  --line: #DBDBDD;
+  --steel: #005198;
+  --steel-dark: #003D73;
   --amber: #D98E3D;
   --moss: #4B7A52;
-  --slate: #5B6472;
-  --ink-text: #1B2836;
+  --slate: #51565C;
+  --ink-text: #1A1D21;
 
-  --font-display: "Space Grotesk", sans-serif;
+  --font-display: "Archivo", sans-serif;
   --font-body: "Inter", sans-serif;
   --font-mono: "IBM Plex Mono", monospace;
 }
@@ -127,10 +130,35 @@ h1, h2 { font-family: var(--font-display); margin: 0; }
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 20px;
   padding: 16px 28px;
   position: sticky;
   top: 0;
   z-index: 10;
+  flex-wrap: wrap;
+}
+
+.mainnav {
+  display: flex;
+  gap: 4px;
+}
+
+.nav-link {
+  color: #C9D3DD;
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 0.85rem;
+  padding: 6px 12px;
+  border-radius: 3px;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.nav-link:hover { background: rgba(255, 255, 255, 0.08); color: #fff; }
+
+.nav-link.active {
+  background: var(--steel);
+  color: #fff;
 }
 
 .brand { display: flex; align-items: center; gap: 10px; }
@@ -149,6 +177,16 @@ h1, h2 { font-family: var(--font-display); margin: 0; }
   font-family: var(--font-display);
   font-weight: 600;
   font-size: 1.05rem;
+}
+
+.brand-sub {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 0.78rem;
+  color: #A9BCCB;
+  margin-left: 2px;
+  padding-left: 10px;
+  border-left: 1px solid rgba(255, 255, 255, 0.25);
 }
 
 .sync-status {
@@ -215,6 +253,109 @@ h1, h2 { font-family: var(--font-display); margin: 0; }
   font-family: var(--font-mono);
   color: var(--slate);
   font-size: 0.85rem;
+}
+
+/* ===== KPI cards ===== */
+.kpi-section { margin-bottom: 28px; }
+
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 14px;
+}
+
+.kpi-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 18px 20px;
+}
+
+.kpi-value {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 2rem;
+  color: var(--ink-text);
+  line-height: 1;
+}
+
+.kpi-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--slate);
+  margin-top: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* ===== Chart panels ===== */
+.charts-section {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 14px;
+  margin-bottom: 28px;
+}
+
+.chart-panel {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 18px 20px;
+}
+
+.panel-head { margin-bottom: 14px; }
+
+.panel-head h2 {
+  font-size: 1rem;
+  letter-spacing: -0.01em;
+}
+
+.chart-wrap { position: relative; }
+.chart-wrap-tall { height: 280px; }
+
+/* ===== Territory breakdown ===== */
+.breakdown-section {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 18px 20px;
+  margin-bottom: 30px;
+}
+
+.territory-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.territory-row {
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--line);
+}
+
+.territory-row:last-child { border-bottom: none; padding-bottom: 0; }
+
+.territory-row-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 6px;
+}
+
+.territory-name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.territory-total {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--slate);
+}
+
+@media (max-width: 800px) {
+  .charts-section { grid-template-columns: 1fr; }
 }
 
 /* ===== Project cards ===== */

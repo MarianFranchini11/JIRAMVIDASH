@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Issues · Hexagon Multivista</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div id="app" class="app">
+
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark">MV</span>
+        <span class="brand-name">Hexagon Multivista</span>
+        <span class="brand-sub">Project Dashboard</span>
+      </div>
+      <nav class="mainnav">
+        <a href="index.html" class="nav-link">Dashboard</a>
+        <a href="issues.html" class="nav-link active">Issues</a>
+      </nav>
+      <div class="sync-status" id="sync-status">
+        <span class="pulse" id="pulse"></span>
+        <span id="sync-text">Loading sync status&hellip;</span>
+      </div>
+    </header>
+
+    <main class="content">
+
+      <section class="issues-section">
+        <div class="issues-head">
+          <h2>All Issues</h2>
+          <div class="filters">
+            <select id="project-filter">
+              <option value="">All projects</option>
+            </select>
+            <select id="status-filter">
+              <option value="">All statuses</option>
+              <option value="To Do">To Do</option>
+              <option value="In Progress">In Progress</option>
+              <option value="Done">Done</option>
+            </select>
+            <select id="territory-filter">
+              <option value="">All territories</option>
+            </select>
+            <select id="service-filter">
+              <option value="">All service types</option>
+            </select>
+            <input type="text" id="search-filter" placeholder="Search by text or key&hellip;" />
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table id="issues-table">
+            <thead>
+              <tr>
+                <th>Key</th>
+                <th>Summary</th>
+                <th>Status</th>
+                <th>Priority</th>
+                <th>Assignee</th>
+                <th>Territory</th>
+                <th>Service Type</th>
+                <th>Updated</th>
+              </tr>
+            </thead>
+            <tbody id="issues-body">
+              <!-- rows injected by list.js -->
+            </tbody>
+          </table>
+        </div>
+        <p id="empty-state" class="empty-state" hidden>No issues match these filters.</p>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      Data syncs automatically from Jira. This dashboard does not allow editing Jira data.
+    </footer>
+
+  </div>
+
+  <script src="shared.js"></script>
+  <script src="list.js"></script>
+</body>
+</html>
