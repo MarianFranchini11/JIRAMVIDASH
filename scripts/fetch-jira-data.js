@@ -40,8 +40,35 @@ async function jiraGet(urlPath) {
   return res.json();
 }
 
-// Fetch every project visible to this account.
+// Fetch project metadata (name) for a specific project key.
+async function getProjectMeta(projectKey) {
+  return jiraGet(`/project/${projectKey}`);
+}
+
+// Determine which projects to sync: either an explicit list from
+// JIRA_PROJECT_KEYS (comma-separated, e.g. "SCAN,ABC"), or -- if that's not
+// set -- fall back to auto-discovering every project visible to the account.
 async function getProjects() {
+  const explicitKeys = (process.env.JIRA_PROJECT_KEYS || "")
+    .split(",")
+    .map((k) => k.trim())
+    .filter(Boolean);
+
+  if (explicitKeys.length > 0) {
+    console.log(`Using explicit project list: ${explicitKeys.join(", ")}`);
+    const projects = [];
+    for (const key of explicitKeys) {
+      try {
+        const meta = await getProjectMeta(key);
+        projects.push({ key: meta.key, name: meta.name });
+      } catch (err) {
+        console.error(`  Failed to fetch project "${key}": ${err.message}`);
+      }
+    }
+    return projects;
+  }
+
+  // Fallback: auto-discover
   const projects = [];
   let startAt = 0;
   const maxResults = 50;
@@ -49,6 +76,12 @@ async function getProjects() {
     const page = await jiraGet(
       `/project/search?startAt=${startAt}&maxResults=${maxResults}`
     );
+    console.log(
+      `  [debug] /project/search page: total=${page.total}, isLast=${page.isLast}, values.length=${page.values.length}`
+    );
+    if (page.values.length === 0 && projects.length === 0) {
+      console.log(`  [debug] raw response: ${JSON.stringify(page)}`);
+    }
     projects.push(...page.values);
     if (page.isLast || projects.length >= page.total) break;
     startAt += maxResults;

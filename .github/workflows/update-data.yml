@@ -26,6 +26,7 @@ jobs:
           JIRA_DOMAIN: ${{ secrets.JIRA_DOMAIN }}
           JIRA_EMAIL: ${{ secrets.JIRA_EMAIL }}
           JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
+          JIRA_PROJECT_KEYS: ${{ secrets.JIRA_PROJECT_KEYS }}
         run: node scripts/fetch-jira-data.js
 
       - name: Commit updated data
