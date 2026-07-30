@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Panel de Proyectos · Multivista</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Gate: shown until the correct passcode is entered -->
+  <div id="gate" class="gate">
+    <div class="gate-card">
+      <div class="gate-mark">MV</div>
+      <h1 class="gate-title">Panel de Proyectos</h1>
+      <p class="gate-sub">Ingresá el código de acceso para continuar.</p>
+      <form id="gate-form" autocomplete="off">
+        <input type="password" id="gate-input" placeholder="Código de acceso" inputmode="numeric" />
+        <button type="submit">Ingresar</button>
+      </form>
+      <p id="gate-error" class="gate-error" hidden>Código incorrecto. Probá de nuevo.</p>
+    </div>
+  </div>
+
+  <!-- Main dashboard: hidden until unlocked -->
+  <div id="app" class="app" hidden>
+
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark">MV</span>
+        <span class="brand-name">Panel de Proyectos</span>
+      </div>
+      <div class="sync-status" id="sync-status">
+        <span class="pulse" id="pulse"></span>
+        <span id="sync-text">Cargando estado de sincronización…</span>
+      </div>
+    </header>
+
+    <main class="content">
+
+      <section class="overview">
+        <div class="overview-head">
+          <h2>Proyectos</h2>
+          <span class="overview-count" id="project-count">—</span>
+        </div>
+        <div class="project-grid" id="project-grid">
+          <!-- project cards injected by script.js -->
+        </div>
+      </section>
+
+      <section class="issues-section">
+        <div class="issues-head">
+          <h2>Tickets</h2>
+          <div class="filters">
+            <select id="project-filter">
+              <option value="">Todos los proyectos</option>
+            </select>
+            <select id="status-filter">
+              <option value="">Todos los estados</option>
+              <option value="To Do">Por hacer</option>
+              <option value="In Progress">En curso</option>
+              <option value="Done">Terminado</option>
+            </select>
+            <input type="text" id="search-filter" placeholder="Buscar por texto o clave…" />
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table id="issues-table">
+            <thead>
+              <tr>
+                <th>Clave</th>
+                <th>Resumen</th>
+                <th>Estado</th>
+                <th>Prioridad</th>
+                <th>Asignado</th>
+                <th>Actualizado</th>
+              </tr>
+            </thead>
+            <tbody id="issues-body">
+              <!-- rows injected by script.js -->
+            </tbody>
+          </table>
+        </div>
+        <p id="empty-state" class="empty-state" hidden>No se encontraron tickets con esos filtros.</p>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      Datos sincronizados automáticamente desde Jira. Este panel no permite editar información en Jira.
+    </footer>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
