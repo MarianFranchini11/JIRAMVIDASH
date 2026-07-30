@@ -1,44 +1,5 @@
 {
-  "generatedAt": null,
+  "generatedAt": "2026-07-30T18:43:36.237Z",
   "domain": "multivista.atlassian.net",
-  "projects": [
-    {
-      "key": "DEMO",
-      "name": "Proyecto de ejemplo",
-      "totalIssues": 3,
-      "statusSummary": { "To Do": 1, "In Progress": 1, "Done": 1 },
-      "issues": [
-        {
-          "key": "DEMO-1",
-          "summary": "Este es un dato de ejemplo -- se reemplaza en la primera sincronizacion",
-          "status": "To Do",
-          "statusCategory": "To Do",
-          "assignee": null,
-          "priority": "Medium",
-          "type": "Task",
-          "updated": null
-        },
-        {
-          "key": "DEMO-2",
-          "summary": "Otro dato de ejemplo",
-          "status": "In Progress",
-          "statusCategory": "In Progress",
-          "assignee": null,
-          "priority": "High",
-          "type": "Task",
-          "updated": null
-        },
-        {
-          "key": "DEMO-3",
-          "summary": "Tercer dato de ejemplo",
-          "status": "Done",
-          "statusCategory": "Done",
-          "assignee": null,
-          "priority": "Low",
-          "type": "Task",
-          "updated": null
-        }
-      ]
-    }
-  ]
+  "projects": []
 }
