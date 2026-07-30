@@ -40,14 +40,15 @@ async function jiraGet(urlPath) {
   return res.json();
 }
 
-// Fetch project metadata (name) for a specific project key.
-async function getProjectMeta(projectKey) {
-  return jiraGet(`/project/${projectKey}`);
-}
-
 // Determine which projects to sync: either an explicit list from
 // JIRA_PROJECT_KEYS (comma-separated, e.g. "SCAN,ABC"), or -- if that's not
 // set -- fall back to auto-discovering every project visible to the account.
+//
+// NOTE: we don't call /project/{key} here to fetch each project's display
+// name -- that endpoint 404s on this Jira site (it uses the newer "Spaces"
+// model where a board's project key doesn't resolve via the classic
+// /project/{key} metadata endpoint). We only need issues, which we get via
+// JQL search, and that works fine with the project key directly.
 async function getProjects() {
   const explicitKeys = (process.env.JIRA_PROJECT_KEYS || "")
     .split(",")
@@ -56,16 +57,7 @@ async function getProjects() {
 
   if (explicitKeys.length > 0) {
     console.log(`Using explicit project list: ${explicitKeys.join(", ")}`);
-    const projects = [];
-    for (const key of explicitKeys) {
-      try {
-        const meta = await getProjectMeta(key);
-        projects.push({ key: meta.key, name: meta.name });
-      } catch (err) {
-        console.error(`  Failed to fetch project "${key}": ${err.message}`);
-      }
-    }
-    return projects;
+    return explicitKeys.map((key) => ({ key, name: key }));
   }
 
   // Fallback: auto-discover
