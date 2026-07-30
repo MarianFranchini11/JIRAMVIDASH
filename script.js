@@ -1,54 +1,7 @@
-// ===== Passcode gate =====
-// NOTE: this is a simple deterrent, not real security -- the hash below
-// lives in a public file, so anyone technical could brute-force it.
-// See README.md for how to change the passcode and regenerate this hash.
-const PASSCODE_HASH_HEX =
-  "700ecea8b0339384b33abcee2ae994e5dd5679fd7c1df8364e22d92e8158fcc0"; // default passcode: multivista2026 -- CHANGE THIS, see README.md
-
-const SESSION_KEY = "mv-dashboard-unlocked";
-
-async function sha256Hex(text) {
-  const enc = new TextEncoder().encode(text);
-  const buf = await crypto.subtle.digest("SHA-256", enc);
-  return Array.from(new Uint8Array(buf))
-    .map((b) => b.toString(16).padStart(2, "0"))
-    .join("");
-}
-
-function showApp() {
-  document.getElementById("gate").hidden = true;
-  document.getElementById("app").hidden = false;
-  initDashboard();
-}
-
-async function tryUnlock(code) {
-  const hash = await sha256Hex(code);
-  if (hash === PASSCODE_HASH_HEX) {
-    sessionStorage.setItem(SESSION_KEY, "1");
-    showApp();
-    return true;
-  }
-  return false;
-}
-
-document.getElementById("gate-form").addEventListener("submit", async (e) => {
-  e.preventDefault();
-  const input = document.getElementById("gate-input");
-  const errorEl = document.getElementById("gate-error");
-  const ok = await tryUnlock(input.value.trim());
-  if (!ok) {
-    errorEl.hidden = false;
-    input.value = "";
-    input.focus();
-  }
-});
-
-// Skip the gate if already unlocked this session
-if (sessionStorage.getItem(SESSION_KEY) === "1") {
-  showApp();
-}
-
 // ===== Dashboard =====
+// Loads directly, no access gate.
+initDashboard();
+
 let allData = null;
 let activeProjectKey = null;
 
