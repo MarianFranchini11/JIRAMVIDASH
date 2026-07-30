@@ -100,6 +100,12 @@ async function getIssuesForProject(projectKey) {
     if (nextPageToken) payload.nextPageToken = nextPageToken;
 
     const body = await jiraPost("/search/jql", payload);
+    console.log(
+      `  [debug] JQL "${payload.jql}" -> issues.length=${body.issues ? body.issues.length : "undefined"}, keys=${Object.keys(body).join(",")}`
+    );
+    if (!body.issues || body.issues.length === 0) {
+      console.log(`  [debug] raw response: ${JSON.stringify(body).slice(0, 500)}`);
+    }
 
     for (const issue of body.issues) {
       issues.push({
