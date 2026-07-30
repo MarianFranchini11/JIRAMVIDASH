@@ -1,5 +1,17 @@
 {
-  "generatedAt": "2026-07-30T19:26:10.390Z",
+  "generatedAt": "2026-07-30T19:39:56.760Z",
   "domain": "multivista.atlassian.net",
-  "projects": []
+  "projects": [
+    {
+      "key": "SCAN",
+      "name": "SCAN",
+      "totalIssues": 0,
+      "statusSummary": {
+        "To Do": 0,
+        "In Progress": 0,
+        "Done": 0
+      },
+      "issues": []
+    }
+  ]
 }
