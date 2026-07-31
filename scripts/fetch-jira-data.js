@@ -49,6 +49,9 @@ const CUSTOM_FIELD_NAMES = [
   "Square Footage",
   "Project Name",
   "Project Type",
+  "FTP Folder Path",
+  "Map Link",
+  "Salesforce Link",
 ];
 
 async function resolveCustomFieldIds() {
@@ -92,6 +95,35 @@ function extractNumberValue(raw) {
   }
   const num = Number(raw);
   return Number.isFinite(num) ? num : null;
+}
+
+// Comment bodies come back as Atlassian Document Format (a structured JSON
+// document), not plain text. Walk the tree and pull out just the text.
+function adfToText(node) {
+  if (!node) return "";
+  if (typeof node === "string") return node;
+  let text = "";
+  if (node.type === "text" && node.text) text += node.text;
+  if (Array.isArray(node.content)) {
+    for (const child of node.content) {
+      text += adfToText(child);
+    }
+    // Add a line break after block-level nodes for readability.
+    if (["paragraph", "heading", "listItem"].includes(node.type)) text += "\n";
+  }
+  return text;
+}
+
+// Fetch up to `limit` most recent comments for one issue.
+async function getRecentComments(issueKey, limit = 10) {
+  const body = await jiraGet(`/issue/${issueKey}/comment?maxResults=${limit}`);
+  const comments = (body.comments || []).map((c) => ({
+    author: c.author ? c.author.displayName : "Unknown",
+    created: c.created,
+    body: adfToText(c.body).trim(),
+  }));
+  comments.sort((a, b) => new Date(b.created) - new Date(a.created));
+  return comments.slice(0, limit);
 }
 
 // Determine which projects to sync: either an explicit list from
@@ -172,6 +204,9 @@ async function getIssuesForProject(projectKey, customFieldIds) {
       const sqftId = customFieldIds["Square Footage"];
       const projectNameId = customFieldIds["Project Name"];
       const projectTypeId = customFieldIds["Project Type"];
+      const ftpId = customFieldIds["FTP Folder Path"];
+      const mapLinkId = customFieldIds["Map Link"];
+      const sfLinkId = customFieldIds["Salesforce Link"];
       const resolutionDate = issue.fields.resolutiondate || null;
       let deliveryStatus = null;
       if (resolutionDate && issue.fields.duedate) {
@@ -201,12 +236,31 @@ async function getIssuesForProject(projectKey, customFieldIds) {
           ? extractFieldValue(issue.fields[projectNameId])
           : issue.fields.summary,
         projectType: projectTypeId ? extractFieldValue(issue.fields[projectTypeId]) : null,
+        ftpFolderPath: ftpId ? extractFieldValue(issue.fields[ftpId]) : null,
+        mapLink: mapLinkId ? extractFieldValue(issue.fields[mapLinkId]) : null,
+        salesforceLink: sfLinkId ? extractFieldValue(issue.fields[sfLinkId]) : null,
+        comments: [],
       });
     }
 
     nextPageToken = body.nextPageToken;
     if (!nextPageToken) break;
   }
+
+  // Comments require a separate call per issue -- only do this for active
+  // (non-Done) tickets, so this stays fast even with thousands of issues.
+  const activeIssues = issues.filter((i) => i.statusCategory !== "Done");
+  console.log(
+    `  Fetching comments for ${activeIssues.length} active ticket(s) (skipping ${issues.length - activeIssues.length} Done)...`
+  );
+  for (const issue of activeIssues) {
+    try {
+      issue.comments = await getRecentComments(issue.key);
+    } catch (err) {
+      console.error(`    Failed to fetch comments for ${issue.key}: ${err.message}`);
+    }
+  }
+
   return issues;
 }
 

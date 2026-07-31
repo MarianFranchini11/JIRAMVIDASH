@@ -295,6 +295,7 @@ function renderProjectsTable(issues) {
 
   for (const issue of sorted.slice(0, 200)) {
     const tr = document.createElement("tr");
+    tr.className = "clickable-row";
     tr.innerHTML = `
       <td class="col-key">${issue.key}</td>
       <td>${escapeHtml(issue.projectName)}</td>
@@ -304,6 +305,7 @@ function renderProjectsTable(issues) {
       <td>${escapeHtml(issue.territory || "Unassigned")}</td>
       <td class="col-updated">${formatDate(issue.dueDate)}</td>
     `;
+    tr.addEventListener("click", () => openProjectModal(issue));
     body.appendChild(tr);
   }
 }

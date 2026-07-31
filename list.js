@@ -110,6 +110,7 @@ function renderTable() {
 
   for (const issue of issues.slice(0, 1000)) {
     const tr = document.createElement("tr");
+    tr.className = "clickable-row";
     tr.innerHTML = `
       <td class="col-key">${issue.key}</td>
       <td>${escapeHtml(issue.summary)}</td>
@@ -120,6 +121,7 @@ function renderTable() {
       <td>${escapeHtml(issue.serviceType || "\u2014")}</td>
       <td class="col-updated">${formatDate(issue.dueDate)}</td>
     `;
+    tr.addEventListener("click", () => openProjectModal(issue));
     body.appendChild(tr);
   }
 }
