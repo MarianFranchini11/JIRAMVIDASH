@@ -71,6 +71,7 @@
         <nav class="rm-subnav">
           <a href="#" class="rm-subnav-link active" data-rmtab="roster">Team Roster</a>
           <a href="#" class="rm-subnav-link" data-rmtab="projects">Projects</a>
+          <a href="#" class="rm-subnav-link" data-rmtab="overview">Resource Overview</a>
         </nav>
 
         <div id="rm-tab-roster" class="rm-tab-panel">
@@ -78,6 +79,7 @@
           <section class="rm-add-section">
             <div class="panel-head">
               <h2>Add Resource</h2>
+              <button type="button" id="rm-import-mockup-btn" class="clear-filters-btn" style="border-color:var(--steel);color:var(--steel);">Import Full Team (57)</button>
             </div>
             <form id="add-resource-form" class="rm-add-form">
               <div class="rm-field">
@@ -154,6 +156,28 @@
 
           <section id="rm-ticket-detail">
             <!-- selected ticket's hour grid injected by rm-projects.js -->
+          </section>
+
+        </div>
+
+        <div id="rm-tab-overview" class="rm-tab-panel" style="display:none;">
+
+          <section class="filter-bar">
+            <div class="rm-week-nav" style="margin-left:0;">
+              <button type="button" id="rm-ov-week-prev" class="rm-week-navbtn" aria-label="Previous week">&lsaquo;</button>
+              <span id="rm-ov-week-label" class="rm-week-label"></span>
+              <button type="button" id="rm-ov-week-next" class="rm-week-navbtn" aria-label="Next week">&rsaquo;</button>
+            </div>
+          </section>
+
+          <section class="rm-roster-section">
+            <div class="panel-head">
+              <h2>Total Load per Resource</h2>
+              <span class="rm-roster-hint">All projects combined &middot; hover a cell to see which ticket that load belongs to</span>
+            </div>
+            <div id="rm-overview-table">
+              <!-- table injected by rm-projects.js -->
+            </div>
           </section>
 
         </div>

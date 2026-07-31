@@ -3,13 +3,47 @@
 // assign team members and log hours per day against it. Hours live in a
 // Firestore collection ("assignments"), separate from Jira.
 
+let rmDataLoaded = false;
 let rmProjectsInitialized = false;
+let rmOverviewInitialized = false;
 let rmAllTickets = [];
 let rmAssignments = [];
 let rmSelectedTicketKey = null;
 let rmSelectedWeekStart = null;
+let rmActiveSubTab = "roster";
+
+// Loads Jira tickets + starts the live assignments listener. Safe to call
+// from either the Projects or the Resource Overview tab -- runs once.
+function ensureRMDataLoaded() {
+  if (rmDataLoaded) return;
+  rmDataLoaded = true;
+  rmSelectedWeekStart = rmMondayOf(rmToISO(new Date()));
+
+  loadDashboardData()
+    .then((data) => {
+      rmAllTickets = flattenIssues(data);
+      if (rmActiveSubTab === "projects") renderRMTicketDetail();
+    })
+    .catch((err) => console.error("Could not load Jira tickets for assignment:", err));
+
+  db.collection("assignments").onSnapshot(
+    (snapshot) => {
+      rmAssignments = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+      if (rmActiveSubTab === "projects") {
+        renderRMStats();
+        renderRMTicketDetail();
+      } else if (rmActiveSubTab === "overview") {
+        renderRMOverviewTable();
+      }
+    },
+    (err) => console.error("Failed to load assignments:", err)
+  );
+}
 
 function initRMProjectsTab() {
+  rmActiveSubTab = "projects";
+  ensureRMDataLoaded();
+
   if (rmProjectsInitialized) {
     renderRMWeekLabel();
     renderRMStats();
@@ -17,22 +51,6 @@ function initRMProjectsTab() {
     return;
   }
   rmProjectsInitialized = true;
-  rmSelectedWeekStart = rmMondayOf(rmToISO(new Date()));
-
-  loadDashboardData()
-    .then((data) => {
-      rmAllTickets = flattenIssues(data);
-    })
-    .catch((err) => console.error("Could not load Jira tickets for assignment:", err));
-
-  db.collection("assignments").onSnapshot(
-    (snapshot) => {
-      rmAssignments = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
-      renderRMStats();
-      renderRMTicketDetail();
-    },
-    (err) => console.error("Failed to load assignments:", err)
-  );
 
   document.getElementById("rm-week-search").addEventListener("input", (e) => {
     renderRMTicketSearchResults(e.target.value.trim());
@@ -40,12 +58,14 @@ function initRMProjectsTab() {
   document.getElementById("rm-week-prev").addEventListener("click", () => {
     rmSelectedWeekStart = rmAddDays(rmSelectedWeekStart, -7);
     renderRMWeekLabel();
+    renderRMOverviewWeekLabel();
     renderRMStats();
     renderRMTicketDetail();
   });
   document.getElementById("rm-week-next").addEventListener("click", () => {
     rmSelectedWeekStart = rmAddDays(rmSelectedWeekStart, 7);
     renderRMWeekLabel();
+    renderRMOverviewWeekLabel();
     renderRMStats();
     renderRMTicketDetail();
   });
@@ -53,6 +73,36 @@ function initRMProjectsTab() {
   renderRMWeekLabel();
   renderRMStats();
   renderRMTicketDetail();
+}
+
+function initRMOverviewTab() {
+  rmActiveSubTab = "overview";
+  ensureRMDataLoaded();
+
+  if (rmOverviewInitialized) {
+    renderRMOverviewWeekLabel();
+    renderRMOverviewTable();
+    return;
+  }
+  rmOverviewInitialized = true;
+
+  document.getElementById("rm-ov-week-prev").addEventListener("click", () => {
+    rmSelectedWeekStart = rmAddDays(rmSelectedWeekStart, -7);
+    renderRMWeekLabel();
+    renderRMOverviewWeekLabel();
+    renderRMStats();
+    renderRMOverviewTable();
+  });
+  document.getElementById("rm-ov-week-next").addEventListener("click", () => {
+    rmSelectedWeekStart = rmAddDays(rmSelectedWeekStart, 7);
+    renderRMWeekLabel();
+    renderRMOverviewWeekLabel();
+    renderRMStats();
+    renderRMOverviewTable();
+  });
+
+  renderRMOverviewWeekLabel();
+  renderRMOverviewTable();
 }
 
 // ---- Date helpers (this sub-tab needs a plain Mon-Sun week, distinct from
@@ -91,6 +141,66 @@ function renderRMWeekLabel() {
   const dates = rmCurrentWeekDates();
   document.getElementById("rm-week-label").textContent =
     `${rmDayLabel(dates[0])} \u2013 ${rmDayLabel(dates[6])}`;
+}
+
+function renderRMOverviewWeekLabel() {
+  const el = document.getElementById("rm-ov-week-label");
+  if (!el) return;
+  const dates = rmCurrentWeekDates();
+  el.textContent = `${rmDayLabel(dates[0])} \u2013 ${rmDayLabel(dates[6])}`;
+}
+
+function renderRMOverviewTable() {
+  const container = document.getElementById("rm-overview-table");
+  if (!container) return;
+
+  const week = rmCurrentWeekDates();
+  const active = allResources.filter((r) => r.active).sort((a, b) => a.name.localeCompare(b.name));
+
+  if (active.length === 0) {
+    container.innerHTML = `<p class="empty-state">No active resources yet. Add some in the Team Roster tab.</p>`;
+    return;
+  }
+
+  container.innerHTML = `
+    <div class="table-wrap">
+      <table class="rm-grid">
+        <thead>
+          <tr>
+            <th style="min-width:160px;">Resource</th>
+            ${week.map((d) => `<th class="rm-daycol ${rmIsWeekend(d) ? "weekend" : ""}">${rmDayLabel(d)}</th>`).join("")}
+            <th>Week Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${active
+            .map((r) => {
+              let weekTotal = 0;
+              const cells = week
+                .map((d) => {
+                  const total = rmTotalForResourceDay(r.id, d);
+                  weekTotal += total;
+                  const status = rmClassify(total, rmIsWeekend(d));
+                  const tip = rmBreakdownForResourceDay(r.id, d).join(" \u00b7 ") || "No hours assigned";
+                  return `<td class="rm-daycell rm-st-${status}" title="${rmStatusLabel(status)}: ${escapeHtml(tip)}">
+                    <span class="rm-cellbox" style="cursor:default;">${total}</span>
+                  </td>`;
+                })
+                .join("");
+              return `<tr><td class="namecell">${escapeHtml(r.name)} <span class="teambadge">${escapeHtml(r.team)}</span></td>${cells}<td class="totalcell">${weekTotal}h</td></tr>`;
+            })
+            .join("")}
+        </tbody>
+      </table>
+    </div>
+    <div class="legend">
+      <span><span class="dot" style="background:var(--moss);"></span>Full 8h</span>
+      <span><span class="dot" style="background:var(--amber);"></span>Under 8h</span>
+      <span><span class="dot" style="background:var(--rm-over);"></span>Over 8h (overtime)</span>
+      <span><span class="dot" style="background:var(--rm-sat);"></span>Worked weekend (overtime)</span>
+      <span><span class="dot" style="background:var(--slate);"></span>Unassigned that day</span>
+    </div>
+  `;
 }
 
 // ---- Data helpers ----
