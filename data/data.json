@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-31T18:05:49.903Z",
+  "generatedAt": "2026-07-31T19:03:23.427Z",
   "domain": "multivista.atlassian.net",
   "projects": [
     {
@@ -8,10 +8,258 @@
       "totalIssues": 2984,
       "statusSummary": {
         "To Do": 26,
-        "In Progress": 41,
-        "Done": 2917
+        "In Progress": 40,
+        "Done": 2918
       },
       "issues": [
+        {
+          "key": "SCAN-6086",
+          "summary": "Scan to Services - CO01 - 89050 - Hines Interests Limited Partnership - Hotel St Bernard",
+          "status": "S2S Production",
+          "statusCategory": "In Progress",
+          "assignee": "Melina Aldana Gavioli",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-07-31T12:02:49.852-0700",
+          "dueDate": "2026-07-31",
+          "resolutionDate": null,
+          "deliveryStatus": null,
+          "territory": "CO01",
+          "serviceType": "Scan to BIM (model and extracted plans)",
+          "price": 15150,
+          "squareFootage": 128000,
+          "projectName": "Hotel St Bernard",
+          "projectType": "Hospitality",
+          "ftpFolderPath": "/mv-s3-ftps-transfer/co01/89050/3D Point Clouds",
+          "mapLink": "https://maps.app.goo.gl/z8FxbPgoAAonvP6JA",
+          "salesforceLink": "https://nam12.safelinks.protection.outlook.com/?url=https%3A%2F%2Fhmv.lightning.force.com%2Flightning%2Fr%2FOpportunity%2F006JQ00000pc00u%2Fview&data=05%7C02%7Cr.elstad%40multivista.com%7Cb9157e0b3e2546a94b4408decc6bf8a7%7C9c275058e9254de6be6d5b14bb704683%7C0%7C0%7C639172961256352268%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=4X5hWp%2Fzs5pnEdhFHf4swp%2BDGUCALTCfdCw2nWPKNdM%3D&reserved=0",
+          "components": [
+            "Registration Error"
+          ],
+          "comments": [
+            {
+              "author": "Roger Elstad",
+              "created": "2026-07-21T12:50:34.870-0700",
+              "body": "Maria,\nI have 6 control points[cid:6d58dbe3-eeae-4c06-b3c6-104820b1ff42][cid:bb8b0709-9893-4f39-ba35-f403c5013da0]Does this help you?\nHave a great day,Roger ElstadOperations Manager\nMultivista, part of HexagonM: 303-888-4645multivista.com________________________________From: JD Lott - Multivista <j.lott@multivista.com>Sent: Tuesday, July 21, 2026 1:34 PMTo: scantoservices@multivista.atlassian.net <scantoservices@multivista.atlassian.net>; Roger Elstad - Multivista <r.elstad@multivista.com>Subject: Re:  Scan to Services - CO01 - 89050 - Hines Interests Limited Partnership - Hotel St Bernard\nI wouldn't have any of these but our ops manager that scanned it might. @Roger Elstad - Multivista<r.elstad@multivista.com>\nJD LottSenior Managing PartnerMultivista, part of HexagonM: 205.427.1868multivista.com<https://www.multivista.com/>\nFrom: Maria Constanza Aguero Gomez <jira@multivista.atlassian.net>Date: Tuesday, July 21, 2026 at 2:33 PMTo: JD Lott - Multivista <j.lott@multivista.com>Subject:  Scan to Services - CO01 - 89050 - Hines Interests Limited Partnership - Hotel St Bernard\n—-—-—-—Reply above this line.\nMaria Constanza Aguero Gomez commented:\nHi JD, great, thank you for the quick response.\nAdditionally, could you please share any images of the control points? They would help us verify that we are identifying the correct locations, as we are currently unable to identify them in the LGS.\n[image-20260721-192738.png]\nWe would appreciate your support,\nThank you in advance, and we look forward to your response.\nBest regards,\nRespectfully yours,\nHexagon Scan to Servicesscantoservices@multivista.com<scantoservices@multivista.com>\nView request<https://multivista.atlassian.net/servicedesk/customer/portal/5/SCAN-6086?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0Z3QiOiJhbm9ueW1vdXMtbGluayIsInFzaCI6ImUxOWQ0NDFlOTZhMTllNGUxYmQzY2E4OTc0MDU5YzI4ZjJjNGFjMDBjMmE4YTkyNDhmZTA5MjRkMGUyN2Y3OWUiLCJpc3MiOiJzZXJ2aWNlZGVzay1qd3QtdG9rZW4taXNzdWVyIiwiY29udGV4dCI6eyJ1c2VyIjoiMTM3NzciLCJpc3N1ZSI6IlNDQU4tNjA4NiJ9LCJleHAiOjE3ODcwODE1NzcsImlhdCI6MTc4NDY2MjM3N30.E-jMW2sgihAikyisGxrYg3mkItcE3Sh3ckF5tMyjzrI&sda_source=notification-email> · Turn off this request's notifications<https://multivista.atlassian.net/servicedesk/customer/portal/5/SCAN-6086/unsubscribe?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0Z3QiOiJhbm9ueW1vdXMtbGluayIsInFzaCI6ImU1YTU5YTI1MTkzNmQ2ZDcxZTNiNjM4OGIxNjIzOTc5NzExY2JiNWZkODUwN2E4MjgzMGViZmFiODk3MWZiYjYiLCJpc3MiOiJzZXJ2aWNlZGVzay1qd3QtdG9rZW4taXNzdWVyIiwiY29udGV4dCI6eyJ1c2VyIjoiNzEyMDIwOmQxNzYxOWI3LWRjYjktNGFlZi04NDQ5LTlmNGM3NzBkMzg4OSIsImlzc3VlIjoiU0NBTi02MDg2In0sImV4cCI6MTc4NzA4MTU3NywiaWF0IjoxNzg0NjYyMzc3fQ.n7uPP_ELjVJXCTr9aP5sIRvwiw7FUr3Ph8CMUFMa-E0>\nThis is shared with Roger Elstad and JD Lott.\nPowered by Jira Service Management<https://www.atlassian.com/software/jira/service-desk/powered-by?utm_medium=jira-in-product&utm_source=jira_service_desk_email_footer&utm_content=multivista>"
+            },
+            {
+              "author": "JD Lott",
+              "created": "2026-07-21T12:35:11.886-0700",
+              "body": "I wouldn't have any of these but our ops manager that scanned it might. @Roger Elstad - Multivista<r.elstad@multivista.com>\nJD LottSenior Managing Partner\nMultivista, part of HexagonM: 205.427.1868multivista.com<https://www.multivista.com/>\nFrom: Maria Constanza Aguero Gomez <jira@multivista.atlassian.net>Date: Tuesday, July 21, 2026 at 2:33 PMTo: JD Lott - Multivista <j.lott@multivista.com>Subject:  Scan to Services - CO01 - 89050 - Hines Interests Limited Partnership - Hotel St Bernard\n—-—-—-—Reply above this line.\nMaria Constanza Aguero Gomez commented:\nHi JD, great, thank you for the quick response.\nAdditionally, could you please share any images of the control points? They would help us verify that we are identifying the correct locations, as we are currently unable to identify them in the LGS.\n[image-20260721-192738.png]\nWe would appreciate your support,\nThank you in advance, and we look forward to your response.\nBest regards,\nRespectfully yours,\nHexagon Scan to Servicesscantoservices@multivista.com<scantoservices@multivista.com>\nView request<https://multivista.atlassian.net/servicedesk/customer/portal/5/SCAN-6086?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0Z3QiOiJhbm9ueW1vdXMtbGluayIsInFzaCI6ImUxOWQ0NDFlOTZhMTllNGUxYmQzY2E4OTc0MDU5YzI4ZjJjNGFjMDBjMmE4YTkyNDhmZTA5MjRkMGUyN2Y3OWUiLCJpc3MiOiJzZXJ2aWNlZGVzay1qd3QtdG9rZW4taXNzdWVyIiwiY29udGV4dCI6eyJ1c2VyIjoiMTM3NzciLCJpc3N1ZSI6IlNDQU4tNjA4NiJ9LCJleHAiOjE3ODcwODE1NzcsImlhdCI6MTc4NDY2MjM3N30.E-jMW2sgihAikyisGxrYg3mkItcE3Sh3ckF5tMyjzrI&sda_source=notification-email> · Turn off this request's notifications<https://multivista.atlassian.net/servicedesk/customer/portal/5/SCAN-6086/unsubscribe?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0Z3QiOiJhbm9ueW1vdXMtbGluayIsInFzaCI6ImU1YTU5YTI1MTkzNmQ2ZDcxZTNiNjM4OGIxNjIzOTc5NzExY2JiNWZkODUwN2E4MjgzMGViZmFiODk3MWZiYjYiLCJpc3MiOiJzZXJ2aWNlZGVzay1qd3QtdG9rZW4taXNzdWVyIiwiY29udGV4dCI6eyJ1c2VyIjoiNzEyMDIwOmQxNzYxOWI3LWRjYjktNGFlZi04NDQ5LTlmNGM3NzBkMzg4OSIsImlzc3VlIjoiU0NBTi02MDg2In0sImV4cCI6MTc4NzA4MTU3NywiaWF0IjoxNzg0NjYyMzc3fQ.n7uPP_ELjVJXCTr9aP5sIRvwiw7FUr3Ph8CMUFMa-E0>\nThis is shared with Roger Elstad and JD Lott.\nPowered by Jira Service Management<https://www.atlassian.com/software/jira/service-desk/powered-by?utm_medium=jira-in-product&utm_source=jira_service_desk_email_footer&utm_content=multivista>"
+            },
+            {
+              "author": "Maria Constanza Aguero Gomez",
+              "created": "2026-07-21T12:31:56.282-0700",
+              "body": "Hi JD, great, thank you for the quick response. \nAdditionally, could you please share any images of the control points? They would help us verify that we are identifying the correct locations, as we are currently unable to identify them in the LGS. \nWe would appreciate your support,\nThank you in advance, and we look forward to your response.\nBest regards,"
+            },
+            {
+              "author": "JD Lott",
+              "created": "2026-07-21T09:52:43.102-0700",
+              "body": "Thanks for calling that out! Here’s the response from the client\nJD,\nGood catch.  Honestly, I don’t remember even checking that box.  We would like the “True As Built” conditions then compared with the design model to generate the report.\nGet Outlook for iOS<https://aka.ms/o0ukef>________________________________From: Maria Constanza Aguero Gomez <jira@multivista.atlassian.net>Sent: Tuesday, 21 July 2026 10:18:23To: JD Lott - Multivista <j.lott@multivista.com>Subject:  Scan to Services - CO01 - 89050 - Hines Interests Limited Partnership - Hotel St Bernard\n—-—-—-—Reply above this line.\nMaria Constanza Aguero Gomez commented:\nHi team,\nWe are currently working on this project, and a question came up regarding the modeling methodology.\nOur understanding is that this model will later be compared with the design model to generate the report. However, we noticed that the checklist indicates the modeling methodology as “As Designed”.\nCould you please validate whether this is correct? From our point of view, it would be more logical for the modeling methodology to be “True As Built” if the model is intended to be compared against the design model.\nWe would appreciate it if you could confirm this as soon as possible so that we can update the model accordingly and avoid any rework.\nThank you in advance for your prompt response.\n[image-20260721-151307.png]\nRespectfully yours,\nHexagon Scan to Servicesscantoservices@multivista.com<scantoservices@multivista.com>\nView request<https://multivista.atlassian.net/servicedesk/customer/portal/5/SCAN-6086?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0Z3QiOiJhbm9ueW1vdXMtbGluayIsInFzaCI6ImUxOWQ0NDFlOTZhMTllNGUxYmQzY2E4OTc0MDU5YzI4ZjJjNGFjMDBjMmE4YTkyNDhmZTA5MjRkMGUyN2Y3OWUiLCJpc3MiOiJzZXJ2aWNlZGVzay1qd3QtdG9rZW4taXNzdWVyIiwiY29udGV4dCI6eyJ1c2VyIjoiMTM3NzciLCJpc3N1ZSI6IlNDQU4tNjA4NiJ9LCJleHAiOjE3ODcwNjYzMDEsImlhdCI6MTc4NDY0NzEwMX0.EAnoJn3czfja-8PnnbMH5LnGxfOvdJK6W1qqQF-R8sM&sda_source=notification-email> · Turn off this request's notifications<https://multivista.atlassian.net/servicedesk/customer/portal/5/SCAN-6086/unsubscribe?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0Z3QiOiJhbm9ueW1vdXMtbGluayIsInFzaCI6ImU1YTU5YTI1MTkzNmQ2ZDcxZTNiNjM4OGIxNjIzOTc5NzExY2JiNWZkODUwN2E4MjgzMGViZmFiODk3MWZiYjYiLCJpc3MiOiJzZXJ2aWNlZGVzay1qd3QtdG9rZW4taXNzdWVyIiwiY29udGV4dCI6eyJ1c2VyIjoiNzEyMDIwOmQxNzYxOWI3LWRjYjktNGFlZi04NDQ5LTlmNGM3NzBkMzg4OSIsImlzc3VlIjoiU0NBTi02MDg2In0sImV4cCI6MTc4NzA2NjMwMSwiaWF0IjoxNzg0NjQ3MTAxfQ.6uCMox7H_CpGSQUvicv92RwUpkcESQCRhAFSifzI4lQ>\nThis is shared with Roger Elstad and JD Lott.\nPowered by Jira Service Management<https://www.atlassian.com/software/jira/service-desk/powered-by?utm_medium=jira-in-product&utm_source=jira_service_desk_email_footer&utm_content=multivista>\nSent on July 21, 2026 8:18:21 AM PDThttps://usw2-track.atlassian.com/CI0/0101019f8541b294-9ee75964-afa6-419b-b0ae-3437a0af2ea0-000000/RNVIZE5at2Qy_qrIIpJ10KYz8NT1CHzvUrKsNfI1cEE=452"
+            },
+            {
+              "author": "Maria Constanza Aguero Gomez",
+              "created": "2026-07-21T08:17:20.317-0700",
+              "body": "Hi team,\nWe are currently working on this project, and a question came up regarding the modeling methodology.\nOur understanding is that this model will later be compared with the design model to generate the report. However, we noticed that the checklist indicates the modeling methodology as “As Designed”.\nCould you please validate whether this is correct? From our point of view, it would be more logical for the modeling methodology to be “True As Built” if the model is intended to be compared against the design model.\nWe would appreciate it if you could confirm this as soon as possible so that we can update the model accordingly and avoid any rework.\nThank you in advance for your prompt response."
+            },
+            {
+              "author": "Martin Isola",
+              "created": "2026-07-03T07:06:49.890-0700",
+              "body": ""
+            },
+            {
+              "author": "Roger Elstad",
+              "created": "2026-07-02T15:24:07.902-0700",
+              "body": "Hi Martin,\nThank you for the reply and info.\nHave a great weekend,Roger ElstadOperations Manager\nMultivista, part of HexagonM: 303-888-4645multivista.com________________________________From: Martin Isola <jira@multivista.atlassian.net>Sent: Thursday, July 2, 2026 2:21 PMTo: Roger Elstad - Multivista <r.elstad@multivista.com>Subject:  Scan to Services - CO01 - 89050 - Hines Interests Limited Partnership - Hotel St Bernard\n—-—-—-—Reply above this line.\nMartin Isola commented:\nHi Roger,I reviewed the checklist and the client marked that we can use our Multivista template. We will use that option.\n[image-20260702-202036.png]\nThanks\nRespectfully yours,\nHexagon Scan to Servicesscantoservices@multivista.com<scantoservices@multivista.com>\nView request<https://multivista.atlassian.net/servicedesk/customer/portal/5/SCAN-6086?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0Z3QiOiJhbm9ueW1vdXMtbGluayIsInFzaCI6ImUxOWQ0NDFlOTZhMTllNGUxYmQzY2E4OTc0MDU5YzI4ZjJjNGFjMDBjMmE4YTkyNDhmZTA5MjRkMGUyN2Y3OWUiLCJpc3MiOiJzZXJ2aWNlZGVzay1qd3QtdG9rZW4taXNzdWVyIiwiY29udGV4dCI6eyJ1c2VyIjoiMTM0NTMiLCJpc3N1ZSI6IlNDQU4tNjA4NiJ9LCJleHAiOjE3ODU0NDI5MTYsImlhdCI6MTc4MzAyMzcxNn0.649O1Y1VWJOvnZhWH6pspcquNJdC55_9OwpmdvgjVg8&sda_source=notification-email> · Turn off this request's notifications<https://multivista.atlassian.net/servicedesk/customer/portal/5/SCAN-6086/unsubscribe?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0Z3QiOiJhbm9ueW1vdXMtbGluayIsInFzaCI6ImU1YTU5YTI1MTkzNmQ2ZDcxZTNiNjM4OGIxNjIzOTc5NzExY2JiNWZkODUwN2E4MjgzMGViZmFiODk3MWZiYjYiLCJpc3MiOiJzZXJ2aWNlZGVzay1qd3QtdG9rZW4taXNzdWVyIiwiY29udGV4dCI6eyJ1c2VyIjoidWc6MDZiMTgxNjItNjg5NC00ZmZmLTg5YjEtMGZiZjM1MzQ4OGVjIiwiaXNzdWUiOiJTQ0FOLTYwODYifSwiZXhwIjoxNzg1NDQyOTE2LCJpYXQiOjE3ODMwMjM3MTZ9.BOYPsd_9-Mkf4Pe-42UsVfqu3FRXrArvfmA3_btW7l0>\nThis is shared with Roger Elstad and JD Lott.\nPowered by Jira Service Management<https://www.atlassian.com/software/jira/service-desk/powered-by?utm_medium=jira-in-product&utm_source=jira_service_desk_email_footer&utm_content=multivista>\nSent on July 2, 2026 2:21:56 PM MDThttps://use1-track.atlassian.com/CI0/0100019f247ecd09-3a999304-32e0-4d65-91a3-43fe13f2f188-000000/Oto1WsrFTNjXkc07y_Ozwiet2MRWe_DOMF7sQUw-rk4=452"
+            },
+            {
+              "author": "Martin Isola",
+              "created": "2026-07-02T13:20:54.049-0700",
+              "body": "Hi Roger,I reviewed the checklist and the client marked that we can use our Multivista template. We will use that option.\nThanks"
+            },
+            {
+              "author": "Roger Elstad",
+              "created": "2026-07-02T08:08:35.041-0700",
+              "body": "Hello Scan to Services and/or 3D Laser Support,\nI asked Rovo if I need a rvt template and just want to confirm if I need to get a Revit template from the customer.\n[cid:a6dcfabf-309d-4ec2-8762-e16568fc68f9]\nThank you for your help.\nHave a great day,Roger ElstadOperations Manager\nMultivista, part of HexagonM: 303-888-4645multivista.com________________________________From: Multivista <jira@multivista.atlassian.net>Sent: Wednesday, July 1, 2026 11:18 PMTo: Roger Elstad - Multivista <r.elstad@multivista.com>Subject:  Scan to Services - CO01 - 89050 - Hines Interests Limited Partnership - Hotel St Bernard\n—-—-—-—Reply above this line.\nHi Roger Elstad,\nThis is an automated response to let you know that we have received your Scan to Services request and will advise if further information is required or when the request is complete.\nRespectfully yours,\nHexagon Scan to Servicesscantoservices@multivista.com<scantoservices@multivista.com>\nView request<https://multivista.atlassian.net/servicedesk/customer/portal/5/SCAN-6086?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0Z3QiOiJhbm9ueW1vdXMtbGluayIsInFzaCI6ImUxOWQ0NDFlOTZhMTllNGUxYmQzY2E4OTc0MDU5YzI4ZjJjNGFjMDBjMmE4YTkyNDhmZTA5MjRkMGUyN2Y3OWUiLCJpc3MiOiJzZXJ2aWNlZGVzay1qd3QtdG9rZW4taXNzdWVyIiwiY29udGV4dCI6eyJ1c2VyIjoiMTM0NTMiLCJpc3N1ZSI6IlNDQU4tNjA4NiJ9LCJleHAiOjE3ODUzODg0ODUsImlhdCI6MTc4Mjk2OTI4NX0.34Kca_5qfJ3aTTcRY_RjgpbJrI0YqXtVQBPjdMQaFBI&sda_source=notification-email> · Turn off this request's notifications<https://multivista.atlassian.net/servicedesk/customer/portal/5/SCAN-6086/unsubscribe?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0Z3QiOiJhbm9ueW1vdXMtbGluayIsInFzaCI6ImU1YTU5YTI1MTkzNmQ2ZDcxZTNiNjM4OGIxNjIzOTc5NzExY2JiNWZkODUwN2E4MjgzMGViZmFiODk3MWZiYjYiLCJpc3MiOiJzZXJ2aWNlZGVzay1qd3QtdG9rZW4taXNzdWVyIiwiY29udGV4dCI6eyJ1c2VyIjoidWc6MDZiMTgxNjItNjg5NC00ZmZmLTg5YjEtMGZiZjM1MzQ4OGVjIiwiaXNzdWUiOiJTQ0FOLTYwODYifSwiZXhwIjoxNzg1Mzg4NDg1LCJpYXQiOjE3ODI5NjkyODV9.xnyvUO7HXUl7C6_JVX9k14jQwgpYHtkOu4PjpJGe4QY>\nThis is shared with Roger Elstad and JD Lott.\nPowered by Jira Service Management<https://www.atlassian.com/software/jira/service-desk/powered-by?utm_medium=jira-in-product&utm_source=jira_service_desk_email_footer&utm_content=multivista>\nSent on July 1, 2026 11:14:45 PM MDThttps://use1-track.atlassian.com/CI0/0100019f214357d9-570f720c-5a8e-4e96-a932-b27588ced14c-000000/T0WjaAqCOmAqMM7gjd2OqI6p6H1MUO5HtQv5tORoCrk=452"
+            },
+            {
+              "author": "Multivista",
+              "created": "2026-07-01T22:13:45.839-0700",
+              "body": "(266 kB)"
+            }
+          ]
+        },
+        {
+          "key": "SCAN-6059",
+          "summary": "Scan to Services - AL01 - 89086 - Magaldi Technologies - MH Valve",
+          "status": "S2S Final QC",
+          "statusCategory": "In Progress",
+          "assignee": "Rojes Malachi",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-07-31T12:01:57.773-0700",
+          "dueDate": "2026-07-31",
+          "resolutionDate": null,
+          "deliveryStatus": null,
+          "territory": "AL01",
+          "serviceType": "Scan to BIM (model only)",
+          "price": 18494.45,
+          "squareFootage": 55000,
+          "projectName": "Magaldi Technologies - MH Valve",
+          "projectType": "Plant",
+          "ftpFolderPath": "/mv-s3-ftps-transfer/al01/89086/3D POINT CLOUDS",
+          "mapLink": "https://maps.app.goo.gl/YDziCGsUhJiWECVa7",
+          "salesforceLink": "https://nam12.safelinks.protection.outlook.com/?url=https%3A%2F%2Fhmv.lightning.force.com%2Flightning%2Fr%2FOpportunity%2F006JQ00000uqjIX%2Fview&data=05%7C02%7Cb.colvin%40multivista.com%7Cc92be77004fb439c11c008decb1e1411%7C9c275058e9254de6be6d5b14bb704683%7C0%7C0%7C639171527245582019%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=E1XO2YKsp2SD44ZFjCM%2BEmsMH7uTKl4pvnnvPveP8mU%3D&reserved=0",
+          "components": [
+            "Franchise Delay",
+            "Rush Request"
+          ],
+          "comments": [
+            {
+              "author": "Rojes Malachi",
+              "created": "2026-07-20T00:18:01.690-0700",
+              "body": "Hi   We have some merging in this portion we will move forwards with the best possible assumptions"
+            },
+            {
+              "author": "Rojes Malachi",
+              "created": "2026-07-13T06:27:35.734-0700",
+              "body": "Hi   can you confirm this point ?"
+            },
+            {
+              "author": "Martin Isola",
+              "created": "2026-07-01T06:27:19.378-0700",
+              "body": "Please confirm we are OK"
+            },
+            {
+              "author": "Martin Isola",
+              "created": "2026-06-30T07:26:54.204-0700",
+              "body": "HI  we have the new point clouds now.\nThanks"
+            },
+            {
+              "author": "Brandon Colvin",
+              "created": "2026-06-30T07:17:51.447-0700",
+              "body": "REMOTE SITE: al01/89086/3D point clouds 2\nBrandon ColvinDirect: 205.218.8836\n________________________________From: Martin Isola <jira@multivista.atlassian.net>Sent: Monday, 29 June 2026 08:33:12To: Brandon Colvin - Multivista <b.colvin@multivista.com>Subject:  Scan to Services - AL01 - 89086 - Magaldi Technologies - MH Valve\n—-—-—-—Reply above this line.\nMartin Isola commented:\nThanks, let me know when they are ready.\nBest Regards\nRespectfully yours,\nHexagon Scan to Servicesscantoservices@multivista.com<scantoservices@multivista.com>\nView request<https://multivista.atlassian.net/servicedesk/customer/portal/5/SCAN-6059?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0Z3QiOiJhbm9ueW1vdXMtbGluayIsInFzaCI6Ijc3NzgyY2U3OWFhYTY4ZTRlYmExMThjZGNmYzExNmVjY2E4ZTY5OGFmMzhhNDE3Zjg0NzQ4NzFmNTI2ODA0NTkiLCJpc3MiOiJzZXJ2aWNlZGVzay1qd3QtdG9rZW4taXNzdWVyIiwiY29udGV4dCI6eyJ1c2VyIjoiMTMyODIiLCJpc3N1ZSI6IlNDQU4tNjA1OSJ9LCJleHAiOjE3ODUxNTkxOTEsImlhdCI6MTc4MjczOTk5MX0.R4zJojkP-yS5zHP88fwe7zFIUk23ZIKulj1bbrLdSVw&sda_source=notification-email> · Turn off this request's notifications<https://multivista.atlassian.net/servicedesk/customer/portal/5/SCAN-6059/unsubscribe?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0Z3QiOiJhbm9ueW1vdXMtbGluayIsInFzaCI6IjAwYjEzOGQwZmFjMDExYWVkMzM5MmIyZmJjYzc3ZTFiODc1MWJmOTE4MzRmYjZmYWM3Y2I3YTRlNjA1YzlkOWYiLCJpc3MiOiJzZXJ2aWNlZGVzay1qd3QtdG9rZW4taXNzdWVyIiwiY29udGV4dCI6eyJ1c2VyIjoidWc6YTFhNTk0NzctOGM0Mi00NGJlLWE5NTUtOGU4YTA1MzdkZjUyIiwiaXNzdWUiOiJTQ0FOLTYwNTkifSwiZXhwIjoxNzg1MTU5MTkxLCJpYXQiOjE3ODI3Mzk5OTF9.lM2TXRKlj9KkWdR7O0cyQkgOx__RrU-Mbf-s77KoSpg>\nThis is shared with Brandon Colvin and JD Lott.\nPowered by Jira Service Management<https://www.atlassian.com/software/jira/service-desk/powered-by?utm_medium=jira-in-product&utm_source=jira_service_desk_email_footer&utm_content=multivista>\nSent on June 29, 2026 6:33:11 AM PDThttps://usw2-track.atlassian.com/CI0/0101019f13958075-9a2a598f-21de-4206-ac34-5ceef4fa58ad-000000/c8u_E32CkLPpBpvCxmrYFx0JqPK2zBCLQ0xlL5Lb1-8=452"
+            },
+            {
+              "author": "Martin Isola",
+              "created": "2026-06-29T06:32:17.573-0700",
+              "body": "Thanks, let me know when they are ready.\nBest Regards"
+            },
+            {
+              "author": "Brandon Colvin",
+              "created": "2026-06-29T06:22:45.249-0700",
+              "body": "Yes. I'll have to publish again.\nBrandon ColvinDirect: 205.218.8836\nFrom: Martin Isola <jira@multivista.atlassian.net>Sent: Monday, June 29, 2026 8:15 AMTo: Brandon Colvin - Multivista <b.colvin@multivista.com>Subject:  Scan to Services - AL01 - 89086 - Magaldi Technologies - MH Valve\n-------Reply above this line.\nMartin Isola commented:\nHi Brandon Colvin<https://multivista.atlassian.net/secure/ViewProfile.jspa?accountId=712020%3A610f6bc1-7e70-4f60-b9c9-a11fd6f21dd4>We were checking the point cloud, and due to the current point density, we are not able to see the small elements to include them into the model. Are you able to provide a more dense version (less decimation)\nPlease let us know.\nThanks\nRespectfully yours,\nHexagon Scan to Servicesscantoservices@multivista.com<scantoservices@multivista.com>\nView request<https://multivista.atlassian.net/servicedesk/customer/portal/5/SCAN-6059?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0Z3QiOiJhbm9ueW1vdXMtbGluayIsInFzaCI6Ijc3NzgyY2U3OWFhYTY4ZTRlYmExMThjZGNmYzExNmVjY2E4ZTY5OGFmMzhhNDE3Zjg0NzQ4NzFmNTI2ODA0NTkiLCJpc3MiOiJzZXJ2aWNlZGVzay1qd3QtdG9rZW4taXNzdWVyIiwiY29udGV4dCI6eyJ1c2VyIjoiMTMyODIiLCJpc3N1ZSI6IlNDQU4tNjA1OSJ9LCJleHAiOjE3ODUxNTgxMTMsImlhdCI6MTc4MjczODkxM30.hmxc_NsAiLtSwdba_al9Qb_D5ygU2NBTeOnJdgg4J_U&sda_source=notification-email> * Turn off this request's notifications<https://multivista.atlassian.net/servicedesk/customer/portal/5/SCAN-6059/unsubscribe?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0Z3QiOiJhbm9ueW1vdXMtbGluayIsInFzaCI6IjAwYjEzOGQwZmFjMDExYWVkMzM5MmIyZmJjYzc3ZTFiODc1MWJmOTE4MzRmYjZmYWM3Y2I3YTRlNjA1YzlkOWYiLCJpc3MiOiJzZXJ2aWNlZGVzay1qd3QtdG9rZW4taXNzdWVyIiwiY29udGV4dCI6eyJ1c2VyIjoidWc6YTFhNTk0NzctOGM0Mi00NGJlLWE5NTUtOGU4YTA1MzdkZjUyIiwiaXNzdWUiOiJTQ0FOLTYwNTkifSwiZXhwIjoxNzg1MTU4MTEzLCJpYXQiOjE3ODI3Mzg5MTN9.3LwrX0ZPLLGMgHiOi6RakVzxEcvZyk-wnXROr81vtA8>\nThis is shared with Brandon Colvin and JD Lott.\nPowered by Jira Service Management<https://www.atlassian.com/software/jira/service-desk/powered-by?utm_medium=jira-in-product&utm_source=jira_service_desk_email_footer&utm_content=multivista>Sent on June 29, 2026 6:15:13 AM PDT"
+            },
+            {
+              "author": "Martin Isola",
+              "created": "2026-06-29T06:14:11.648-0700",
+              "body": "Hi  We were checking the point cloud, and due to the current point density, we are not able to see the small elements to include them into the model. Are you able to provide a more dense version (less decimation)\nPlease let us know.\nThanks"
+            },
+            {
+              "author": "Rojes Malachi",
+              "created": "2026-06-27T06:25:24.735-0700",
+              "body": "Hi    The density of the point cloud is very less we cannot model the small elements with this data"
+            },
+            {
+              "author": "Multivista",
+              "created": "2026-06-23T13:24:37.763-0700",
+              "body": "(267 kB)"
+            }
+          ]
+        },
+        {
+          "key": "SCAN-6120",
+          "summary": "Scan to Services - IA01 - 89395 - AMCA - ACPI Office Scan",
+          "status": "Done",
+          "statusCategory": "Done",
+          "assignee": "Rojes Malachi",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-07-31T11:50:09.223-0700",
+          "dueDate": "2026-07-31",
+          "resolutionDate": "2026-07-31T11:50:01.511-0700",
+          "deliveryStatus": "On time",
+          "territory": "IA01",
+          "serviceType": "Scan to Plan (plans only)",
+          "price": 3055.5,
+          "squareFootage": 9000,
+          "projectName": "ACPI Office",
+          "projectType": "Office",
+          "ftpFolderPath": "/mv-s3-ftps-transfer/ia01/89395 - ACPI Office",
+          "mapLink": "https://maps.app.goo.gl/s2n3Nn3TNsqbiFZW6",
+          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ00000wWQ61YAG/view",
+          "components": [],
+          "comments": []
+        },
+        {
+          "key": "SCAN-6138",
+          "summary": "Scan to Services - TX03 - 89452 - Rice Residential Design - 11526 Shadow Way Street",
+          "status": "S2S Queue",
+          "statusCategory": "In Progress",
+          "assignee": "sirajudheen",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-07-31T11:09:14.306-0700",
+          "dueDate": "2026-08-11",
+          "resolutionDate": null,
+          "deliveryStatus": null,
+          "territory": "TX03",
+          "serviceType": "Scan to BIM (model and extracted plans)",
+          "price": 2885,
+          "squareFootage": 8229,
+          "projectName": "11526 Shadow Way Street",
+          "projectType": "Single-family",
+          "ftpFolderPath": "/mv-s3-ftps-transfer/tx03/89452",
+          "mapLink": "https://maps.app.goo.gl/Ggc2puax6MFD3Aw77",
+          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ00000vbAfWYAU/view",
+          "components": [
+            "Checklist Missing",
+            "Scan Data Delivery Prompt",
+            "Scan Data Missing"
+          ],
+          "comments": [
+            {
+              "author": "Maria Constanza Aguero Gomez",
+              "created": "2026-07-31T11:09:14.231-0700",
+              "body": "Hi Patrick,\nThanks for the update.\nPlease let us know as soon as you receive confirmation from the customer, whether the answer is yes or no, as we need your validation to proceed.\nPlease also keep in mind that if we move forward with the Multivista template and later need to switch to the customer's template, the change will incur additional costs.\nThanks!"
+            },
+            {
+              "author": "Patrick Armstrong",
+              "created": "2026-07-31T10:10:26.286-0700",
+              "body": "Hi Martin,\nI've asked the customer but haven't heard back yet. So if we don't get a response today, I'd say proceed with our Multivista template.\nPatrick ArmstrongManaging Principal - SE TexasSoutheast Texas\nMultivista, part of HexagonM: +1 713 254 5426multivista.com<https://www.multivista.com/>"
+            },
+            {
+              "author": "Martin Isola",
+              "created": "2026-07-31T04:50:14.300-0700",
+              "body": "Hi Jason,\nCould we use our Multivista template for this project?\nPlease confirm.\nThanks"
+            },
+            {
+              "author": "sirajudheen",
+              "created": "2026-07-31T00:26:15.696-0700",
+              "body": "Revit template need to be confirm"
+            },
+            {
+              "author": "Martin Isola",
+              "created": "2026-07-28T12:27:38.034-0700",
+              "body": ""
+            },
+            {
+              "author": "Jason Hunt",
+              "created": "2026-07-28T07:52:45.522-0700",
+              "body": "Good morning,\nAll point cloud data is available.\nMany thanks,-Jason\nGet Outlook for iOS<https://aka.ms/o0ukef>________________________________From: Jira automation <automation@multivista.atlassian.net>Sent: Monday, 27 July 2026 07:00:35To: Jason Hunt - Multivista <j.hunt@multivista.com>; Patrick Armstrong - Multivista <p.armstrong@multivista.com>Subject: Waiting on Scan Data -  - Scan to Services - TX03 - 89452 - Rice Residential Design - 11526 Shadow Way Street\nHi Team,\nThis is an automated REMINDER to let you know that your Scan to Services ticket is still ON HOLD as we are still ‘Waiting on Scan Data’.\nThe communicated upload date for scan data provided by your team within the Scan to Services ticket has now passed.\nIf corrective action was required, you should have received a communication with further details of the issue previously.\nPlease respond directly to this ticket/email/message when both the .LGSx and .RCS point cloud files are available within the projects designated ‘3D Point Clouds’ folder on the FTP. Failure to communicate data upload will delay the start of your project further.\nRespectfully yours,\nHexagon Scan to Servicesscantoservices@multivista.com"
+            },
+            {
+              "author": "Automation for Jira",
+              "created": "2026-07-27T05:00:31.469-0700",
+              "body": "Email sent to customer notifying that the given scan data delivery date has passed."
+            },
+            {
+              "author": "Multivista",
+              "created": "2026-07-23T06:40:36.824-0700",
+              "body": "(213 kB)"
+            }
+          ]
+        },
         {
           "key": "SCAN-6146",
           "summary": "Scan to Services - CA01 - 84376 - Holland Partner Group - El Paseo de Saratoga - B2-L4P4_PostPour & B2-L4P4_PostTension",
@@ -171,70 +419,6 @@
               "author": "Multivista",
               "created": "2026-07-31T07:38:47.395-0700",
               "body": "(228 kB)"
-            }
-          ]
-        },
-        {
-          "key": "SCAN-6138",
-          "summary": "Scan to Services - TX03 - 89452 - Rice Residential Design - 11526 Shadow Way Street",
-          "status": "S2S Queue",
-          "statusCategory": "In Progress",
-          "assignee": "sirajudheen",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-07-31T10:10:26.412-0700",
-          "dueDate": "2026-08-11",
-          "resolutionDate": null,
-          "deliveryStatus": null,
-          "territory": "TX03",
-          "serviceType": "Scan to BIM (model and extracted plans)",
-          "price": 2885,
-          "squareFootage": 8229,
-          "projectName": "11526 Shadow Way Street",
-          "projectType": "Single-family",
-          "ftpFolderPath": "/mv-s3-ftps-transfer/tx03/89452",
-          "mapLink": "https://maps.app.goo.gl/Ggc2puax6MFD3Aw77",
-          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ00000vbAfWYAU/view",
-          "components": [
-            "Checklist Missing",
-            "Scan Data Delivery Prompt",
-            "Scan Data Missing"
-          ],
-          "comments": [
-            {
-              "author": "Patrick Armstrong",
-              "created": "2026-07-31T10:10:26.286-0700",
-              "body": "Hi Martin,\nI've asked the customer but haven't heard back yet. So if we don't get a response today, I'd say proceed with our Multivista template.\nPatrick ArmstrongManaging Principal - SE TexasSoutheast Texas\nMultivista, part of HexagonM: +1 713 254 5426multivista.com<https://www.multivista.com/>"
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-07-31T04:50:14.300-0700",
-              "body": "Hi Jason,\nCould we use our Multivista template for this project?\nPlease confirm.\nThanks"
-            },
-            {
-              "author": "sirajudheen",
-              "created": "2026-07-31T00:26:15.696-0700",
-              "body": "Revit template need to be confirm"
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-07-28T12:27:38.034-0700",
-              "body": ""
-            },
-            {
-              "author": "Jason Hunt",
-              "created": "2026-07-28T07:52:45.522-0700",
-              "body": "Good morning,\nAll point cloud data is available.\nMany thanks,-Jason\nGet Outlook for iOS<https://aka.ms/o0ukef>________________________________From: Jira automation <automation@multivista.atlassian.net>Sent: Monday, 27 July 2026 07:00:35To: Jason Hunt - Multivista <j.hunt@multivista.com>; Patrick Armstrong - Multivista <p.armstrong@multivista.com>Subject: Waiting on Scan Data -  - Scan to Services - TX03 - 89452 - Rice Residential Design - 11526 Shadow Way Street\nHi Team,\nThis is an automated REMINDER to let you know that your Scan to Services ticket is still ON HOLD as we are still ‘Waiting on Scan Data’.\nThe communicated upload date for scan data provided by your team within the Scan to Services ticket has now passed.\nIf corrective action was required, you should have received a communication with further details of the issue previously.\nPlease respond directly to this ticket/email/message when both the .LGSx and .RCS point cloud files are available within the projects designated ‘3D Point Clouds’ folder on the FTP. Failure to communicate data upload will delay the start of your project further.\nRespectfully yours,\nHexagon Scan to Servicesscantoservices@multivista.com"
-            },
-            {
-              "author": "Automation for Jira",
-              "created": "2026-07-27T05:00:31.469-0700",
-              "body": "Email sent to customer notifying that the given scan data delivery date has passed."
-            },
-            {
-              "author": "Multivista",
-              "created": "2026-07-23T06:40:36.824-0700",
-              "body": "(213 kB)"
             }
           ]
         },
@@ -511,81 +695,6 @@
               "author": "Multivista",
               "created": "2026-07-21T19:44:04.328-0700",
               "body": "(199 kB)"
-            }
-          ]
-        },
-        {
-          "key": "SCAN-6120",
-          "summary": "Scan to Services - IA01 - 89395 - AMCA - ACPI Office Scan",
-          "status": "S2S Final QC",
-          "statusCategory": "In Progress",
-          "assignee": "Rojes Malachi",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-07-31T08:53:46.097-0700",
-          "dueDate": "2026-07-31",
-          "resolutionDate": null,
-          "deliveryStatus": null,
-          "territory": "IA01",
-          "serviceType": "Scan to Plan (plans only)",
-          "price": 3055.5,
-          "squareFootage": 9000,
-          "projectName": "ACPI Office",
-          "projectType": "Office",
-          "ftpFolderPath": "/mv-s3-ftps-transfer/ia01/89395 - ACPI Office",
-          "mapLink": "https://maps.app.goo.gl/s2n3Nn3TNsqbiFZW6",
-          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ00000wWQ61YAG/view",
-          "components": [],
-          "comments": [
-            {
-              "author": "Rojes Malachi",
-              "created": "2026-07-24T00:22:30.445-0700",
-              "body": "Hi   we will submit on the 31st"
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-07-23T11:40:42.944-0700",
-              "body": "Additionally,  what is the best day you can deliver this project?\nThanks"
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-07-23T11:28:47.392-0700",
-              "body": "Hi Rojes,\nCould you please check that? Thanks"
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-07-17T09:58:40.711-0700",
-              "body": ""
-            },
-            {
-              "author": "Dan Foster",
-              "created": "2026-07-17T09:14:02.439-0700",
-              "body": "Hi Brent,\nWhen a Scan to Plan request is completed it is automatically passed over to Project Setup to upload the plans and integrate the Truview model.  Once the Scan to Services team is done and plans delivered you can expect the MDS integration to be complete within ~2 business days."
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-07-17T09:12:10.555-0700",
-              "body": "Hi Brent,\nI am adding Project Setup (  ) to help us on TrueView seatings.\nFrom Scan to, we just provide the plans.\nThanks"
-            },
-            {
-              "author": "Brent Egger",
-              "created": "2026-07-17T09:03:55.006-0700",
-              "body": "Thanks Martin. Do you have everything you need to provide the TrueView model for this project? The ticketing is a little vague on our end for this.\nThanks,Brent\nBrent EggerAccount Manager/Training SpecialistDirect: 563-529-7614Check us out: https://youtu.be/yl34gz8MKso\n[cid:image001.png@01DD15DB.E9F19E10]\nMultivista, PO Box 219, Swisher, IA 52338Tel: 319-321-4583, Fax: 515-257-7203, www.multivista.com<http://www.multivista.com/>–Photo<http://www.multivista.com/services/construction-photography> | Video<http://www.multivista.com/services/multivista-video> | Webcam<http://www.multivista.com/services/construction-webcams>––The contents of this communication, including any attachment(s), are confidential and may be privileged. If you are not the intended recipient (or are not receiving this communication on behalf of the intended recipient), please notify the sender immediately and delete or destroy this communication without reading it, and without making, forwarding, or retaining any copy or record of it or its contents. Thank you. Note: We have taken precautions against viruses, but take no responsibility for loss or damage caused by any virus present.–The above-named person proudly represents an independent contractor and licensed vendor of the MULTIVISTA(r) brand services and products in the location or region indicated. Titles such as principal, managing principal, regional partner or senior regional partner do not indicate affiliation with Multivista Systems, LLC, but rather the licensees status as a licensed vendor. For more information on the licensee structure, visit www.multivista.com/licensedvendors<http://www.multivista.com/licensedvendors>\nFrom: Martin Isola <jira@multivista.atlassian.net>Sent: Friday, July 17, 2026 10:59 AMTo: Brent Egger - Multivista <b.egger@multivista.com>Subject:  Scan to Services - IA01 - 89395 - AMCA - ACPI Office Scan\n-------Reply above this line.\nMartin Isola commented:\nHi Jon,\nThanks for the clarification, I already change the project type. I will let you know if we have any other questions\nRegards\nRespectfully yours,\nHexagon Scan to Servicesscantoservices@multivista.com<scantoservices@multivista.com>\nView request<https://multivista.atlassian.net/servicedesk/customer/portal/5/SCAN-6120?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0Z3QiOiJhbm9ueW1vdXMtbGluayIsInFzaCI6ImJiMGZkZDUzMmNlYzI3YThmMTJkNjM5YzZmNTYzNGMxZWVjMjNmZmEyNGMwNWU4ODJmNjk0ODEwMDI0NzcwYTAiLCJpc3MiOiJzZXJ2aWNlZGVzay1qd3QtdG9rZW4taXNzdWVyIiwiY29udGV4dCI6eyJ1c2VyIjoiMTMyODQiLCJpc3N1ZSI6IlNDQU4tNjEyMCJ9LCJleHAiOjE3ODY3MjMxNjAsImlhdCI6MTc4NDMwMzk2MH0.iEoAGZE2bW5pNAY1jBkL-8On-bDBez1AiylwfTJAGEU&sda_source=notification-email> * Turn off this request's notifications<https://multivista.atlassian.net/servicedesk/customer/portal/5/SCAN-6120/unsubscribe?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0Z3QiOiJhbm9ueW1vdXMtbGluayIsInFzaCI6ImQ0ZTE0ZDk5NmEzZjU3NzBjNDMxYjYwMjg5NWMzMzgxYWJlMmIzZDUwYmExNWZkZDFkODczMzkzYzM0OTVhNDIiLCJpc3MiOiJzZXJ2aWNlZGVzay1qd3QtdG9rZW4taXNzdWVyIiwiY29udGV4dCI6eyJ1c2VyIjoidWc6MTRmYjUyMmItZmM4Ni00N2YxLWI0MTctN2YyODYyODg5NmI2IiwiaXNzdWUiOiJTQ0FOLTYxMjAifSwiZXhwIjoxNzg2NzIzMTYwLCJpYXQiOjE3ODQzMDM5NjB9.qz9SI7BVZslVmALkSQN5rS_NIoX33W5LQkVSyYJdxe4>\nThis is shared with Jon Weber and Brent Egger.\nPowered by Jira Service Management<https://www.atlassian.com/software/jira/service-desk/powered-by?utm_medium=jira-in-product&utm_source=jira_service_desk_email_footer&utm_content=multivista>Sent on July 17, 2026 8:59:20 AM PDT"
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-07-17T08:58:12.283-0700",
-              "body": "Hi Jon,\nThanks for the clarification, I already change the project type. I will let you know if we have any other questions\nRegards"
-            },
-            {
-              "author": "Jon Weber",
-              "created": "2026-07-17T08:44:06.449-0700",
-              "body": "RE:  Scan to Services - IA01 - 89395 - AMCA - ACPI Office Scan\nI errored on the ticket Service Type  and selected Scan to Bim and Model Plans Extracted. We only need Scan to Plans (plans only).\\\r\nCan you please confirm you got this change.\nThanks,\nJon WeberManaging PrincipalDirect: (319) 321-4583Check us out: https://youtu.be/yl34gz8MKso[cid:image001.png@01DD15D9.2C644C00]Multivista, PO Box 219, Swisher, IA 52338Tel: 319-321-4583, Fax: 515-257-7203, www.multivista.com<http://www.multivista.com/>–Photo<http://www.multivista.com/services/construction-photography> | Video<http://www.multivista.com/services/multivista-video> | Webcam<http://www.multivista.com/services/construction-webcams>–The contents of this communication, including any attachment(s), are confidential and may be privileged. If you are not the intended recipient (or are not receiving this communication on behalf of the intended recipient), please notify the sender immediately and delete or destroy this communication without reading it, and without making, forwarding, or retaining any copy or record of it or its contents. Thank you. Note: We have taken precautions against viruses, but take no responsibility for loss or damage caused by any virus present.–The above-named person proudly represents an independent contractor and licensed vendor of the MULTIVISTA(r) brand services and products in the location or region indicated. Titles such as principal, managing principal, regional partner or senior regional partner do not indicate affiliation with Multivista Systems, LLC, but rather the licensees status as a licensed vendor. For more information on the licensee structure, visit www.multivista.com/licensedvendors<http://www.multivista.com/licensedvendors>\nFrom: Multivista <jira@multivista.atlassian.net>Sent: Friday, July 17, 2026 10:23 AMTo: Jon Weber - Multivista <j.weber@multivista.com>Subject:  Scan to Services - IA01 - 89395 - AMCA - ACPI Office Scan\n-------Reply above this line.\nHi Jon Weber,\nThis is an automated response to let you know that we have received your Scan to Services request and will advise if further information is required or when the request is complete.\nRespectfully yours,\nHexagon Scan to Servicesscantoservices@multivista.com<scantoservices@multivista.com>\nView request<https://multivista.atlassian.net/servicedesk/customer/portal/5/SCAN-6120?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0Z3QiOiJhbm9ueW1vdXMtbGluayIsInFzaCI6ImJiMGZkZDUzMmNlYzI3YThmMTJkNjM5YzZmNTYzNGMxZWVjMjNmZmEyNGMwNWU4ODJmNjk0ODEwMDI0NzcwYTAiLCJpc3MiOiJzZXJ2aWNlZGVzay1qd3QtdG9rZW4taXNzdWVyIiwiY29udGV4dCI6eyJ1c2VyIjoiMTM0NDQiLCJpc3N1ZSI6IlNDQU4tNjEyMCJ9LCJleHAiOjE3ODY3MjA5NjcsImlhdCI6MTc4NDMwMTc2N30.QFsHVSUCZcUnwf6N2eTQ6VUoaqyhaIoJYotATpmmnMk&sda_source=notification-email> * Turn off this request's notifications<https://multivista.atlassian.net/servicedesk/customer/portal/5/SCAN-6120/unsubscribe?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0Z3QiOiJhbm9ueW1vdXMtbGluayIsInFzaCI6ImQ0ZTE0ZDk5NmEzZjU3NzBjNDMxYjYwMjg5NWMzMzgxYWJlMmIzZDUwYmExNWZkZDFkODczMzkzYzM0OTVhNDIiLCJpc3MiOiJzZXJ2aWNlZGVzay1qd3QtdG9rZW4taXNzdWVyIiwiY29udGV4dCI6eyJ1c2VyIjoidWc6MDY2NDU2MGEtMThkYy00NDFkLWEwYTItODE2MDZhNDA5MDk2IiwiaXNzdWUiOiJTQ0FOLTYxMjAifSwiZXhwIjoxNzg2NzIwOTY3LCJpYXQiOjE3ODQzMDE3Njd9.o2gDqEAH9ZPoiDarc8Oz3gEmrmsoY4Iv7JOUkwOnvNE>\nThis is shared with Jon Weber and Brent Egger.\nPowered by Jira Service Management<https://www.atlassian.com/software/jira/service-desk/powered-by?utm_medium=jira-in-product&utm_source=jira_service_desk_email_footer&utm_content=multivista>Sent on July 17, 2026 8:22:47 AM PDT"
-            },
-            {
-              "author": "Multivista",
-              "created": "2026-07-17T08:21:49.333-0700",
-              "body": "(816 kB)"
             }
           ]
         },
@@ -2312,84 +2421,6 @@
               "author": "Multivista",
               "created": "2026-05-15T03:38:19.825-0700",
               "body": "(8.96 MB)"
-            }
-          ]
-        },
-        {
-          "key": "SCAN-6059",
-          "summary": "Scan to Services - AL01 - 89086 - Magaldi Technologies - MH Valve",
-          "status": "S2S Final QC",
-          "statusCategory": "In Progress",
-          "assignee": "Rojes Malachi",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-07-31T00:25:44.951-0700",
-          "dueDate": "2026-07-31",
-          "resolutionDate": null,
-          "deliveryStatus": null,
-          "territory": "AL01",
-          "serviceType": "Scan to BIM (model only)",
-          "price": 18494.45,
-          "squareFootage": 55000,
-          "projectName": "Magaldi Technologies - MH Valve",
-          "projectType": "Plant",
-          "ftpFolderPath": "/mv-s3-ftps-transfer/al01/89086/3D POINT CLOUDS",
-          "mapLink": "https://maps.app.goo.gl/YDziCGsUhJiWECVa7",
-          "salesforceLink": "https://nam12.safelinks.protection.outlook.com/?url=https%3A%2F%2Fhmv.lightning.force.com%2Flightning%2Fr%2FOpportunity%2F006JQ00000uqjIX%2Fview&data=05%7C02%7Cb.colvin%40multivista.com%7Cc92be77004fb439c11c008decb1e1411%7C9c275058e9254de6be6d5b14bb704683%7C0%7C0%7C639171527245582019%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=E1XO2YKsp2SD44ZFjCM%2BEmsMH7uTKl4pvnnvPveP8mU%3D&reserved=0",
-          "components": [
-            "Franchise Delay",
-            "Rush Request"
-          ],
-          "comments": [
-            {
-              "author": "Rojes Malachi",
-              "created": "2026-07-20T00:18:01.690-0700",
-              "body": "Hi   We have some merging in this portion we will move forwards with the best possible assumptions"
-            },
-            {
-              "author": "Rojes Malachi",
-              "created": "2026-07-13T06:27:35.734-0700",
-              "body": "Hi   can you confirm this point ?"
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-07-01T06:27:19.378-0700",
-              "body": "Please confirm we are OK"
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-06-30T07:26:54.204-0700",
-              "body": "HI  we have the new point clouds now.\nThanks"
-            },
-            {
-              "author": "Brandon Colvin",
-              "created": "2026-06-30T07:17:51.447-0700",
-              "body": "REMOTE SITE: al01/89086/3D point clouds 2\nBrandon ColvinDirect: 205.218.8836\n________________________________From: Martin Isola <jira@multivista.atlassian.net>Sent: Monday, 29 June 2026 08:33:12To: Brandon Colvin - Multivista <b.colvin@multivista.com>Subject:  Scan to Services - AL01 - 89086 - Magaldi Technologies - MH Valve\n—-—-—-—Reply above this line.\nMartin Isola commented:\nThanks, let me know when they are ready.\nBest Regards\nRespectfully yours,\nHexagon Scan to Servicesscantoservices@multivista.com<scantoservices@multivista.com>\nView request<https://multivista.atlassian.net/servicedesk/customer/portal/5/SCAN-6059?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0Z3QiOiJhbm9ueW1vdXMtbGluayIsInFzaCI6Ijc3NzgyY2U3OWFhYTY4ZTRlYmExMThjZGNmYzExNmVjY2E4ZTY5OGFmMzhhNDE3Zjg0NzQ4NzFmNTI2ODA0NTkiLCJpc3MiOiJzZXJ2aWNlZGVzay1qd3QtdG9rZW4taXNzdWVyIiwiY29udGV4dCI6eyJ1c2VyIjoiMTMyODIiLCJpc3N1ZSI6IlNDQU4tNjA1OSJ9LCJleHAiOjE3ODUxNTkxOTEsImlhdCI6MTc4MjczOTk5MX0.R4zJojkP-yS5zHP88fwe7zFIUk23ZIKulj1bbrLdSVw&sda_source=notification-email> · Turn off this request's notifications<https://multivista.atlassian.net/servicedesk/customer/portal/5/SCAN-6059/unsubscribe?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0Z3QiOiJhbm9ueW1vdXMtbGluayIsInFzaCI6IjAwYjEzOGQwZmFjMDExYWVkMzM5MmIyZmJjYzc3ZTFiODc1MWJmOTE4MzRmYjZmYWM3Y2I3YTRlNjA1YzlkOWYiLCJpc3MiOiJzZXJ2aWNlZGVzay1qd3QtdG9rZW4taXNzdWVyIiwiY29udGV4dCI6eyJ1c2VyIjoidWc6YTFhNTk0NzctOGM0Mi00NGJlLWE5NTUtOGU4YTA1MzdkZjUyIiwiaXNzdWUiOiJTQ0FOLTYwNTkifSwiZXhwIjoxNzg1MTU5MTkxLCJpYXQiOjE3ODI3Mzk5OTF9.lM2TXRKlj9KkWdR7O0cyQkgOx__RrU-Mbf-s77KoSpg>\nThis is shared with Brandon Colvin and JD Lott.\nPowered by Jira Service Management<https://www.atlassian.com/software/jira/service-desk/powered-by?utm_medium=jira-in-product&utm_source=jira_service_desk_email_footer&utm_content=multivista>\nSent on June 29, 2026 6:33:11 AM PDThttps://usw2-track.atlassian.com/CI0/0101019f13958075-9a2a598f-21de-4206-ac34-5ceef4fa58ad-000000/c8u_E32CkLPpBpvCxmrYFx0JqPK2zBCLQ0xlL5Lb1-8=452"
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-06-29T06:32:17.573-0700",
-              "body": "Thanks, let me know when they are ready.\nBest Regards"
-            },
-            {
-              "author": "Brandon Colvin",
-              "created": "2026-06-29T06:22:45.249-0700",
-              "body": "Yes. I'll have to publish again.\nBrandon ColvinDirect: 205.218.8836\nFrom: Martin Isola <jira@multivista.atlassian.net>Sent: Monday, June 29, 2026 8:15 AMTo: Brandon Colvin - Multivista <b.colvin@multivista.com>Subject:  Scan to Services - AL01 - 89086 - Magaldi Technologies - MH Valve\n-------Reply above this line.\nMartin Isola commented:\nHi Brandon Colvin<https://multivista.atlassian.net/secure/ViewProfile.jspa?accountId=712020%3A610f6bc1-7e70-4f60-b9c9-a11fd6f21dd4>We were checking the point cloud, and due to the current point density, we are not able to see the small elements to include them into the model. Are you able to provide a more dense version (less decimation)\nPlease let us know.\nThanks\nRespectfully yours,\nHexagon Scan to Servicesscantoservices@multivista.com<scantoservices@multivista.com>\nView request<https://multivista.atlassian.net/servicedesk/customer/portal/5/SCAN-6059?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0Z3QiOiJhbm9ueW1vdXMtbGluayIsInFzaCI6Ijc3NzgyY2U3OWFhYTY4ZTRlYmExMThjZGNmYzExNmVjY2E4ZTY5OGFmMzhhNDE3Zjg0NzQ4NzFmNTI2ODA0NTkiLCJpc3MiOiJzZXJ2aWNlZGVzay1qd3QtdG9rZW4taXNzdWVyIiwiY29udGV4dCI6eyJ1c2VyIjoiMTMyODIiLCJpc3N1ZSI6IlNDQU4tNjA1OSJ9LCJleHAiOjE3ODUxNTgxMTMsImlhdCI6MTc4MjczODkxM30.hmxc_NsAiLtSwdba_al9Qb_D5ygU2NBTeOnJdgg4J_U&sda_source=notification-email> * Turn off this request's notifications<https://multivista.atlassian.net/servicedesk/customer/portal/5/SCAN-6059/unsubscribe?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0Z3QiOiJhbm9ueW1vdXMtbGluayIsInFzaCI6IjAwYjEzOGQwZmFjMDExYWVkMzM5MmIyZmJjYzc3ZTFiODc1MWJmOTE4MzRmYjZmYWM3Y2I3YTRlNjA1YzlkOWYiLCJpc3MiOiJzZXJ2aWNlZGVzay1qd3QtdG9rZW4taXNzdWVyIiwiY29udGV4dCI6eyJ1c2VyIjoidWc6YTFhNTk0NzctOGM0Mi00NGJlLWE5NTUtOGU4YTA1MzdkZjUyIiwiaXNzdWUiOiJTQ0FOLTYwNTkifSwiZXhwIjoxNzg1MTU4MTEzLCJpYXQiOjE3ODI3Mzg5MTN9.3LwrX0ZPLLGMgHiOi6RakVzxEcvZyk-wnXROr81vtA8>\nThis is shared with Brandon Colvin and JD Lott.\nPowered by Jira Service Management<https://www.atlassian.com/software/jira/service-desk/powered-by?utm_medium=jira-in-product&utm_source=jira_service_desk_email_footer&utm_content=multivista>Sent on June 29, 2026 6:15:13 AM PDT"
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-06-29T06:14:11.648-0700",
-              "body": "Hi  We were checking the point cloud, and due to the current point density, we are not able to see the small elements to include them into the model. Are you able to provide a more dense version (less decimation)\nPlease let us know.\nThanks"
-            },
-            {
-              "author": "Rojes Malachi",
-              "created": "2026-06-27T06:25:24.735-0700",
-              "body": "Hi    The density of the point cloud is very less we cannot model the small elements with this data"
-            },
-            {
-              "author": "Multivista",
-              "created": "2026-06-23T13:24:37.763-0700",
-              "body": "(267 kB)"
             }
           ]
         },
@@ -4223,83 +4254,6 @@
             "Scan Data Missing"
           ],
           "comments": []
-        },
-        {
-          "key": "SCAN-6086",
-          "summary": "Scan to Services - CO01 - 89050 - Hines Interests Limited Partnership - Hotel St Bernard",
-          "status": "S2S Production",
-          "statusCategory": "In Progress",
-          "assignee": "Melina Aldana Gavioli",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-07-29T11:20:05.072-0700",
-          "dueDate": "2026-07-31",
-          "resolutionDate": null,
-          "deliveryStatus": null,
-          "territory": "CO01",
-          "serviceType": "Scan to BIM (model and extracted plans)",
-          "price": 15150,
-          "squareFootage": 128000,
-          "projectName": "Hotel St Bernard",
-          "projectType": "Hospitality",
-          "ftpFolderPath": "/mv-s3-ftps-transfer/co01/89050/3D Point Clouds",
-          "mapLink": "https://maps.app.goo.gl/z8FxbPgoAAonvP6JA",
-          "salesforceLink": "https://nam12.safelinks.protection.outlook.com/?url=https%3A%2F%2Fhmv.lightning.force.com%2Flightning%2Fr%2FOpportunity%2F006JQ00000pc00u%2Fview&data=05%7C02%7Cr.elstad%40multivista.com%7Cb9157e0b3e2546a94b4408decc6bf8a7%7C9c275058e9254de6be6d5b14bb704683%7C0%7C0%7C639172961256352268%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=4X5hWp%2Fzs5pnEdhFHf4swp%2BDGUCALTCfdCw2nWPKNdM%3D&reserved=0",
-          "components": [
-            "Registration Error"
-          ],
-          "comments": [
-            {
-              "author": "Roger Elstad",
-              "created": "2026-07-21T12:50:34.870-0700",
-              "body": "Maria,\nI have 6 control points[cid:6d58dbe3-eeae-4c06-b3c6-104820b1ff42][cid:bb8b0709-9893-4f39-ba35-f403c5013da0]Does this help you?\nHave a great day,Roger ElstadOperations Manager\nMultivista, part of HexagonM: 303-888-4645multivista.com________________________________From: JD Lott - Multivista <j.lott@multivista.com>Sent: Tuesday, July 21, 2026 1:34 PMTo: scantoservices@multivista.atlassian.net <scantoservices@multivista.atlassian.net>; Roger Elstad - Multivista <r.elstad@multivista.com>Subject: Re:  Scan to Services - CO01 - 89050 - Hines Interests Limited Partnership - Hotel St Bernard\nI wouldn't have any of these but our ops manager that scanned it might. @Roger Elstad - Multivista<r.elstad@multivista.com>\nJD LottSenior Managing PartnerMultivista, part of HexagonM: 205.427.1868multivista.com<https://www.multivista.com/>\nFrom: Maria Constanza Aguero Gomez <jira@multivista.atlassian.net>Date: Tuesday, July 21, 2026 at 2:33 PMTo: JD Lott - Multivista <j.lott@multivista.com>Subject:  Scan to Services - CO01 - 89050 - Hines Interests Limited Partnership - Hotel St Bernard\n—-—-—-—Reply above this line.\nMaria Constanza Aguero Gomez commented:\nHi JD, great, thank you for the quick response.\nAdditionally, could you please share any images of the control points? They would help us verify that we are identifying the correct locations, as we are currently unable to identify them in the LGS.\n[image-20260721-192738.png]\nWe would appreciate your support,\nThank you in advance, and we look forward to your response.\nBest regards,\nRespectfully yours,\nHexagon Scan to Servicesscantoservices@multivista.com<scantoservices@multivista.com>\nView request<https://multivista.atlassian.net/servicedesk/customer/portal/5/SCAN-6086?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0Z3QiOiJhbm9ueW1vdXMtbGluayIsInFzaCI6ImUxOWQ0NDFlOTZhMTllNGUxYmQzY2E4OTc0MDU5YzI4ZjJjNGFjMDBjMmE4YTkyNDhmZTA5MjRkMGUyN2Y3OWUiLCJpc3MiOiJzZXJ2aWNlZGVzay1qd3QtdG9rZW4taXNzdWVyIiwiY29udGV4dCI6eyJ1c2VyIjoiMTM3NzciLCJpc3N1ZSI6IlNDQU4tNjA4NiJ9LCJleHAiOjE3ODcwODE1NzcsImlhdCI6MTc4NDY2MjM3N30.E-jMW2sgihAikyisGxrYg3mkItcE3Sh3ckF5tMyjzrI&sda_source=notification-email> · Turn off this request's notifications<https://multivista.atlassian.net/servicedesk/customer/portal/5/SCAN-6086/unsubscribe?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0Z3QiOiJhbm9ueW1vdXMtbGluayIsInFzaCI6ImU1YTU5YTI1MTkzNmQ2ZDcxZTNiNjM4OGIxNjIzOTc5NzExY2JiNWZkODUwN2E4MjgzMGViZmFiODk3MWZiYjYiLCJpc3MiOiJzZXJ2aWNlZGVzay1qd3QtdG9rZW4taXNzdWVyIiwiY29udGV4dCI6eyJ1c2VyIjoiNzEyMDIwOmQxNzYxOWI3LWRjYjktNGFlZi04NDQ5LTlmNGM3NzBkMzg4OSIsImlzc3VlIjoiU0NBTi02MDg2In0sImV4cCI6MTc4NzA4MTU3NywiaWF0IjoxNzg0NjYyMzc3fQ.n7uPP_ELjVJXCTr9aP5sIRvwiw7FUr3Ph8CMUFMa-E0>\nThis is shared with Roger Elstad and JD Lott.\nPowered by Jira Service Management<https://www.atlassian.com/software/jira/service-desk/powered-by?utm_medium=jira-in-product&utm_source=jira_service_desk_email_footer&utm_content=multivista>"
-            },
-            {
-              "author": "JD Lott",
-              "created": "2026-07-21T12:35:11.886-0700",
-              "body": "I wouldn't have any of these but our ops manager that scanned it might. @Roger Elstad - Multivista<r.elstad@multivista.com>\nJD LottSenior Managing Partner\nMultivista, part of HexagonM: 205.427.1868multivista.com<https://www.multivista.com/>\nFrom: Maria Constanza Aguero Gomez <jira@multivista.atlassian.net>Date: Tuesday, July 21, 2026 at 2:33 PMTo: JD Lott - Multivista <j.lott@multivista.com>Subject:  Scan to Services - CO01 - 89050 - Hines Interests Limited Partnership - Hotel St Bernard\n—-—-—-—Reply above this line.\nMaria Constanza Aguero Gomez commented:\nHi JD, great, thank you for the quick response.\nAdditionally, could you please share any images of the control points? They would help us verify that we are identifying the correct locations, as we are currently unable to identify them in the LGS.\n[image-20260721-192738.png]\nWe would appreciate your support,\nThank you in advance, and we look forward to your response.\nBest regards,\nRespectfully yours,\nHexagon Scan to Servicesscantoservices@multivista.com<scantoservices@multivista.com>\nView request<https://multivista.atlassian.net/servicedesk/customer/portal/5/SCAN-6086?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0Z3QiOiJhbm9ueW1vdXMtbGluayIsInFzaCI6ImUxOWQ0NDFlOTZhMTllNGUxYmQzY2E4OTc0MDU5YzI4ZjJjNGFjMDBjMmE4YTkyNDhmZTA5MjRkMGUyN2Y3OWUiLCJpc3MiOiJzZXJ2aWNlZGVzay1qd3QtdG9rZW4taXNzdWVyIiwiY29udGV4dCI6eyJ1c2VyIjoiMTM3NzciLCJpc3N1ZSI6IlNDQU4tNjA4NiJ9LCJleHAiOjE3ODcwODE1NzcsImlhdCI6MTc4NDY2MjM3N30.E-jMW2sgihAikyisGxrYg3mkItcE3Sh3ckF5tMyjzrI&sda_source=notification-email> · Turn off this request's notifications<https://multivista.atlassian.net/servicedesk/customer/portal/5/SCAN-6086/unsubscribe?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0Z3QiOiJhbm9ueW1vdXMtbGluayIsInFzaCI6ImU1YTU5YTI1MTkzNmQ2ZDcxZTNiNjM4OGIxNjIzOTc5NzExY2JiNWZkODUwN2E4MjgzMGViZmFiODk3MWZiYjYiLCJpc3MiOiJzZXJ2aWNlZGVzay1qd3QtdG9rZW4taXNzdWVyIiwiY29udGV4dCI6eyJ1c2VyIjoiNzEyMDIwOmQxNzYxOWI3LWRjYjktNGFlZi04NDQ5LTlmNGM3NzBkMzg4OSIsImlzc3VlIjoiU0NBTi02MDg2In0sImV4cCI6MTc4NzA4MTU3NywiaWF0IjoxNzg0NjYyMzc3fQ.n7uPP_ELjVJXCTr9aP5sIRvwiw7FUr3Ph8CMUFMa-E0>\nThis is shared with Roger Elstad and JD Lott.\nPowered by Jira Service Management<https://www.atlassian.com/software/jira/service-desk/powered-by?utm_medium=jira-in-product&utm_source=jira_service_desk_email_footer&utm_content=multivista>"
-            },
-            {
-              "author": "Maria Constanza Aguero Gomez",
-              "created": "2026-07-21T12:31:56.282-0700",
-              "body": "Hi JD, great, thank you for the quick response. \nAdditionally, could you please share any images of the control points? They would help us verify that we are identifying the correct locations, as we are currently unable to identify them in the LGS. \nWe would appreciate your support,\nThank you in advance, and we look forward to your response.\nBest regards,"
-            },
-            {
-              "author": "JD Lott",
-              "created": "2026-07-21T09:52:43.102-0700",
-              "body": "Thanks for calling that out! Here’s the response from the client\nJD,\nGood catch.  Honestly, I don’t remember even checking that box.  We would like the “True As Built” conditions then compared with the design model to generate the report.\nGet Outlook for iOS<https://aka.ms/o0ukef>________________________________From: Maria Constanza Aguero Gomez <jira@multivista.atlassian.net>Sent: Tuesday, 21 July 2026 10:18:23To: JD Lott - Multivista <j.lott@multivista.com>Subject:  Scan to Services - CO01 - 89050 - Hines Interests Limited Partnership - Hotel St Bernard\n—-—-—-—Reply above this line.\nMaria Constanza Aguero Gomez commented:\nHi team,\nWe are currently working on this project, and a question came up regarding the modeling methodology.\nOur understanding is that this model will later be compared with the design model to generate the report. However, we noticed that the checklist indicates the modeling methodology as “As Designed”.\nCould you please validate whether this is correct? From our point of view, it would be more logical for the modeling methodology to be “True As Built” if the model is intended to be compared against the design model.\nWe would appreciate it if you could confirm this as soon as possible so that we can update the model accordingly and avoid any rework.\nThank you in advance for your prompt response.\n[image-20260721-151307.png]\nRespectfully yours,\nHexagon Scan to Servicesscantoservices@multivista.com<scantoservices@multivista.com>\nView request<https://multivista.atlassian.net/servicedesk/customer/portal/5/SCAN-6086?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0Z3QiOiJhbm9ueW1vdXMtbGluayIsInFzaCI6ImUxOWQ0NDFlOTZhMTllNGUxYmQzY2E4OTc0MDU5YzI4ZjJjNGFjMDBjMmE4YTkyNDhmZTA5MjRkMGUyN2Y3OWUiLCJpc3MiOiJzZXJ2aWNlZGVzay1qd3QtdG9rZW4taXNzdWVyIiwiY29udGV4dCI6eyJ1c2VyIjoiMTM3NzciLCJpc3N1ZSI6IlNDQU4tNjA4NiJ9LCJleHAiOjE3ODcwNjYzMDEsImlhdCI6MTc4NDY0NzEwMX0.EAnoJn3czfja-8PnnbMH5LnGxfOvdJK6W1qqQF-R8sM&sda_source=notification-email> · Turn off this request's notifications<https://multivista.atlassian.net/servicedesk/customer/portal/5/SCAN-6086/unsubscribe?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0Z3QiOiJhbm9ueW1vdXMtbGluayIsInFzaCI6ImU1YTU5YTI1MTkzNmQ2ZDcxZTNiNjM4OGIxNjIzOTc5NzExY2JiNWZkODUwN2E4MjgzMGViZmFiODk3MWZiYjYiLCJpc3MiOiJzZXJ2aWNlZGVzay1qd3QtdG9rZW4taXNzdWVyIiwiY29udGV4dCI6eyJ1c2VyIjoiNzEyMDIwOmQxNzYxOWI3LWRjYjktNGFlZi04NDQ5LTlmNGM3NzBkMzg4OSIsImlzc3VlIjoiU0NBTi02MDg2In0sImV4cCI6MTc4NzA2NjMwMSwiaWF0IjoxNzg0NjQ3MTAxfQ.6uCMox7H_CpGSQUvicv92RwUpkcESQCRhAFSifzI4lQ>\nThis is shared with Roger Elstad and JD Lott.\nPowered by Jira Service Management<https://www.atlassian.com/software/jira/service-desk/powered-by?utm_medium=jira-in-product&utm_source=jira_service_desk_email_footer&utm_content=multivista>\nSent on July 21, 2026 8:18:21 AM PDThttps://usw2-track.atlassian.com/CI0/0101019f8541b294-9ee75964-afa6-419b-b0ae-3437a0af2ea0-000000/RNVIZE5at2Qy_qrIIpJ10KYz8NT1CHzvUrKsNfI1cEE=452"
-            },
-            {
-              "author": "Maria Constanza Aguero Gomez",
-              "created": "2026-07-21T08:17:20.317-0700",
-              "body": "Hi team,\nWe are currently working on this project, and a question came up regarding the modeling methodology.\nOur understanding is that this model will later be compared with the design model to generate the report. However, we noticed that the checklist indicates the modeling methodology as “As Designed”.\nCould you please validate whether this is correct? From our point of view, it would be more logical for the modeling methodology to be “True As Built” if the model is intended to be compared against the design model.\nWe would appreciate it if you could confirm this as soon as possible so that we can update the model accordingly and avoid any rework.\nThank you in advance for your prompt response."
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-07-03T07:06:49.890-0700",
-              "body": ""
-            },
-            {
-              "author": "Roger Elstad",
-              "created": "2026-07-02T15:24:07.902-0700",
-              "body": "Hi Martin,\nThank you for the reply and info.\nHave a great weekend,Roger ElstadOperations Manager\nMultivista, part of HexagonM: 303-888-4645multivista.com________________________________From: Martin Isola <jira@multivista.atlassian.net>Sent: Thursday, July 2, 2026 2:21 PMTo: Roger Elstad - Multivista <r.elstad@multivista.com>Subject:  Scan to Services - CO01 - 89050 - Hines Interests Limited Partnership - Hotel St Bernard\n—-—-—-—Reply above this line.\nMartin Isola commented:\nHi Roger,I reviewed the checklist and the client marked that we can use our Multivista template. We will use that option.\n[image-20260702-202036.png]\nThanks\nRespectfully yours,\nHexagon Scan to Servicesscantoservices@multivista.com<scantoservices@multivista.com>\nView request<https://multivista.atlassian.net/servicedesk/customer/portal/5/SCAN-6086?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0Z3QiOiJhbm9ueW1vdXMtbGluayIsInFzaCI6ImUxOWQ0NDFlOTZhMTllNGUxYmQzY2E4OTc0MDU5YzI4ZjJjNGFjMDBjMmE4YTkyNDhmZTA5MjRkMGUyN2Y3OWUiLCJpc3MiOiJzZXJ2aWNlZGVzay1qd3QtdG9rZW4taXNzdWVyIiwiY29udGV4dCI6eyJ1c2VyIjoiMTM0NTMiLCJpc3N1ZSI6IlNDQU4tNjA4NiJ9LCJleHAiOjE3ODU0NDI5MTYsImlhdCI6MTc4MzAyMzcxNn0.649O1Y1VWJOvnZhWH6pspcquNJdC55_9OwpmdvgjVg8&sda_source=notification-email> · Turn off this request's notifications<https://multivista.atlassian.net/servicedesk/customer/portal/5/SCAN-6086/unsubscribe?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0Z3QiOiJhbm9ueW1vdXMtbGluayIsInFzaCI6ImU1YTU5YTI1MTkzNmQ2ZDcxZTNiNjM4OGIxNjIzOTc5NzExY2JiNWZkODUwN2E4MjgzMGViZmFiODk3MWZiYjYiLCJpc3MiOiJzZXJ2aWNlZGVzay1qd3QtdG9rZW4taXNzdWVyIiwiY29udGV4dCI6eyJ1c2VyIjoidWc6MDZiMTgxNjItNjg5NC00ZmZmLTg5YjEtMGZiZjM1MzQ4OGVjIiwiaXNzdWUiOiJTQ0FOLTYwODYifSwiZXhwIjoxNzg1NDQyOTE2LCJpYXQiOjE3ODMwMjM3MTZ9.BOYPsd_9-Mkf4Pe-42UsVfqu3FRXrArvfmA3_btW7l0>\nThis is shared with Roger Elstad and JD Lott.\nPowered by Jira Service Management<https://www.atlassian.com/software/jira/service-desk/powered-by?utm_medium=jira-in-product&utm_source=jira_service_desk_email_footer&utm_content=multivista>\nSent on July 2, 2026 2:21:56 PM MDThttps://use1-track.atlassian.com/CI0/0100019f247ecd09-3a999304-32e0-4d65-91a3-43fe13f2f188-000000/Oto1WsrFTNjXkc07y_Ozwiet2MRWe_DOMF7sQUw-rk4=452"
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-07-02T13:20:54.049-0700",
-              "body": "Hi Roger,I reviewed the checklist and the client marked that we can use our Multivista template. We will use that option.\nThanks"
-            },
-            {
-              "author": "Roger Elstad",
-              "created": "2026-07-02T08:08:35.041-0700",
-              "body": "Hello Scan to Services and/or 3D Laser Support,\nI asked Rovo if I need a rvt template and just want to confirm if I need to get a Revit template from the customer.\n[cid:a6dcfabf-309d-4ec2-8762-e16568fc68f9]\nThank you for your help.\nHave a great day,Roger ElstadOperations Manager\nMultivista, part of HexagonM: 303-888-4645multivista.com________________________________From: Multivista <jira@multivista.atlassian.net>Sent: Wednesday, July 1, 2026 11:18 PMTo: Roger Elstad - Multivista <r.elstad@multivista.com>Subject:  Scan to Services - CO01 - 89050 - Hines Interests Limited Partnership - Hotel St Bernard\n—-—-—-—Reply above this line.\nHi Roger Elstad,\nThis is an automated response to let you know that we have received your Scan to Services request and will advise if further information is required or when the request is complete.\nRespectfully yours,\nHexagon Scan to Servicesscantoservices@multivista.com<scantoservices@multivista.com>\nView request<https://multivista.atlassian.net/servicedesk/customer/portal/5/SCAN-6086?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0Z3QiOiJhbm9ueW1vdXMtbGluayIsInFzaCI6ImUxOWQ0NDFlOTZhMTllNGUxYmQzY2E4OTc0MDU5YzI4ZjJjNGFjMDBjMmE4YTkyNDhmZTA5MjRkMGUyN2Y3OWUiLCJpc3MiOiJzZXJ2aWNlZGVzay1qd3QtdG9rZW4taXNzdWVyIiwiY29udGV4dCI6eyJ1c2VyIjoiMTM0NTMiLCJpc3N1ZSI6IlNDQU4tNjA4NiJ9LCJleHAiOjE3ODUzODg0ODUsImlhdCI6MTc4Mjk2OTI4NX0.34Kca_5qfJ3aTTcRY_RjgpbJrI0YqXtVQBPjdMQaFBI&sda_source=notification-email> · Turn off this request's notifications<https://multivista.atlassian.net/servicedesk/customer/portal/5/SCAN-6086/unsubscribe?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0Z3QiOiJhbm9ueW1vdXMtbGluayIsInFzaCI6ImU1YTU5YTI1MTkzNmQ2ZDcxZTNiNjM4OGIxNjIzOTc5NzExY2JiNWZkODUwN2E4MjgzMGViZmFiODk3MWZiYjYiLCJpc3MiOiJzZXJ2aWNlZGVzay1qd3QtdG9rZW4taXNzdWVyIiwiY29udGV4dCI6eyJ1c2VyIjoidWc6MDZiMTgxNjItNjg5NC00ZmZmLTg5YjEtMGZiZjM1MzQ4OGVjIiwiaXNzdWUiOiJTQ0FOLTYwODYifSwiZXhwIjoxNzg1Mzg4NDg1LCJpYXQiOjE3ODI5NjkyODV9.xnyvUO7HXUl7C6_JVX9k14jQwgpYHtkOu4PjpJGe4QY>\nThis is shared with Roger Elstad and JD Lott.\nPowered by Jira Service Management<https://www.atlassian.com/software/jira/service-desk/powered-by?utm_medium=jira-in-product&utm_source=jira_service_desk_email_footer&utm_content=multivista>\nSent on July 1, 2026 11:14:45 PM MDThttps://use1-track.atlassian.com/CI0/0100019f214357d9-570f720c-5a8e-4e96-a932-b27588ced14c-000000/T0WjaAqCOmAqMM7gjd2OqI6p6H1MUO5HtQv5tORoCrk=452"
-            },
-            {
-              "author": "Multivista",
-              "created": "2026-07-01T22:13:45.839-0700",
-              "body": "(266 kB)"
-            }
-          ]
         },
         {
           "key": "SCAN-6071",
