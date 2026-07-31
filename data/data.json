@@ -1,17 +1,53 @@
 {
-  "generatedAt": "2026-07-30T20:17:15.739Z",
+  "generatedAt": "2026-07-31T10:30:24.522Z",
   "domain": "multivista.atlassian.net",
   "projects": [
     {
       "key": "SCAN",
       "name": "SCAN",
-      "totalIssues": 2980,
+      "totalIssues": 2984,
       "statusSummary": {
-        "To Do": 23,
+        "To Do": 27,
         "In Progress": 41,
         "Done": 2916
       },
       "issues": [
+        {
+          "key": "SCAN-5931",
+          "summary": "Scan to Services - GBR02 - 503412 - PRP - George Downing Estate",
+          "status": "Reopened",
+          "statusCategory": "In Progress",
+          "assignee": "sirajudheen",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-07-31T03:08:21.166-0700",
+          "territory": "GBR02",
+          "serviceType": "Scan to BIM (model only)"
+        },
+        {
+          "key": "SCAN-6163",
+          "summary": "Scan to Services - GBR02 - 503345 - London Borough of Islington - 36x Islington Building Blocks - Mears",
+          "status": "Backlog",
+          "statusCategory": "To Do",
+          "assignee": "Scan to Services",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-07-31T03:00:01.175-0700",
+          "territory": "GBR02",
+          "serviceType": "Scan to Plan (plans only)"
+        },
+        {
+          "key": "SCAN-5429",
+          "summary": "Scan to Services - GBR02 - 502708 - Royal London Asset Management - Atlantic House",
+          "status": "Done",
+          "statusCategory": "Done",
+          "assignee": "Rojes Malachi",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-07-31T02:33:52.789-0700",
+          "territory": "GBR02",
+          "serviceType": "Scan to BIM (model and extracted plans)"
+        },
         {
           "key": "SCAN-5906",
           "summary": "Scan to Services - GBR02 - 503335 - Barratt Development PLC - Blake Tower",
@@ -20,19 +56,175 @@
           "assignee": "Rojes Malachi",
           "priority": "Unprioritized",
           "type": "ScanTo",
-          "updated": "2026-07-30T13:14:57.847-0700",
+          "updated": "2026-07-31T01:52:40.653-0700",
           "territory": "GBR02",
           "serviceType": "Scan to BIM (model only)"
         },
         {
-          "key": "SCAN-6159",
-          "summary": "Scan to Services - WA01 - 89612 - PCL Construction - Alaska C1 Lounge",
-          "status": "Validation",
+          "key": "SCAN-6138",
+          "summary": "Scan to Services - TX03 - 89452 - Rice Residential Design - 11526 Shadow Way Street",
+          "status": "S2S Backlog",
+          "statusCategory": "To Do",
+          "assignee": "sirajudheen",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-07-31T00:26:15.758-0700",
+          "territory": "TX03",
+          "serviceType": "Scan to BIM (model and extracted plans)"
+        },
+        {
+          "key": "SCAN-6059",
+          "summary": "Scan to Services - AL01 - 89086 - Magaldi Technologies - MH Valve",
+          "status": "S2S Final QC",
           "statusCategory": "In Progress",
+          "assignee": "Rojes Malachi",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-07-31T00:25:44.951-0700",
+          "territory": "AL01",
+          "serviceType": "Scan to BIM (model only)"
+        },
+        {
+          "key": "SCAN-6153",
+          "summary": "Scan to Services - NV01 - 89321 - Caesars Entertainment - Paris LV Bordeaux Tower",
+          "status": "S2S Backlog",
+          "statusCategory": "To Do",
+          "assignee": null,
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-07-30T23:07:09.830-0700",
+          "territory": "NV01",
+          "serviceType": "Scan to Plan (plans only)"
+        },
+        {
+          "key": "SCAN-6158",
+          "summary": "Upsell - Scan to Services - NE01 - 89450 - Hoar Construction - Avenue One Building R-2",
+          "status": "S2S Queue",
+          "statusCategory": "In Progress",
+          "assignee": "sirajudheen",
+          "priority": "Urgent",
+          "type": "ScanTo",
+          "updated": "2026-07-30T22:24:32.085-0700",
+          "territory": "NE01",
+          "serviceType": "Scan to Plan (plans only)"
+        },
+        {
+          "key": "SCAN-6156",
+          "summary": "Scan to Services - MA01 - 89319 - Wessling Architects - 1 Park Way",
+          "status": "S2S Production",
+          "statusCategory": "In Progress",
+          "assignee": "sirajudheen",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-07-30T21:30:47.737-0700",
+          "territory": "MA01",
+          "serviceType": "Scan to BIM (model and extracted plans)"
+        },
+        {
+          "key": "SCAN-6127",
+          "summary": "Scan to Services - GBR01 - 503664 - Rigg Tech Ltd - Sugar House Close",
+          "status": "S2S Production",
+          "statusCategory": "In Progress",
+          "assignee": "sirajudheen",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-07-30T21:30:43.885-0700",
+          "territory": "GBR01",
+          "serviceType": "Scan to Plan (plans only)"
+        },
+        {
+          "key": "SCAN-6129",
+          "summary": "Scan to Services - GBR01 - 503665 - Rigg Tech Ltd - Haddington Place",
+          "status": "S2S Production",
+          "statusCategory": "In Progress",
+          "assignee": "sirajudheen",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-07-30T21:30:42.383-0700",
+          "territory": "GBR01",
+          "serviceType": "Scan to Plan (plans only)"
+        },
+        {
+          "key": "SCAN-6157",
+          "summary": "Scan to Services - GA02 - 89539 - SCAD - Film Studio Royal Transport",
+          "status": "S2S Production",
+          "statusCategory": "In Progress",
+          "assignee": "sirajudheen",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-07-30T21:30:34.474-0700",
+          "territory": "GA02",
+          "serviceType": "Scan to BIM (model and extracted plans)"
+        },
+        {
+          "key": "SCAN-6152",
+          "summary": "Scan to Services - TX02 - 89490 - EBAA Iron - Eastland Iron Foundry",
+          "status": "S2S Backlog",
+          "statusCategory": "To Do",
+          "assignee": "Rojes Malachi",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-07-30T21:29:47.416-0700",
+          "territory": "TX02",
+          "serviceType": "Scan to BIM (model and extracted plans)"
+        },
+        {
+          "key": "SCAN-6162",
+          "summary": "Scan to Services - WA01 - 89524 - Jeff Heiser - Heiser Apartments",
+          "status": "Backlog",
+          "statusCategory": "To Do",
           "assignee": "Scan to Services",
           "priority": "Unprioritized",
           "type": "ScanTo",
-          "updated": "2026-07-30T13:14:57.622-0700",
+          "updated": "2026-07-30T16:32:29.387-0700",
+          "territory": "WA01",
+          "serviceType": "Scan to BIM (model and extracted plans)"
+        },
+        {
+          "key": "SCAN-6161",
+          "summary": "Scan to Services - AB01 - 89559 - BENCHMARK Windows and Doors - Prince of Wales Hotel",
+          "status": "Backlog",
+          "statusCategory": "To Do",
+          "assignee": "Scan to Services",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-07-30T15:04:42.176-0700",
+          "territory": "AB01",
+          "serviceType": "Scan to BIM (model and extracted plans)"
+        },
+        {
+          "key": "SCAN-6160",
+          "summary": "Scan to Services - AB01 - 89559 - BENCHMARK Windows and Doors - Prince of Wales Hotel",
+          "status": "Backlog",
+          "statusCategory": "To Do",
+          "assignee": "Scan to Services",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-07-30T15:02:47.156-0700",
+          "territory": "AB01",
+          "serviceType": "Scan to BIM (model and extracted plans)"
+        },
+        {
+          "key": "SCAN-6130",
+          "summary": "Scan to Services - GA01 - 89434 - Leapley Construction - Bank of America West Wing Restaurant and Conference Room",
+          "status": "S2S QC",
+          "statusCategory": "In Progress",
+          "assignee": "Brian Nahuel Aduco",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-07-30T13:36:57.469-0700",
+          "territory": "GA01",
+          "serviceType": "Floor Flatness Report"
+        },
+        {
+          "key": "SCAN-6159",
+          "summary": "Scan to Services - WA01 - 89612 - PCL Construction - Alaska C1 Lounge",
+          "status": "Waiting for Scan Data",
+          "statusCategory": "To Do",
+          "assignee": "Scan to Services",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-07-30T13:20:53.997-0700",
           "territory": "WA01",
           "serviceType": "Floor Flatness Report"
         },
@@ -46,42 +238,6 @@
           "type": "ScanTo",
           "updated": "2026-07-30T12:57:39.197-0700",
           "territory": "CT01",
-          "serviceType": "Scan to Plan (plans only)"
-        },
-        {
-          "key": "SCAN-6059",
-          "summary": "Scan to Services - AL01 - 89086 - Magaldi Technologies - MH Valve",
-          "status": "S2S QC",
-          "statusCategory": "In Progress",
-          "assignee": "Rojes Malachi",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-07-30T12:02:56.378-0700",
-          "territory": "AL01",
-          "serviceType": "Scan to BIM (model only)"
-        },
-        {
-          "key": "SCAN-5931",
-          "summary": "Scan to Services - GBR02 - 503412 - PRP - George Downing Estate",
-          "status": "Reopened",
-          "statusCategory": "In Progress",
-          "assignee": "sirajudheen",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-07-30T11:37:14.598-0700",
-          "territory": "GBR02",
-          "serviceType": "Scan to BIM (model only)"
-        },
-        {
-          "key": "SCAN-6158",
-          "summary": "Upsell - Scan to Services - NE01 - 89450 - Hoar Construction - Avenue One Building R-2",
-          "status": "S2S Backlog",
-          "statusCategory": "To Do",
-          "assignee": null,
-          "priority": "Urgent",
-          "type": "ScanTo",
-          "updated": "2026-07-30T11:35:26.983-0700",
-          "territory": "NE01",
           "serviceType": "Scan to Plan (plans only)"
         },
         {
@@ -119,18 +275,6 @@
           "updated": "2026-07-30T07:41:19.150-0700",
           "territory": "IL01",
           "serviceType": "Scan to Plan (plans only)"
-        },
-        {
-          "key": "SCAN-6156",
-          "summary": "Scan to Services - MA01 - 89319 - Wessling Architects - 1 Park Way",
-          "status": "S2S Queue",
-          "statusCategory": "In Progress",
-          "assignee": "sirajudheen",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-07-30T07:40:39.501-0700",
-          "territory": "MA01",
-          "serviceType": "Scan to BIM (model and extracted plans)"
         },
         {
           "key": "SCAN-6140",
@@ -241,30 +385,6 @@
           "serviceType": "Scan to BIM (model only)"
         },
         {
-          "key": "SCAN-6130",
-          "summary": "Scan to Services - GA01 - 89434 - Leapley Construction - Bank of America West Wing Restaurant and Conference Room",
-          "status": "S2S Production",
-          "statusCategory": "In Progress",
-          "assignee": "Brian Nahuel Aduco",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-07-30T05:30:21.531-0700",
-          "territory": "GA01",
-          "serviceType": "Floor Flatness Report"
-        },
-        {
-          "key": "SCAN-6157",
-          "summary": "Scan to Services - GA02 - 89539 - SCAD - Film Studio Royal Transport",
-          "status": "S2S Queue",
-          "statusCategory": "In Progress",
-          "assignee": "sirajudheen",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-07-30T05:09:17.570-0700",
-          "territory": "GA02",
-          "serviceType": "Scan to BIM (model and extracted plans)"
-        },
-        {
           "key": "SCAN-6041",
           "summary": "Scan to Services - ON01 - 87803 - Matheson Constructors - NT 08 - T3 - HBS Replacement",
           "status": "S2S Production",
@@ -325,30 +445,6 @@
           "serviceType": "Scan to BIM (model only)"
         },
         {
-          "key": "SCAN-6129",
-          "summary": "Scan to Services - GBR01 - 503665 - Rigg Tech Ltd - Haddington Place",
-          "status": "S2S Queue",
-          "statusCategory": "In Progress",
-          "assignee": "sirajudheen",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-07-30T05:00:52.771-0700",
-          "territory": "GBR01",
-          "serviceType": "Scan to Plan (plans only)"
-        },
-        {
-          "key": "SCAN-6127",
-          "summary": "Scan to Services - GBR01 - 503664 - Rigg Tech Ltd - Sugar House Close",
-          "status": "S2S Queue",
-          "statusCategory": "In Progress",
-          "assignee": "sirajudheen",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-07-30T05:00:52.721-0700",
-          "territory": "GBR01",
-          "serviceType": "Scan to Plan (plans only)"
-        },
-        {
           "key": "SCAN-6052",
           "summary": "Scan to Services - GBR01 - 503447 - Ayrshire College - Dam Park Building",
           "status": "S2S Production",
@@ -382,18 +478,6 @@
           "type": "ScanTo",
           "updated": "2026-07-30T04:30:18.410-0700",
           "territory": "GA02",
-          "serviceType": "Scan to BIM (model and extracted plans)"
-        },
-        {
-          "key": "SCAN-6152",
-          "summary": "Scan to Services - TX02 - 89490 - EBAA Iron - Eastland Iron Foundry",
-          "status": "S2S Backlog",
-          "statusCategory": "To Do",
-          "assignee": "Rojes Malachi",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-07-30T01:56:01.635-0700",
-          "territory": "TX02",
           "serviceType": "Scan to BIM (model and extracted plans)"
         },
         {
@@ -1033,18 +1117,6 @@
           "serviceType": "Scan to BIM (model and extracted plans)"
         },
         {
-          "key": "SCAN-6153",
-          "summary": "Scan to Services - NV01 - 89321 - Caesars Entertainment - Paris LV Bordeaux Tower",
-          "status": "S2S Backlog",
-          "statusCategory": "To Do",
-          "assignee": null,
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-07-29T09:39:33.664-0700",
-          "territory": "NV01",
-          "serviceType": "Scan to Plan (plans only)"
-        },
-        {
           "key": "SCAN-6134",
           "summary": "Scan to Services - AL01 - 87950 - Multivista Alabama - Auburn House",
           "status": "S2S Production",
@@ -1139,18 +1211,6 @@
           "updated": "2026-07-29T05:00:55.242-0700",
           "territory": "PA01",
           "serviceType": "Scan to BIM (model only)"
-        },
-        {
-          "key": "SCAN-6138",
-          "summary": "Scan to Services - TX03 - 89452 - Rice Residential Design - 11526 Shadow Way Street",
-          "status": "S2S Backlog",
-          "statusCategory": "To Do",
-          "assignee": null,
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-07-29T04:32:15.568-0700",
-          "territory": "TX03",
-          "serviceType": "Scan to BIM (model and extracted plans)"
         },
         {
           "key": "SCAN-5912",
@@ -8003,18 +8063,6 @@
           "updated": "2026-04-17T06:18:58.693-0700",
           "territory": "GBR02",
           "serviceType": "Scan to BIM (model only)"
-        },
-        {
-          "key": "SCAN-5429",
-          "summary": "Scan to Services - GBR02 - 502708 - Royal London Asset Management - Atlantic House",
-          "status": "Done",
-          "statusCategory": "Done",
-          "assignee": "Rojes Malachi",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-04-17T06:18:11.042-0700",
-          "territory": "GBR02",
-          "serviceType": "Scan to BIM (model and extracted plans)"
         },
         {
           "key": "SCAN-5393",
