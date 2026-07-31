@@ -133,7 +133,7 @@ function renderKpis(issues) {
   const inProgress = issues.filter((i) => i.statusCategory === "In Progress").length;
   const territories = new Set(issues.map((i) => i.territory || "Unassigned")).size;
   const revenue = issues.reduce((sum, i) => sum + (i.price || 0), 0);
-  const totalSqft = issues.reduce((sum, i) => sum + (i.squareFootage || 0), 0);
+  const totalSqft = Math.round(issues.reduce((sum, i) => sum + (i.squareFootage || 0), 0));
 
   const withDeliveryStatus = issues.filter((i) => i.deliveryStatus);
   const onTime = withDeliveryStatus.filter((i) => i.deliveryStatus === "On time").length;

@@ -327,9 +327,12 @@ h1, h2 { font-family: var(--font-display); margin: 0; }
 .kpi-value {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 2rem;
+  font-size: 1.6rem;
   color: var(--ink-text);
-  line-height: 1;
+  line-height: 1.15;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .kpi-label {
