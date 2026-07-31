@@ -75,6 +75,36 @@ Argentina). Para no esperar hasta la próxima corrida automática:
 Si algo falla, el log de esa corrida en la pestaña Actions te va a decir
 exactamente qué pasó (token inválido, dominio mal escrito, etc.).
 
+## Sobre el login
+
+El dashboard pide usuario y contraseña antes de mostrar nada. Las
+credenciales actuales son:
+
+- Usuario: `Hex-Multivista`
+- Contraseña: `Hexagon`
+
+**Importante:** esto filtra el acceso casual, pero no es seguridad real —
+el archivo `auth.js` es público, así que alguien con conocimientos
+técnicos podría intentar forzarlo. No lo uses para datos verdaderamente
+sensibles.
+
+Para cambiar las credenciales:
+
+1. Elegí un usuario y contraseña nuevos
+2. Generá el hash SHA-256 de `usuario:contraseña` (con los dos puntos en
+   el medio, tal cual). En una terminal (Mac/Linux):
+   ```bash
+   echo -n "tu-usuario:tu-contraseña" | sha256sum
+   ```
+   En Windows (PowerShell):
+   ```powershell
+   $h = [System.Security.Cryptography.SHA256]::Create()
+   $b = $h.ComputeHash([System.Text.Encoding]::UTF8.GetBytes("tu-usuario:tu-contraseña"))
+   ($b | ForEach-Object { $_.ToString("x2") }) -join ""
+   ```
+3. Copiá el resultado y reemplazá el valor de `AUTH_HASH_HEX` en `auth.js`
+4. Subí el cambio (`git add auth.js && git commit -m "cambiar credenciales" && git push`)
+
 ## Ajustar la frecuencia de sincronización
 
 En `.github/workflows/update-data.yml`, la línea:
@@ -96,7 +126,9 @@ semana los lunes a la misma hora:
 jira-dashboard/
 ├── index.html                     # Dashboard page (KPIs + charts by territory)
 ├── issues.html                    # Issues List page (filterable table)
-├── shared.js                      # shared data loading + sync status
+├── auth.js                        # login gate logic
+├── logo.svg                       # Hexagon Multivista logo (login screen)
+├── shared.js                      # shared data loading + sync status + project modal
 ├── dashboard.js                   # Dashboard page logic (Chart.js)
 ├── list.js                        # Issues List page logic
 ├── style.css                      # estilos

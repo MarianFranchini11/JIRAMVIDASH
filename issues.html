@@ -11,6 +11,20 @@
 </head>
 <body>
 
+  <div id="gate" class="gate">
+    <div class="gate-card">
+      <img src="logo.svg" alt="Hexagon Multivista" class="gate-logo" />
+      <h1 class="gate-title">Project Dashboard</h1>
+      <p class="gate-sub">Sign in to continue.</p>
+      <form id="gate-form" autocomplete="off">
+        <input type="text" id="gate-username" placeholder="Username" autocomplete="username" />
+        <input type="password" id="gate-password" placeholder="Password" autocomplete="current-password" />
+        <button type="submit">Sign in</button>
+      </form>
+      <p id="gate-error" class="gate-error" hidden>Incorrect username or password.</p>
+    </div>
+  </div>
+
   <div id="app" class="app">
 
     <header class="topbar">
@@ -99,6 +113,7 @@
 
   </div>
 
+  <script src="auth.js"></script>
   <script src="shared.js"></script>
   <script src="list.js"></script>
 </body>

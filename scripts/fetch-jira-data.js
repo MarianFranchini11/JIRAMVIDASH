@@ -81,6 +81,12 @@ function extractFieldValue(raw) {
     return raw.map(extractFieldValue).filter(Boolean).join(", ") || null;
   }
   if (typeof raw === "object") {
+    if (raw.type === "doc") {
+      // Rich-text (textarea) fields store an Atlassian Document Format
+      // object instead of a plain string.
+      const text = adfToText(raw).trim();
+      return text || null;
+    }
     return raw.value ?? raw.name ?? null;
   }
   return String(raw);

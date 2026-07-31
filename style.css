@@ -32,7 +32,9 @@ html, body {
 
 h1, h2 { font-family: var(--font-display); margin: 0; }
 
-/* ===== Passcode gate ===== */
+/* ===== Login gate ===== */
+#app { display: none; }
+
 .gate {
   position: fixed;
   inset: 0;
@@ -54,30 +56,22 @@ h1, h2 { font-family: var(--font-display); margin: 0; }
   box-shadow: 0 20px 60px rgba(0,0,0,0.35);
 }
 
-.gate-mark {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 44px;
-  height: 44px;
-  background: var(--steel);
-  color: #fff;
-  font-family: var(--font-mono);
-  font-weight: 500;
-  border-radius: 4px;
-  margin-bottom: 16px;
-  letter-spacing: 0.02em;
+.gate-logo {
+  max-width: 220px;
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
 }
 
 .gate-title {
-  font-size: 1.3rem;
+  font-size: 1.15rem;
   color: var(--ink-text);
 }
 
 .gate-sub {
   color: var(--slate);
   font-size: 0.9rem;
-  margin: 10px 0 22px;
+  margin: 8px 0 22px;
 }
 
 #gate-form {
@@ -86,17 +80,16 @@ h1, h2 { font-family: var(--font-display); margin: 0; }
   gap: 10px;
 }
 
-#gate-input {
-  font-family: var(--font-mono);
-  font-size: 1rem;
+#gate-form input {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
   padding: 12px 14px;
   border: 1px solid var(--line);
   border-radius: 3px;
-  text-align: center;
-  letter-spacing: 0.12em;
+  text-align: left;
 }
 
-#gate-input:focus {
+#gate-form input:focus {
   outline: 2px solid var(--steel);
   outline-offset: 1px;
 }
@@ -112,6 +105,7 @@ h1, h2 { font-family: var(--font-display); margin: 0; }
   color: #fff;
   cursor: pointer;
   transition: background 0.15s ease;
+  margin-top: 4px;
 }
 
 #gate-form button:hover { background: var(--steel-dark); }
