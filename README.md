@@ -126,6 +126,8 @@ semana los lunes a la misma hora:
 jira-dashboard/
 ├── index.html                     # Dashboard page (KPIs + charts by territory)
 ├── issues.html                    # Issues List page (filterable table)
+├── laser-support.html             # 3D Laser Support page (flagged components)
+├── laser-support.js               # 3D Laser Support page logic
 ├── auth.js                        # login gate logic
 ├── logo.svg                       # Hexagon Multivista logo (login screen)
 ├── shared.js                      # shared data loading + sync status + project modal

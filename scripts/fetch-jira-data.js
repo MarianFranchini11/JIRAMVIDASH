@@ -189,6 +189,7 @@ async function getIssuesForProject(projectKey, customFieldIds) {
     "issuetype",
     "duedate",
     "resolutiondate",
+    "components",
     ...Object.values(customFieldIds),
   ];
   let nextPageToken = undefined;
@@ -245,6 +246,7 @@ async function getIssuesForProject(projectKey, customFieldIds) {
         ftpFolderPath: ftpId ? extractFieldValue(issue.fields[ftpId]) : null,
         mapLink: mapLinkId ? extractFieldValue(issue.fields[mapLinkId]) : null,
         salesforceLink: sfLinkId ? extractFieldValue(issue.fields[sfLinkId]) : null,
+        components: (issue.fields.components || []).map((c) => c.name),
         comments: [],
       });
     }

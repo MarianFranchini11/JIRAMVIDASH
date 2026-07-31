@@ -1,0 +1,139 @@
+// laser-support.js
+// Summary of tickets flagged with the "Point Cloud Orientation Issue" or
+// "Registration Error" components.
+
+const TARGET_COMPONENTS = ["Point Cloud Orientation Issue", "Registration Error"];
+
+let allLaserIssues = [];
+
+async function initLaserSupportPage() {
+  let data;
+  try {
+    data = await loadDashboardData();
+  } catch (err) {
+    document.getElementById("sync-text").textContent = "Could not load data.";
+    console.error(err);
+    return;
+  }
+
+  renderSyncStatus(data);
+
+  const allIssues = flattenIssues(data);
+  allLaserIssues = allIssues.filter(
+    (issue) =>
+      issue.components &&
+      issue.components.some((c) => TARGET_COMPONENTS.includes(c))
+  );
+
+  populateLaserFilters(allLaserIssues);
+  renderLaserAll();
+
+  document.getElementById("filter-orientation").addEventListener("change", renderLaserAll);
+  document.getElementById("filter-registration").addEventListener("change", renderLaserAll);
+  document.getElementById("laser-territory-filter").addEventListener("change", renderLaserAll);
+  document.getElementById("laser-status-filter").addEventListener("change", renderLaserAll);
+}
+
+function populateLaserFilters(issues) {
+  const territories = new Set();
+  for (const issue of issues) {
+    territories.add(issue.territory || "Unassigned");
+  }
+  const select = document.getElementById("laser-territory-filter");
+  for (const t of Array.from(territories).sort()) {
+    const opt = document.createElement("option");
+    opt.value = t;
+    opt.textContent = t;
+    select.appendChild(opt);
+  }
+}
+
+function getFilteredLaserIssues() {
+  const wantOrientation = document.getElementById("filter-orientation").checked;
+  const wantRegistration = document.getElementById("filter-registration").checked;
+  const territory = document.getElementById("laser-territory-filter").value;
+  const status = document.getElementById("laser-status-filter").value;
+
+  return allLaserIssues.filter((issue) => {
+    const hasOrientation = issue.components.includes("Point Cloud Orientation Issue");
+    const hasRegistration = issue.components.includes("Registration Error");
+    const matchesComponent =
+      (wantOrientation && hasOrientation) || (wantRegistration && hasRegistration);
+    if (!matchesComponent) return false;
+    if (territory && (issue.territory || "Unassigned") !== territory) return false;
+    if (status && issue.statusCategory !== status) return false;
+    return true;
+  });
+}
+
+function formatCurrencyLaser(amount) {
+  return amount.toLocaleString("en-US", {
+    style: "currency",
+    currency: "USD",
+    maximumFractionDigits: 0,
+  });
+}
+
+function renderLaserAll() {
+  const issues = getFilteredLaserIssues();
+  renderLaserKpis(issues);
+  renderLaserTable(issues);
+}
+
+function renderLaserKpis(issues) {
+  const total = issues.length;
+  const orientationCount = issues.filter((i) =>
+    i.components.includes("Point Cloud Orientation Issue")
+  ).length;
+  const registrationCount = issues.filter((i) =>
+    i.components.includes("Registration Error")
+  ).length;
+  const revenue = issues.reduce((sum, i) => sum + (i.price || 0), 0);
+
+  const kpis = [
+    { label: "Total Flagged Tickets", value: total.toLocaleString("en-US") },
+    { label: "Point Cloud Orientation Issue", value: orientationCount.toLocaleString("en-US") },
+    { label: "Registration Error", value: registrationCount.toLocaleString("en-US") },
+    { label: "Total Revenue Affected", value: formatCurrencyLaser(revenue) },
+  ];
+
+  const grid = document.getElementById("kpi-grid");
+  grid.innerHTML = kpis
+    .map(
+      (k) => `
+      <div class="kpi-card">
+        <div class="kpi-value">${k.value}</div>
+        <div class="kpi-label">${k.label}</div>
+      </div>`
+    )
+    .join("");
+}
+
+function renderLaserTable(issues) {
+  const body = document.getElementById("laser-body");
+  const emptyState = document.getElementById("laser-empty-state");
+
+  const sorted = [...issues].sort((a, b) => new Date(b.updated || 0) - new Date(a.updated || 0));
+
+  body.innerHTML = "";
+  emptyState.hidden = sorted.length > 0;
+
+  for (const issue of sorted.slice(0, 500)) {
+    const relevantComponents = issue.components.filter((c) => TARGET_COMPONENTS.includes(c));
+    const tr = document.createElement("tr");
+    tr.className = "clickable-row";
+    tr.innerHTML = `
+      <td class="col-key">${issue.key}</td>
+      <td>${escapeHtml(issue.projectName)}</td>
+      <td>${escapeHtml(relevantComponents.join(", "))}</td>
+      <td><span class="status-pill ${statusPillClass(issue.statusCategory)}">${issue.statusCategory}</span></td>
+      <td>${escapeHtml(issue.territory || "Unassigned")}</td>
+      <td>${issue.price != null ? formatCurrencyLaser(issue.price) : "\u2014"}</td>
+      <td class="col-updated">${formatDate(issue.dueDate)}</td>
+    `;
+    tr.addEventListener("click", () => openProjectModal(issue));
+    body.appendChild(tr);
+  }
+}
+
+initLaserSupportPage();

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Tickets · Hexagon Multivista</title>
+<title>3D Laser Support · Hexagon Multivista</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -34,8 +34,8 @@
       </div>
       <nav class="mainnav">
         <a href="index.html" class="nav-link">Dashboard</a>
-        <a href="issues.html" class="nav-link active">Tickets</a>
-        <a href="laser-support.html" class="nav-link">3D Laser Support</a>
+        <a href="issues.html" class="nav-link">Tickets</a>
+        <a href="laser-support.html" class="nav-link active">3D Laser Support</a>
       </nav>
       <div class="sync-status" id="sync-status">
         <span class="pulse" id="pulse"></span>
@@ -46,64 +46,60 @@
 
     <main class="content">
 
-      <section class="issues-section">
-        <div class="issues-head">
-          <h2>All Tickets</h2>
-          <div class="filters">
-            <div class="filter-group">
-              <label for="project-filter">Project</label>
-              <select id="project-filter">
-                <option value="">All</option>
-              </select>
-            </div>
-            <div class="filter-group">
-              <label for="status-filter">Status</label>
-              <select id="status-filter">
-                <option value="">All</option>
-                <option value="To Do">To Do</option>
-                <option value="In Progress">In Progress</option>
-                <option value="Done">Done</option>
-              </select>
-            </div>
-            <div class="filter-group">
-              <label for="territory-filter">Territory</label>
-              <select id="territory-filter">
-                <option value="">All</option>
-              </select>
-            </div>
-            <div class="filter-group">
-              <label for="service-filter">Service type</label>
-              <select id="service-filter">
-                <option value="">All</option>
-              </select>
-            </div>
-            <div class="filter-group">
-              <label for="search-filter">Search</label>
-              <input type="text" id="search-filter" placeholder="Text or key&hellip;" />
-            </div>
+      <section class="filter-bar">
+        <div class="filter-group">
+          <label>Issue type</label>
+          <div class="laser-toggle-group">
+            <label class="laser-toggle"><input type="checkbox" id="filter-orientation" checked /> Point Cloud Orientation Issue</label>
+            <label class="laser-toggle"><input type="checkbox" id="filter-registration" checked /> Registration Error</label>
           </div>
         </div>
+        <div class="filter-group">
+          <label for="laser-territory-filter">Territory</label>
+          <select id="laser-territory-filter">
+            <option value="">All</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="laser-status-filter">Status</label>
+          <select id="laser-status-filter">
+            <option value="">All</option>
+            <option value="To Do">To Do</option>
+            <option value="In Progress">In Progress</option>
+            <option value="Done">Done</option>
+          </select>
+        </div>
+      </section>
 
+      <section class="kpi-section">
+        <div class="kpi-grid" id="kpi-grid">
+          <!-- KPI cards injected by laser-support.js -->
+        </div>
+      </section>
+
+      <section class="issues-section">
+        <div class="issues-head">
+          <h2>Flagged Tickets</h2>
+        </div>
         <div class="table-wrap">
-          <table id="issues-table">
+          <table id="laser-table">
             <thead>
               <tr>
                 <th>Key</th>
-                <th>Summary</th>
+                <th>Project Name</th>
+                <th>Component</th>
                 <th>Status</th>
-                <th>Priority</th>
-                <th>Assignee</th>
                 <th>Territory</th>
-                <th>Service Type</th>
+                <th>Price</th>
                 <th>Due Date</th>
               </tr>
             </thead>
-            <tbody id="issues-body">
-              <!-- rows injected by list.js -->
+            <tbody id="laser-body">
+              <!-- rows injected by laser-support.js -->
             </tbody>
           </table>
         </div>
-        <p id="empty-state" class="empty-state" hidden>No tickets match these filters.</p>
+        <p id="laser-empty-state" class="empty-state" hidden>No tickets match these filters.</p>
       </section>
 
     </main>
@@ -116,6 +112,6 @@
 
   <script src="auth.js"></script>
   <script src="shared.js"></script>
-  <script src="list.js"></script>
+  <script src="laser-support.js"></script>
 </body>
 </html>

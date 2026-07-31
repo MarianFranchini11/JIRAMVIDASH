@@ -110,6 +110,7 @@ function openProjectModal(issue) {
     ["Territory", escapeHtml(issue.territory || "Unassigned")],
     ["Service Type", escapeHtml(issue.serviceType || "\u2014")],
     ["Project Type", escapeHtml(issue.projectType || "\u2014")],
+    ["Components", issue.components && issue.components.length ? escapeHtml(issue.components.join(", ")) : "\u2014"],
     ["Price", issue.price != null ? issue.price.toLocaleString("en-US", { style: "currency", currency: "USD" }) : "\u2014"],
     ["Square Footage", issue.squareFootage != null ? issue.squareFootage.toLocaleString("en-US") : "\u2014"],
     ["Due Date", formatDate(issue.dueDate)],

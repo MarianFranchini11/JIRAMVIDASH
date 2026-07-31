@@ -592,6 +592,26 @@ h1, h2 { font-family: var(--font-display); margin: 0; }
 .clear-filters-btn:hover { border-color: var(--steel); color: var(--steel); }
 .clear-filters-btn:focus-visible { outline: 2px solid var(--steel); outline-offset: 1px; }
 
+.laser-toggle-group {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  padding: 8px 0;
+}
+
+.laser-toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--ink-text);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.laser-toggle input { accent-color: var(--steel); }
+
 /* ===== KPI cards ===== */
 .kpi-section { margin-bottom: 28px; }
 
