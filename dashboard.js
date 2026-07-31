@@ -15,6 +15,14 @@ let allIssues = [];
 let territoryChartInstance = null;
 let statusChartInstance = null;
 
+const MONTH_NAMES = [
+  "January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December",
+];
+
+let selectedYear = "";
+let selectedMonths = new Set(); // "01".."12"
+
 async function initDashboardPage() {
   let data;
   try {
@@ -34,14 +42,60 @@ async function initDashboardPage() {
   document.getElementById("territory-filter").addEventListener("change", renderAll);
   document.getElementById("service-filter").addEventListener("change", renderAll);
   document.getElementById("status-filter").addEventListener("change", renderAll);
-  document.getElementById("month-filter").addEventListener("change", renderAll);
+
+  document.getElementById("due-date-apply").addEventListener("click", () => {
+    selectedYear = document.getElementById("year-select").value;
+    selectedMonths = new Set(
+      Array.from(document.querySelectorAll(".month-checkbox-grid input:checked")).map(
+        (el) => el.value
+      )
+    );
+    updateDueDateSummary();
+    document.getElementById("due-date-details").open = false;
+    renderAll();
+  });
+
+  document.getElementById("due-date-clear").addEventListener("click", () => {
+    document.getElementById("year-select").value = "";
+    document.querySelectorAll(".month-checkbox-grid input").forEach((el) => (el.checked = false));
+    selectedYear = "";
+    selectedMonths = new Set();
+    updateDueDateSummary();
+    document.getElementById("due-date-details").open = false;
+    renderAll();
+  });
+
   document.getElementById("clear-filters").addEventListener("click", () => {
     document.getElementById("territory-filter").value = "";
     document.getElementById("service-filter").value = "";
     document.getElementById("status-filter").value = "";
-    document.getElementById("month-filter").value = "";
+    document.getElementById("year-select").value = "";
+    document.querySelectorAll(".month-checkbox-grid input").forEach((el) => (el.checked = false));
+    selectedYear = "";
+    selectedMonths = new Set();
+    updateDueDateSummary();
     renderAll();
   });
+
+  document.addEventListener("click", (e) => {
+    const details = document.getElementById("due-date-details");
+    if (details.open && !details.contains(e.target)) {
+      details.open = false;
+    }
+  });
+}
+
+function updateDueDateSummary() {
+  const summary = document.getElementById("due-date-summary");
+  const parts = [];
+  if (selectedYear) parts.push(selectedYear);
+  if (selectedMonths.size > 0) {
+    const names = Array.from(selectedMonths)
+      .sort()
+      .map((m) => MONTH_NAMES[parseInt(m, 10) - 1].slice(0, 3));
+    parts.push(names.join(", "));
+  }
+  summary.textContent = parts.length > 0 ? parts.join(" \u00b7 ") : "All";
 }
 
 function populateFilters(issues) {
@@ -68,35 +122,41 @@ function populateFilters(issues) {
     serviceSelect.appendChild(opt);
   }
 
-  const months = new Set();
+  const years = new Set();
   for (const issue of issues) {
-    if (issue.dueDate) months.add(issue.dueDate.slice(0, 7)); // "YYYY-MM"
+    if (issue.dueDate) years.add(issue.dueDate.slice(0, 4));
   }
-  const monthSelect = document.getElementById("month-filter");
-  const MONTH_NAMES = [
-    "January", "February", "March", "April", "May", "June",
-    "July", "August", "September", "October", "November", "December",
-  ];
-  for (const m of Array.from(months).sort()) {
-    const [year, month] = m.split("-");
+  const yearSelect = document.getElementById("year-select");
+  for (const y of Array.from(years).sort()) {
     const opt = document.createElement("option");
-    opt.value = m;
-    opt.textContent = `${MONTH_NAMES[parseInt(month, 10) - 1]} ${year}`;
-    monthSelect.appendChild(opt);
+    opt.value = y;
+    opt.textContent = y;
+    yearSelect.appendChild(opt);
   }
+
+  const monthContainer = document.getElementById("month-checkboxes");
+  monthContainer.innerHTML = MONTH_NAMES.map((name, i) => {
+    const value = String(i + 1).padStart(2, "0");
+    return `<label><input type="checkbox" value="${value}" />${name.slice(0, 3)}</label>`;
+  }).join("");
 }
 
 function getFilteredIssues() {
   const territory = document.getElementById("territory-filter").value;
   const service = document.getElementById("service-filter").value;
   const status = document.getElementById("status-filter").value;
-  const month = document.getElementById("month-filter").value;
 
   return allIssues.filter((issue) => {
     if (territory && (issue.territory || "Unassigned") !== territory) return false;
     if (service && issue.serviceType !== service) return false;
     if (status && issue.statusCategory !== status) return false;
-    if (month && (!issue.dueDate || issue.dueDate.slice(0, 7) !== month)) return false;
+    if (selectedYear || selectedMonths.size > 0) {
+      if (!issue.dueDate) return false;
+      const y = issue.dueDate.slice(0, 4);
+      const m = issue.dueDate.slice(5, 7);
+      if (selectedYear && y !== selectedYear) return false;
+      if (selectedMonths.size > 0 && !selectedMonths.has(m)) return false;
+    }
     return true;
   });
 }

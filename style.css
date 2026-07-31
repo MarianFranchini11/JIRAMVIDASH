@@ -173,6 +173,35 @@ h1, h2 { font-family: var(--font-display); margin: 0; }
   font-size: 1.05rem;
 }
 
+.topbar-logo-wrap {
+  display: inline-flex;
+  align-items: center;
+  background: #fff;
+  border-radius: 4px;
+  padding: 5px 10px;
+}
+
+.topbar-logo {
+  height: 22px;
+  display: block;
+}
+
+.logout-btn {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: #C9D3DD;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 3px;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.logout-btn:hover { background: rgba(255, 255, 255, 0.1); color: #fff; }
+.logout-btn:focus-visible { outline: 2px solid var(--amber); outline-offset: 1px; }
+
 .brand-sub {
   font-family: var(--font-body);
   font-weight: 400;
@@ -430,6 +459,122 @@ h1, h2 { font-family: var(--font-display); margin: 0; }
 }
 
 .filter-bar select:focus { outline: 2px solid var(--steel); outline-offset: 1px; }
+
+/* ===== Due date filter (year + multi-month popover) ===== */
+.due-date-filter {
+  position: relative;
+}
+
+.due-date-filter summary {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  background: var(--paper);
+  color: var(--ink-text);
+  min-width: 150px;
+  cursor: pointer;
+  list-style: none;
+}
+
+.due-date-filter summary::-webkit-details-marker { display: none; }
+
+.due-date-filter[open] summary { border-color: var(--steel); }
+
+.due-date-filter summary::after {
+  content: "\25BE";
+  float: right;
+  color: var(--slate);
+}
+
+.due-date-panel {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  z-index: 20;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  padding: 14px;
+  min-width: 260px;
+}
+
+.due-date-panel-row {
+  margin-bottom: 12px;
+}
+
+.due-date-panel-row label {
+  display: block;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.68rem;
+  color: var(--slate);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 6px;
+}
+
+.due-date-panel-row select {
+  width: 100%;
+  font-size: 0.85rem;
+  padding: 7px 9px;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+}
+
+.month-checkbox-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 6px;
+}
+
+.month-checkbox-grid label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 0.8rem;
+  text-transform: none;
+  color: var(--ink-text);
+  cursor: pointer;
+}
+
+.month-checkbox-grid input { margin: 0; accent-color: var(--steel); }
+
+.due-date-panel-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.due-date-panel-actions button {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+#due-date-clear {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  color: var(--slate);
+}
+
+#due-date-clear:hover { border-color: var(--steel); color: var(--steel); }
+
+#due-date-apply {
+  background: var(--ink);
+  border: none;
+  color: #fff;
+}
+
+#due-date-apply:hover { background: var(--steel-dark); }
 
 .clear-filters-btn {
   font-family: var(--font-body);

@@ -21,6 +21,15 @@ function showApp() {
   document.getElementById("app").style.display = "block";
 }
 
+function logout() {
+  sessionStorage.removeItem(AUTH_SESSION_KEY);
+  document.getElementById("gate-username").value = "";
+  document.getElementById("gate-password").value = "";
+  document.getElementById("gate-error").hidden = true;
+  document.getElementById("app").style.display = "none";
+  document.getElementById("gate").style.display = "flex";
+}
+
 async function tryLogin(username, password) {
   const hash = await sha256Hex(`${username}:${password}`);
   if (hash === AUTH_HASH_HEX) {
@@ -30,6 +39,8 @@ async function tryLogin(username, password) {
   }
   return false;
 }
+
+document.getElementById("logout-btn").addEventListener("click", logout);
 
 if (sessionStorage.getItem(AUTH_SESSION_KEY) === "1") {
   showApp();
