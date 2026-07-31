@@ -687,6 +687,10 @@ h1, h2 { font-family: var(--font-display); margin: 0; }
   gap: 4px;
   margin-bottom: 20px;
   border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 64px;
+  background: var(--canvas);
+  z-index: 15;
 }
 
 .rm-subnav-link {

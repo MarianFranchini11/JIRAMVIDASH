@@ -5,6 +5,10 @@
 
 let rmTimelineInitialized = false;
 let rmEstimates = {}; // ticketKey -> { hours, manual }
+let rmTlSearch = "";
+let rmTlTerritory = "";
+let rmTlAssignee = "";
+let rmTlUrgency = "";
 
 function initRMTimelineTab() {
   rmActiveSubTab = "timeline";
@@ -27,15 +31,93 @@ function initRMTimelineTab() {
     (err) => console.error("Failed to load estimates:", err)
   );
 
-  // Re-render once Jira tickets/assignments finish loading (ensureRMDataLoaded
-  // is async), in case Timeline was opened before Projects/Overview.
-  loadDashboardData().then(() => renderRMTimeline());
+  // Re-render (incl. filter dropdown options) once Jira tickets/assignments
+  // finish loading, in case Timeline was opened before Projects/Overview.
+  loadDashboardData().then(() => {
+    populateRMTimelineFilters();
+    renderRMTimeline();
+  });
+
+  document.getElementById("rm-tl-search").addEventListener("input", (e) => {
+    rmTlSearch = e.target.value.trim().toLowerCase();
+    renderRMTimeline();
+  });
+  document.getElementById("rm-tl-territory").addEventListener("change", (e) => {
+    rmTlTerritory = e.target.value;
+    renderRMTimeline();
+  });
+  document.getElementById("rm-tl-assignee").addEventListener("change", (e) => {
+    rmTlAssignee = e.target.value;
+    renderRMTimeline();
+  });
+  document.querySelectorAll("#rm-tl-urgency-chips .rm-chip").forEach((chip) => {
+    chip.addEventListener("click", () => {
+      rmTlUrgency = chip.dataset.urgency;
+      document.querySelectorAll("#rm-tl-urgency-chips .rm-chip").forEach((c) => c.classList.remove("active"));
+      chip.classList.add("active");
+      renderRMTimeline();
+    });
+  });
+  document.getElementById("rm-tl-clear").addEventListener("click", () => {
+    rmTlSearch = "";
+    rmTlTerritory = "";
+    rmTlAssignee = "";
+    rmTlUrgency = "";
+    document.getElementById("rm-tl-search").value = "";
+    document.getElementById("rm-tl-territory").value = "";
+    document.getElementById("rm-tl-assignee").value = "";
+    document.querySelectorAll("#rm-tl-urgency-chips .rm-chip").forEach((c) => c.classList.remove("active"));
+    document.querySelector('#rm-tl-urgency-chips .rm-chip[data-urgency=""]').classList.add("active");
+    renderRMTimeline();
+  });
+}
+
+function populateRMTimelineFilters() {
+  const base = rmTicketsForTimeline();
+
+  const territories = new Set(base.map((t) => t.territory || "Unassigned"));
+  const territorySelect = document.getElementById("rm-tl-territory");
+  territorySelect.innerHTML =
+    '<option value="">All</option>' +
+    Array.from(territories).sort().map((t) => `<option value="${escapeHtml(t)}">${escapeHtml(t)}</option>`).join("");
+
+  const assigneeSelect = document.getElementById("rm-tl-assignee");
+  const assignedResourceIds = new Set(
+    base.flatMap((t) => rmAssignmentsForTicket(t.key).map((a) => a.resourceId))
+  );
+  const assignedResources = allResources
+    .filter((r) => assignedResourceIds.has(r.id))
+    .sort((a, b) => a.name.localeCompare(b.name));
+  assigneeSelect.innerHTML =
+    '<option value="">All</option>' +
+    assignedResources.map((r) => `<option value="${r.id}">${escapeHtml(r.name)}</option>`).join("");
 }
 
 function rmTicketsForTimeline() {
   return rmAllTickets.filter(
     (t) => (t.statusCategory === "To Do" || t.statusCategory === "In Progress") && t.dueDate
   );
+}
+
+function rmFilteredTimelineTickets() {
+  let tickets = rmTicketsForTimeline();
+  const today = rmToISO(new Date());
+
+  if (rmTlSearch) {
+    tickets = tickets.filter(
+      (t) => t.key.toLowerCase().includes(rmTlSearch) || (t.projectName || "").toLowerCase().includes(rmTlSearch)
+    );
+  }
+  if (rmTlTerritory) {
+    tickets = tickets.filter((t) => (t.territory || "Unassigned") === rmTlTerritory);
+  }
+  if (rmTlAssignee) {
+    tickets = tickets.filter((t) => rmAssignmentsForTicket(t.key).some((a) => a.resourceId === rmTlAssignee));
+  }
+  if (rmTlUrgency) {
+    tickets = tickets.filter((t) => rmUrgency(rmDaysBetween(today, t.dueDate)) === rmTlUrgency);
+  }
+  return tickets;
 }
 
 function rmEstimatedHours(ticket) {
@@ -69,14 +151,18 @@ function rmUrgencyLabel(daysLeft) {
 
 function rmComputePace(ticket) {
   const est = rmEstimatedHours(ticket);
-  const created = ticket.created ? ticket.created.slice(0, 10) : ticket.dueDate;
+  const started = ticket.inProgressDate; // null = hasn't started yet
   const today = rmToISO(new Date());
   const usedHours = rmHoursLoggedTotal(ticket.key);
   if (!est) return { est, usedHours, usedPct: null, expectedPct: null, status: "no-estimate" };
 
   const usedPct = Math.min(999, Math.round((usedHours / est) * 100));
-  const totalSpan = Math.max(1, rmDaysBetween(created, ticket.dueDate));
-  const elapsed = Math.max(0, Math.min(totalSpan, rmDaysBetween(created, today)));
+  if (!started) {
+    // Hasn't moved to In Progress yet: 0% expected pace so far.
+    return { est, usedHours, usedPct, expectedPct: 0, status: usedPct > 10 ? "over" : "pace" };
+  }
+  const totalSpan = Math.max(1, rmDaysBetween(started, ticket.dueDate));
+  const elapsed = Math.max(0, Math.min(totalSpan, rmDaysBetween(started, today)));
   const expectedPct = Math.round((elapsed / totalSpan) * 100);
   const diff = usedPct - expectedPct;
   const status = diff > 10 ? "over" : diff < -10 ? "under" : "pace";
@@ -99,14 +185,28 @@ function renderRMTimeline() {
 function renderRMGantt() {
   const container = document.getElementById("rm-gantt");
   if (!container) return;
-  const tickets = rmTicketsForTimeline();
+  const tickets = rmFilteredTimelineTickets();
+  const countEl = document.getElementById("rm-tl-count");
+  if (countEl) countEl.textContent = `(${tickets.length})`;
+
   if (tickets.length === 0) {
-    container.innerHTML = `<p class="empty-state">No To Do / In Progress tickets with a due date.</p>`;
+    container.innerHTML = `<p class="empty-state">No tickets match these filters.</p>`;
     return;
   }
 
   const today = rmToISO(new Date());
-  const starts = tickets.map((t) => (t.created ? t.created.slice(0, 10) : t.dueDate));
+  const VISUAL_WINDOW_DAYS = 45;
+
+  // Cap how far back a bar visually starts -- a ticket that's been "In
+  // Progress" for a year shouldn't stretch the whole chart's scale into
+  // uselessness. The pace calculation elsewhere still uses the real date.
+  const visualStart = (t) => {
+    const started = t.inProgressDate || today; // not started yet -> today
+    const capped = rmAddDays(today, -VISUAL_WINDOW_DAYS);
+    return started > capped ? started : capped;
+  };
+
+  const starts = tickets.map(visualStart);
   const rangeStart = starts.reduce((a, b) => (a < b ? a : b));
   const rangeEnd = tickets.map((t) => t.dueDate).reduce((a, b) => (a > b ? a : b), today);
   const totalDays = Math.max(1, rmDaysBetween(rangeStart, rangeEnd));
@@ -120,7 +220,7 @@ function renderRMGantt() {
         <div class="rm-todayline" style="left:${pct(today)}%;"><span class="rm-todaytag">Today</span></div>
         ${sorted
           .map((t) => {
-            const start = t.created ? t.created.slice(0, 10) : t.dueDate;
+            const start = visualStart(t);
             const left = pct(start);
             const width = Math.max(1.2, pct(t.dueDate) - left);
             const daysLeft = rmDaysBetween(today, t.dueDate);
@@ -128,7 +228,7 @@ function renderRMGantt() {
             return `<div class="rm-ganttrow">
               <div class="rm-ganttlabel">${t.key}<span class="sub">${escapeHtml(t.projectName)}</span></div>
               <div class="rm-ganttrack">
-                <div class="rm-ganttbar rm-gb-${u}" style="left:${left}%;width:${width}%;" title="${escapeHtml(t.projectName)} \u00b7 ${start} \u2013 ${t.dueDate}">${t.dueDate}</div>
+                <div class="rm-ganttbar rm-gb-${u}" style="left:${left}%;width:${width}%;" title="${escapeHtml(t.projectName)} \u00b7 due ${t.dueDate}">${t.dueDate}</div>
               </div>
             </div>`;
           })
@@ -140,7 +240,7 @@ function renderRMGantt() {
 function renderRMDeadlines() {
   const container = document.getElementById("rm-deadlines");
   if (!container) return;
-  const tickets = rmTicketsForTimeline();
+  const tickets = rmFilteredTimelineTickets();
   if (tickets.length === 0) {
     container.innerHTML = "";
     return;
@@ -154,7 +254,7 @@ function renderRMDeadlines() {
       const u = rmUrgency(daysLeft);
       const pace = rmComputePace(t);
       const crew = rmAssignmentsForTicket(t.key).map((a) => rmResourceName(a.resourceId));
-      const created = t.created ? t.created.slice(0, 10) : "\u2014";
+      const started = t.inProgressDate || "Not started";
 
       const paceHtml =
         pace.est == null
@@ -177,7 +277,7 @@ function renderRMDeadlines() {
             </div>`;
 
       return `<div class="rm-deadlinerow">
-        <span class="rm-deadlinedate">${created} \u2013 ${t.dueDate}</span>
+        <span class="rm-deadlinedate">${started} \u2013 ${t.dueDate}</span>
         <span class="rm-deadlinename">
           <span class="col-key">${t.key}</span> &middot; ${escapeHtml(t.projectName)}
           ${paceHtml}

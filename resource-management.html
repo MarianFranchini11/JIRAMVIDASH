@@ -184,10 +184,36 @@
 
         <div id="rm-tab-timeline" class="rm-tab-panel" style="display:none;">
 
+          <section class="filter-bar">
+            <div class="filter-group">
+              <label for="rm-tl-search">Search</label>
+              <input type="text" id="rm-tl-search" class="rm-search" placeholder="Key or project name&hellip;" />
+            </div>
+            <div class="filter-group">
+              <label for="rm-tl-territory">Territory</label>
+              <select id="rm-tl-territory"><option value="">All</option></select>
+            </div>
+            <div class="filter-group">
+              <label for="rm-tl-assignee">Assigned To</label>
+              <select id="rm-tl-assignee"><option value="">All</option></select>
+            </div>
+            <div class="filter-group">
+              <label>Urgency</label>
+              <div id="rm-tl-urgency-chips" class="rm-chip-group">
+                <button type="button" class="rm-chip active" data-urgency="">All</button>
+                <button type="button" class="rm-chip" data-urgency="overdue">Overdue</button>
+                <button type="button" class="rm-chip" data-urgency="urgent">Urgent (&le;7d)</button>
+                <button type="button" class="rm-chip" data-urgency="soon">Soon (&le;21d)</button>
+                <button type="button" class="rm-chip" data-urgency="ok">OK</button>
+              </div>
+            </div>
+            <button type="button" id="rm-tl-clear" class="clear-filters-btn">Clear filters</button>
+          </section>
+
           <section class="rm-roster-section">
             <div class="panel-head">
-              <h2>Project Timeline</h2>
-              <span class="rm-roster-hint">Tickets currently To Do or In Progress &middot; dashed red line is today</span>
+              <h2>Project Timeline <span id="rm-tl-count" class="panel-subtitle"></span></h2>
+              <span class="rm-roster-hint">Dashed red line is today &middot; bars show the last 45 days of progress toward the due date</span>
             </div>
             <div id="rm-gantt">
               <!-- gantt injected by rm-timeline.js -->

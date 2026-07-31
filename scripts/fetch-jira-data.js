@@ -132,6 +132,36 @@ async function getRecentComments(issueKey, limit = 10) {
   return comments.slice(0, limit);
 }
 
+// Global list of every workflow status name -> its category (To Do / In
+// Progress / Done). Needed to interpret changelog entries below, since the
+// changelog only gives us status *names*, not categories.
+async function getStatusCategoryMap() {
+  const statuses = await jiraGet("/status");
+  const map = {};
+  for (const s of statuses) {
+    map[s.name.trim().toLowerCase()] = s.statusCategory ? s.statusCategory.name : null;
+  }
+  return map;
+}
+
+// Looks at an issue's changelog for the first time it moved into a status
+// whose category is "In Progress". Returns an ISO date, or null if it
+// never has (e.g. still sitting in a To Do-category status).
+async function getInProgressDate(issueKey, statusCategoryMap) {
+  const body = await jiraGet(`/issue/${issueKey}/changelog?maxResults=100`);
+  const histories = (body.values || []).slice().sort((a, b) => new Date(a.created) - new Date(b.created));
+  for (const history of histories) {
+    for (const item of history.items || []) {
+      if (item.field !== "status") continue;
+      const category = statusCategoryMap[(item.toString || "").trim().toLowerCase()];
+      if (category === "In Progress") {
+        return history.created.slice(0, 10);
+      }
+    }
+  }
+  return null;
+}
+
 // Determine which projects to sync: either an explicit list from
 // JIRA_PROJECT_KEYS (comma-separated, e.g. "SCAN,ABC"), or -- if that's not
 // set -- fall back to auto-discovering every project visible to the account.
@@ -249,6 +279,7 @@ async function getIssuesForProject(projectKey, customFieldIds) {
         mapLink: mapLinkId ? extractFieldValue(issue.fields[mapLinkId]) : null,
         salesforceLink: sfLinkId ? extractFieldValue(issue.fields[sfLinkId]) : null,
         components: (issue.fields.components || []).map((c) => c.name),
+        inProgressDate: null,
         comments: [],
       });
     }
@@ -257,17 +288,25 @@ async function getIssuesForProject(projectKey, customFieldIds) {
     if (!nextPageToken) break;
   }
 
-  // Comments require a separate call per issue -- only do this for active
-  // (non-Done) tickets, so this stays fast even with thousands of issues.
+  // Comments + in-progress date require a separate call per issue -- only
+  // do this for active (non-Done) tickets, so this stays fast even with
+  // thousands of issues.
   const activeIssues = issues.filter((i) => i.statusCategory !== "Done");
   console.log(
-    `  Fetching comments for ${activeIssues.length} active ticket(s) (skipping ${issues.length - activeIssues.length} Done)...`
+    `  Fetching comments + status history for ${activeIssues.length} active ticket(s) (skipping ${issues.length - activeIssues.length} Done)...`
   );
+  const statusCategoryMap = await getStatusCategoryMap();
   for (const issue of activeIssues) {
     try {
       issue.comments = await getRecentComments(issue.key);
     } catch (err) {
       console.error(`    Failed to fetch comments for ${issue.key}: ${err.message}`);
+    }
+    try {
+      issue.inProgressDate = await getInProgressDate(issue.key, statusCategoryMap);
+    } catch (err) {
+      console.error(`    Failed to fetch changelog for ${issue.key}: ${err.message}`);
+      issue.inProgressDate = null;
     }
   }
 
