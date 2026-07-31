@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-31T19:03:23.427Z",
+  "generatedAt": "2026-07-31T19:16:50.599Z",
   "domain": "multivista.atlassian.net",
   "projects": [
     {
@@ -8,10 +8,37 @@
       "totalIssues": 2984,
       "statusSummary": {
         "To Do": 26,
-        "In Progress": 40,
-        "Done": 2918
+        "In Progress": 39,
+        "Done": 2919
       },
       "issues": [
+        {
+          "key": "SCAN-5849",
+          "summary": "Scan to Services - GBR04 - 503489 - Meadway Developments - 62 - 68 Dale Street",
+          "status": "Done",
+          "statusCategory": "Done",
+          "assignee": "Rojes Malachi",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-07-31T12:12:10.750-0700",
+          "dueDate": "2026-07-31",
+          "resolutionDate": "2026-07-31T12:12:03.866-0700",
+          "deliveryStatus": "On time",
+          "territory": "GBR04",
+          "serviceType": "Scan to BIM (model and extracted plans)",
+          "price": 13691.56,
+          "squareFootage": 45000,
+          "projectName": "62 - 68 Dale Street",
+          "projectType": "Multi-familty",
+          "ftpFolderPath": "/mv-s3-ftps-transfer-london/gbr04/503489/3D Point Cloud",
+          "mapLink": "https://maps.app.goo.gl/UWwMsDwzABZ4cF5x8",
+          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ00000qS7qFYAS/view",
+          "components": [
+            "Scan Data Delivery Prompt",
+            "Scan Data Missing"
+          ],
+          "comments": []
+        },
         {
           "key": "SCAN-6086",
           "summary": "Scan to Services - CO01 - 89050 - Hines Interests Limited Partnership - Hotel St Bernard",
@@ -313,84 +340,6 @@
           "salesforceLink": "https://nam12.safelinks.protection.outlook.com/?url=https%3A%2F%2Fhmv.lightning.force.com%2Flightning%2Fr%2FOpportunity%2F006JQ00000pbrAYYAY%2Fview&data=05%7C02%7Ce.dulog%40multivista.com%7Cbca080267a60462b11b008dee26ce473%7C9c275058e9254de6be6d5b14bb704683%7C0%7C0%7C639197154941189966%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=YACAm3wTotYfBuEokcOse426w3MUp36SApAuw6Z4VDQ%3D&reserved=0",
           "components": [],
           "comments": []
-        },
-        {
-          "key": "SCAN-5849",
-          "summary": "Scan to Services - GBR04 - 503489 - Meadway Developments - 62 - 68 Dale Street",
-          "status": "S2S Final QC",
-          "statusCategory": "In Progress",
-          "assignee": "Rojes Malachi",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-07-31T10:39:32.144-0700",
-          "dueDate": "2026-07-31",
-          "resolutionDate": null,
-          "deliveryStatus": null,
-          "territory": "GBR04",
-          "serviceType": "Scan to BIM (model and extracted plans)",
-          "price": 13691.56,
-          "squareFootage": 45000,
-          "projectName": "62 - 68 Dale Street",
-          "projectType": "Multi-familty",
-          "ftpFolderPath": "/mv-s3-ftps-transfer-london/gbr04/503489/3D Point Cloud",
-          "mapLink": "https://maps.app.goo.gl/UWwMsDwzABZ4cF5x8",
-          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ00000qS7qFYAS/view",
-          "components": [
-            "Scan Data Delivery Prompt",
-            "Scan Data Missing"
-          ],
-          "comments": [
-            {
-              "author": "Automation for Jira",
-              "created": "2026-05-22T05:00:53.431-0700",
-              "body": "Follow-up email sent to customer notifying that the given scan data delivery date has passed."
-            },
-            {
-              "author": "Automation for Jira",
-              "created": "2026-05-20T05:00:54.787-0700",
-              "body": "Follow-up email sent to customer notifying that the given scan data delivery date has passed."
-            },
-            {
-              "author": "Automation for Jira",
-              "created": "2026-05-18T05:01:01.274-0700",
-              "body": "Follow-up email sent to customer notifying that the given scan data delivery date has passed."
-            },
-            {
-              "author": "Automation for Jira",
-              "created": "2026-05-15T05:00:13.502-0700",
-              "body": "Follow-up email sent to customer notifying that the given scan data delivery date has passed."
-            },
-            {
-              "author": "Automation for Jira",
-              "created": "2026-05-13T05:00:09.583-0700",
-              "body": "Follow-up email sent to customer notifying that the given scan data delivery date has passed."
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-05-13T04:50:28.615-0700",
-              "body": "Thanks, James, for the update. \nKeep me posted.\nRegards"
-            },
-            {
-              "author": "James Kelly",
-              "created": "2026-05-12T23:16:12.614-0700",
-              "body": "Martin,\nThis project has been delayed and hasn't even been scanned yet.Waiting on the client to allow access to the building.I have no definite date.\nRegards,James Kelly.\nJames KellyOperations Manager\nMultivista, part of HexagonT: 0161 826 9133 Ext 9600 M: 07531543160E: j.kelly@multivista.com<j.kelly@multivista.com>multivista.com<https://www.multivista.com/> | LinkedIn<https://www.linkedin.com/company/multivista/>\nFrom: Martin Isola <jira@multivista.atlassian.net>Sent: 12 May 2026 20:10To: James Kelly - Multivista <j.kelly@multivista.com>Subject:  Scan to Services - GBR04 - 503489 - Meadway Developments - 62 - 68 Dale Street\n-------Reply above this line.\nMartin Isola commented:\nHi team,\nDo you have any news regarding the point clouds for this project?\nThanks\nRespectfully yours,\nHexagon Scan to Servicesscantoservices@multivista.com<scantoservices@multivista.com>\nView request<https://multivista.atlassian.net/servicedesk/customer/portal/5/SCAN-5849?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0Z3QiOiJhbm9ueW1vdXMtbGluayIsInFzaCI6IjM0NjIyYTY1MGY0ZjYwMjU1NDMwNTRiZDBiODM3NzUzMjE2ZWEyNDJlYzAyZTdlYWUwNzhhYjgwNjMyMjQzMWEiLCJpc3MiOiJzZXJ2aWNlZGVzay1qd3QtdG9rZW4taXNzdWVyIiwiY29udGV4dCI6eyJ1c2VyIjoiMTM0MDEiLCJpc3N1ZSI6IlNDQU4tNTg0OSJ9LCJleHAiOjE3ODEwMzIxODUsImlhdCI6MTc3ODYxMjk4NX0.zAz8RLrIgq3H_mnfZxY6wDLPrhwluRwKEWexK6eNIww&sda_source=notification-email> * Turn off this request's notifications<https://multivista.atlassian.net/servicedesk/customer/portal/5/SCAN-5849/unsubscribe?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0Z3QiOiJhbm9ueW1vdXMtbGluayIsInFzaCI6IjRkYjJkMGRiODA4ODA1MzQxNTEwMmJhMDk3ZTg0MmFhYjYxMWY2MzNiZDQwN2UwOTEyNjMwZmYxYjdiODJlZWQiLCJpc3MiOiJzZXJ2aWNlZGVzay1qd3QtdG9rZW4taXNzdWVyIiwiY29udGV4dCI6eyJ1c2VyIjoidWc6MzYwYmNhNGYtMGUxYy00N2EyLThhMTItZTI0YmM3ZDUzZGFiIiwiaXNzdWUiOiJTQ0FOLTU4NDkifSwiZXhwIjoxNzgxMDMyMTg1LCJpYXQiOjE3Nzg2MTI5ODV9.yi3sqUD3FbgA-aAGrbQNcLlMKSrTbm_PFlU4yNiHfyo>\nThis is shared with James Kelly.\nPowered by Jira Service Management<https://www.atlassian.com/software/jira/service-desk/powered-by?utm_medium=jira-in-product&utm_source=jira_service_desk_email_footer&utm_content=multivista>Sent on 12 May 2026 12:09:45 PDT"
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-05-12T12:09:27.993-0700",
-              "body": "Hi team,\nDo you have any news regarding the point clouds for this project?\nThanks"
-            },
-            {
-              "author": "Automation for Jira",
-              "created": "2026-05-11T05:01:29.495-0700",
-              "body": "Email sent to customer notifying that the given scan data delivery date has passed."
-            },
-            {
-              "author": "Multivista",
-              "created": "2026-04-29T05:49:58.062-0700",
-              "body": "(276 kB)"
-            }
-          ]
         },
         {
           "key": "SCAN-6164",
