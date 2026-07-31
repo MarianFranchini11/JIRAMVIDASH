@@ -54,6 +54,12 @@
             <option value="Done">Done</option>
           </select>
         </div>
+        <div class="filter-group">
+          <label for="month-filter">Due month</label>
+          <select id="month-filter">
+            <option value="">All</option>
+          </select>
+        </div>
         <button id="clear-filters" class="clear-filters-btn">Clear filters</button>
       </section>
 
@@ -66,7 +72,7 @@
       <section class="charts-section">
         <div class="chart-panel chart-panel-wide">
           <div class="panel-head">
-            <h2>Tickets by Territory</h2>
+            <h2>Tickets by Territory <span class="panel-subtitle">(Top 10)</span></h2>
           </div>
           <div class="chart-wrap chart-wrap-tall">
             <canvas id="territory-chart"></canvas>

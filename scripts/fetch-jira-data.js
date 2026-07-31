@@ -42,7 +42,14 @@ async function jiraGet(urlPath) {
 
 // Jira custom fields are exposed by internal id (e.g. "customfield_10102"),
 // not by their visible name. Resolve the ids we care about once, by name.
-const CUSTOM_FIELD_NAMES = ["MDS Territory", "ScanTo Service", "Price"];
+const CUSTOM_FIELD_NAMES = [
+  "MDS Territory",
+  "ScanTo Service",
+  "Price",
+  "Square Footage",
+  "Project Name",
+  "Project Type",
+];
 
 async function resolveCustomFieldIds() {
   const allFields = await jiraGet("/field");
@@ -143,6 +150,7 @@ async function getIssuesForProject(projectKey, customFieldIds) {
     "updated",
     "issuetype",
     "duedate",
+    "resolutiondate",
     ...Object.values(customFieldIds),
   ];
   let nextPageToken = undefined;
@@ -161,6 +169,16 @@ async function getIssuesForProject(projectKey, customFieldIds) {
       const territoryId = customFieldIds["MDS Territory"];
       const serviceId = customFieldIds["ScanTo Service"];
       const priceId = customFieldIds["Price"];
+      const sqftId = customFieldIds["Square Footage"];
+      const projectNameId = customFieldIds["Project Name"];
+      const projectTypeId = customFieldIds["Project Type"];
+      const resolutionDate = issue.fields.resolutiondate || null;
+      let deliveryStatus = null;
+      if (resolutionDate && issue.fields.duedate) {
+        deliveryStatus =
+          resolutionDate.slice(0, 10) <= issue.fields.duedate ? "On time" : "Late";
+      }
+
       issues.push({
         key: issue.key,
         summary: issue.fields.summary,
@@ -173,9 +191,16 @@ async function getIssuesForProject(projectKey, customFieldIds) {
         type: issue.fields.issuetype ? issue.fields.issuetype.name : null,
         updated: issue.fields.updated,
         dueDate: issue.fields.duedate || null,
+        resolutionDate,
+        deliveryStatus,
         territory: territoryId ? extractFieldValue(issue.fields[territoryId]) : null,
         serviceType: serviceId ? extractFieldValue(issue.fields[serviceId]) : null,
         price: priceId ? extractNumberValue(issue.fields[priceId]) : null,
+        squareFootage: sqftId ? extractNumberValue(issue.fields[sqftId]) : null,
+        projectName: projectNameId
+          ? extractFieldValue(issue.fields[projectNameId])
+          : issue.fields.summary,
+        projectType: projectTypeId ? extractFieldValue(issue.fields[projectTypeId]) : null,
       });
     }
 
