@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-31T14:49:50.894Z",
+  "generatedAt": "2026-07-31T15:00:52.598Z",
   "domain": "multivista.atlassian.net",
   "projects": [
     {
@@ -7,20 +7,39 @@
       "name": "SCAN",
       "totalIssues": 2984,
       "statusSummary": {
-        "To Do": 24,
-        "In Progress": 44,
+        "To Do": 25,
+        "In Progress": 43,
         "Done": 2916
       },
       "issues": [
         {
+          "key": "SCAN-5939",
+          "summary": "Scan to Services - IL01 - 88466 - KOO Architecture - ABLA Brooks - 1247-63 S Throop St",
+          "status": "S2S QC",
+          "statusCategory": "In Progress",
+          "assignee": "Rojes Malachi",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-07-31T07:56:57.526-0700",
+          "dueDate": "2026-07-31",
+          "resolutionDate": null,
+          "deliveryStatus": null,
+          "territory": "IL01",
+          "serviceType": "Scan to BIM (model only)",
+          "price": 0,
+          "squareFootage": 127756,
+          "projectName": "ABLA Brooks - 1247-63 S Throop St",
+          "projectType": "Multi-familty"
+        },
+        {
           "key": "SCAN-6163",
           "summary": "Scan to Services - GBR02 - 503345 - London Borough of Islington - 36x Islington Building Blocks - Mears",
-          "status": "Validation",
-          "statusCategory": "In Progress",
+          "status": "Waiting for Info",
+          "statusCategory": "To Do",
           "assignee": "Scan to Services",
           "priority": "Unprioritized",
           "type": "ScanTo",
-          "updated": "2026-07-31T07:45:44.172-0700",
+          "updated": "2026-07-31T07:55:30.845-0700",
           "dueDate": null,
           "resolutionDate": null,
           "deliveryStatus": null,
@@ -1378,25 +1397,6 @@
           "price": 0,
           "squareFootage": 127756,
           "projectName": "ABLA Brooks - 1242-56 S Throop St",
-          "projectType": "Multi-familty"
-        },
-        {
-          "key": "SCAN-5939",
-          "summary": "Scan to Services - IL01 - 88466 - KOO Architecture - ABLA Brooks - 1247-63 S Throop St",
-          "status": "S2S QC",
-          "statusCategory": "In Progress",
-          "assignee": "Rojes Malachi",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-07-30T01:52:41.406-0700",
-          "dueDate": "2026-08-14",
-          "resolutionDate": null,
-          "deliveryStatus": null,
-          "territory": "IL01",
-          "serviceType": "Scan to BIM (model only)",
-          "price": 0,
-          "squareFootage": 127756,
-          "projectName": "ABLA Brooks - 1247-63 S Throop St",
           "projectType": "Multi-familty"
         },
         {
