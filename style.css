@@ -255,6 +255,59 @@ h1, h2 { font-family: var(--font-display); margin: 0; }
   font-size: 0.85rem;
 }
 
+/* ===== Filter bar (Dashboard) ===== */
+.filter-bar {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  margin-bottom: 20px;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.filter-group label {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.68rem;
+  color: var(--slate);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.filter-bar select {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  background: var(--paper);
+  color: var(--ink-text);
+  min-width: 150px;
+}
+
+.filter-bar select:focus { outline: 2px solid var(--steel); outline-offset: 1px; }
+
+.clear-filters-btn {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 8px 14px;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  background: var(--paper);
+  color: var(--slate);
+  cursor: pointer;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.clear-filters-btn:hover { border-color: var(--steel); color: var(--steel); }
+.clear-filters-btn:focus-visible { outline: 2px solid var(--steel); outline-offset: 1px; }
+
 /* ===== KPI cards ===== */
 .kpi-section { margin-bottom: 28px; }
 

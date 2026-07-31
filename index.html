@@ -22,7 +22,7 @@
       </div>
       <nav class="mainnav">
         <a href="index.html" class="nav-link active">Dashboard</a>
-        <a href="issues.html" class="nav-link">Issues</a>
+        <a href="issues.html" class="nav-link">Tickets</a>
       </nav>
       <div class="sync-status" id="sync-status">
         <span class="pulse" id="pulse"></span>
@@ -31,6 +31,31 @@
     </header>
 
     <main class="content">
+
+      <section class="filter-bar">
+        <div class="filter-group">
+          <label for="territory-filter">Territory</label>
+          <select id="territory-filter">
+            <option value="">All</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="service-filter">Service type</label>
+          <select id="service-filter">
+            <option value="">All</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="status-filter">Status</label>
+          <select id="status-filter">
+            <option value="">All</option>
+            <option value="To Do">To Do</option>
+            <option value="In Progress">In Progress</option>
+            <option value="Done">Done</option>
+          </select>
+        </div>
+        <button id="clear-filters" class="clear-filters-btn">Clear filters</button>
+      </section>
 
       <section class="kpi-section">
         <div class="kpi-grid" id="kpi-grid">
@@ -41,7 +66,7 @@
       <section class="charts-section">
         <div class="chart-panel chart-panel-wide">
           <div class="panel-head">
-            <h2>Issues by Territory</h2>
+            <h2>Tickets by Territory</h2>
           </div>
           <div class="chart-wrap chart-wrap-tall">
             <canvas id="territory-chart"></canvas>
@@ -64,6 +89,31 @@
         <div id="territory-breakdown" class="territory-list">
           <!-- rows injected by dashboard.js -->
         </div>
+      </section>
+
+      <section class="issues-section">
+        <div class="issues-head">
+          <h2>Tickets</h2>
+        </div>
+        <div class="table-wrap">
+          <table id="projects-table">
+            <thead>
+              <tr>
+                <th>Key</th>
+                <th>Project Name</th>
+                <th>Type</th>
+                <th>Price</th>
+                <th>Status</th>
+                <th>Territory</th>
+                <th>Due Date</th>
+              </tr>
+            </thead>
+            <tbody id="projects-body">
+              <!-- rows injected by dashboard.js -->
+            </tbody>
+          </table>
+        </div>
+        <p id="projects-empty-state" class="empty-state" hidden>No tickets match these filters.</p>
       </section>
 
     </main>

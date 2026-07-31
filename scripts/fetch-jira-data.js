@@ -42,7 +42,7 @@ async function jiraGet(urlPath) {
 
 // Jira custom fields are exposed by internal id (e.g. "customfield_10102"),
 // not by their visible name. Resolve the ids we care about once, by name.
-const CUSTOM_FIELD_NAMES = ["MDS Territory", "ScanTo Service"];
+const CUSTOM_FIELD_NAMES = ["MDS Territory", "ScanTo Service", "Price"];
 
 async function resolveCustomFieldIds() {
   const allFields = await jiraGet("/field");
@@ -74,6 +74,17 @@ function extractFieldValue(raw) {
     return raw.value ?? raw.name ?? null;
   }
   return String(raw);
+}
+
+// Same idea, but keeps the value numeric (for fields like Price we need to
+// sum/average, not display as text).
+function extractNumberValue(raw) {
+  if (raw === null || raw === undefined) return null;
+  if (typeof raw === "object") {
+    raw = raw.value ?? null;
+  }
+  const num = Number(raw);
+  return Number.isFinite(num) ? num : null;
 }
 
 // Determine which projects to sync: either an explicit list from
@@ -131,6 +142,7 @@ async function getIssuesForProject(projectKey, customFieldIds) {
     "priority",
     "updated",
     "issuetype",
+    "duedate",
     ...Object.values(customFieldIds),
   ];
   let nextPageToken = undefined;
@@ -148,6 +160,7 @@ async function getIssuesForProject(projectKey, customFieldIds) {
     for (const issue of body.issues) {
       const territoryId = customFieldIds["MDS Territory"];
       const serviceId = customFieldIds["ScanTo Service"];
+      const priceId = customFieldIds["Price"];
       issues.push({
         key: issue.key,
         summary: issue.fields.summary,
@@ -159,8 +172,10 @@ async function getIssuesForProject(projectKey, customFieldIds) {
         priority: issue.fields.priority ? issue.fields.priority.name : null,
         type: issue.fields.issuetype ? issue.fields.issuetype.name : null,
         updated: issue.fields.updated,
+        dueDate: issue.fields.duedate || null,
         territory: territoryId ? extractFieldValue(issue.fields[territoryId]) : null,
         serviceType: serviceId ? extractFieldValue(issue.fields[serviceId]) : null,
+        price: priceId ? extractNumberValue(issue.fields[priceId]) : null,
       });
     }
 
