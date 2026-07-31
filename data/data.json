@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-31T16:55:29.003Z",
+  "generatedAt": "2026-07-31T18:05:49.903Z",
   "domain": "multivista.atlassian.net",
   "projects": [
     {
@@ -7,11 +7,237 @@
       "name": "SCAN",
       "totalIssues": 2984,
       "statusSummary": {
-        "To Do": 25,
-        "In Progress": 43,
-        "Done": 2916
+        "To Do": 26,
+        "In Progress": 41,
+        "Done": 2917
       },
       "issues": [
+        {
+          "key": "SCAN-6146",
+          "summary": "Scan to Services - CA01 - 84376 - Holland Partner Group - El Paseo de Saratoga - B2-L4P4_PostPour & B2-L4P4_PostTension",
+          "status": "S2S QC",
+          "statusCategory": "In Progress",
+          "assignee": "Brian Nahuel Aduco",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-07-31T10:55:07.195-0700",
+          "dueDate": "2026-08-06",
+          "resolutionDate": null,
+          "deliveryStatus": null,
+          "territory": "CA01",
+          "serviceType": "Floor Flatness Report",
+          "price": 2000,
+          "squareFootage": 14000,
+          "projectName": "El Paseo de Saratoga-B2-L4P4_PostPour & El Paseo de Saratoga-B2-L4P4_PostTension",
+          "projectType": "Retail",
+          "ftpFolderPath": "/mv-s3-ftps-transfer/ca01/84376/Point Clouds/Level04",
+          "mapLink": "https://maps.app.goo.gl/CPxTZoMbCj3NibrZ7",
+          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ00000sJSJFYA4/view",
+          "components": [],
+          "comments": [
+            {
+              "author": "Multivista",
+              "created": "2026-07-24T15:51:25.854-0700",
+              "body": "(165 kB)"
+            }
+          ]
+        },
+        {
+          "key": "SCAN-6130",
+          "summary": "Scan to Services - GA01 - 89434 - Leapley Construction - Bank of America West Wing Restaurant and Conference Room",
+          "status": "Done",
+          "statusCategory": "Done",
+          "assignee": "Brian Nahuel Aduco",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-07-31T10:55:05.933-0700",
+          "dueDate": "2026-08-03",
+          "resolutionDate": "2026-07-24T05:11:45.712-0700",
+          "deliveryStatus": "On time",
+          "territory": "GA01",
+          "serviceType": "Floor Flatness Report",
+          "price": 1260,
+          "squareFootage": 23000,
+          "projectName": "Bank of America West Wing & Conference Center Reno",
+          "projectType": "Office",
+          "ftpFolderPath": "/mv-s3-ftps-transfer/ga01/89434/3D Point Clouds",
+          "mapLink": "https://maps.app.goo.gl/yDuefmprWtCM4yxHA",
+          "salesforceLink": "https://nam12.safelinks.protection.outlook.com/?url=https%3A%2F%2Fhmv.lightning.force.com%2Flightning%2Fr%2FOpportunity%2F006JQ00000pbrAYYAY%2Fview&data=05%7C02%7Ce.dulog%40multivista.com%7Cbca080267a60462b11b008dee26ce473%7C9c275058e9254de6be6d5b14bb704683%7C0%7C0%7C639197154941189966%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=YACAm3wTotYfBuEokcOse426w3MUp36SApAuw6Z4VDQ%3D&reserved=0",
+          "components": [],
+          "comments": []
+        },
+        {
+          "key": "SCAN-5849",
+          "summary": "Scan to Services - GBR04 - 503489 - Meadway Developments - 62 - 68 Dale Street",
+          "status": "S2S Final QC",
+          "statusCategory": "In Progress",
+          "assignee": "Rojes Malachi",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-07-31T10:39:32.144-0700",
+          "dueDate": "2026-07-31",
+          "resolutionDate": null,
+          "deliveryStatus": null,
+          "territory": "GBR04",
+          "serviceType": "Scan to BIM (model and extracted plans)",
+          "price": 13691.56,
+          "squareFootage": 45000,
+          "projectName": "62 - 68 Dale Street",
+          "projectType": "Multi-familty",
+          "ftpFolderPath": "/mv-s3-ftps-transfer-london/gbr04/503489/3D Point Cloud",
+          "mapLink": "https://maps.app.goo.gl/UWwMsDwzABZ4cF5x8",
+          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ00000qS7qFYAS/view",
+          "components": [
+            "Scan Data Delivery Prompt",
+            "Scan Data Missing"
+          ],
+          "comments": [
+            {
+              "author": "Automation for Jira",
+              "created": "2026-05-22T05:00:53.431-0700",
+              "body": "Follow-up email sent to customer notifying that the given scan data delivery date has passed."
+            },
+            {
+              "author": "Automation for Jira",
+              "created": "2026-05-20T05:00:54.787-0700",
+              "body": "Follow-up email sent to customer notifying that the given scan data delivery date has passed."
+            },
+            {
+              "author": "Automation for Jira",
+              "created": "2026-05-18T05:01:01.274-0700",
+              "body": "Follow-up email sent to customer notifying that the given scan data delivery date has passed."
+            },
+            {
+              "author": "Automation for Jira",
+              "created": "2026-05-15T05:00:13.502-0700",
+              "body": "Follow-up email sent to customer notifying that the given scan data delivery date has passed."
+            },
+            {
+              "author": "Automation for Jira",
+              "created": "2026-05-13T05:00:09.583-0700",
+              "body": "Follow-up email sent to customer notifying that the given scan data delivery date has passed."
+            },
+            {
+              "author": "Martin Isola",
+              "created": "2026-05-13T04:50:28.615-0700",
+              "body": "Thanks, James, for the update. \nKeep me posted.\nRegards"
+            },
+            {
+              "author": "James Kelly",
+              "created": "2026-05-12T23:16:12.614-0700",
+              "body": "Martin,\nThis project has been delayed and hasn't even been scanned yet.Waiting on the client to allow access to the building.I have no definite date.\nRegards,James Kelly.\nJames KellyOperations Manager\nMultivista, part of HexagonT: 0161 826 9133 Ext 9600 M: 07531543160E: j.kelly@multivista.com<j.kelly@multivista.com>multivista.com<https://www.multivista.com/> | LinkedIn<https://www.linkedin.com/company/multivista/>\nFrom: Martin Isola <jira@multivista.atlassian.net>Sent: 12 May 2026 20:10To: James Kelly - Multivista <j.kelly@multivista.com>Subject:  Scan to Services - GBR04 - 503489 - Meadway Developments - 62 - 68 Dale Street\n-------Reply above this line.\nMartin Isola commented:\nHi team,\nDo you have any news regarding the point clouds for this project?\nThanks\nRespectfully yours,\nHexagon Scan to Servicesscantoservices@multivista.com<scantoservices@multivista.com>\nView request<https://multivista.atlassian.net/servicedesk/customer/portal/5/SCAN-5849?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0Z3QiOiJhbm9ueW1vdXMtbGluayIsInFzaCI6IjM0NjIyYTY1MGY0ZjYwMjU1NDMwNTRiZDBiODM3NzUzMjE2ZWEyNDJlYzAyZTdlYWUwNzhhYjgwNjMyMjQzMWEiLCJpc3MiOiJzZXJ2aWNlZGVzay1qd3QtdG9rZW4taXNzdWVyIiwiY29udGV4dCI6eyJ1c2VyIjoiMTM0MDEiLCJpc3N1ZSI6IlNDQU4tNTg0OSJ9LCJleHAiOjE3ODEwMzIxODUsImlhdCI6MTc3ODYxMjk4NX0.zAz8RLrIgq3H_mnfZxY6wDLPrhwluRwKEWexK6eNIww&sda_source=notification-email> * Turn off this request's notifications<https://multivista.atlassian.net/servicedesk/customer/portal/5/SCAN-5849/unsubscribe?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0Z3QiOiJhbm9ueW1vdXMtbGluayIsInFzaCI6IjRkYjJkMGRiODA4ODA1MzQxNTEwMmJhMDk3ZTg0MmFhYjYxMWY2MzNiZDQwN2UwOTEyNjMwZmYxYjdiODJlZWQiLCJpc3MiOiJzZXJ2aWNlZGVzay1qd3QtdG9rZW4taXNzdWVyIiwiY29udGV4dCI6eyJ1c2VyIjoidWc6MzYwYmNhNGYtMGUxYy00N2EyLThhMTItZTI0YmM3ZDUzZGFiIiwiaXNzdWUiOiJTQ0FOLTU4NDkifSwiZXhwIjoxNzgxMDMyMTg1LCJpYXQiOjE3Nzg2MTI5ODV9.yi3sqUD3FbgA-aAGrbQNcLlMKSrTbm_PFlU4yNiHfyo>\nThis is shared with James Kelly.\nPowered by Jira Service Management<https://www.atlassian.com/software/jira/service-desk/powered-by?utm_medium=jira-in-product&utm_source=jira_service_desk_email_footer&utm_content=multivista>Sent on 12 May 2026 12:09:45 PDT"
+            },
+            {
+              "author": "Martin Isola",
+              "created": "2026-05-12T12:09:27.993-0700",
+              "body": "Hi team,\nDo you have any news regarding the point clouds for this project?\nThanks"
+            },
+            {
+              "author": "Automation for Jira",
+              "created": "2026-05-11T05:01:29.495-0700",
+              "body": "Email sent to customer notifying that the given scan data delivery date has passed."
+            },
+            {
+              "author": "Multivista",
+              "created": "2026-04-29T05:49:58.062-0700",
+              "body": "(276 kB)"
+            }
+          ]
+        },
+        {
+          "key": "SCAN-6164",
+          "summary": "Upsell - Scan to Services - NE01 - 89450 - Hoar Construction - Avenue One Building R-2 - CAD Aligment",
+          "status": "S2S Backlog",
+          "statusCategory": "To Do",
+          "assignee": "sirajudheen",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-07-31T10:16:42.490-0700",
+          "dueDate": "2026-08-06",
+          "resolutionDate": null,
+          "deliveryStatus": null,
+          "territory": "NE01",
+          "serviceType": "Scan to Plan (plans only)",
+          "price": 450,
+          "squareFootage": 9244,
+          "projectName": "Avenue One Building R-2",
+          "projectType": "Manufacturing & Warehouse",
+          "ftpFolderPath": "/mv-s3-ftps-transfer/ne01/89450",
+          "mapLink": "https://maps.app.goo.gl/7VcrMmADUeBPKRdC9",
+          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Quote/0Q0JQ0000080NJN0A2/view",
+          "components": [],
+          "comments": [
+            {
+              "author": "Multivista",
+              "created": "2026-07-31T07:38:47.395-0700",
+              "body": "(228 kB)"
+            }
+          ]
+        },
+        {
+          "key": "SCAN-6138",
+          "summary": "Scan to Services - TX03 - 89452 - Rice Residential Design - 11526 Shadow Way Street",
+          "status": "S2S Queue",
+          "statusCategory": "In Progress",
+          "assignee": "sirajudheen",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-07-31T10:10:26.412-0700",
+          "dueDate": "2026-08-11",
+          "resolutionDate": null,
+          "deliveryStatus": null,
+          "territory": "TX03",
+          "serviceType": "Scan to BIM (model and extracted plans)",
+          "price": 2885,
+          "squareFootage": 8229,
+          "projectName": "11526 Shadow Way Street",
+          "projectType": "Single-family",
+          "ftpFolderPath": "/mv-s3-ftps-transfer/tx03/89452",
+          "mapLink": "https://maps.app.goo.gl/Ggc2puax6MFD3Aw77",
+          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ00000vbAfWYAU/view",
+          "components": [
+            "Checklist Missing",
+            "Scan Data Delivery Prompt",
+            "Scan Data Missing"
+          ],
+          "comments": [
+            {
+              "author": "Patrick Armstrong",
+              "created": "2026-07-31T10:10:26.286-0700",
+              "body": "Hi Martin,\nI've asked the customer but haven't heard back yet. So if we don't get a response today, I'd say proceed with our Multivista template.\nPatrick ArmstrongManaging Principal - SE TexasSoutheast Texas\nMultivista, part of HexagonM: +1 713 254 5426multivista.com<https://www.multivista.com/>"
+            },
+            {
+              "author": "Martin Isola",
+              "created": "2026-07-31T04:50:14.300-0700",
+              "body": "Hi Jason,\nCould we use our Multivista template for this project?\nPlease confirm.\nThanks"
+            },
+            {
+              "author": "sirajudheen",
+              "created": "2026-07-31T00:26:15.696-0700",
+              "body": "Revit template need to be confirm"
+            },
+            {
+              "author": "Martin Isola",
+              "created": "2026-07-28T12:27:38.034-0700",
+              "body": ""
+            },
+            {
+              "author": "Jason Hunt",
+              "created": "2026-07-28T07:52:45.522-0700",
+              "body": "Good morning,\nAll point cloud data is available.\nMany thanks,-Jason\nGet Outlook for iOS<https://aka.ms/o0ukef>________________________________From: Jira automation <automation@multivista.atlassian.net>Sent: Monday, 27 July 2026 07:00:35To: Jason Hunt - Multivista <j.hunt@multivista.com>; Patrick Armstrong - Multivista <p.armstrong@multivista.com>Subject: Waiting on Scan Data -  - Scan to Services - TX03 - 89452 - Rice Residential Design - 11526 Shadow Way Street\nHi Team,\nThis is an automated REMINDER to let you know that your Scan to Services ticket is still ON HOLD as we are still ‘Waiting on Scan Data’.\nThe communicated upload date for scan data provided by your team within the Scan to Services ticket has now passed.\nIf corrective action was required, you should have received a communication with further details of the issue previously.\nPlease respond directly to this ticket/email/message when both the .LGSx and .RCS point cloud files are available within the projects designated ‘3D Point Clouds’ folder on the FTP. Failure to communicate data upload will delay the start of your project further.\nRespectfully yours,\nHexagon Scan to Servicesscantoservices@multivista.com"
+            },
+            {
+              "author": "Automation for Jira",
+              "created": "2026-07-27T05:00:31.469-0700",
+              "body": "Email sent to customer notifying that the given scan data delivery date has passed."
+            },
+            {
+              "author": "Multivista",
+              "created": "2026-07-23T06:40:36.824-0700",
+              "body": "(213 kB)"
+            }
+          ]
+        },
         {
           "key": "SCAN-5912",
           "summary": "Scan to Services - IL01 - 88462 - KOO Architecture - ABLA Brooks - 1232-44 S Racine Ave",
@@ -41,36 +267,6 @@
               "author": "Multivista",
               "created": "2026-05-18T13:58:23.650-0700",
               "body": "(259 kB)\n (1.09 MB)\n (3.19 MB)"
-            }
-          ]
-        },
-        {
-          "key": "SCAN-6164",
-          "summary": "Upsell - Scan to Services - NE01 - 89450 - Hoar Construction - Avenue One Building R-2",
-          "status": "Validation",
-          "statusCategory": "In Progress",
-          "assignee": "Scan to Services",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-07-31T09:54:25.152-0700",
-          "dueDate": null,
-          "resolutionDate": null,
-          "deliveryStatus": null,
-          "territory": "NE01",
-          "serviceType": "Scan to Plan (plans only)",
-          "price": null,
-          "squareFootage": null,
-          "projectName": null,
-          "projectType": null,
-          "ftpFolderPath": "/mv-s3-ftps-transfer/ne01/89450",
-          "mapLink": null,
-          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Quote/0Q0JQ0000080NJN0A2/view",
-          "components": [],
-          "comments": [
-            {
-              "author": "Multivista",
-              "created": "2026-07-31T07:38:47.395-0700",
-              "body": "(228 kB)"
             }
           ]
         },
@@ -718,65 +914,6 @@
               "author": "Multivista",
               "created": "2026-06-26T07:36:24.487-0700",
               "body": "(259 kB)\n (1.09 MB)\n (3.19 MB)"
-            }
-          ]
-        },
-        {
-          "key": "SCAN-6138",
-          "summary": "Scan to Services - TX03 - 89452 - Rice Residential Design - 11526 Shadow Way Street",
-          "status": "S2S Queue",
-          "statusCategory": "In Progress",
-          "assignee": "sirajudheen",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-07-31T05:32:03.734-0700",
-          "dueDate": "2026-08-11",
-          "resolutionDate": null,
-          "deliveryStatus": null,
-          "territory": "TX03",
-          "serviceType": "Scan to BIM (model and extracted plans)",
-          "price": 2885,
-          "squareFootage": 8229,
-          "projectName": "11526 Shadow Way Street",
-          "projectType": "Single-family",
-          "ftpFolderPath": "/mv-s3-ftps-transfer/tx03/89452",
-          "mapLink": "https://maps.app.goo.gl/Ggc2puax6MFD3Aw77",
-          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ00000vbAfWYAU/view",
-          "components": [
-            "Checklist Missing",
-            "Scan Data Delivery Prompt",
-            "Scan Data Missing"
-          ],
-          "comments": [
-            {
-              "author": "Martin Isola",
-              "created": "2026-07-31T04:50:14.300-0700",
-              "body": "Hi Jason,\nCould we use our Multivista template for this project?\nPlease confirm.\nThanks"
-            },
-            {
-              "author": "sirajudheen",
-              "created": "2026-07-31T00:26:15.696-0700",
-              "body": "Revit template need to be confirm"
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-07-28T12:27:38.034-0700",
-              "body": ""
-            },
-            {
-              "author": "Jason Hunt",
-              "created": "2026-07-28T07:52:45.522-0700",
-              "body": "Good morning,\nAll point cloud data is available.\nMany thanks,-Jason\nGet Outlook for iOS<https://aka.ms/o0ukef>________________________________From: Jira automation <automation@multivista.atlassian.net>Sent: Monday, 27 July 2026 07:00:35To: Jason Hunt - Multivista <j.hunt@multivista.com>; Patrick Armstrong - Multivista <p.armstrong@multivista.com>Subject: Waiting on Scan Data -  - Scan to Services - TX03 - 89452 - Rice Residential Design - 11526 Shadow Way Street\nHi Team,\nThis is an automated REMINDER to let you know that your Scan to Services ticket is still ON HOLD as we are still ‘Waiting on Scan Data’.\nThe communicated upload date for scan data provided by your team within the Scan to Services ticket has now passed.\nIf corrective action was required, you should have received a communication with further details of the issue previously.\nPlease respond directly to this ticket/email/message when both the .LGSx and .RCS point cloud files are available within the projects designated ‘3D Point Clouds’ folder on the FTP. Failure to communicate data upload will delay the start of your project further.\nRespectfully yours,\nHexagon Scan to Servicesscantoservices@multivista.com"
-            },
-            {
-              "author": "Automation for Jira",
-              "created": "2026-07-27T05:00:31.469-0700",
-              "body": "Email sent to customer notifying that the given scan data delivery date has passed."
-            },
-            {
-              "author": "Multivista",
-              "created": "2026-07-23T06:40:36.824-0700",
-              "body": "(213 kB)"
             }
           ]
         },
@@ -2430,56 +2567,6 @@
           ]
         },
         {
-          "key": "SCAN-6130",
-          "summary": "Scan to Services - GA01 - 89434 - Leapley Construction - Bank of America West Wing Restaurant and Conference Room",
-          "status": "S2S QC",
-          "statusCategory": "In Progress",
-          "assignee": "Brian Nahuel Aduco",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-07-30T13:36:57.469-0700",
-          "dueDate": "2026-08-03",
-          "resolutionDate": "2026-07-24T05:11:45.712-0700",
-          "deliveryStatus": "On time",
-          "territory": "GA01",
-          "serviceType": "Floor Flatness Report",
-          "price": 1260,
-          "squareFootage": 23000,
-          "projectName": "Bank of America West Wing & Conference Center Reno",
-          "projectType": "Office",
-          "ftpFolderPath": "/mv-s3-ftps-transfer/ga01/89434/3D Point Clouds",
-          "mapLink": "https://maps.app.goo.gl/yDuefmprWtCM4yxHA",
-          "salesforceLink": "https://nam12.safelinks.protection.outlook.com/?url=https%3A%2F%2Fhmv.lightning.force.com%2Flightning%2Fr%2FOpportunity%2F006JQ00000pbrAYYAY%2Fview&data=05%7C02%7Ce.dulog%40multivista.com%7Cbca080267a60462b11b008dee26ce473%7C9c275058e9254de6be6d5b14bb704683%7C0%7C0%7C639197154941189966%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=YACAm3wTotYfBuEokcOse426w3MUp36SApAuw6Z4VDQ%3D&reserved=0",
-          "components": [],
-          "comments": [
-            {
-              "author": "Edgar Dulog",
-              "created": "2026-07-27T10:17:08.854-0700",
-              "body": "Brian,\nThe DWG file is now available on the FTP and MDS for download\nFTP Remote Site: /ga01/89434\nFile name: 11821-26_BOA Restaurant_ARCH_r24-Sheet - A1-01 - OVERALL CONSTRUCTION PLAN\nThanks,\nEd DulogReality Capture Technician3D Laser Scanning | Webcam\nMultivista, part of HexagonM: 404 663 8272multivista.com<https://www.multivista.com/>\n[Multivista - Part of Hexagon]<http://www.multivista.com/>\n________________________________From: Brian Nahuel Aduco <jira@multivista.atlassian.net>Sent: Friday, July 24, 2026 4:29 PMTo: Edgar Dulog - Multivista <e.dulog@multivista.com>Subject:  Scan to Services - GA01 - 89434 - Leapley Construction - Bank of America West Wing Restaurant and Conference Room\n—-—-—-—Reply above this line.\nBrian Nahuel Aduco commented:\nHi Brent Pearce<https://multivista.atlassian.net/secure/ViewProfile.jspa?accountId=712020%3Aeec6966a-e6e4-4b72-be4e-7abbcf73b958> , no problem! We can do that, but we'll need you to share the DWG file of the plan. Could you send it over? Also, for next time, please remember to check the option if you need the overlay\n[image-20260724-202707.png]\nPlease let us know once the DWG is ready to download.\nBest regards\nRespectfully yours,\nHexagon Scan to Servicesscantoservices@multivista.com<scantoservices@multivista.com>\nView request<https://multivista.atlassian.net/servicedesk/customer/portal/5/SCAN-6130?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0Z3QiOiJhbm9ueW1vdXMtbGluayIsInFzaCI6IjJjNDNlOTM3ZWI0YzRlMmVjZjE2YWZmYmQzYTA5ZTUyNThjMmMxZjJhNDgyM2NhNzZkZDc0Y2EwODJkZGQ3YmQiLCJpc3MiOiJzZXJ2aWNlZGVzay1qd3QtdG9rZW4taXNzdWVyIiwiY29udGV4dCI6eyJ1c2VyIjoiMTM4MTEiLCJpc3N1ZSI6IlNDQU4tNjEzMCJ9LCJleHAiOjE3ODczNDQxNDAsImlhdCI6MTc4NDkyNDk0MH0.6R23wGtGPtVQNXI-OhjTRinDVm3HryrkKuKYqfbbjRk&sda_source=notification-email> · Turn off this request's notifications<https://multivista.atlassian.net/servicedesk/customer/portal/5/SCAN-6130/unsubscribe?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0Z3QiOiJhbm9ueW1vdXMtbGluayIsInFzaCI6ImJkYTY0YTkyMjU5ZWRiZmVmNTZjYTYzN2QwNWE0MzU0ZmRmZGExNGU2NTc3MDE3YmViMjMzYWE4OWM4NzRhNjQiLCJpc3MiOiJzZXJ2aWNlZGVzay1qd3QtdG9rZW4taXNzdWVyIiwiY29udGV4dCI6eyJ1c2VyIjoiNzEyMDIwOjk0MjVmNTkzLWVlMTQtNDkyNC04ZjJmLTA5MmY3NWNkMjI1ZCIsImlzc3VlIjoiU0NBTi02MTMwIn0sImV4cCI6MTc4NzM0NDE0MCwiaWF0IjoxNzg0OTI0OTQwfQ.dbCvX7nv6TrdjM88_d9qswbLwMfBCWGF1UTTNGXyVck>\nThis is shared with Edgar Dulog, Brent Pearce, and Grace Drake - Multivista.\nPowered by Jira Service Management<https://www.atlassian.com/software/jira/service-desk/powered-by?utm_medium=jira-in-product&utm_source=jira_service_desk_email_footer&utm_content=multivista>\nSent on July 24, 2026 1:29:00 PM PDThttps://usw2-track.atlassian.com/CI0/0101019f95d12eb1-f1e90e02-a55a-453a-aa64-308f75ca115d-000000/1RaUmHPpTVvwgK5F-UuoSWjCm4pwfwvR5kLp8Ho9-hA=452"
-            },
-            {
-              "author": "Automation for Jira",
-              "created": "2026-07-27T05:01:26.333-0700",
-              "body": "Email sent to customer asking for clarification."
-            },
-            {
-              "author": "Brian Nahuel Aduco",
-              "created": "2026-07-24T13:27:58.508-0700",
-              "body": "Hi  , no problem! We can do that, but we'll need you to share the DWG file of the plan. Could you send it over? Also, for next time, please remember to check the option if you need the overlay\nPlease let us know once the DWG is ready to download.\nBest regards"
-            },
-            {
-              "author": "Brent Pearce",
-              "created": "2026-07-24T05:48:37.587-0700",
-              "body": "This was just uploaded, but the DWG files are not overlaid per checklist/request.  Please update and re-upload.\nThanks,\nBrent Pearce\n(770) 337-3401\n________________________________From: Brian Nahuel Aduco <jira@multivista.atlassian.net>Sent: Friday, July 24, 2026 8:12 AMTo: Brent Pearce - Multivista <b.pearce@multivista.com>Subject:  Scan to Services - GA01 - 89434 - Leapley Construction - Bank of America West Wing Restaurant and Conference Room\n—-—-—-—Reply above this line.\nHi Brent Pearce,\nThis is an automated response to let you know that your project deliverables are now available on the FTP and ready for transfer to the MDS files section.\nPlease note: It is the responsibility of the client to notify Multivista of any default or concern with the deliverables as soon as possible, but no later than 30 days after client has received the deliverables by Multivista. All claims or deficiencies will be deemed waived by client if not made within 30 days of receiving the deliverables by Multivista and will effectively be accepted by client.\nRespectfully yours,\nHexagon Scan to Servicesscantoservices@multivista.com<scantoservices@multivista.com>\nView request<https://multivista.atlassian.net/servicedesk/customer/portal/5/SCAN-6130?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0Z3QiOiJhbm9ueW1vdXMtbGluayIsInFzaCI6IjJjNDNlOTM3ZWI0YzRlMmVjZjE2YWZmYmQzYTA5ZTUyNThjMmMxZjJhNDgyM2NhNzZkZDc0Y2EwODJkZGQ3YmQiLCJpc3MiOiJzZXJ2aWNlZGVzay1qd3QtdG9rZW4taXNzdWVyIiwiY29udGV4dCI6eyJ1c2VyIjoiMTMyOTgiLCJpc3N1ZSI6IlNDQU4tNjEzMCJ9LCJleHAiOjE3ODczMTQzMTksImlhdCI6MTc4NDg5NTExOX0.CPWLQ66bR4Sh3FY0FC_b2s_dPxDgsZzHvHqVsYiRcuU&sda_source=notification-email> · Turn off this request's notifications<https://multivista.atlassian.net/servicedesk/customer/portal/5/SCAN-6130/unsubscribe?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0Z3QiOiJhbm9ueW1vdXMtbGluayIsInFzaCI6ImJkYTY0YTkyMjU5ZWRiZmVmNTZjYTYzN2QwNWE0MzU0ZmRmZGExNGU2NTc3MDE3YmViMjMzYWE4OWM4NzRhNjQiLCJpc3MiOiJzZXJ2aWNlZGVzay1qd3QtdG9rZW4taXNzdWVyIiwiY29udGV4dCI6eyJ1c2VyIjoidWc6MjE1OTdlYzgtY2I2Mi00ZmIyLTkxNDYtYTdkYzEzN2U4YmJjIiwiaXNzdWUiOiJTQ0FOLTYxMzAifSwiZXhwIjoxNzg3MzE0MzE5LCJpYXQiOjE3ODQ4OTUxMTl9.p_PNexn6fTFdTrixpDOHoU4E_eLYXhzKs13lGydsRw0>\nThis is shared with Edgar Dulog, Brent Pearce, and Grace Drake - Multivista.\nPowered by Jira Service Management<https://www.atlassian.com/software/jira/service-desk/powered-by?utm_medium=jira-in-product&utm_source=jira_service_desk_email_footer&utm_content=multivista>\nSent on July 24, 2026 5:11:59 AM PDThttps://use1-track.atlassian.com/CI0/0100019f940a242d-33715787-0cb8-4f6d-84f3-ddf8aca4764b-000000/XCNlRbLqurpPA23ENo5Nv3T9cg7B1Js00zItZdH-VG8=452"
-            },
-            {
-              "author": "Multivista",
-              "created": "2026-07-21T12:22:43.265-0700",
-              "body": "(154 kB)"
-            }
-          ]
-        },
-        {
           "key": "SCAN-6135",
           "summary": "Scan to Services - NE01 - 89450 - Hoar Construction - Avenue One Building R-2",
           "status": "Done",
@@ -3961,84 +4048,6 @@
           "comments": []
         },
         {
-          "key": "SCAN-5849",
-          "summary": "Scan to Services - GBR04 - 503489 - Meadway Developments - 62 - 68 Dale Street",
-          "status": "S2S Production",
-          "statusCategory": "In Progress",
-          "assignee": "Rojes Malachi",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-07-29T12:22:30.983-0700",
-          "dueDate": "2026-07-31",
-          "resolutionDate": null,
-          "deliveryStatus": null,
-          "territory": "GBR04",
-          "serviceType": "Scan to BIM (model and extracted plans)",
-          "price": 13691.56,
-          "squareFootage": 45000,
-          "projectName": "62 - 68 Dale Street",
-          "projectType": "Multi-familty",
-          "ftpFolderPath": "/mv-s3-ftps-transfer-london/gbr04/503489/3D Point Cloud",
-          "mapLink": "https://maps.app.goo.gl/UWwMsDwzABZ4cF5x8",
-          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ00000qS7qFYAS/view",
-          "components": [
-            "Scan Data Delivery Prompt",
-            "Scan Data Missing"
-          ],
-          "comments": [
-            {
-              "author": "Automation for Jira",
-              "created": "2026-05-22T05:00:53.431-0700",
-              "body": "Follow-up email sent to customer notifying that the given scan data delivery date has passed."
-            },
-            {
-              "author": "Automation for Jira",
-              "created": "2026-05-20T05:00:54.787-0700",
-              "body": "Follow-up email sent to customer notifying that the given scan data delivery date has passed."
-            },
-            {
-              "author": "Automation for Jira",
-              "created": "2026-05-18T05:01:01.274-0700",
-              "body": "Follow-up email sent to customer notifying that the given scan data delivery date has passed."
-            },
-            {
-              "author": "Automation for Jira",
-              "created": "2026-05-15T05:00:13.502-0700",
-              "body": "Follow-up email sent to customer notifying that the given scan data delivery date has passed."
-            },
-            {
-              "author": "Automation for Jira",
-              "created": "2026-05-13T05:00:09.583-0700",
-              "body": "Follow-up email sent to customer notifying that the given scan data delivery date has passed."
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-05-13T04:50:28.615-0700",
-              "body": "Thanks, James, for the update. \nKeep me posted.\nRegards"
-            },
-            {
-              "author": "James Kelly",
-              "created": "2026-05-12T23:16:12.614-0700",
-              "body": "Martin,\nThis project has been delayed and hasn't even been scanned yet.Waiting on the client to allow access to the building.I have no definite date.\nRegards,James Kelly.\nJames KellyOperations Manager\nMultivista, part of HexagonT: 0161 826 9133 Ext 9600 M: 07531543160E: j.kelly@multivista.com<j.kelly@multivista.com>multivista.com<https://www.multivista.com/> | LinkedIn<https://www.linkedin.com/company/multivista/>\nFrom: Martin Isola <jira@multivista.atlassian.net>Sent: 12 May 2026 20:10To: James Kelly - Multivista <j.kelly@multivista.com>Subject:  Scan to Services - GBR04 - 503489 - Meadway Developments - 62 - 68 Dale Street\n-------Reply above this line.\nMartin Isola commented:\nHi team,\nDo you have any news regarding the point clouds for this project?\nThanks\nRespectfully yours,\nHexagon Scan to Servicesscantoservices@multivista.com<scantoservices@multivista.com>\nView request<https://multivista.atlassian.net/servicedesk/customer/portal/5/SCAN-5849?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0Z3QiOiJhbm9ueW1vdXMtbGluayIsInFzaCI6IjM0NjIyYTY1MGY0ZjYwMjU1NDMwNTRiZDBiODM3NzUzMjE2ZWEyNDJlYzAyZTdlYWUwNzhhYjgwNjMyMjQzMWEiLCJpc3MiOiJzZXJ2aWNlZGVzay1qd3QtdG9rZW4taXNzdWVyIiwiY29udGV4dCI6eyJ1c2VyIjoiMTM0MDEiLCJpc3N1ZSI6IlNDQU4tNTg0OSJ9LCJleHAiOjE3ODEwMzIxODUsImlhdCI6MTc3ODYxMjk4NX0.zAz8RLrIgq3H_mnfZxY6wDLPrhwluRwKEWexK6eNIww&sda_source=notification-email> * Turn off this request's notifications<https://multivista.atlassian.net/servicedesk/customer/portal/5/SCAN-5849/unsubscribe?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0Z3QiOiJhbm9ueW1vdXMtbGluayIsInFzaCI6IjRkYjJkMGRiODA4ODA1MzQxNTEwMmJhMDk3ZTg0MmFhYjYxMWY2MzNiZDQwN2UwOTEyNjMwZmYxYjdiODJlZWQiLCJpc3MiOiJzZXJ2aWNlZGVzay1qd3QtdG9rZW4taXNzdWVyIiwiY29udGV4dCI6eyJ1c2VyIjoidWc6MzYwYmNhNGYtMGUxYy00N2EyLThhMTItZTI0YmM3ZDUzZGFiIiwiaXNzdWUiOiJTQ0FOLTU4NDkifSwiZXhwIjoxNzgxMDMyMTg1LCJpYXQiOjE3Nzg2MTI5ODV9.yi3sqUD3FbgA-aAGrbQNcLlMKSrTbm_PFlU4yNiHfyo>\nThis is shared with James Kelly.\nPowered by Jira Service Management<https://www.atlassian.com/software/jira/service-desk/powered-by?utm_medium=jira-in-product&utm_source=jira_service_desk_email_footer&utm_content=multivista>Sent on 12 May 2026 12:09:45 PDT"
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-05-12T12:09:27.993-0700",
-              "body": "Hi team,\nDo you have any news regarding the point clouds for this project?\nThanks"
-            },
-            {
-              "author": "Automation for Jira",
-              "created": "2026-05-11T05:01:29.495-0700",
-              "body": "Email sent to customer notifying that the given scan data delivery date has passed."
-            },
-            {
-              "author": "Multivista",
-              "created": "2026-04-29T05:49:58.062-0700",
-              "body": "(276 kB)"
-            }
-          ]
-        },
-        {
           "key": "SCAN-6054",
           "summary": "Scan to Services - GBR01 - 503590 - Scottish Fire and Rescue - Campbeltown Fire Station",
           "status": "Done",
@@ -4367,36 +4376,6 @@
             "Revisions - Free Fix"
           ],
           "comments": []
-        },
-        {
-          "key": "SCAN-6146",
-          "summary": "Scan to Services - CA01 - 84376 - Holland Partner Group - El Paseo de Saratoga - B2-L4P4_PostPour & B2-L4P4_PostTension",
-          "status": "S2S Production",
-          "statusCategory": "In Progress",
-          "assignee": "Brian Nahuel Aduco",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-07-29T07:22:21.446-0700",
-          "dueDate": "2026-08-06",
-          "resolutionDate": null,
-          "deliveryStatus": null,
-          "territory": "CA01",
-          "serviceType": "Floor Flatness Report",
-          "price": 2000,
-          "squareFootage": 14000,
-          "projectName": "El Paseo de Saratoga-B2-L4P4_PostPour & El Paseo de Saratoga-B2-L4P4_PostTension",
-          "projectType": "Retail",
-          "ftpFolderPath": "/mv-s3-ftps-transfer/ca01/84376/Point Clouds/Level04",
-          "mapLink": "https://maps.app.goo.gl/CPxTZoMbCj3NibrZ7",
-          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ00000sJSJFYA4/view",
-          "components": [],
-          "comments": [
-            {
-              "author": "Multivista",
-              "created": "2026-07-24T15:51:25.854-0700",
-              "body": "(165 kB)"
-            }
-          ]
         },
         {
           "key": "SCAN-6109",
