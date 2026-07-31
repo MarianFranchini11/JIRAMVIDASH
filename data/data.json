@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-31T19:16:50.599Z",
+  "generatedAt": "2026-07-31T19:34:11.524Z",
   "domain": "multivista.atlassian.net",
   "projects": [
     {
@@ -8,37 +8,10 @@
       "totalIssues": 2984,
       "statusSummary": {
         "To Do": 26,
-        "In Progress": 39,
-        "Done": 2919
+        "In Progress": 38,
+        "Done": 2920
       },
       "issues": [
-        {
-          "key": "SCAN-5849",
-          "summary": "Scan to Services - GBR04 - 503489 - Meadway Developments - 62 - 68 Dale Street",
-          "status": "Done",
-          "statusCategory": "Done",
-          "assignee": "Rojes Malachi",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-07-31T12:12:10.750-0700",
-          "dueDate": "2026-07-31",
-          "resolutionDate": "2026-07-31T12:12:03.866-0700",
-          "deliveryStatus": "On time",
-          "territory": "GBR04",
-          "serviceType": "Scan to BIM (model and extracted plans)",
-          "price": 13691.56,
-          "squareFootage": 45000,
-          "projectName": "62 - 68 Dale Street",
-          "projectType": "Multi-familty",
-          "ftpFolderPath": "/mv-s3-ftps-transfer-london/gbr04/503489/3D Point Cloud",
-          "mapLink": "https://maps.app.goo.gl/UWwMsDwzABZ4cF5x8",
-          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ00000qS7qFYAS/view",
-          "components": [
-            "Scan Data Delivery Prompt",
-            "Scan Data Missing"
-          ],
-          "comments": []
-        },
         {
           "key": "SCAN-6086",
           "summary": "Scan to Services - CO01 - 89050 - Hines Interests Limited Partnership - Hotel St Bernard",
@@ -47,7 +20,7 @@
           "assignee": "Melina Aldana Gavioli",
           "priority": "Unprioritized",
           "type": "ScanTo",
-          "updated": "2026-07-31T12:02:49.852-0700",
+          "updated": "2026-07-31T12:26:07.246-0700",
           "dueDate": "2026-07-31",
           "resolutionDate": null,
           "deliveryStatus": null,
@@ -115,6 +88,138 @@
               "body": "(266 kB)"
             }
           ]
+        },
+        {
+          "key": "SCAN-6134",
+          "summary": "Scan to Services - AL01 - 87950 - Multivista Alabama - Auburn House",
+          "status": "Done",
+          "statusCategory": "Done",
+          "assignee": "Rojes Malachi",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-07-31T12:24:43.389-0700",
+          "dueDate": "2026-07-31",
+          "resolutionDate": "2026-07-31T12:24:36.334-0700",
+          "deliveryStatus": "On time",
+          "territory": "AL01",
+          "serviceType": "Scan to Plan (plans only)",
+          "price": 937,
+          "squareFootage": 3000,
+          "projectName": "Auburn House",
+          "projectType": "Single-family",
+          "ftpFolderPath": "/mv-s3-ftps-transfer/al01/87950/3D Point Clouds",
+          "mapLink": "https://maps.app.goo.gl/MWWUSwiDTChdgf7W6",
+          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Quote/0Q0JQ000007t3HN0AY/view",
+          "components": [
+            "Rush Request"
+          ],
+          "comments": []
+        },
+        {
+          "key": "SCAN-5931",
+          "summary": "Scan to Services - GBR02 - 503412 - PRP - George Downing Estate",
+          "status": "Reopened",
+          "statusCategory": "In Progress",
+          "assignee": "sirajudheen",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-07-31T12:23:23.357-0700",
+          "dueDate": "2026-06-26",
+          "resolutionDate": "2026-06-26T12:02:26.933-0700",
+          "deliveryStatus": "On time",
+          "territory": "GBR02",
+          "serviceType": "Scan to BIM (model only)",
+          "price": 9918.72,
+          "squareFootage": 102851,
+          "projectName": "DD SH George Downing Estate",
+          "projectType": "Multi-familty",
+          "ftpFolderPath": "/mv-s3-ftps-transfer-london/gbr02/503412/3D Point cloud",
+          "mapLink": "https://maps.app.goo.gl/CCcNhTM22RyHDv2DA",
+          "salesforceLink": "https://mds.lightning.force.com/lightning/r/Opportunity/006JQ00000o3KbhYAE/view",
+          "components": [
+            "Checklist Missing",
+            "Franchise Delay",
+            "Revisions - Free Fix"
+          ],
+          "comments": [
+            {
+              "author": "sirajudheen",
+              "created": "2026-06-04T08:56:35.565-0700",
+              "body": "The wall markups and wall build-up information are missing for the marked locations. Could you please confirm which wall type should be used at these locations?"
+            },
+            {
+              "author": "Martin Isola",
+              "created": "2026-05-27T09:07:26.662-0700",
+              "body": "Hi Klaus,\nSorry, I didn´t catch your questions. \nThanks"
+            },
+            {
+              "author": "Klaus Rieke",
+              "created": "2026-05-26T15:12:58.660-0700",
+              "body": "Hi Martin,\nIs that for both blocks together or when you model them in parallel?\nCheers,Klaus RiekeHead of Reality Capture UK SouthOffice +44 (0)2086 109 869Mobile +44 (0)7512 761 191\n[cid:1600b419-cc11-4707-9dfd-104e71f76c9d]\nmultivista.com<https://www.multivista.com/>3 Scrutton Street, London EC2A 4HF\n[Multivista - Part of Hexagon]<http://www.multivista.com/>\n–The contents of this communication, including any attachment(s), are confidential and may be privileged. If you are not the intended recipient (or are not receiving this communication on behalf of the intended recipient), please notify the sender immediately and delete or destroy this communication without reading it, and without making, forwarding or retaining any copy or record of it or its contents. Thank you. Note: We have taken precautions against viruses, but take no responsibility for loss or damage caused by any virus present. The above-named person proudly represents an independent contractor and licensed vendor of the MULTIVISTA® brand services and products in the location or region indicated. Titles such as principal, managing principal, regional partner or senior regional partner do not indicate affiliation with Multivista Systems, LLC, but rather the licensees status as a licensed vendor. For more information on the licensee structure, visit www.multivista.com/licensedvendors<https://www.multivista.com/licensedvendors>–\n________________________________From: Jira automation <automation@multivista.atlassian.net>Sent: 26 May 2026 5:32 PMTo: Klaus Rieke - Multivista <k.rieke@multivista.com>; Lukasz Perlowski - Multivista <l.perlowski@multivista.com>; Alvin Chan - Multivista <a.chan@multivista.com>Subject: Scan Data Successfully Validated -  - Scan to Services - GBR02 - 503412 - PRP - George Downing Estate\nHi Alvin Chan,\nThis is an automated response to let you know that your scan data has been successfully validated and moved through into production.\nScan Data Validation Date: 2026-05-26Estimated Delivery Date: 2026-06-23\nDelivery date is an estimate and may change, any changes to this delivery date will be communicated to you.\nRespectfully yours,\nHexagon Scan to Servicesscantoservices@multivista.com"
+            },
+            {
+              "author": "Klaus Rieke",
+              "created": "2026-05-26T15:11:36.666-0700",
+              "body": "True north - thanks flagging\nCheers,Klaus RiekeHead of Reality Capture UK SouthOffice +44 (0)2086 109 869Mobile +44 (0)7512 761 191\n[cid:c8415642-f33d-482d-8dcf-031946c0810b]\nmultivista.com<https://www.multivista.com/>3 Scrutton Street, London EC2A 4HF\n[Multivista - Part of Hexagon]<http://www.multivista.com/>\n–The contents of this communication, including any attachment(s), are confidential and may be privileged. If you are not the intended recipient (or are not receiving this communication on behalf of the intended recipient), please notify the sender immediately and delete or destroy this communication without reading it, and without making, forwarding or retaining any copy or record of it or its contents. Thank you. Note: We have taken precautions against viruses, but take no responsibility for loss or damage caused by any virus present. The above-named person proudly represents an independent contractor and licensed vendor of the MULTIVISTA® brand services and products in the location or region indicated. Titles such as principal, managing principal, regional partner or senior regional partner do not indicate affiliation with Multivista Systems, LLC, but rather the licensees status as a licensed vendor. For more information on the licensee structure, visit www.multivista.com/licensedvendors<https://www.multivista.com/licensedvendors>–\n________________________________From: Martin Isola <jira@multivista.atlassian.net>Sent: 26 May 2026 4:06 PMTo: Klaus Rieke - Multivista <k.rieke@multivista.com>Subject:  Scan to Services - GBR02 - 503412 - PRP - George Downing Estate\n—-—-—-—Reply above this line.\nMartin Isola commented:\nHI Team,\nCould you please confirm this option?\n[image-20260526-150503.png]\nTHanks\nRespectfully yours,\nHexagon Scan to Servicesscantoservices@multivista.com<scantoservices@multivista.com>\nView request<https://multivista.atlassian.net/servicedesk/customer/portal/5/SCAN-5931?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0Z3QiOiJhbm9ueW1vdXMtbGluayIsInFzaCI6ImFiOWIxNDc4ZTUxZjFhZmIzMmQ0MmE1NTg0ODgwYjI0MGVlMDU1MDk0Y2JkNmRmNGMyZjQ5NmI2MzE3YzkwZmYiLCJpc3MiOiJzZXJ2aWNlZGVzay1qd3QtdG9rZW4taXNzdWVyIiwiY29udGV4dCI6eyJ1c2VyIjoiMTMzMzciLCJpc3N1ZSI6IlNDQU4tNTkzMSJ9LCJleHAiOjE3ODIyMjcxNjksImlhdCI6MTc3OTgwNzk2OX0.ooTofRRjoR3fX2gCNSIJpwk88lt4ZV7Am2aJ_oypB-A&sda_source=notification-email> · Turn off this request's notifications<https://multivista.atlassian.net/servicedesk/customer/portal/5/SCAN-5931/unsubscribe?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0Z3QiOiJhbm9ueW1vdXMtbGluayIsInFzaCI6IjNhZjg1ZDdjYjVhNmQzMWFiMjkzMjA2MjViOGUzZTk2MDJhNDlkZDQ2ZDdkM2QzYjMxZmY1OTM5YzUzMzk5OTEiLCJpc3MiOiJzZXJ2aWNlZGVzay1qd3QtdG9rZW4taXNzdWVyIiwiY29udGV4dCI6eyJ1c2VyIjoidWc6MGViMGNkYjMtN2YzZC00M2M5LTgyYWEtY2Y3ZGY2NjY3NTAwIiwiaXNzdWUiOiJTQ0FOLTU5MzEifSwiZXhwIjoxNzgyMjI3MTY5LCJpYXQiOjE3Nzk4MDc5Njl9.Te7_jJbG_WVvekwgw5MOElflpizqzA-mkfyfK2h37O4>\nThis is shared with Alvin Chan, Lukasz Perlowski, and Klaus Rieke.\nPowered by Jira Service Management<https://www.atlassian.com/software/jira/service-desk/powered-by?utm_medium=jira-in-product&utm_source=jira_service_desk_email_footer&utm_content=multivista>\nSent on 26 May 2026 08:06:09 PDThttps://use1-track.atlassian.com/CI0/0100019e64d29379-8df731d1-666f-4fbd-bdb4-2dffce164be0-000000/Nb5Biy8l-o_OiQqEGqHHLNnwZOVEHfPQIJt3Mi7zct8=452"
+            },
+            {
+              "author": "Martin Isola",
+              "created": "2026-05-26T09:31:57.363-0700",
+              "body": ""
+            },
+            {
+              "author": "Martin Isola",
+              "created": "2026-05-26T08:05:11.862-0700",
+              "body": "HI Team, \nCould you please confirm this option?\nTHanks"
+            },
+            {
+              "author": "Automation for Jira",
+              "created": "2026-05-25T05:01:15.872-0700",
+              "body": "Email sent to customer asking for clarification."
+            },
+            {
+              "author": "Automation for Jira",
+              "created": "2026-05-22T13:32:19.462-0700",
+              "body": "Email sent to customer requesting checklist."
+            },
+            {
+              "author": "Martin Isola",
+              "created": "2026-05-22T13:32:08.799-0700",
+              "body": "HI team,\nCould you please confirm this option?\nThanks"
+            },
+            {
+              "author": "Multivista",
+              "created": "2026-05-22T04:25:49.600-0700",
+              "body": "(1014 kB)\n (13.77 MB)"
+            }
+          ]
+        },
+        {
+          "key": "SCAN-5849",
+          "summary": "Scan to Services - GBR04 - 503489 - Meadway Developments - 62 - 68 Dale Street",
+          "status": "Done",
+          "statusCategory": "Done",
+          "assignee": "Rojes Malachi",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-07-31T12:12:10.750-0700",
+          "dueDate": "2026-07-31",
+          "resolutionDate": "2026-07-31T12:12:03.866-0700",
+          "deliveryStatus": "On time",
+          "territory": "GBR04",
+          "serviceType": "Scan to BIM (model and extracted plans)",
+          "price": 13691.56,
+          "squareFootage": 45000,
+          "projectName": "62 - 68 Dale Street",
+          "projectType": "Multi-familty",
+          "ftpFolderPath": "/mv-s3-ftps-transfer-london/gbr04/503489/3D Point Cloud",
+          "mapLink": "https://maps.app.goo.gl/UWwMsDwzABZ4cF5x8",
+          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ00000qS7qFYAS/view",
+          "components": [
+            "Scan Data Delivery Prompt",
+            "Scan Data Missing"
+          ],
+          "comments": []
         },
         {
           "key": "SCAN-6059",
@@ -582,68 +687,6 @@
               "author": "Multivista",
               "created": "2026-07-24T14:28:14.784-0700",
               "body": ""
-            }
-          ]
-        },
-        {
-          "key": "SCAN-6134",
-          "summary": "Scan to Services - AL01 - 87950 - Multivista Alabama - Auburn House",
-          "status": "S2S Final QC",
-          "statusCategory": "In Progress",
-          "assignee": "Rojes Malachi",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-07-31T09:09:05.419-0700",
-          "dueDate": "2026-07-31",
-          "resolutionDate": null,
-          "deliveryStatus": null,
-          "territory": "AL01",
-          "serviceType": "Scan to Plan (plans only)",
-          "price": 937,
-          "squareFootage": 3000,
-          "projectName": "Auburn House",
-          "projectType": "Single-family",
-          "ftpFolderPath": "/mv-s3-ftps-transfer/al01/87950/3D Point Clouds",
-          "mapLink": "https://maps.app.goo.gl/MWWUSwiDTChdgf7W6",
-          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Quote/0Q0JQ000007t3HN0AY/view",
-          "components": [
-            "Rush Request"
-          ],
-          "comments": [
-            {
-              "author": "Rocio Ferreyra",
-              "created": "2026-07-27T11:26:40.451-0700",
-              "body": "Hi , The exterior elevations are now available on the FTP.\nAs mentioned previously, today's deliverable included the exterior elevations. The remaining floor plans will be ready by Friday.\nBest regards,"
-            },
-            {
-              "author": "b.vann",
-              "created": "2026-07-27T09:16:36.674-0700",
-              "body": "I’m good with the rush fee. Are the plans available on the project now?\nColvin,Can you please add this to the quote.\nBrannon VannManaging Partner(Tennessee)615-943-2844\nOn Jul 27, 2026, at 10:50 AM, Maria Constanza Aguero Gomez <jira@multivista.atlassian.net> wrote:\n﻿—-—-—-—Reply above this line.\nMaria Constanza Aguero Gomez commented:\nHi b.vann<https://multivista.atlassian.net/secure/ViewProfile.jspa?accountId=712020%3Ad8d707d8-f033-4d0a-8b49-c69305c1518a>,\nThanks for your patience.\nWe can have the exterior elevations ready for delivery today with a 25% rush fee, which comes to $187. The remaining floor plans will be delivered on Friday, July 31, as originally scheduled.\nIn general, it's difficult for us to shorten turnaround times on projects that already have a relatively short schedule, but we're happy to make an exception in this case.\nIf you're okay with the rush fee, please let us know. We'll also need you to upload the updated quote to Salesforce so we can approve it and move forward with the expedited delivery.\nBest,\nRespectfully yours,\nHexagon Scan to Servicesscantoservices@multivista.com<scantoservices@multivista.com>\nView request<https://multivista.atlassian.net/servicedesk/customer/portal/5/SCAN-6134?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0Z3QiOiJhbm9ueW1vdXMtbGluayIsInFzaCI6IjQ1ZmVlMDgzMmIyYmZkMjNiNWNkMGI4YTk3ZjU5ZTQ5OGY1NGM3MDNiODA4NGNmYTE2ZWZhYjNlOWE4ODA0YWIiLCJpc3MiOiJzZXJ2aWNlZGVzay1qd3QtdG9rZW4taXNzdWVyIiwiY29udGV4dCI6eyJ1c2VyIjoiMTMzMDEiLCJpc3N1ZSI6IlNDQU4tNjEzNCJ9LCJleHAiOjE3ODc1ODY2MTUsImlhdCI6MTc4NTE2NzQxNX0.yUgv5adc1zL3qjosSogFKv4ZNJsDbPVKfWPtNxS9O0g&sda_source=notification-email> · Turn off this request's notifications<https://multivista.atlassian.net/servicedesk/customer/portal/5/SCAN-6134/unsubscribe?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0Z3QiOiJhbm9ueW1vdXMtbGluayIsInFzaCI6IjM1ZWMyMTU3NjQwZWM2Y2FhMTAwZTcxZjYxNWZjMDJlYzM0MjFkMTA5OTVlNzRlODU0ZThkN2Y5NzU0NzE0MWUiLCJpc3MiOiJzZXJ2aWNlZGVzay1qd3QtdG9rZW4taXNzdWVyIiwiY29udGV4dCI6eyJ1c2VyIjoidWc6MTRhMjU0OWEtNzc1Ni00NzFlLWE2MDUtODcyMzc0NTNmZWMwIiwiaXNzdWUiOiJTQ0FOLTYxMzQifSwiZXhwIjoxNzg3NTg2NjE1LCJpYXQiOjE3ODUxNjc0MTV9.jzIjOE474djB_c2WugRLfSyrbtU_N5x5J5bVBVDJ9kk>\nThis is shared with Brandon Colvin, b.vann, and Daniel Ryan.\nPowered by Jira Service Management<https://www.atlassian.com/software/jira/service-desk/powered-by?utm_medium=jira-in-product&utm_source=jira_service_desk_email_footer&utm_content=multivista>\nSent on July 27, 2026 8:50:15 AM PDThttps://use1-track.atlassian.com/CI0/0100019fa4450c9e-d7e952ec-4f40-4bb3-9cde-477cc2178bfe-000000/fqJL4CoiviIXaCLv3MbaJKCf-k0YVzL6w9iZtraeq84=452"
-            },
-            {
-              "author": "Maria Constanza Aguero Gomez",
-              "created": "2026-07-27T08:50:00.146-0700",
-              "body": "Hi ,\nThanks for your patience.\nWe can have the exterior elevations ready for delivery today with a 25% rush fee, which comes to $187. The remaining floor plans will be delivered on Friday, July 31, as originally scheduled.\nIn general, it's difficult for us to shorten turnaround times on projects that already have a relatively short schedule, but we're happy to make an exception in this case.\nIf you're okay with the rush fee, please let us know. We'll also need you to upload the updated quote to Salesforce so we can approve it and move forward with the expedited delivery.\nBest,"
-            },
-            {
-              "author": "Maria Constanza Aguero Gomez",
-              "created": "2026-07-22T13:50:30.600-0700",
-              "body": "Hi ,\nThanks for reaching out. It's difficult to apply rush fees to projects with a short turnaround time, but we'll evaluate the situation and confirm tomorrow whether we can deliver the exterior elevations by the end of this week, along with the associated cost.\nBest,"
-            },
-            {
-              "author": "b.vann",
-              "created": "2026-07-22T08:48:30.814-0700",
-              "body": "Good morning, is there any possible way to get the exterior elevations delivered this week. I’m happy to pay and extreme rush fee. This is for my personal residence.\nBrannon VannManaging Partner(Tennessee)615-943-2844\nOn Jul 22, 2026, at 10:41 AM, Jira automation <automation@multivista.atlassian.net> wrote:\n﻿Hi Brandon Colvin,\nThis is an automated response to let you know that your scan data has been successfully validated and moved through into production.\nScan Data Validation Date: 2026-07-22Estimated Delivery Date: 2026-07-31\nDelivery date is an estimate and may change, any changes to this delivery date will be communicated to you.\nRespectfully yours,\nHexagon Scan to Servicesscantoservices@multivista.com"
-            },
-            {
-              "author": "Maria Constanza Aguero Gomez",
-              "created": "2026-07-22T08:36:58.946-0700",
-              "body": "4 exterior elevations (Rear elevation no needed) + 2 Floor Plans (Basement - Auburn house 2) + (Auburn House 3 - 2nd floor). Level 1 already delivered."
-            },
-            {
-              "author": "Multivista",
-              "created": "2026-07-21T19:44:04.328-0700",
-              "body": "(199 kB)"
             }
           ]
         },
@@ -2189,85 +2232,6 @@
           "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ00000x9pKfYAI/view",
           "components": [],
           "comments": []
-        },
-        {
-          "key": "SCAN-5931",
-          "summary": "Scan to Services - GBR02 - 503412 - PRP - George Downing Estate",
-          "status": "Reopened",
-          "statusCategory": "In Progress",
-          "assignee": "sirajudheen",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-07-31T04:20:54.901-0700",
-          "dueDate": "2026-06-26",
-          "resolutionDate": "2026-06-26T12:02:26.933-0700",
-          "deliveryStatus": "On time",
-          "territory": "GBR02",
-          "serviceType": "Scan to BIM (model only)",
-          "price": 9918.72,
-          "squareFootage": 102851,
-          "projectName": "DD SH George Downing Estate",
-          "projectType": "Multi-familty",
-          "ftpFolderPath": "/mv-s3-ftps-transfer-london/gbr02/503412/3D Point cloud",
-          "mapLink": "https://maps.app.goo.gl/CCcNhTM22RyHDv2DA",
-          "salesforceLink": "https://mds.lightning.force.com/lightning/r/Opportunity/006JQ00000o3KbhYAE/view",
-          "components": [
-            "Checklist Missing",
-            "Franchise Delay",
-            "Revisions - Free Fix"
-          ],
-          "comments": [
-            {
-              "author": "sirajudheen",
-              "created": "2026-06-04T08:56:35.565-0700",
-              "body": "The wall markups and wall build-up information are missing for the marked locations. Could you please confirm which wall type should be used at these locations?"
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-05-27T09:07:26.662-0700",
-              "body": "Hi Klaus,\nSorry, I didn´t catch your questions. \nThanks"
-            },
-            {
-              "author": "Klaus Rieke",
-              "created": "2026-05-26T15:12:58.660-0700",
-              "body": "Hi Martin,\nIs that for both blocks together or when you model them in parallel?\nCheers,Klaus RiekeHead of Reality Capture UK SouthOffice +44 (0)2086 109 869Mobile +44 (0)7512 761 191\n[cid:1600b419-cc11-4707-9dfd-104e71f76c9d]\nmultivista.com<https://www.multivista.com/>3 Scrutton Street, London EC2A 4HF\n[Multivista - Part of Hexagon]<http://www.multivista.com/>\n–The contents of this communication, including any attachment(s), are confidential and may be privileged. If you are not the intended recipient (or are not receiving this communication on behalf of the intended recipient), please notify the sender immediately and delete or destroy this communication without reading it, and without making, forwarding or retaining any copy or record of it or its contents. Thank you. Note: We have taken precautions against viruses, but take no responsibility for loss or damage caused by any virus present. The above-named person proudly represents an independent contractor and licensed vendor of the MULTIVISTA® brand services and products in the location or region indicated. Titles such as principal, managing principal, regional partner or senior regional partner do not indicate affiliation with Multivista Systems, LLC, but rather the licensees status as a licensed vendor. For more information on the licensee structure, visit www.multivista.com/licensedvendors<https://www.multivista.com/licensedvendors>–\n________________________________From: Jira automation <automation@multivista.atlassian.net>Sent: 26 May 2026 5:32 PMTo: Klaus Rieke - Multivista <k.rieke@multivista.com>; Lukasz Perlowski - Multivista <l.perlowski@multivista.com>; Alvin Chan - Multivista <a.chan@multivista.com>Subject: Scan Data Successfully Validated -  - Scan to Services - GBR02 - 503412 - PRP - George Downing Estate\nHi Alvin Chan,\nThis is an automated response to let you know that your scan data has been successfully validated and moved through into production.\nScan Data Validation Date: 2026-05-26Estimated Delivery Date: 2026-06-23\nDelivery date is an estimate and may change, any changes to this delivery date will be communicated to you.\nRespectfully yours,\nHexagon Scan to Servicesscantoservices@multivista.com"
-            },
-            {
-              "author": "Klaus Rieke",
-              "created": "2026-05-26T15:11:36.666-0700",
-              "body": "True north - thanks flagging\nCheers,Klaus RiekeHead of Reality Capture UK SouthOffice +44 (0)2086 109 869Mobile +44 (0)7512 761 191\n[cid:c8415642-f33d-482d-8dcf-031946c0810b]\nmultivista.com<https://www.multivista.com/>3 Scrutton Street, London EC2A 4HF\n[Multivista - Part of Hexagon]<http://www.multivista.com/>\n–The contents of this communication, including any attachment(s), are confidential and may be privileged. If you are not the intended recipient (or are not receiving this communication on behalf of the intended recipient), please notify the sender immediately and delete or destroy this communication without reading it, and without making, forwarding or retaining any copy or record of it or its contents. Thank you. Note: We have taken precautions against viruses, but take no responsibility for loss or damage caused by any virus present. The above-named person proudly represents an independent contractor and licensed vendor of the MULTIVISTA® brand services and products in the location or region indicated. Titles such as principal, managing principal, regional partner or senior regional partner do not indicate affiliation with Multivista Systems, LLC, but rather the licensees status as a licensed vendor. For more information on the licensee structure, visit www.multivista.com/licensedvendors<https://www.multivista.com/licensedvendors>–\n________________________________From: Martin Isola <jira@multivista.atlassian.net>Sent: 26 May 2026 4:06 PMTo: Klaus Rieke - Multivista <k.rieke@multivista.com>Subject:  Scan to Services - GBR02 - 503412 - PRP - George Downing Estate\n—-—-—-—Reply above this line.\nMartin Isola commented:\nHI Team,\nCould you please confirm this option?\n[image-20260526-150503.png]\nTHanks\nRespectfully yours,\nHexagon Scan to Servicesscantoservices@multivista.com<scantoservices@multivista.com>\nView request<https://multivista.atlassian.net/servicedesk/customer/portal/5/SCAN-5931?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0Z3QiOiJhbm9ueW1vdXMtbGluayIsInFzaCI6ImFiOWIxNDc4ZTUxZjFhZmIzMmQ0MmE1NTg0ODgwYjI0MGVlMDU1MDk0Y2JkNmRmNGMyZjQ5NmI2MzE3YzkwZmYiLCJpc3MiOiJzZXJ2aWNlZGVzay1qd3QtdG9rZW4taXNzdWVyIiwiY29udGV4dCI6eyJ1c2VyIjoiMTMzMzciLCJpc3N1ZSI6IlNDQU4tNTkzMSJ9LCJleHAiOjE3ODIyMjcxNjksImlhdCI6MTc3OTgwNzk2OX0.ooTofRRjoR3fX2gCNSIJpwk88lt4ZV7Am2aJ_oypB-A&sda_source=notification-email> · Turn off this request's notifications<https://multivista.atlassian.net/servicedesk/customer/portal/5/SCAN-5931/unsubscribe?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0Z3QiOiJhbm9ueW1vdXMtbGluayIsInFzaCI6IjNhZjg1ZDdjYjVhNmQzMWFiMjkzMjA2MjViOGUzZTk2MDJhNDlkZDQ2ZDdkM2QzYjMxZmY1OTM5YzUzMzk5OTEiLCJpc3MiOiJzZXJ2aWNlZGVzay1qd3QtdG9rZW4taXNzdWVyIiwiY29udGV4dCI6eyJ1c2VyIjoidWc6MGViMGNkYjMtN2YzZC00M2M5LTgyYWEtY2Y3ZGY2NjY3NTAwIiwiaXNzdWUiOiJTQ0FOLTU5MzEifSwiZXhwIjoxNzgyMjI3MTY5LCJpYXQiOjE3Nzk4MDc5Njl9.Te7_jJbG_WVvekwgw5MOElflpizqzA-mkfyfK2h37O4>\nThis is shared with Alvin Chan, Lukasz Perlowski, and Klaus Rieke.\nPowered by Jira Service Management<https://www.atlassian.com/software/jira/service-desk/powered-by?utm_medium=jira-in-product&utm_source=jira_service_desk_email_footer&utm_content=multivista>\nSent on 26 May 2026 08:06:09 PDThttps://use1-track.atlassian.com/CI0/0100019e64d29379-8df731d1-666f-4fbd-bdb4-2dffce164be0-000000/Nb5Biy8l-o_OiQqEGqHHLNnwZOVEHfPQIJt3Mi7zct8=452"
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-05-26T09:31:57.363-0700",
-              "body": ""
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-05-26T08:05:11.862-0700",
-              "body": "HI Team, \nCould you please confirm this option?\nTHanks"
-            },
-            {
-              "author": "Automation for Jira",
-              "created": "2026-05-25T05:01:15.872-0700",
-              "body": "Email sent to customer asking for clarification."
-            },
-            {
-              "author": "Automation for Jira",
-              "created": "2026-05-22T13:32:19.462-0700",
-              "body": "Email sent to customer requesting checklist."
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-05-22T13:32:08.799-0700",
-              "body": "HI team,\nCould you please confirm this option?\nThanks"
-            },
-            {
-              "author": "Multivista",
-              "created": "2026-05-22T04:25:49.600-0700",
-              "body": "(1014 kB)\n (13.77 MB)"
-            }
-          ]
         },
         {
           "key": "SCAN-5429",
