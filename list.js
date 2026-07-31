@@ -119,7 +119,6 @@ function renderTable() {
       <td>${escapeHtml(issue.territory || "\u2014")}</td>
       <td>${escapeHtml(issue.serviceType || "\u2014")}</td>
       <td class="col-updated">${formatDate(issue.dueDate)}</td>
-      <td class="col-updated">${formatDate(issue.updated)}</td>
     `;
     body.appendChild(tr);
   }

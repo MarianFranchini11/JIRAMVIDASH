@@ -33,7 +33,7 @@ function flattenIssues(data) {
   const all = [];
   for (const project of data.projects) {
     for (const issue of project.issues) {
-      all.push({ ...issue, projectKey: project.key, projectName: project.name });
+      all.push({ ...issue, projectKey: project.key, jiraProjectName: project.name });
     }
   }
   return all;
