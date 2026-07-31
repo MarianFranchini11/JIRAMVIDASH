@@ -1063,6 +1063,151 @@ h1, h2 { font-family: var(--font-display); margin: 0; }
   vertical-align: -1px;
 }
 
+/* ---- Timeline sub-tab ---- */
+.rm-ganttwrap { padding: 6px 4px 4px; overflow-x: auto; }
+.rm-ganttbody { position: relative; min-width: 640px; }
+
+.rm-todayline {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  border-left: 2px solid var(--rm-over);
+  z-index: 3;
+}
+.rm-todaytag {
+  position: absolute;
+  top: -18px;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--rm-over);
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+.rm-ganttrow {
+  display: flex;
+  align-items: center;
+  height: 38px;
+  position: relative;
+}
+.rm-ganttlabel {
+  width: 190px;
+  flex-shrink: 0;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--steel-dark);
+  padding-right: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.rm-ganttlabel .sub {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.68rem;
+  color: var(--slate);
+  font-weight: 500;
+}
+.rm-ganttrack { flex: 1; position: relative; height: 20px; }
+.rm-ganttbar {
+  position: absolute;
+  top: 0;
+  height: 20px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  padding: 0 8px;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  z-index: 2;
+}
+.rm-gb-ok { background: var(--steel); }
+.rm-gb-soon { background: var(--amber); }
+.rm-gb-urgent { background: var(--rm-over); }
+.rm-gb-overdue { background: #8A2A17; }
+
+.rm-deadlinerow {
+  display: grid;
+  grid-template-columns: 120px 1fr 100px 1.2fr;
+  gap: 12px;
+  align-items: start;
+  padding: 12px 4px;
+  border-bottom: 1px solid var(--line);
+}
+.rm-deadlinerow:last-child { border-bottom: none; }
+.rm-deadlinedate {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--slate);
+}
+.rm-deadlinename { font-size: 0.85rem; font-weight: 600; }
+.rm-crew { font-size: 0.78rem; color: var(--slate); }
+
+.daysbadge-ok, .daysbadge-soon, .daysbadge-urgent, .daysbadge-overdue {
+  font-size: 0.7rem;
+  font-weight: 700;
+  border-radius: 12px;
+  padding: 3px 10px;
+  text-align: center;
+  white-space: nowrap;
+  align-self: start;
+}
+.daysbadge-ok { background: #E4F4EC; color: var(--moss); }
+.daysbadge-soon { background: #FBEDD8; color: var(--amber); }
+.daysbadge-urgent { background: #FBE1D6; color: var(--rm-over); }
+.daysbadge-overdue { background: #F6D9D0; color: #8A2A17; }
+
+.rm-pacewrap { margin-top: 6px; }
+.rm-pacebar {
+  background: var(--canvas);
+  border-radius: 5px;
+  height: 10px;
+  position: relative;
+  overflow: hidden;
+}
+.rm-pacefill { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 5px; background: var(--steel); }
+.rm-pacemark { position: absolute; top: -3px; bottom: -3px; width: 2px; background: var(--ink); opacity: 0.55; }
+.rm-pacetext {
+  font-size: 0.7rem;
+  color: var(--slate);
+  margin-top: 3px;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+.rm-pacepill {
+  font-size: 0.7rem;
+  font-weight: 700;
+  border-radius: 10px;
+  padding: 2px 8px;
+  white-space: nowrap;
+}
+.rm-pace-under { background: #E4F4EC; color: var(--moss); }
+.rm-pace-pace { background: var(--canvas); color: var(--slate); }
+.rm-pace-over { background: #FBE1D6; color: var(--rm-over); }
+.rm-pace-no-estimate { background: var(--canvas); color: var(--slate); }
+
+.rm-estimate-input { display: flex; gap: 6px; }
+.rm-estimate-input input {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  padding: 5px 8px;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  width: 140px;
+}
+
+@media (max-width: 760px) {
+  .rm-ganttlabel { width: 120px; }
+  .rm-deadlinerow { grid-template-columns: 1fr 90px; }
+  .rm-deadlinedate, .rm-crew { display: none; }
+}
+
 /* ===== KPI cards ===== */
 .kpi-section { margin-bottom: 28px; }
 

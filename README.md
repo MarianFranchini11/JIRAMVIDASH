@@ -118,6 +118,19 @@ echo -n "el-pin-nuevo" | sha256sum
 
 Reemplazá el resultado en `RM_PIN_HASH_HEX` dentro de `pin-gate.js`.
 
+## Sobre la subpestaña "Timeline"
+
+Suma una tercera colección de Firestore: **`estimates`** — solo se usa
+cuando un ticket no tiene "Price" en Jira, para guardar una estimación de
+horas ingresada a mano:
+
+```
+{ hours: 40, manual: true }   // documento con id = la clave del ticket, ej. "SCAN-6060"
+```
+
+Si el ticket tiene Price, la estimación se calcula sola como `Price / 2 / 25`
+y no hace falta tocar nada.
+
 ## Sobre la subpestaña "Projects" (asignación de horas)
 
 Además de la colección `resources`, esta subpestaña usa una nueva
@@ -189,6 +202,7 @@ jira-dashboard/
 ├── resource-management.html       # Resource Management page (Firebase)
 ├── resource-management.js         # Resource Management: Team Roster sub-tab + tab switching
 ├── rm-projects.js                 # Resource Management: Projects sub-tab (hour assignment)
+├── rm-timeline.js                 # Resource Management: Timeline sub-tab (Gantt + pace)
 ├── firebase-init.js               # Firebase config + Firestore init
 ├── auth.js                        # login gate logic
 ├── logo.svg                       # Hexagon Multivista logo (login screen)

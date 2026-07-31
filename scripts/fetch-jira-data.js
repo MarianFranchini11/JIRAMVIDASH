@@ -189,6 +189,7 @@ async function getIssuesForProject(projectKey, customFieldIds) {
     "issuetype",
     "duedate",
     "resolutiondate",
+    "created",
     "components",
     ...Object.values(customFieldIds),
   ];
@@ -233,6 +234,7 @@ async function getIssuesForProject(projectKey, customFieldIds) {
         type: issue.fields.issuetype ? issue.fields.issuetype.name : null,
         updated: issue.fields.updated,
         dueDate: issue.fields.duedate || null,
+        created: issue.fields.created || null,
         resolutionDate,
         deliveryStatus,
         territory: territoryId ? extractFieldValue(issue.fields[territoryId]) : null,

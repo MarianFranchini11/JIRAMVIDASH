@@ -72,6 +72,7 @@
           <a href="#" class="rm-subnav-link active" data-rmtab="roster">Team Roster</a>
           <a href="#" class="rm-subnav-link" data-rmtab="projects">Projects</a>
           <a href="#" class="rm-subnav-link" data-rmtab="overview">Resource Overview</a>
+          <a href="#" class="rm-subnav-link" data-rmtab="timeline">Timeline</a>
         </nav>
 
         <div id="rm-tab-roster" class="rm-tab-panel">
@@ -79,7 +80,6 @@
           <section class="rm-add-section">
             <div class="panel-head">
               <h2>Add Resource</h2>
-              <button type="button" id="rm-import-mockup-btn" class="clear-filters-btn" style="border-color:var(--steel);color:var(--steel);">Import Full Team (57)</button>
             </div>
             <form id="add-resource-form" class="rm-add-form">
               <div class="rm-field">
@@ -182,6 +182,30 @@
 
         </div>
 
+        <div id="rm-tab-timeline" class="rm-tab-panel" style="display:none;">
+
+          <section class="rm-roster-section">
+            <div class="panel-head">
+              <h2>Project Timeline</h2>
+              <span class="rm-roster-hint">Tickets currently To Do or In Progress &middot; dashed red line is today</span>
+            </div>
+            <div id="rm-gantt">
+              <!-- gantt injected by rm-timeline.js -->
+            </div>
+          </section>
+
+          <section class="rm-roster-section">
+            <div class="panel-head">
+              <h2>Upcoming Deadlines</h2>
+              <span class="rm-roster-hint">Date/badge = Jira due date &middot; bar underneath = hours logged vs. estimate</span>
+            </div>
+            <div id="rm-deadlines">
+              <!-- deadline rows injected by rm-timeline.js -->
+            </div>
+          </section>
+
+        </div>
+
       </div>
     </main>
 
@@ -197,5 +221,6 @@
   <script src="firebase-init.js"></script>
   <script src="resource-management.js"></script>
   <script src="rm-projects.js"></script>
+  <script src="rm-timeline.js"></script>
 </body>
 </html>

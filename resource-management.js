@@ -5,73 +5,6 @@ let allResources = [];
 let activeTeamFilter = "";
 let unsubscribe = null;
 
-// Full team roster from the PM's mockup (57 people): 42 GCS + 10 ARG + 5 OUT.
-const MOCKUP_TEAM_GCS = [
-  "SAHOO Monalisha", "Rarish P", "Sirajudheen K P", "C Rojes Malachi", "Sujavudeen A", "Akshaya T",
-  "A Guruprasath", "Vishnu Itagi", "Rejin James J L", "Nandhakumar S", "Bharath Kumar K",
-  "Poongothai Subramanian", "Shreya P S", "Elbinston Camil C", "Sumit Kumar", "Leo Pauly P",
-  "Sreejith J S", "Pulivarthi Ravi Teja", "Abhilasha Kumari", "Mallikarjun R Bannuri", "Karthi E",
-  "Naidili B", "Nikesh Vishwanath Meshram", "Krishnaveni Pothala", "Nihad Khan N N", "Mohamed Fayis M",
-  "Binobin Dubas Baludin", "Mohamed Thoufeek M", "Satyanarayana Ramoji", "Doddi Chakradhara Rao",
-  "Naveen Kumar R", "Sheik Moideen S", "Venugopal K", "Vigneshwar Mani", "Muthu Ramachandran",
-  "Priyadharshini Venkatesan", "Vimal Raghu", "E Ebisho", "A Ajisha", "Begini Praveen kumar",
-  "Prasanna Kumara", "Mohammed Afroz",
-];
-const MOCKUP_TEAM_ARG = [
-  "Maria Constanza, Aguero Gomez", "Rocio, Ferreyra", "Melina Aldana, Gavioli", "Fernanda Yasmin, Soria",
-  "Erick Miguel, Saldarriaga Ordinola", "David Antonio, Paredes Coronel", "Diana Carolina, Rodriguez Viana",
-  "Natalia, Tolosa", "Mircko Alexandro, Hijar Torres", "Agustina, Bustamante",
-];
-const MOCKUP_TEAM_OUT = ["CadBricks", "One Click", "Virtual Building", "Value 3D", "BIM Prove"];
-
-function slugifyMockupName(name) {
-  return name
-    .toLowerCase()
-    .replace(/,/g, "")
-    .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
-    .trim()
-    .split(/\s+/)
-    .join(".");
-}
-
-function buildMockupMember(name, team) {
-  if (team === "OUT") {
-    const domain = slugifyMockupName(name).replace(/\./g, "");
-    return { name, team, email: `contact@${domain}.com`, level: "Mid", active: true };
-  }
-  return { name, team, email: `${slugifyMockupName(name)}@multivista.com`, level: "Mid", active: true };
-}
-
-async function importMockupTeam() {
-  const members = [
-    ...MOCKUP_TEAM_GCS.map((n) => buildMockupMember(n, "GCS")),
-    ...MOCKUP_TEAM_ARG.map((n) => buildMockupMember(n, "ARG")),
-    ...MOCKUP_TEAM_OUT.map((n) => buildMockupMember(n, "OUT")),
-  ];
-
-  const existingEmails = new Set(allResources.map((r) => r.email.toLowerCase()));
-  const toAdd = members.filter((m) => !existingEmails.has(m.email.toLowerCase()));
-
-  if (toAdd.length === 0) {
-    alert("Everyone from the mockup team is already in the roster.");
-    return;
-  }
-  if (!confirm(`Import ${toAdd.length} resource(s) from the mockup team?`)) return;
-
-  const batch = db.batch();
-  for (const m of toAdd) {
-    const ref = db.collection("resources").doc();
-    batch.set(ref, { ...m, createdAt: firebase.firestore.FieldValue.serverTimestamp() });
-  }
-  try {
-    await batch.commit();
-  } catch (err) {
-    console.error("Failed to import mockup team:", err);
-    alert(`Could not import team: ${err.message}`);
-  }
-}
-
 function initResourceManagementPage() {
   // Sub-tab switching (Team Roster / Projects / Resource Overview).
   document.querySelectorAll(".rm-subnav-link").forEach((link) => {
@@ -83,11 +16,15 @@ function initResourceManagementPage() {
       document.getElementById("rm-tab-roster").style.display = target === "roster" ? "block" : "none";
       document.getElementById("rm-tab-projects").style.display = target === "projects" ? "block" : "none";
       document.getElementById("rm-tab-overview").style.display = target === "overview" ? "block" : "none";
+      document.getElementById("rm-tab-timeline").style.display = target === "timeline" ? "block" : "none";
       if (target === "projects" && typeof initRMProjectsTab === "function") {
         initRMProjectsTab();
       }
       if (target === "overview" && typeof initRMOverviewTab === "function") {
         initRMOverviewTab();
+      }
+      if (target === "timeline" && typeof initRMTimelineTab === "function") {
+        initRMTimelineTab();
       }
     });
   });
@@ -110,7 +47,6 @@ function initResourceManagementPage() {
 
   document.getElementById("add-resource-form").addEventListener("submit", handleAddResource);
   document.getElementById("rm-search").addEventListener("input", renderRoster);
-  document.getElementById("rm-import-mockup-btn").addEventListener("click", importMockupTeam);
 }
 
 async function handleAddResource(e) {
