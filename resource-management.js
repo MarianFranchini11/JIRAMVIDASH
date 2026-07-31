@@ -6,6 +6,21 @@ let activeTeamFilter = "";
 let unsubscribe = null;
 
 function initResourceManagementPage() {
+  // Sub-tab switching (Team Roster / Projects).
+  document.querySelectorAll(".rm-subnav-link").forEach((link) => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      const target = link.dataset.rmtab;
+      document.querySelectorAll(".rm-subnav-link").forEach((l) => l.classList.remove("active"));
+      link.classList.add("active");
+      document.getElementById("rm-tab-roster").style.display = target === "roster" ? "block" : "none";
+      document.getElementById("rm-tab-projects").style.display = target === "projects" ? "block" : "none";
+      if (target === "projects" && typeof initRMProjectsTab === "function") {
+        initRMProjectsTab();
+      }
+    });
+  });
+
   // Live-updates: re-render automatically whenever the collection changes,
   // including changes made by other people viewing the page.
   unsubscribe = db.collection("resources").orderBy("name").onSnapshot(

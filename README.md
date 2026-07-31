@@ -118,6 +118,21 @@ echo -n "el-pin-nuevo" | sha256sum
 
 Reemplazá el resultado en `RM_PIN_HASH_HEX` dentro de `pin-gate.js`.
 
+## Sobre la subpestaña "Projects" (asignación de horas)
+
+Además de la colección `resources`, esta subpestaña usa una nueva
+colección de Firestore: **`assignments`**. Cada documento representa
+"esta persona trabajó estas horas, estos días, en este ticket de Jira":
+
+```
+{ ticketKey: "SCAN-6060", resourceId: "abc123", hours: { "2026-07-27": 8, "2026-07-28": 8 } }
+```
+
+No hace falta crear nada a mano en Firebase — el código crea los
+documentos solos la primera vez que asignás un recurso a un ticket. Las
+mismas reglas de Firestore ("allow read, write: if true") ya cubren esta
+colección nueva.
+
 ## Sobre Resource Management (Firebase)
 
 La pestaña "Resource Management" guarda datos en **Firebase Firestore**,
@@ -172,7 +187,8 @@ jira-dashboard/
 ├── laser-support.html             # 3D Laser Support page (flagged components)
 ├── laser-support.js               # 3D Laser Support page logic
 ├── resource-management.html       # Resource Management page (Firebase)
-├── resource-management.js         # Resource Management page logic
+├── resource-management.js         # Resource Management: Team Roster sub-tab + tab switching
+├── rm-projects.js                 # Resource Management: Projects sub-tab (hour assignment)
 ├── firebase-init.js               # Firebase config + Firestore init
 ├── auth.js                        # login gate logic
 ├── logo.svg                       # Hexagon Multivista logo (login screen)

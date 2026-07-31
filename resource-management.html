@@ -69,60 +69,94 @@
       <div id="rm-content" class="rm-content">
 
         <nav class="rm-subnav">
-          <a href="#" class="rm-subnav-link active">Team Roster</a>
-          <!-- future sub-tabs (e.g. Hour Assignments) go here -->
+          <a href="#" class="rm-subnav-link active" data-rmtab="roster">Team Roster</a>
+          <a href="#" class="rm-subnav-link" data-rmtab="projects">Projects</a>
         </nav>
 
-        <section class="rm-add-section">
-          <div class="panel-head">
-            <h2>Add Resource</h2>
-          </div>
-          <form id="add-resource-form" class="rm-add-form">
-            <div class="rm-field">
-              <label for="rm-name">Name</label>
-              <input type="text" id="rm-name" required placeholder="Full name" />
-            </div>
-            <div class="rm-field">
-              <label for="rm-email">Email</label>
-              <input type="email" id="rm-email" required placeholder="name@multivista.com" />
-            </div>
-            <div class="rm-field">
-              <label for="rm-team">Team</label>
-              <input type="text" id="rm-team" required placeholder="GCS, ARG, OUT..." list="rm-team-suggestions" />
-              <datalist id="rm-team-suggestions"></datalist>
-            </div>
-            <div class="rm-field">
-              <label for="rm-level">Level</label>
-              <select id="rm-level">
-                <option value="Junior">Junior</option>
-                <option value="Mid" selected>Mid</option>
-                <option value="Senior">Senior</option>
-                <option value="Lead">Lead</option>
-              </select>
-            </div>
-            <button type="submit" class="rm-add-btn">Add Resource</button>
-          </form>
-          <p id="rm-add-error" class="gate-error" hidden></p>
-        </section>
+        <div id="rm-tab-roster" class="rm-tab-panel">
 
-        <section class="rm-roster-section">
-          <div class="panel-head">
-            <h2>Full Team Roster</h2>
-            <span class="rm-roster-hint">Grouped by team &middot; click a group header to collapse it</span>
-          </div>
-
-          <div class="rm-toolbar">
-            <div id="rm-team-chips" class="rm-chip-group">
-              <!-- chips injected by resource-management.js -->
+          <section class="rm-add-section">
+            <div class="panel-head">
+              <h2>Add Resource</h2>
             </div>
-            <input type="text" id="rm-search" class="rm-search" placeholder="Search by name or email&hellip;" />
-          </div>
+            <form id="add-resource-form" class="rm-add-form">
+              <div class="rm-field">
+                <label for="rm-name">Name</label>
+                <input type="text" id="rm-name" required placeholder="Full name" />
+              </div>
+              <div class="rm-field">
+                <label for="rm-email">Email</label>
+                <input type="email" id="rm-email" required placeholder="name@multivista.com" />
+              </div>
+              <div class="rm-field">
+                <label for="rm-team">Team</label>
+                <input type="text" id="rm-team" required placeholder="GCS, ARG, OUT..." list="rm-team-suggestions" />
+                <datalist id="rm-team-suggestions"></datalist>
+              </div>
+              <div class="rm-field">
+                <label for="rm-level">Level</label>
+                <select id="rm-level">
+                  <option value="Junior">Junior</option>
+                  <option value="Mid" selected>Mid</option>
+                  <option value="Senior">Senior</option>
+                  <option value="Lead">Lead</option>
+                </select>
+              </div>
+              <button type="submit" class="rm-add-btn">Add Resource</button>
+            </form>
+            <p id="rm-add-error" class="gate-error" hidden></p>
+          </section>
 
-          <div id="rm-roster" class="rm-roster">
-            <!-- groups injected by resource-management.js -->
-          </div>
-          <p id="rm-empty-state" class="empty-state" hidden>No resources match this search/filter.</p>
-        </section>
+          <section class="rm-roster-section">
+            <div class="panel-head">
+              <h2>Full Team Roster</h2>
+              <span class="rm-roster-hint">Grouped by team &middot; click a group header to collapse it</span>
+            </div>
+
+            <div class="rm-toolbar">
+              <div id="rm-team-chips" class="rm-chip-group">
+                <!-- chips injected by resource-management.js -->
+              </div>
+              <input type="text" id="rm-search" class="rm-search" placeholder="Search by name or email&hellip;" />
+            </div>
+
+            <div id="rm-roster" class="rm-roster">
+              <!-- groups injected by resource-management.js -->
+            </div>
+            <p id="rm-empty-state" class="empty-state" hidden>No resources match this search/filter.</p>
+          </section>
+
+        </div>
+
+        <div id="rm-tab-projects" class="rm-tab-panel" style="display:none;">
+
+          <section class="filter-bar">
+            <div class="filter-group">
+              <label for="rm-week-search">Find a ticket</label>
+              <input type="text" id="rm-week-search" class="rm-search" placeholder="Search by key, project name...&hellip;" style="min-width:280px;" />
+            </div>
+            <div class="rm-week-nav">
+              <button type="button" id="rm-week-prev" class="rm-week-navbtn" aria-label="Previous week">&lsaquo;</button>
+              <span id="rm-week-label" class="rm-week-label"></span>
+              <button type="button" id="rm-week-next" class="rm-week-navbtn" aria-label="Next week">&rsaquo;</button>
+            </div>
+          </section>
+
+          <section class="kpi-section">
+            <div class="kpi-grid" id="rm-stats-grid">
+              <!-- alert cards injected by rm-projects.js -->
+            </div>
+          </section>
+
+          <section class="rm-ticket-search-results" id="rm-ticket-results">
+            <!-- search results injected by rm-projects.js -->
+          </section>
+
+          <section id="rm-ticket-detail">
+            <!-- selected ticket's hour grid injected by rm-projects.js -->
+          </section>
+
+        </div>
 
       </div>
     </main>
@@ -138,5 +172,6 @@
   <script src="pin-gate.js"></script>
   <script src="firebase-init.js"></script>
   <script src="resource-management.js"></script>
+  <script src="rm-projects.js"></script>
 </body>
 </html>
