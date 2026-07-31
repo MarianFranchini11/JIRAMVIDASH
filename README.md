@@ -105,6 +105,49 @@ Para cambiar las credenciales:
 3. Copiá el resultado y reemplazá el valor de `AUTH_HASH_HEX` en `auth.js`
 4. Subí el cambio (`git add auth.js && git commit -m "cambiar credenciales" && git push`)
 
+## Sobre el PIN de Resource Management
+
+Además del login general, la pestaña "Resource Management" (y sus futuras
+subpestañas) tienen un candado propio: un PIN de 4 dígitos. Actual: **`1122`**.
+
+Para cambiarlo, mismo mecanismo que las otras credenciales:
+
+```bash
+echo -n "el-pin-nuevo" | sha256sum
+```
+
+Reemplazá el resultado en `RM_PIN_HASH_HEX` dentro de `pin-gate.js`.
+
+## Sobre Resource Management (Firebase)
+
+La pestaña "Resource Management" guarda datos en **Firebase Firestore**,
+no en Jira. La configuración ya está en `firebase-init.js`.
+
+**Reglas de seguridad de Firestore:** al crear la base de datos en modo de
+prueba ("test mode"), las reglas expiran a los 30 días. Cuando eso pase, la
+pestaña deja de funcionar hasta que actualices las reglas. Para renovarlas
+(o dejarlas sin vencimiento, coherente con que el resto del dashboard
+tampoco tiene seguridad real):
+
+1. Firebase Console → tu proyecto → **Firestore Database** → pestaña **Rules**
+2. Reemplazá el contenido por:
+   ```
+   rules_version = '2';
+   service cloud.firestore {
+     match /databases/{database}/documents {
+       match /{document=**} {
+         allow read, write: if true;
+       }
+     }
+   }
+   ```
+3. **Publish**
+
+Como con el resto del dashboard, esto no es seguridad real — cualquiera
+con el link puede editar los recursos. Si en algún momento se necesita
+restringir esto, hay que sumar autenticación real de Firebase (es otro
+paso, avisen si lo necesitan).
+
 ## Ajustar la frecuencia de sincronización
 
 En `.github/workflows/update-data.yml`, la línea:
@@ -128,6 +171,9 @@ jira-dashboard/
 ├── issues.html                    # Issues List page (filterable table)
 ├── laser-support.html             # 3D Laser Support page (flagged components)
 ├── laser-support.js               # 3D Laser Support page logic
+├── resource-management.html       # Resource Management page (Firebase)
+├── resource-management.js         # Resource Management page logic
+├── firebase-init.js               # Firebase config + Firestore init
 ├── auth.js                        # login gate logic
 ├── logo.svg                       # Hexagon Multivista logo (login screen)
 ├── shared.js                      # shared data loading + sync status + project modal

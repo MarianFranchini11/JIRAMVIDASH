@@ -23,6 +23,9 @@ function showApp() {
 
 function logout() {
   sessionStorage.removeItem(AUTH_SESSION_KEY);
+  if (typeof RM_PIN_SESSION_KEY !== "undefined") {
+    sessionStorage.removeItem(RM_PIN_SESSION_KEY);
+  }
   document.getElementById("gate-username").value = "";
   document.getElementById("gate-password").value = "";
   document.getElementById("gate-error").hidden = true;
