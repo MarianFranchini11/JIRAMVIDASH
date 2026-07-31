@@ -729,6 +729,14 @@ h1, h2 { font-family: var(--font-display); margin: 0; }
   color: var(--slate);
 }
 
+.charts-section-even { grid-template-columns: 1fr 1fr; }
+
+.chart-note {
+  font-size: 0.8rem;
+  color: var(--slate);
+  margin: -4px 0 14px;
+}
+
 @media (max-width: 800px) {
   .charts-section { grid-template-columns: 1fr; }
 }

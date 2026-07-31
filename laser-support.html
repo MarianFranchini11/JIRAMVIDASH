@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="style.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 </head>
 <body>
 
@@ -74,6 +75,27 @@
       <section class="kpi-section">
         <div class="kpi-grid" id="kpi-grid">
           <!-- KPI cards injected by laser-support.js -->
+        </div>
+      </section>
+
+      <p class="chart-note">These two charts compare all territories against each other using the full ticket volume — they respect the Status filter above, but not the Territory filter or the Issue Type checkboxes.</p>
+
+      <section class="charts-section charts-section-even">
+        <div class="chart-panel">
+          <div class="panel-head">
+            <h2>Registration Error Rate <span class="panel-subtitle">(Top 10, min. 10 tickets)</span></h2>
+          </div>
+          <div class="chart-wrap chart-wrap-tall">
+            <canvas id="registration-rate-chart"></canvas>
+          </div>
+        </div>
+        <div class="chart-panel">
+          <div class="panel-head">
+            <h2>Point Cloud Orientation Rate <span class="panel-subtitle">(Top 10, min. 10 tickets)</span></h2>
+          </div>
+          <div class="chart-wrap chart-wrap-tall">
+            <canvas id="orientation-rate-chart"></canvas>
+          </div>
         </div>
       </section>
 

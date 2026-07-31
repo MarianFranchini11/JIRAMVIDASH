@@ -3,8 +3,12 @@
 // "Registration Error" components.
 
 const TARGET_COMPONENTS = ["Point Cloud Orientation Issue", "Registration Error"];
+const MIN_TICKETS_FOR_RATE = 10;
 
 let allLaserIssues = [];
+let allIssuesFull = [];
+let registrationRateChart = null;
+let orientationRateChart = null;
 
 async function initLaserSupportPage() {
   let data;
@@ -18,8 +22,8 @@ async function initLaserSupportPage() {
 
   renderSyncStatus(data);
 
-  const allIssues = flattenIssues(data);
-  allLaserIssues = allIssues.filter(
+  allIssuesFull = flattenIssues(data);
+  allLaserIssues = allIssuesFull.filter(
     (issue) =>
       issue.components &&
       issue.components.some((c) => TARGET_COMPONENTS.includes(c))
@@ -78,6 +82,98 @@ function renderLaserAll() {
   const issues = getFilteredLaserIssues();
   renderLaserKpis(issues);
   renderLaserTable(issues);
+  renderRateCharts();
+}
+
+// Rate-by-territory charts use the FULL ticket set (respecting only the
+// Status filter, not the territory filter or the component checkboxes --
+// the point is to compare territories against each other).
+function computeRateByTerritory(componentName) {
+  const status = document.getElementById("laser-status-filter").value;
+  const base = status
+    ? allIssuesFull.filter((i) => i.statusCategory === status)
+    : allIssuesFull;
+
+  const totals = {};
+  const flagged = {};
+  for (const issue of base) {
+    const territory = issue.territory || "Unassigned";
+    totals[territory] = (totals[territory] || 0) + 1;
+    if (issue.components && issue.components.includes(componentName)) {
+      flagged[territory] = (flagged[territory] || 0) + 1;
+    }
+  }
+
+  return Object.entries(totals)
+    .filter(([, total]) => total >= MIN_TICKETS_FOR_RATE)
+    .map(([territory, total]) => ({
+      territory,
+      total,
+      flagged: flagged[territory] || 0,
+      pct: ((flagged[territory] || 0) / total) * 100,
+    }))
+    .sort((a, b) => b.pct - a.pct)
+    .slice(0, 10);
+}
+
+function renderRateChart(canvasId, chartInstance, rows, color) {
+  const ctx = document.getElementById(canvasId);
+  if (chartInstance) chartInstance.destroy();
+  return new Chart(ctx, {
+    type: "bar",
+    data: {
+      labels: rows.map((r) => r.territory),
+      datasets: [
+        {
+          label: "% of tickets",
+          data: rows.map((r) => r.pct),
+          backgroundColor: color,
+          borderRadius: 4,
+          maxBarThickness: 40,
+        },
+      ],
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            label: (ctx) => {
+              const row = rows[ctx.dataIndex];
+              return `${row.pct.toFixed(1)}% (${row.flagged} of ${row.total} tickets)`;
+            },
+          },
+        },
+      },
+      scales: {
+        y: {
+          beginAtZero: true,
+          ticks: { callback: (v) => `${v}%` },
+          grid: { color: "#DBDBDD" },
+        },
+        x: { grid: { display: false } },
+      },
+    },
+  });
+}
+
+function renderRateCharts() {
+  const registrationRows = computeRateByTerritory("Registration Error");
+  const orientationRows = computeRateByTerritory("Point Cloud Orientation Issue");
+  registrationRateChart = renderRateChart(
+    "registration-rate-chart",
+    registrationRateChart,
+    registrationRows,
+    "#005198"
+  );
+  orientationRateChart = renderRateChart(
+    "orientation-rate-chart",
+    orientationRateChart,
+    orientationRows,
+    "#D98E3D"
+  );
 }
 
 function renderLaserKpis(issues) {
