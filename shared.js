@@ -81,7 +81,7 @@ function ensureModalMounted() {
   if (document.getElementById("project-modal")) return;
   const wrap = document.createElement("div");
   wrap.innerHTML = `
-    <div id="project-modal" class="modal-overlay" hidden>
+    <div id="project-modal" class="modal-overlay" style="display:none;">
       <div class="modal-card">
         <button id="modal-close" class="modal-close" aria-label="Close">&times;</button>
         <div id="modal-body"></div>
@@ -100,7 +100,7 @@ function ensureModalMounted() {
 
 function closeProjectModal() {
   const modal = document.getElementById("project-modal");
-  if (modal) modal.hidden = true;
+  if (modal) modal.style.display = "none";
 }
 
 function openProjectModal(issue) {
@@ -156,5 +156,5 @@ function openProjectModal(issue) {
     </div>
   `;
 
-  document.getElementById("project-modal").hidden = false;
+  document.getElementById("project-modal").style.display = "flex";
 }
