@@ -4,7 +4,6 @@
 // estimate (Price / 2 / 25, or a manual override stored in Firestore).
 
 let rmTimelineInitialized = false;
-let rmEstimates = {}; // ticketKey -> { hours, manual }
 let rmTlSearch = "";
 let rmTlTerritory = "";
 let rmTlAssignee = "";
@@ -19,17 +18,6 @@ function initRMTimelineTab() {
     return;
   }
   rmTimelineInitialized = true;
-
-  db.collection("estimates").onSnapshot(
-    (snapshot) => {
-      rmEstimates = {};
-      snapshot.docs.forEach((doc) => {
-        rmEstimates[doc.id] = doc.data();
-      });
-      renderRMTimeline();
-    },
-    (err) => console.error("Failed to load estimates:", err)
-  );
 
   // Re-render (incl. filter dropdown options) once Jira tickets/assignments
   // finish loading, in case Timeline was opened before Projects/Overview.
@@ -149,6 +137,70 @@ function rmUrgencyLabel(daysLeft) {
   return `${daysLeft}d left`;
 }
 
+function rmIsBusinessDay(iso) {
+  const wd = new Date(iso + "T00:00:00Z").getUTCDay();
+  return wd !== 0 && wd !== 6;
+}
+function rmBusinessDaysBetween(startIso, endIso) {
+  if (!startIso) return 0;
+  let count = 0;
+  let cur = startIso;
+  while (cur < endIso) {
+    cur = rmAddDays(cur, 1);
+    if (rmIsBusinessDay(cur)) count++;
+  }
+  return count;
+}
+function rmAddBusinessDays(startIso, n) {
+  let cur = startIso;
+  let added = 0;
+  while (added < n) {
+    cur = rmAddDays(cur, 1);
+    if (rmIsBusinessDay(cur)) added++;
+  }
+  return cur;
+}
+
+function rmMonthTicks(startIso, endIso) {
+  const ticks = [];
+  let d = new Date(startIso + "T00:00:00Z");
+  d = new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), 1));
+  if (rmToISO(d) < startIso) d = new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth() + 1, 1));
+  const end = new Date(endIso + "T00:00:00Z");
+  while (d <= end) {
+    ticks.push(rmToISO(d));
+    d = new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth() + 1, 1));
+  }
+  return ticks;
+}
+function rmMonthLabel(iso) {
+  const d = new Date(iso + "T00:00:00Z");
+  return d.toLocaleDateString("en-US", { month: "short", year: "2-digit", timeZone: "UTC" });
+}
+
+// "Quoted Turnaround" is a Jira field: the quoted number of *business* days
+// to produce the deliverable, counted from when the ticket went In Progress.
+function rmComputeTurnaround(ticket) {
+  const quoted = ticket.quotedTurnaround;
+  const started = ticket.inProgressDate;
+  const today = rmToISO(new Date());
+  if (!started) return { quoted, elapsed: 0, status: "not-started" };
+  const elapsed = rmBusinessDaysBetween(started, today);
+  if (!quoted) return { quoted: null, elapsed, status: "no-data" };
+  const usedPct = elapsed / quoted;
+  const status = elapsed > quoted ? "over" : usedPct >= 0.85 ? "near" : "within";
+  return { quoted, elapsed, status };
+}
+function rmTurnaroundLabel(status) {
+  return {
+    over: "Over quoted turnaround",
+    near: "Near turnaround limit",
+    within: "Within quoted turnaround",
+    "not-started": "Not started yet",
+    "no-data": "No Quoted Turnaround set",
+  }[status];
+}
+
 function rmComputePace(ticket) {
   const est = rmEstimatedHours(ticket);
   const started = ticket.inProgressDate; // null = hasn't started yet
@@ -213,9 +265,16 @@ function renderRMGantt() {
   const pct = (iso) => Math.max(0, Math.min(100, (rmDaysBetween(rangeStart, iso) / totalDays) * 100));
 
   const sorted = [...tickets].sort((a, b) => (a.dueDate < b.dueDate ? -1 : 1));
+  const monthTicks = rmMonthTicks(rangeStart, rangeEnd);
 
   container.innerHTML = `
     <div class="rm-ganttwrap">
+      <div class="rm-ganttrow rm-ganttaxisrow">
+        <div class="rm-ganttlabel"></div>
+        <div class="rm-ganttrack rm-ganttaxistrack">
+          ${monthTicks.map((m) => `<div class="rm-ganttmonth" style="left:${pct(m)}%;">${rmMonthLabel(m)}</div>`).join("")}
+        </div>
+      </div>
       <div class="rm-ganttbody">
         <div class="rm-todayline" style="left:${pct(today)}%;"><span class="rm-todaytag">Today</span></div>
         ${sorted
@@ -225,10 +284,23 @@ function renderRMGantt() {
             const width = Math.max(1.2, pct(t.dueDate) - left);
             const daysLeft = rmDaysBetween(today, t.dueDate);
             const u = rmUrgency(daysLeft);
+            const startLabel = t.inProgressDate || "Not started";
+
+            let markerHtml = "";
+            if (t.inProgressDate && t.quotedTurnaround) {
+              const turnaround = rmComputeTurnaround(t);
+              const deadlineIso = rmAddBusinessDays(t.inProgressDate, t.quotedTurnaround);
+              const markerPct = pct(deadlineIso);
+              const passed = turnaround.status === "over";
+              markerHtml = `<div class="rm-turnaroundmarker ${passed ? "passed" : ""}" style="left:${markerPct}%;" title="Quoted turnaround deadline: ${deadlineIso}${passed ? " (passed)" : ""}"></div>`;
+            }
+
             return `<div class="rm-ganttrow">
               <div class="rm-ganttlabel">${t.key}<span class="sub">${escapeHtml(t.projectName)}</span></div>
               <div class="rm-ganttrack">
+                <span class="rm-ganttstart" style="left:${left}%;">${startLabel}</span>
                 <div class="rm-ganttbar rm-gb-${u}" style="left:${left}%;width:${width}%;" title="${escapeHtml(t.projectName)} \u00b7 due ${t.dueDate}">${t.dueDate}</div>
+                ${markerHtml}
               </div>
             </div>`;
           })
@@ -276,11 +348,28 @@ function renderRMDeadlines() {
               </div>
             </div>`;
 
+      const turnaround = rmComputeTurnaround(t);
+      const turnaroundHtml =
+        turnaround.status === "no-data"
+          ? `<p class="modal-note" style="margin:6px 0 0;">No Quoted Turnaround set for this ticket.</p>`
+          : turnaround.status === "not-started"
+          ? `<p class="modal-note" style="margin:6px 0 0;">Turnaround clock hasn't started (still To Do).</p>`
+          : `<div class="rm-pacewrap">
+              <div class="rm-pacebar">
+                <div class="rm-pacefill rm-turnfill-${turnaround.status}" style="width:${Math.min(100, Math.round((turnaround.elapsed / turnaround.quoted) * 100))}%;"></div>
+              </div>
+              <div class="rm-pacetext">
+                <span>${turnaround.elapsed} business days elapsed of ${turnaround.quoted} quoted</span>
+                <span class="rm-pacepill rm-turn-${turnaround.status}">${rmTurnaroundLabel(turnaround.status)}</span>
+              </div>
+            </div>`;
+
       return `<div class="rm-deadlinerow">
         <span class="rm-deadlinedate">${started} \u2013 ${t.dueDate}</span>
         <span class="rm-deadlinename">
           <span class="col-key">${t.key}</span> &middot; ${escapeHtml(t.projectName)}
           ${paceHtml}
+          ${turnaroundHtml}
         </span>
         <span class="daysbadge-${u}">${rmUrgencyLabel(daysLeft)}</span>
         <span class="rm-crew">${crew.length ? escapeHtml(crew.join(", ")) : "\u2014"}</span>

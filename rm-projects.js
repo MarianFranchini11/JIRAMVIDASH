@@ -11,6 +11,12 @@ let rmAssignments = [];
 let rmSelectedTicketKey = null;
 let rmSelectedWeekStart = null;
 let rmActiveSubTab = "roster";
+let rmUnSearch = "";
+let rmUnTerritory = "";
+let rmUnService = "";
+let rmUnStatus = "";
+let rmGapFilter = "";
+let rmEstimates = {}; // ticketKey -> { hours, manual } -- also used by rm-timeline.js
 
 // Loads Jira tickets + starts the live assignments listener. Safe to call
 // from either the Projects or the Resource Overview tab -- runs once.
@@ -22,7 +28,11 @@ function ensureRMDataLoaded() {
   loadDashboardData()
     .then((data) => {
       rmAllTickets = flattenIssues(data);
-      if (rmActiveSubTab === "projects") renderRMTicketDetail();
+      populateRMUnassignedFilters();
+      if (rmActiveSubTab === "projects") {
+        renderRMTicketDetail();
+        renderRMUnassignedList();
+      }
     })
     .catch((err) => console.error("Could not load Jira tickets for assignment:", err));
 
@@ -32,11 +42,26 @@ function ensureRMDataLoaded() {
       if (rmActiveSubTab === "projects") {
         renderRMStats();
         renderRMTicketDetail();
+        renderRMUnassignedList();
       } else if (rmActiveSubTab === "overview") {
         renderRMOverviewTable();
+      } else if (rmActiveSubTab === "timeline" && typeof renderRMTimeline === "function") {
+        renderRMTimeline();
       }
     },
     (err) => console.error("Failed to load assignments:", err)
+  );
+
+  db.collection("estimates").onSnapshot(
+    (snapshot) => {
+      rmEstimates = {};
+      snapshot.docs.forEach((doc) => {
+        rmEstimates[doc.id] = doc.data();
+      });
+      if (rmActiveSubTab === "projects") renderRMUnassignedList();
+      else if (rmActiveSubTab === "timeline" && typeof renderRMTimeline === "function") renderRMTimeline();
+    },
+    (err) => console.error("Failed to load estimates:", err)
   );
 }
 
@@ -70,9 +95,51 @@ function initRMProjectsTab() {
     renderRMTicketDetail();
   });
 
+  document.querySelectorAll('[data-gap]').forEach((chip) => {
+    chip.addEventListener("click", () => {
+      rmGapFilter = chip.dataset.gap;
+      document.querySelectorAll('[data-gap]').forEach((c) => c.classList.remove("active"));
+      chip.classList.add("active");
+      renderRMUnassignedList();
+    });
+  });
+
+  document.getElementById("rm-un-search").addEventListener("input", (e) => {
+    rmUnSearch = e.target.value.trim().toLowerCase();
+    renderRMUnassignedList();
+  });
+  document.getElementById("rm-un-territory").addEventListener("change", (e) => {
+    rmUnTerritory = e.target.value;
+    renderRMUnassignedList();
+  });
+  document.getElementById("rm-un-service").addEventListener("change", (e) => {
+    rmUnService = e.target.value;
+    renderRMUnassignedList();
+  });
+  document.getElementById("rm-un-status").addEventListener("change", (e) => {
+    rmUnStatus = e.target.value;
+    renderRMUnassignedList();
+  });
+  document.getElementById("rm-un-clear").addEventListener("click", () => {
+    rmUnSearch = "";
+    rmUnTerritory = "";
+    rmUnService = "";
+    rmUnStatus = "";
+    rmGapFilter = "";
+    document.getElementById("rm-un-search").value = "";
+    document.getElementById("rm-un-territory").value = "";
+    document.getElementById("rm-un-service").value = "";
+    document.getElementById("rm-un-status").value = "";
+    document.querySelectorAll('[data-gap]').forEach((c) => c.classList.remove("active"));
+    document.querySelector('[data-gap=""]').classList.add("active");
+    renderRMUnassignedList();
+  });
+
   renderRMWeekLabel();
   renderRMStats();
   renderRMTicketDetail();
+  populateRMUnassignedFilters();
+  renderRMUnassignedList();
 }
 
 function initRMOverviewTab() {
@@ -334,11 +401,120 @@ function renderRMTicketSearchResults(query) {
   });
 }
 
+// ---- "Staffing Gaps" list ----
+// A ticket has a gap if: nobody's assigned yet, or someone is assigned but
+// logged hours are falling behind the expected pace toward the estimate.
+function rmGapCategory(ticket) {
+  const assignedCount = new Set(rmAssignmentsForTicket(ticket.key).map((a) => a.resourceId)).size;
+  if (assignedCount === 0) return "unstaffed";
+  if (typeof rmComputePace !== "function") return "none";
+  const pace = rmComputePace(ticket);
+  if (pace.status === "no-estimate") return "no-estimate";
+  if (pace.status === "under") return "understaffed";
+  return "none";
+}
+
+function rmStaffingGapTickets() {
+  return rmAllTickets.filter(
+    (t) => t.statusCategory === "To Do" || t.statusCategory === "In Progress"
+  );
+}
+
+function populateRMUnassignedFilters() {
+  const territorySelect = document.getElementById("rm-un-territory");
+  const serviceSelect = document.getElementById("rm-un-service");
+  if (!territorySelect || !serviceSelect) return;
+
+  const territories = new Set(rmAllTickets.map((t) => t.territory || "Unassigned"));
+  const services = new Set(rmAllTickets.map((t) => t.serviceType).filter(Boolean));
+
+  territorySelect.innerHTML =
+    '<option value="">All</option>' +
+    Array.from(territories).sort().map((t) => `<option value="${escapeHtml(t)}">${escapeHtml(t)}</option>`).join("");
+  serviceSelect.innerHTML =
+    '<option value="">All</option>' +
+    Array.from(services).sort().map((s) => `<option value="${escapeHtml(s)}">${escapeHtml(s)}</option>`).join("");
+}
+
+function rmGapLabel(gap) {
+  return {
+    unstaffed: "Unstaffed",
+    understaffed: "Understaffed",
+    "no-estimate": "No Estimate",
+  }[gap];
+}
+
+function renderRMUnassignedList() {
+  const container = document.getElementById("rm-unassigned-list");
+  const countEl = document.getElementById("rm-unassigned-count");
+  if (!container) return;
+
+  let tickets = rmStaffingGapTickets().map((t) => ({ t, gap: rmGapCategory(t) }));
+  tickets = tickets.filter((row) => row.gap !== "none");
+
+  if (rmGapFilter) tickets = tickets.filter((row) => row.gap === rmGapFilter);
+  if (rmUnSearch) {
+    tickets = tickets.filter(
+      (row) =>
+        row.t.key.toLowerCase().includes(rmUnSearch) ||
+        (row.t.projectName || "").toLowerCase().includes(rmUnSearch)
+    );
+  }
+  if (rmUnTerritory) tickets = tickets.filter((row) => (row.t.territory || "Unassigned") === rmUnTerritory);
+  if (rmUnService) tickets = tickets.filter((row) => row.t.serviceType === rmUnService);
+  if (rmUnStatus) tickets = tickets.filter((row) => row.t.statusCategory === rmUnStatus);
+
+  tickets.sort((a, b) => (a.t.dueDate || "9999") < (b.t.dueDate || "9999") ? -1 : 1);
+
+  if (countEl) countEl.textContent = `(${tickets.length})`;
+
+  if (tickets.length === 0) {
+    container.innerHTML = `<p class="empty-state">No tickets match these filters. Nice work!</p>`;
+    return;
+  }
+
+  container.innerHTML = `
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>Key</th><th>Project Name</th><th>Gap</th><th>Team</th><th>Hours</th><th>Territory</th><th>Status</th><th>Due Date</th></tr>
+        </thead>
+        <tbody>
+          ${tickets
+            .slice(0, 200)
+            .map(({ t, gap }) => {
+              const assignedCount = new Set(rmAssignmentsForTicket(t.key).map((a) => a.resourceId)).size;
+              const pace = typeof rmComputePace === "function" ? rmComputePace(t) : { est: null, usedHours: 0 };
+              const hoursText =
+                pace.est != null ? `${pace.usedHours}h / ${pace.est}h` : assignedCount > 0 ? `${pace.usedHours}h logged` : "\u2014";
+              return `
+            <tr class="clickable-row" data-ticketkey="${t.key}">
+              <td class="col-key">${t.key}</td>
+              <td>${escapeHtml(t.projectName)}</td>
+              <td><span class="rm-pacepill rm-gap-${gap}">${rmGapLabel(gap)}</span></td>
+              <td>${assignedCount}</td>
+              <td class="col-updated">${hoursText}</td>
+              <td>${escapeHtml(t.territory || "Unassigned")}</td>
+              <td><span class="status-pill ${statusPillClass(t.statusCategory)}">${t.statusCategory}</span></td>
+              <td class="col-updated">${formatDate(t.dueDate)}</td>
+            </tr>`;
+            })
+            .join("")}
+        </tbody>
+      </table>
+    </div>`;
+
+  container.querySelectorAll("tr[data-ticketkey]").forEach((row) => {
+    row.addEventListener("click", () => selectRMTicket(row.dataset.ticketkey));
+  });
+}
+
 function selectRMTicket(key) {
   rmSelectedTicketKey = key;
   document.getElementById("rm-week-search").value = "";
   document.getElementById("rm-ticket-results").innerHTML = "";
   renderRMTicketDetail();
+  document.getElementById("rm-ticket-detail").scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
 // ---- Ticket detail + hour grid ----

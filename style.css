@@ -1135,6 +1135,38 @@ h1, h2 { font-family: var(--font-display); margin: 0; }
 .rm-gb-urgent { background: var(--rm-over); }
 .rm-gb-overdue { background: #8A2A17; }
 
+.rm-ganttaxisrow { height: 22px; border-bottom: 1px solid var(--line); margin-bottom: 6px; }
+.rm-ganttaxistrack { height: 100%; }
+.rm-ganttmonth {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  font-size: 11px;
+  color: var(--slate);
+  border-left: 1px solid var(--line);
+  padding-left: 4px;
+}
+
+.rm-ganttstart {
+  position: absolute;
+  top: -14px;
+  font-size: 10px;
+  color: var(--slate);
+  white-space: nowrap;
+}
+
+.rm-turnaroundmarker {
+  position: absolute;
+  top: -3px;
+  bottom: -3px;
+  width: 2px;
+  background: #fff;
+  border-left: 1px solid var(--slate);
+  border-right: 1px solid var(--slate);
+  z-index: 2;
+}
+.rm-turnaroundmarker.passed { border-left-color: #8A2A17; border-right-color: #8A2A17; }
+
 .rm-deadlinerow {
   display: grid;
   grid-template-columns: 120px 1fr 100px 1.2fr;
@@ -1195,6 +1227,17 @@ h1, h2 { font-family: var(--font-display); margin: 0; }
 .rm-pace-pace { background: var(--canvas); color: var(--slate); }
 .rm-pace-over { background: #FBE1D6; color: var(--rm-over); }
 .rm-pace-no-estimate { background: var(--canvas); color: var(--slate); }
+
+.rm-gap-unstaffed { background: #F6D9D0; color: #8A2A17; }
+.rm-gap-understaffed { background: #FBEDD8; color: var(--amber); }
+.rm-gap-no-estimate { background: var(--canvas); color: var(--slate); }
+
+.rm-turnfill-within { background: var(--moss); }
+.rm-turnfill-near { background: var(--amber); }
+.rm-turnfill-over { background: var(--rm-over); }
+.rm-turn-within { background: #E4F4EC; color: var(--moss); }
+.rm-turn-near { background: #FBEDD8; color: var(--amber); }
+.rm-turn-over { background: #FBE1D6; color: var(--rm-over); }
 
 .rm-estimate-input { display: flex; gap: 6px; }
 .rm-estimate-input input {

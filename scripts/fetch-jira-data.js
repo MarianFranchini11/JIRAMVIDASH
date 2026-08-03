@@ -52,6 +52,7 @@ const CUSTOM_FIELD_NAMES = [
   "FTP Folder Path",
   "Map Link",
   "Salesforce Link",
+  "Quoted Turnaround",
 ];
 
 async function resolveCustomFieldIds() {
@@ -245,6 +246,7 @@ async function getIssuesForProject(projectKey, customFieldIds) {
       const ftpId = customFieldIds["FTP Folder Path"];
       const mapLinkId = customFieldIds["Map Link"];
       const sfLinkId = customFieldIds["Salesforce Link"];
+      const quotedTurnaroundId = customFieldIds["Quoted Turnaround"];
       const resolutionDate = issue.fields.resolutiondate || null;
       let deliveryStatus = null;
       if (resolutionDate && issue.fields.duedate) {
@@ -278,6 +280,9 @@ async function getIssuesForProject(projectKey, customFieldIds) {
         ftpFolderPath: ftpId ? extractFieldValue(issue.fields[ftpId]) : null,
         mapLink: mapLinkId ? extractFieldValue(issue.fields[mapLinkId]) : null,
         salesforceLink: sfLinkId ? extractFieldValue(issue.fields[sfLinkId]) : null,
+        quotedTurnaround: quotedTurnaroundId
+          ? extractNumberValue(issue.fields[quotedTurnaroundId])
+          : null,
         components: (issue.fields.components || []).map((c) => c.name),
         inProgressDate: null,
         comments: [],
