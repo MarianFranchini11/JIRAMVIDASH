@@ -1,17 +1,91 @@
 {
-  "generatedAt": "2026-08-05T15:21:14.024Z",
+  "generatedAt": "2026-08-05T15:51:04.101Z",
   "domain": "multivista.atlassian.net",
   "projects": [
     {
       "key": "SCAN",
       "name": "SCAN",
-      "totalIssues": 2995,
+      "totalIssues": 2996,
       "statusSummary": {
-        "To Do": 22,
-        "In Progress": 41,
-        "Done": 2932
+        "To Do": 23,
+        "In Progress": 42,
+        "Done": 2931
       },
       "issues": [
+        {
+          "key": "SCAN-6164",
+          "summary": "Upsell - Scan to Services - NE01 - 89450 - Hoar Construction - Avenue One Building R-2 - CAD Aligment",
+          "status": "Reopened",
+          "statusCategory": "In Progress",
+          "assignee": "sirajudheen",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-08-05T08:32:08.806-0700",
+          "dueDate": "2026-08-05",
+          "created": "2026-07-31T07:38:44.940-0700",
+          "resolutionDate": "2026-08-05T07:22:54.693-0700",
+          "deliveryStatus": "On time",
+          "territory": "NE01",
+          "serviceType": "Scan to Plan (plans only)",
+          "price": 450,
+          "squareFootage": 9244,
+          "projectName": "Avenue One Building R-2",
+          "projectType": "Manufacturing & Warehouse",
+          "ftpFolderPath": "/mv-s3-ftps-transfer/ne01/89450",
+          "mapLink": "https://maps.app.goo.gl/7VcrMmADUeBPKRdC9",
+          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Quote/0Q0JQ0000080NJN0A2/view",
+          "quotedTurnaround": 4,
+          "projectId": "89450",
+          "components": [],
+          "inProgressDate": "2026-07-31",
+          "dataValidatedDate": "2026-07-31",
+          "comments": [
+            {
+              "author": "Russ Bollig",
+              "created": "2026-08-05T08:32:06.727-0700",
+              "body": "Hello Scan to Services Team, \nThis ticket was updated to have the CAD add the (3) new Control Points from our Rescan last Thursday. The updated scan data was uploaded on Friday morning and receipt confirmed. \n Question - Can you please confirm Control was added to the updated CAD? \n\n \nThanks again and have a great day! \n-Russ \nRuss Bollig Principal  Office (402) 765-0400  Mobile (515) 441-0448  \nmultivista.com : LinkedIn : Facebook : X : Instagram \n6818 Grover Street, Suite 405, Omaha, NE 68106 \n<http://www.multivista.com/> \n--  The contents of this communication, including any attachment(s), are confidential and may be privileged. If you are not the intended recipient (or are not receiving this communication on behalf of the intended recipient), please notify the sender immediately and delete or destroy this communication without reading it, and without making, forwarding or retaining any copy or record of it or its contents. Thank you. Note: We have taken precautions against viruses, but take no responsibility for loss or damage caused by any virus present. The above-named person proudly represents an independent contractor and licensed vendor of the MULTIVISTA® brand services and products in the location or region indicated. Titles such as principal, managing principal, regional partner or senior regional partner do not indicate affiliation with Multivista Systems, LLC, but rather the licensees status as a licensed vendor. For more information on the licensee structure, visit www.multivista.com/licensedvendors -- \nFrom: Rocio Ferreyra <jira@multivista.atlassian.net> Sent: Wednesday, August 5, 2026 9:24 AMTo: Russ Bollig <r.bollig@multivista.com>Subject:  Upsell - Scan to Services - NE01 - 89450 - Hoar Construction - Avenue One Building R-2 - CAD Aligment   \nThis email is not from Hexagon’s Office 365 instance. Please be careful while clicking links, opening attachments, or replying to this email.  \n—-—-—-—   \nReply above this line.    \nHi Russ Bollig, \nThis is an automated response to let you know that your project deliverables are now available on the FTP and ready for transfer to the MDS files section. \nPlease note: It is the responsibility of the client to notify Multivista of any default or concern with the deliverables as soon as possible, but no later than 30 days after client has received the deliverables by Multivista. All claims or deficiencies will be deemed waived by client if not made within 30 days of receiving the deliverables by Multivista and will effectively be accepted by client.\n>Respectfully yours, \nHexagon Scan to Servicesscantoservices@multivista.com  \nHow was our service for this Scan to Services request? \n☆ Very poor \n☆ Poor \n☆ Average \n☆ Good \n☆ Very good \nView request · Turn off this request's notifications \nThis is shared with Russ Bollig and Jon Weber. \nPowered by Jira Service Management  \nSent on August 5, 2026 7:23:56 AM PDT"
+            },
+            {
+              "author": "Maria Constanza Aguero Gomez",
+              "created": "2026-08-03T06:18:00.035-0700",
+              "body": "Overlay the attached electrical outlet CAD on top of the CAD file we created."
+            },
+            {
+              "author": "Multivista",
+              "created": "2026-07-31T07:38:47.395-0700",
+              "body": "(228 kB)"
+            }
+          ]
+        },
+        {
+          "key": "SCAN-6177",
+          "summary": "Scan to Services - BC01 - 88047 - Anthem Properties - Citizen",
+          "status": "Backlog",
+          "statusCategory": "To Do",
+          "assignee": "Scan to Services",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-08-05T08:26:27.220-0700",
+          "dueDate": null,
+          "created": "2026-08-05T08:26:27.012-0700",
+          "resolutionDate": null,
+          "deliveryStatus": null,
+          "territory": "BC01",
+          "serviceType": "Scan to Plan (plans only)",
+          "price": null,
+          "squareFootage": null,
+          "projectName": null,
+          "projectType": null,
+          "ftpFolderPath": null,
+          "mapLink": null,
+          "salesforceLink": "https://eur02.safelinks.protection.outlook.com/?url=https%3A%2F%2Fhmv.lightning.force.com%2Flightning%2Fr%2FOpportunity%2F006JQ00000shWAQYA2%2Fview&data=05%7C02%7Cnicolas.loubser%40multivistasystems.com%7C8bf3818a969048e9d1e708debd2b89cf%7C1b16ab3eb8f64fe39f3e2db7fe549f6a%7C0%7C0%7C639156192146218955%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=eu1%2BKyCTSEWfqSd1BHVsJBE1Ez%2BYsbFI4T3EAvaAksk%3D&reserved=0",
+          "quotedTurnaround": null,
+          "projectId": "88047",
+          "components": [],
+          "inProgressDate": null,
+          "dataValidatedDate": null,
+          "comments": []
+        },
         {
           "key": "SCAN-6174",
           "summary": "Scan to Services - TX03 - 89489 - Morse Studio - 15 Cedarwing Lane",
@@ -220,35 +294,6 @@
             "Scan Data Delivery Prompt",
             "Scan Data Missing"
           ],
-          "inProgressDate": null,
-          "dataValidatedDate": null,
-          "comments": []
-        },
-        {
-          "key": "SCAN-6164",
-          "summary": "Upsell - Scan to Services - NE01 - 89450 - Hoar Construction - Avenue One Building R-2 - CAD Aligment",
-          "status": "Done",
-          "statusCategory": "Done",
-          "assignee": "sirajudheen",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-08-05T07:23:02.141-0700",
-          "dueDate": "2026-08-05",
-          "created": "2026-07-31T07:38:44.940-0700",
-          "resolutionDate": "2026-08-05T07:22:54.693-0700",
-          "deliveryStatus": "On time",
-          "territory": "NE01",
-          "serviceType": "Scan to Plan (plans only)",
-          "price": 450,
-          "squareFootage": 9244,
-          "projectName": "Avenue One Building R-2",
-          "projectType": "Manufacturing & Warehouse",
-          "ftpFolderPath": "/mv-s3-ftps-transfer/ne01/89450",
-          "mapLink": "https://maps.app.goo.gl/7VcrMmADUeBPKRdC9",
-          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Quote/0Q0JQ0000080NJN0A2/view",
-          "quotedTurnaround": 4,
-          "projectId": "89450",
-          "components": [],
           "inProgressDate": null,
           "dataValidatedDate": null,
           "comments": []
