@@ -71,6 +71,32 @@
             <option value="Done">Done</option>
           </select>
         </div>
+        <div class="filter-group">
+          <label for="laser-search">Search</label>
+          <input type="text" id="laser-search" class="rm-search" placeholder="Key, Project ID, name&hellip;" />
+        </div>
+        <div class="filter-group">
+          <label for="due-date-details">Due date</label>
+          <details id="due-date-details" class="due-date-filter">
+            <summary id="due-date-summary">All</summary>
+            <div class="due-date-panel">
+              <div class="due-date-panel-row">
+                <label for="year-select">Year</label>
+                <select id="year-select">
+                  <option value="">All years</option>
+                </select>
+              </div>
+              <div class="due-date-panel-row">
+                <label>Months</label>
+                <div id="month-checkboxes" class="month-checkbox-grid"></div>
+              </div>
+              <div class="due-date-panel-actions">
+                <button type="button" id="due-date-clear">Clear</button>
+                <button type="button" id="due-date-apply">Apply</button>
+              </div>
+            </div>
+          </details>
+        </div>
       </section>
 
       <section class="kpi-section">
@@ -109,6 +135,7 @@
             <thead>
               <tr>
                 <th>Key</th>
+                <th>Project ID</th>
                 <th>Project Name</th>
                 <th>Component</th>
                 <th>Status</th>

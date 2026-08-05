@@ -53,6 +53,7 @@ const CUSTOM_FIELD_NAMES = [
   "Map Link",
   "Salesforce Link",
   "Quoted Turnaround",
+  "Project ID",
 ];
 
 async function resolveCustomFieldIds() {
@@ -145,22 +146,32 @@ async function getStatusCategoryMap() {
   return map;
 }
 
-// Looks at an issue's changelog for the first time it moved into a status
-// whose category is "In Progress". Returns an ISO date, or null if it
-// never has (e.g. still sitting in a To Do-category status).
-async function getInProgressDate(issueKey, statusCategoryMap) {
+// Looks at an issue's changelog once, and pulls out two dates:
+//  - inProgressDate: first time it moved into a status whose *category* is
+//    "In Progress" (used for the Gantt bar's visual start)
+//  - dataValidatedDate: first time it moved into the specific status named
+//    "S2S Backlog" (means the scan data was validated; used as the start
+//    of the Quoted Turnaround clock)
+// Either can be null if that transition never happened.
+async function getStatusHistoryDates(issueKey, statusCategoryMap) {
   const body = await jiraGet(`/issue/${issueKey}/changelog?maxResults=100`);
   const histories = (body.values || []).slice().sort((a, b) => new Date(a.created) - new Date(b.created));
+  let inProgressDate = null;
+  let dataValidatedDate = null;
   for (const history of histories) {
     for (const item of history.items || []) {
       if (item.field !== "status") continue;
-      const category = statusCategoryMap[(item.toString || "").trim().toLowerCase()];
-      if (category === "In Progress") {
-        return history.created.slice(0, 10);
+      const toName = (item.toString || "").trim();
+      const category = statusCategoryMap[toName.toLowerCase()];
+      if (!inProgressDate && category === "In Progress") {
+        inProgressDate = history.created.slice(0, 10);
+      }
+      if (!dataValidatedDate && toName.toLowerCase() === "s2s backlog") {
+        dataValidatedDate = history.created.slice(0, 10);
       }
     }
   }
-  return null;
+  return { inProgressDate, dataValidatedDate };
 }
 
 // Determine which projects to sync: either an explicit list from
@@ -247,6 +258,7 @@ async function getIssuesForProject(projectKey, customFieldIds) {
       const mapLinkId = customFieldIds["Map Link"];
       const sfLinkId = customFieldIds["Salesforce Link"];
       const quotedTurnaroundId = customFieldIds["Quoted Turnaround"];
+      const projectIdId = customFieldIds["Project ID"];
       const resolutionDate = issue.fields.resolutiondate || null;
       let deliveryStatus = null;
       if (resolutionDate && issue.fields.duedate) {
@@ -283,8 +295,10 @@ async function getIssuesForProject(projectKey, customFieldIds) {
         quotedTurnaround: quotedTurnaroundId
           ? extractNumberValue(issue.fields[quotedTurnaroundId])
           : null,
+        projectId: projectIdId ? extractFieldValue(issue.fields[projectIdId]) : null,
         components: (issue.fields.components || []).map((c) => c.name),
         inProgressDate: null,
+        dataValidatedDate: null,
         comments: [],
       });
     }
@@ -308,10 +322,13 @@ async function getIssuesForProject(projectKey, customFieldIds) {
       console.error(`    Failed to fetch comments for ${issue.key}: ${err.message}`);
     }
     try {
-      issue.inProgressDate = await getInProgressDate(issue.key, statusCategoryMap);
+      const dates = await getStatusHistoryDates(issue.key, statusCategoryMap);
+      issue.inProgressDate = dates.inProgressDate;
+      issue.dataValidatedDate = dates.dataValidatedDate;
     } catch (err) {
       console.error(`    Failed to fetch changelog for ${issue.key}: ${err.message}`);
       issue.inProgressDate = null;
+      issue.dataValidatedDate = null;
     }
   }
 

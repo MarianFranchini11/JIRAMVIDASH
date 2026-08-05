@@ -51,6 +51,18 @@ function formatDate(iso) {
   return d.toLocaleDateString("en-US", { day: "2-digit", month: "short", year: "numeric" });
 }
 
+// Project size tier, computed from Price (not a Jira field -- purely
+// derived). A = <=$7.5k, B = $7.5k-$20k, C = >$20k.
+function priceTier(price) {
+  if (price == null) return null;
+  if (price <= 7500) return "A";
+  if (price <= 20000) return "B";
+  return "C";
+}
+function priceTierLabel(tier) {
+  return { A: "Tier A (\u2264$7.5k)", B: "Tier B ($7.5k\u2013$20k)", C: "Tier C (>$20k)" }[tier] || "\u2014";
+}
+
 function statusPillClass(statusCategory) {
   if (statusCategory === "Done") return "status-done";
   if (statusCategory === "In Progress") return "status-progress";
@@ -107,6 +119,7 @@ function openProjectModal(issue) {
   ensureModalMounted();
 
   const fields = [
+    ["Project ID", escapeHtml(issue.projectId || "\u2014")],
     ["Territory", escapeHtml(issue.territory || "Unassigned")],
     ["Service Type", escapeHtml(issue.serviceType || "\u2014")],
     ["Project Type", escapeHtml(issue.projectType || "\u2014")],

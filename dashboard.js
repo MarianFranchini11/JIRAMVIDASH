@@ -14,14 +14,16 @@ function territoryColor(index) {
 let allIssues = [];
 let territoryChartInstance = null;
 let statusChartInstance = null;
+let tierChartInstance = null;
 
 const MONTH_NAMES = [
   "January", "February", "March", "April", "May", "June",
   "July", "August", "September", "October", "November", "December",
 ];
 
-let selectedYear = "";
+let selectedYear = "2026";
 let selectedMonths = new Set(); // "01".."12"
+let selectedTier = "";
 
 async function initDashboardPage() {
   let data;
@@ -37,6 +39,8 @@ async function initDashboardPage() {
   allIssues = flattenIssues(data);
 
   populateFilters(allIssues);
+  document.getElementById("year-select").value = selectedYear;
+  updateDueDateSummary();
   renderAll();
 
   document.getElementById("territory-filter").addEventListener("change", renderAll);
@@ -65,6 +69,15 @@ async function initDashboardPage() {
     renderAll();
   });
 
+  document.querySelectorAll("#tier-chips .rm-chip").forEach((chip) => {
+    chip.addEventListener("click", () => {
+      selectedTier = chip.dataset.tier;
+      document.querySelectorAll("#tier-chips .rm-chip").forEach((c) => c.classList.remove("active"));
+      chip.classList.add("active");
+      renderAll();
+    });
+  });
+
   document.getElementById("clear-filters").addEventListener("click", () => {
     document.getElementById("territory-filter").value = "";
     document.getElementById("service-filter").value = "";
@@ -73,6 +86,9 @@ async function initDashboardPage() {
     document.querySelectorAll(".month-checkbox-grid input").forEach((el) => (el.checked = false));
     selectedYear = "";
     selectedMonths = new Set();
+    selectedTier = "";
+    document.querySelectorAll("#tier-chips .rm-chip").forEach((c) => c.classList.remove("active"));
+    document.querySelector('#tier-chips .rm-chip[data-tier=""]').classList.add("active");
     updateDueDateSummary();
     renderAll();
   });
@@ -150,6 +166,7 @@ function getFilteredIssues() {
     if (territory && (issue.territory || "Unassigned") !== territory) return false;
     if (service && issue.serviceType !== service) return false;
     if (status && issue.statusCategory !== status) return false;
+    if (selectedTier && priceTier(issue.price) !== selectedTier) return false;
     if (selectedYear || selectedMonths.size > 0) {
       if (!issue.dueDate) return false;
       const y = issue.dueDate.slice(0, 4);
@@ -166,6 +183,7 @@ function renderAll() {
   renderKpis(issues);
   renderTerritoryChart(issues);
   renderStatusChart(issues);
+  renderTierChart(issues);
   renderTerritoryBreakdown(issues);
   renderProjectsTable(issues);
 }
@@ -305,6 +323,42 @@ function renderStatusChart(issues) {
   });
 }
 
+function renderTierChart(issues) {
+  const byTerritory = {};
+  for (const issue of issues) {
+    const territory = issue.territory || "Unassigned";
+    const tier = priceTier(issue.price);
+    if (!byTerritory[territory]) byTerritory[territory] = { A: 0, B: 0, C: 0 };
+    if (tier) byTerritory[territory][tier] += 1;
+  }
+  const entries = Object.entries(byTerritory)
+    .sort((a, b) => b[1].A + b[1].B + b[1].C - (a[1].A + a[1].B + a[1].C))
+    .slice(0, 12);
+
+  if (tierChartInstance) tierChartInstance.destroy();
+  const ctx = document.getElementById("tier-chart");
+  tierChartInstance = new Chart(ctx, {
+    type: "bar",
+    data: {
+      labels: entries.map(([t]) => t),
+      datasets: [
+        { label: "Tier A", data: entries.map(([, v]) => v.A), backgroundColor: "#4B7A52", stack: "s" },
+        { label: "Tier B", data: entries.map(([, v]) => v.B), backgroundColor: "#D98E3D", stack: "s" },
+        { label: "Tier C", data: entries.map(([, v]) => v.C), backgroundColor: "#005198", stack: "s" },
+      ],
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: { legend: { position: "bottom", labels: { boxWidth: 10, font: { family: "Inter" } } } },
+      scales: {
+        x: { stacked: true, grid: { display: false } },
+        y: { stacked: true, beginAtZero: true, ticks: { precision: 0 }, grid: { color: "#DBDBDD" } },
+      },
+    },
+  });
+}
+
 function renderTerritoryBreakdown(issues) {
   const groups = groupByTerritory(issues);
   const entries = Object.entries(groups).sort((a, b) => b[1].length - a[1].length);
@@ -358,6 +412,7 @@ function renderProjectsTable(issues) {
     tr.className = "clickable-row";
     tr.innerHTML = `
       <td class="col-key">${issue.key}</td>
+      <td class="col-updated">${escapeHtml(issue.projectId || "\u2014")}</td>
       <td>${escapeHtml(issue.projectName)}</td>
       <td>${escapeHtml(issue.serviceType || issue.type || "\u2014")}</td>
       <td>${issue.price != null ? formatCurrency(issue.price) : "\u2014"}</td>

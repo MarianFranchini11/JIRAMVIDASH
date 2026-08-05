@@ -4,11 +4,17 @@
 
 const TARGET_COMPONENTS = ["Point Cloud Orientation Issue", "Registration Error"];
 const MIN_TICKETS_FOR_RATE = 10;
+const MONTH_NAMES = [
+  "January", "February", "March", "April", "May", "June",
+  "July", "August", "September", "October", "November", "December",
+];
 
 let allLaserIssues = [];
 let allIssuesFull = [];
 let registrationRateChart = null;
 let orientationRateChart = null;
+let laserSelectedYear = "";
+let laserSelectedMonths = new Set();
 
 async function initLaserSupportPage() {
   let data;
@@ -36,6 +42,45 @@ async function initLaserSupportPage() {
   document.getElementById("filter-registration").addEventListener("change", renderLaserAll);
   document.getElementById("laser-territory-filter").addEventListener("change", renderLaserAll);
   document.getElementById("laser-status-filter").addEventListener("change", renderLaserAll);
+  document.getElementById("laser-search").addEventListener("input", renderLaserAll);
+
+  document.getElementById("due-date-apply").addEventListener("click", () => {
+    laserSelectedYear = document.getElementById("year-select").value;
+    laserSelectedMonths = new Set(
+      Array.from(document.querySelectorAll(".month-checkbox-grid input:checked")).map((el) => el.value)
+    );
+    updateLaserDueDateSummary();
+    document.getElementById("due-date-details").open = false;
+    renderLaserAll();
+  });
+
+  document.getElementById("due-date-clear").addEventListener("click", () => {
+    document.getElementById("year-select").value = "";
+    document.querySelectorAll(".month-checkbox-grid input").forEach((el) => (el.checked = false));
+    laserSelectedYear = "";
+    laserSelectedMonths = new Set();
+    updateLaserDueDateSummary();
+    document.getElementById("due-date-details").open = false;
+    renderLaserAll();
+  });
+
+  document.addEventListener("click", (e) => {
+    const details = document.getElementById("due-date-details");
+    if (details.open && !details.contains(e.target)) details.open = false;
+  });
+}
+
+function updateLaserDueDateSummary() {
+  const summary = document.getElementById("due-date-summary");
+  const parts = [];
+  if (laserSelectedYear) parts.push(laserSelectedYear);
+  if (laserSelectedMonths.size > 0) {
+    const names = Array.from(laserSelectedMonths)
+      .sort()
+      .map((m) => MONTH_NAMES[parseInt(m, 10) - 1].slice(0, 3));
+    parts.push(names.join(", "));
+  }
+  summary.textContent = parts.length > 0 ? parts.join(" \u00b7 ") : "All";
 }
 
 function populateLaserFilters(issues) {
@@ -50,6 +95,24 @@ function populateLaserFilters(issues) {
     opt.textContent = t;
     select.appendChild(opt);
   }
+
+  const years = new Set();
+  for (const issue of allIssuesFull) {
+    if (issue.dueDate) years.add(issue.dueDate.slice(0, 4));
+  }
+  const yearSelect = document.getElementById("year-select");
+  for (const y of Array.from(years).sort()) {
+    const opt = document.createElement("option");
+    opt.value = y;
+    opt.textContent = y;
+    yearSelect.appendChild(opt);
+  }
+
+  const monthContainer = document.getElementById("month-checkboxes");
+  monthContainer.innerHTML = MONTH_NAMES.map((name, i) => {
+    const value = String(i + 1).padStart(2, "0");
+    return `<label><input type="checkbox" value="${value}" />${name.slice(0, 3)}</label>`;
+  }).join("");
 }
 
 function getFilteredLaserIssues() {
@@ -57,6 +120,7 @@ function getFilteredLaserIssues() {
   const wantRegistration = document.getElementById("filter-registration").checked;
   const territory = document.getElementById("laser-territory-filter").value;
   const status = document.getElementById("laser-status-filter").value;
+  const search = document.getElementById("laser-search").value.trim().toLowerCase();
 
   return allLaserIssues.filter((issue) => {
     const hasOrientation = issue.components.includes("Point Cloud Orientation Issue");
@@ -66,6 +130,20 @@ function getFilteredLaserIssues() {
     if (!matchesComponent) return false;
     if (territory && (issue.territory || "Unassigned") !== territory) return false;
     if (status && issue.statusCategory !== status) return false;
+    if (search) {
+      const matchesSearch =
+        issue.key.toLowerCase().includes(search) ||
+        (issue.projectId || "").toLowerCase().includes(search) ||
+        (issue.projectName || "").toLowerCase().includes(search);
+      if (!matchesSearch) return false;
+    }
+    if (laserSelectedYear || laserSelectedMonths.size > 0) {
+      if (!issue.dueDate) return false;
+      const y = issue.dueDate.slice(0, 4);
+      const m = issue.dueDate.slice(5, 7);
+      if (laserSelectedYear && y !== laserSelectedYear) return false;
+      if (laserSelectedMonths.size > 0 && !laserSelectedMonths.has(m)) return false;
+    }
     return true;
   });
 }
@@ -220,6 +298,7 @@ function renderLaserTable(issues) {
     tr.className = "clickable-row";
     tr.innerHTML = `
       <td class="col-key">${issue.key}</td>
+      <td class="col-updated">${escapeHtml(issue.projectId || "\u2014")}</td>
       <td>${escapeHtml(issue.projectName)}</td>
       <td>${escapeHtml(relevantComponents.join(", "))}</td>
       <td><span class="status-pill ${statusPillClass(issue.statusCategory)}">${issue.statusCategory}</span></td>

@@ -95,6 +95,13 @@
         <button id="clear-filters" class="clear-filters-btn">Clear filters</button>
       </section>
 
+      <section class="rm-chip-group" style="margin-bottom:20px;" id="tier-chips">
+        <button type="button" class="rm-chip active" data-tier="">All Tiers</button>
+        <button type="button" class="rm-chip" data-tier="A">Tier A (&le;$7.5k)</button>
+        <button type="button" class="rm-chip" data-tier="B">Tier B ($7.5k&ndash;$20k)</button>
+        <button type="button" class="rm-chip" data-tier="C">Tier C (&gt;$20k)</button>
+      </section>
+
       <section class="kpi-section">
         <div class="kpi-grid" id="kpi-grid">
           <!-- KPI cards injected by dashboard.js -->
@@ -120,6 +127,16 @@
         </div>
       </section>
 
+      <section class="chart-panel" style="margin-bottom:28px;">
+        <div class="panel-head">
+          <h2>Project Tier by Territory</h2>
+          <span class="panel-subtitle">A/B/C by Price &middot; see which territories sell more of each tier</span>
+        </div>
+        <div class="chart-wrap" style="height:280px;">
+          <canvas id="tier-chart"></canvas>
+        </div>
+      </section>
+
       <section class="breakdown-section">
         <div class="panel-head">
           <h2>Territory Detail</h2>
@@ -138,6 +155,7 @@
             <thead>
               <tr>
                 <th>Key</th>
+                <th>Project ID</th>
                 <th>Project Name</th>
                 <th>Type</th>
                 <th>Price</th>

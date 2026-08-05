@@ -99,6 +99,7 @@ function renderTable() {
     issues = issues.filter(
       (i) =>
         i.key.toLowerCase().includes(searchTerm) ||
+        (i.projectId || "").toLowerCase().includes(searchTerm) ||
         (i.summary || "").toLowerCase().includes(searchTerm)
     );
   }
@@ -113,6 +114,7 @@ function renderTable() {
     tr.className = "clickable-row";
     tr.innerHTML = `
       <td class="col-key">${issue.key}</td>
+      <td class="col-updated">${escapeHtml(issue.projectId || "\u2014")}</td>
       <td>${escapeHtml(issue.summary)}</td>
       <td><span class="status-pill ${statusPillClass(issue.statusCategory)}">${statusLabel(issue.statusCategory, issue.status)}</span></td>
       <td>${escapeHtml(issue.priority || "\u2014")}</td>
