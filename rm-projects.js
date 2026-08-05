@@ -325,18 +325,39 @@ function renderRMOverviewTable() {
 }
 
 // ---- Data helpers ----
+// Core rule for the whole app: for any given day, we read/write
+// "actualHours" if that day is in the past, or "plannedHours" if it's
+// today or in the future. This is what makes a past week always show
+// what really happened (per Time Tracking), a future week show only the
+// plan, and the current week naturally blend both (today's cell splits
+// the two: everything before it is real, everything from today on is
+// still planning).
+function rmFieldForDate(date) {
+  const today = rmToISO(new Date());
+  return date < today ? "actualHours" : "plannedHours";
+}
+function rmHourValue(assignment, date) {
+  const field = rmFieldForDate(date);
+  const bucket = assignment[field];
+  if (bucket && bucket[date] != null) return bucket[date];
+  // Back-compat: assignments created before the planned/actual split used
+  // a single "hours" map -- fall back to that if the new fields are empty.
+  if (assignment.hours && assignment.hours[date] != null) return assignment.hours[date];
+  return 0;
+}
+
 function rmAssignmentsForTicket(ticketKey) {
   return rmAssignments.filter((a) => a.ticketKey === ticketKey);
 }
 function rmTotalForResourceDay(resourceId, date) {
   return rmAssignments
     .filter((a) => a.resourceId === resourceId)
-    .reduce((sum, a) => sum + (a.hours && a.hours[date] ? a.hours[date] : 0), 0);
+    .reduce((sum, a) => sum + rmHourValue(a, date), 0);
 }
 function rmBreakdownForResourceDay(resourceId, date) {
   return rmAssignments
-    .filter((a) => a.resourceId === resourceId && a.hours && a.hours[date])
-    .map((a) => `${a.ticketKey}: ${a.hours[date]}h`);
+    .filter((a) => a.resourceId === resourceId && rmHourValue(a, date) > 0)
+    .map((a) => `${a.ticketKey}: ${rmHourValue(a, date)}h`);
 }
 function rmClassify(total, isWeekend) {
   if (isWeekend) return total > 0 ? "satOT" : "weekendoff";
@@ -621,12 +642,14 @@ function renderRMTicketDetail() {
                     const cells = week
                       .map((d) => {
                         const totalDay = rmTotalForResourceDay(a.resourceId, d);
-                        const own = (a.hours && a.hours[d]) || 0;
+                        const own = rmHourValue(a, d);
                         rowTotal += own;
                         const status = rmClassify(totalDay, rmIsWeekend(d));
+                        const isActual = rmFieldForDate(d) === "actualHours";
                         const tip = rmBreakdownForResourceDay(a.resourceId, d).join(" \u00b7 ") || "No hours";
-                        return `<td class="rm-daycell rm-st-${status}" title="${rmStatusLabel(status)}: ${escapeHtml(tip)}">
+                        return `<td class="rm-daycell rm-st-${status} ${isActual ? "rm-actual-cell" : ""}" title="${rmStatusLabel(status)}: ${escapeHtml(tip)}${isActual ? " (actual, from Time Tracking)" : " (planned)"}">
                           <span class="rm-cellbox"><input type="number" min="0" step="1" value="${own}" data-assign="${a.id}" data-date="${d}"></span>
+                          ${isActual ? '<span class="rm-cell-tag">actual</span>' : ""}
                         </td>`;
                       })
                       .join("");
@@ -676,6 +699,7 @@ function renderRMTicketDetail() {
       <span><span class="dot" style="background:var(--rm-over);"></span>Over 8h (overtime)</span>
       <span><span class="dot" style="background:var(--rm-sat);"></span>Worked weekend (overtime)</span>
       <span><span class="dot" style="background:var(--slate);"></span>Unassigned that day</span>
+      <span>Cells tagged "actual" are real hours from Time Tracking &mdash; still editable if you need to correct something.</span>
     </div>
     <div id="rm-history-panel" class="rm-history-panel" style="display:none;"></div>
   `;
@@ -786,16 +810,17 @@ async function applyRMMultiAssign() {
         const ref = await db.collection("assignments").add({
           ticketKey: rmSelectedTicketKey,
           resourceId,
-          hours: {},
+          plannedHours: {},
+          actualHours: {},
         });
         assignmentId = ref.id;
       }
       if (entries.length > 0) {
         const patch = {};
-        for (const { date, hours } of entries) patch[`hours.${date}`] = hours;
+        for (const { date, hours } of entries) patch[`${rmFieldForDate(date)}.${date}`] = hours;
         await db.collection("assignments").doc(assignmentId).update(patch);
         for (const { date, hours } of entries) {
-          await logRMAssignmentHistory(rmSelectedTicketKey, resourceId, date, hours);
+          await logRMAssignmentHistory(rmSelectedTicketKey, resourceId, date, hours, rmFieldForDate(date));
         }
       }
     }
@@ -810,9 +835,10 @@ async function applyRMMultiAssign() {
 async function updateRMAssignmentHour(assignmentId, date, value) {
   try {
     const assignment = rmAssignments.find((a) => a.id === assignmentId);
-    await db.collection("assignments").doc(assignmentId).update({ [`hours.${date}`]: value });
+    const field = rmFieldForDate(date);
+    await db.collection("assignments").doc(assignmentId).update({ [`${field}.${date}`]: value });
     if (assignment) {
-      await logRMAssignmentHistory(assignment.ticketKey, assignment.resourceId, date, value);
+      await logRMAssignmentHistory(assignment.ticketKey, assignment.resourceId, date, value, field);
     }
   } catch (err) {
     console.error("Failed to update hours:", err);
@@ -824,13 +850,14 @@ async function updateRMAssignmentHour(assignmentId, date, value) {
 // row here, and this collection is never edited or deleted. This means the
 // exact plan for any past week can always be reconstructed later, even
 // after people change their hours going forward.
-async function logRMAssignmentHistory(ticketKey, resourceId, date, hours) {
+async function logRMAssignmentHistory(ticketKey, resourceId, date, hours, field) {
   try {
     await db.collection("assignment_history").add({
       ticketKey,
       resourceId,
       date,
       hours,
+      field: field || "actualHours",
       changedAt: firebase.firestore.FieldValue.serverTimestamp(),
     });
   } catch (err) {
@@ -867,7 +894,7 @@ async function toggleRMHistoryPanel(ticketKey) {
             const when = h.changedAt ? h.changedAt.toDate().toLocaleString("en-US") : "\u2014";
             return `<div class="rm-history-row">
               <span class="rm-history-when">${when}</span>
-              <span>${escapeHtml(rmResourceName(h.resourceId))} \u2192 ${h.date}: <strong>${h.hours}h</strong></span>
+              <span>${escapeHtml(rmResourceName(h.resourceId))} \u2192 ${h.date}: <strong>${h.hours}h</strong> <span class="teambadge">${h.field === "plannedHours" ? "planned" : "actual"}</span></span>
             </div>`;
           })
           .join("")}
@@ -879,7 +906,7 @@ async function toggleRMHistoryPanel(ticketKey) {
 
 async function addRMAssignment(ticketKey, resourceId) {
   try {
-    await db.collection("assignments").add({ ticketKey, resourceId, hours: {} });
+    await db.collection("assignments").add({ ticketKey, resourceId, plannedHours: {}, actualHours: {} });
   } catch (err) {
     console.error("Failed to add assignment:", err);
     alert(`Could not add resource to this ticket: ${err.message}`);

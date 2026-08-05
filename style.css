@@ -1064,6 +1064,17 @@ h1, h2 { font-family: var(--font-display); margin: 0; }
   color: var(--slate);
 }
 
+.rm-daycell.rm-actual-cell { position: relative; }
+.rm-daycell.rm-actual-cell .rm-cellbox { background: #EEEFF1 !important; color: var(--slate); }
+.rm-cell-tag {
+  display: block;
+  font-size: 0.58rem;
+  color: var(--slate);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  margin-top: 1px;
+}
+
 .rm-addrow {
   padding: 12px 16px;
   border-top: 1px dashed var(--line);
@@ -1364,6 +1375,62 @@ h1, h2 { font-family: var(--font-display); margin: 0; }
 }
 
 .inactive-row { opacity: 0.55; }
+
+/* ---- Time Tracking ---- */
+.tt-identify {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50vh;
+}
+
+.tt-identify-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 32px 28px;
+  max-width: 360px;
+  width: 100%;
+  text-align: center;
+}
+
+.tt-identify-card h2 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  margin: 0 0 6px;
+}
+
+#tt-email-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+#tt-email-form input {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  padding: 11px 13px;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  text-align: center;
+}
+
+#tt-email-form input:focus { outline: 2px solid var(--steel); outline-offset: 1px; }
+
+#tt-email-form button {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 11px 14px;
+  border: none;
+  border-radius: 3px;
+  background: var(--ink);
+  color: #fff;
+  cursor: pointer;
+}
+
+#tt-email-form button:hover { background: var(--steel-dark); }
 
 /* ---- Change history panel ---- */
 .rm-history-panel {

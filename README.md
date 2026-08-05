@@ -75,6 +75,16 @@ Argentina). Para no esperar hasta la próxima corrida automática:
 Si algo falla, el log de esa corrida en la pestaña Actions te va a decir
 exactamente qué pasó (token inválido, dominio mal escrito, etc.).
 
+## Sobre "Time Tracking"
+
+Pestaña nueva, separada de Resource Management (no pide el PIN de manager
+— cualquiera con el login general puede entrar). Cada persona escribe su
+email; si coincide con un email del roster (colección `resources` de
+Firebase), ve sus propios proyectos asignados y puede cargar sus horas.
+Usa las mismas colecciones de Firestore que Resource Management
+(`resources`, `assignments`, `assignment_history`), así que todo queda
+sincronizado en ambos sentidos automáticamente.
+
 ## Sobre el login
 
 El dashboard pide usuario y contraseña antes de mostrar nada. Las

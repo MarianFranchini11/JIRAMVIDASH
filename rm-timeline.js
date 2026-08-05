@@ -115,10 +115,19 @@ function rmEstimatedHours(ticket) {
   return null;
 }
 
+// "Hours logged" for pace/turnaround purposes means real work done, i.e.
+// actualHours (from Time Tracking) -- planned-but-not-yet-worked hours
+// don't count as progress. Falls back to the legacy single "hours" field
+// for assignments created before the planned/actual split.
 function rmHoursLoggedTotal(ticketKey) {
   return rmAssignments
     .filter((a) => a.ticketKey === ticketKey)
-    .reduce((sum, a) => sum + Object.values(a.hours || {}).reduce((s, h) => s + (h || 0), 0), 0);
+    .reduce((sum, a) => {
+      if (a.actualHours) {
+        return sum + Object.values(a.actualHours).reduce((s, h) => s + (h || 0), 0);
+      }
+      return sum + Object.values(a.hours || {}).reduce((s, h) => s + (h || 0), 0);
+    }, 0);
 }
 
 function rmDaysBetween(aIso, bIso) {
