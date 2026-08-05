@@ -9,6 +9,7 @@ let rmOverviewInitialized = false;
 let rmAllTickets = [];
 let rmAssignments = [];
 let rmSelectedTicketKey = null;
+let rmMultiWeekOffsets = [0];
 let rmSelectedWeekStart = null;
 let rmActiveSubTab = "roster";
 let rmUnSearch = "";
@@ -16,6 +17,8 @@ let rmUnTerritory = "";
 let rmUnService = "";
 let rmUnStatus = "";
 let rmGapFilter = "";
+let rmOvFilter = "";
+let rmOvTeam = "";
 let rmEstimates = {}; // ticketKey -> { hours, manual } -- also used by rm-timeline.js
 
 // Loads Jira tickets + starts the live assignments listener. Safe to call
@@ -167,7 +170,20 @@ function initRMOverviewTab() {
     renderRMStats();
     renderRMOverviewTable();
   });
+  document.getElementById("rm-ov-team").addEventListener("change", (e) => {
+    rmOvTeam = e.target.value;
+    renderRMOverviewTable();
+  });
+  document.querySelectorAll("#rm-ov-chips .rm-chip").forEach((chip) => {
+    chip.addEventListener("click", () => {
+      rmOvFilter = chip.dataset.ov;
+      document.querySelectorAll("#rm-ov-chips .rm-chip").forEach((c) => c.classList.remove("active"));
+      chip.classList.add("active");
+      renderRMOverviewTable();
+    });
+  });
 
+  populateRMOverviewTeamFilter();
   renderRMOverviewWeekLabel();
   renderRMOverviewTable();
 }
@@ -204,17 +220,38 @@ function rmCurrentWeekDates() {
   return dates;
 }
 
+function rmWeekRangeLabel(startIso, endIso) {
+  const MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+  const s = new Date(startIso + "T00:00:00Z");
+  const e = new Date(endIso + "T00:00:00Z");
+  const sMonth = MONTHS[s.getUTCMonth()];
+  const eMonth = MONTHS[e.getUTCMonth()];
+  const year = e.getUTCFullYear();
+  if (s.getUTCMonth() === e.getUTCMonth() && s.getUTCFullYear() === e.getUTCFullYear()) {
+    return `Week of ${sMonth} ${s.getUTCDate()}\u2013${e.getUTCDate()}, ${year}`;
+  }
+  return `Week of ${sMonth} ${s.getUTCDate()} \u2013 ${eMonth} ${e.getUTCDate()}, ${year}`;
+}
+
 function renderRMWeekLabel() {
   const dates = rmCurrentWeekDates();
-  document.getElementById("rm-week-label").textContent =
-    `${rmDayLabel(dates[0])} \u2013 ${rmDayLabel(dates[6])}`;
+  document.getElementById("rm-week-label").textContent = rmWeekRangeLabel(dates[0], dates[6]);
 }
 
 function renderRMOverviewWeekLabel() {
   const el = document.getElementById("rm-ov-week-label");
   if (!el) return;
   const dates = rmCurrentWeekDates();
-  el.textContent = `${rmDayLabel(dates[0])} \u2013 ${rmDayLabel(dates[6])}`;
+  el.textContent = rmWeekRangeLabel(dates[0], dates[6]);
+}
+
+function populateRMOverviewTeamFilter() {
+  const select = document.getElementById("rm-ov-team");
+  if (!select) return;
+  const teams = new Set(allResources.map((r) => r.team));
+  select.innerHTML =
+    '<option value="">All</option>' +
+    Array.from(teams).sort().map((t) => `<option value="${escapeHtml(t)}">${escapeHtml(t)}</option>`).join("");
 }
 
 function renderRMOverviewTable() {
@@ -222,10 +259,27 @@ function renderRMOverviewTable() {
   if (!container) return;
 
   const week = rmCurrentWeekDates();
-  const active = allResources.filter((r) => r.active).sort((a, b) => a.name.localeCompare(b.name));
+  let active = allResources.filter((r) => r.active);
+  if (rmOvTeam) active = active.filter((r) => r.team === rmOvTeam);
+
+  const isAssignedThisWeek = (r) => week.some((d) => rmTotalForResourceDay(r.id, d) > 0);
+  const assignedCount = active.filter(isAssignedThisWeek).length;
+  const unassignedCount = active.length - assignedCount;
+  const setCount = (id, n) => {
+    const el = document.getElementById(id);
+    if (el) el.textContent = `(${n})`;
+  };
+  setCount("rm-ov-count-all", active.length);
+  setCount("rm-ov-count-assigned", assignedCount);
+  setCount("rm-ov-count-unassigned", unassignedCount);
+
+  if (rmOvFilter === "assigned") active = active.filter(isAssignedThisWeek);
+  if (rmOvFilter === "unassigned") active = active.filter((r) => !isAssignedThisWeek(r));
+
+  active = active.sort((a, b) => a.name.localeCompare(b.name));
 
   if (active.length === 0) {
-    container.innerHTML = `<p class="empty-state">No active resources yet. Add some in the Team Roster tab.</p>`;
+    container.innerHTML = `<p class="empty-state">No resources match these filters.</p>`;
     return;
   }
 
@@ -366,6 +420,7 @@ function renderRMTicketSearchResults(query) {
     .filter(
       (t) =>
         t.key.toLowerCase().includes(q) ||
+        (t.projectId || "").toLowerCase().includes(q) ||
         (t.projectName || "").toLowerCase().includes(q) ||
         (t.summary || "").toLowerCase().includes(q)
     )
@@ -379,13 +434,14 @@ function renderRMTicketSearchResults(query) {
   container.innerHTML = `
     <div class="table-wrap rm-ticket-pick-wrap">
       <table>
-        <thead><tr><th>Key</th><th>Project Name</th><th>Territory</th><th>Status</th></tr></thead>
+        <thead><tr><th>Key</th><th>Project ID</th><th>Project Name</th><th>Territory</th><th>Status</th></tr></thead>
         <tbody>
           ${matches
             .map(
               (t) => `
             <tr class="clickable-row" data-ticketkey="${t.key}">
               <td class="col-key">${t.key}</td>
+              <td class="col-updated">${escapeHtml(t.projectId || "\u2014")}</td>
               <td>${escapeHtml(t.projectName)}</td>
               <td>${escapeHtml(t.territory || "Unassigned")}</td>
               <td><span class="status-pill ${statusPillClass(t.statusCategory)}">${t.statusCategory}</span></td>
@@ -441,6 +497,7 @@ function rmGapLabel(gap) {
     unstaffed: "Unstaffed",
     understaffed: "Understaffed",
     "no-estimate": "No Estimate",
+    none: "On Track",
   }[gap];
 }
 
@@ -449,14 +506,18 @@ function renderRMUnassignedList() {
   const countEl = document.getElementById("rm-unassigned-count");
   if (!container) return;
 
+  // Show every open ticket -- nothing gets auto-hidden based on the pace
+  // calculation, since that flips as soon as someone's assigned (even
+  // before they've logged any real hours). The Gap column + chips are
+  // there to help you judge, not to hide things from you.
   let tickets = rmStaffingGapTickets().map((t) => ({ t, gap: rmGapCategory(t) }));
-  tickets = tickets.filter((row) => row.gap !== "none");
 
   if (rmGapFilter) tickets = tickets.filter((row) => row.gap === rmGapFilter);
   if (rmUnSearch) {
     tickets = tickets.filter(
       (row) =>
         row.t.key.toLowerCase().includes(rmUnSearch) ||
+        (row.t.projectId || "").toLowerCase().includes(rmUnSearch) ||
         (row.t.projectName || "").toLowerCase().includes(rmUnSearch)
     );
   }
@@ -466,10 +527,10 @@ function renderRMUnassignedList() {
 
   tickets.sort((a, b) => (a.t.dueDate || "9999") < (b.t.dueDate || "9999") ? -1 : 1);
 
-  if (countEl) countEl.textContent = `(${tickets.length})`;
+  if (countEl) countEl.textContent = `(${tickets.length} of ${rmStaffingGapTickets().length} open tickets)`;
 
   if (tickets.length === 0) {
-    container.innerHTML = `<p class="empty-state">No tickets match these filters. Nice work!</p>`;
+    container.innerHTML = `<p class="empty-state">No tickets match these filters.</p>`;
     return;
   }
 
@@ -477,11 +538,11 @@ function renderRMUnassignedList() {
     <div class="table-wrap">
       <table>
         <thead>
-          <tr><th>Key</th><th>Project Name</th><th>Gap</th><th>Team</th><th>Hours</th><th>Territory</th><th>Status</th><th>Due Date</th></tr>
+          <tr><th>Key</th><th>Project ID</th><th>Project Name</th><th>Gap</th><th>Team</th><th>Hours</th><th>Territory</th><th>Status</th><th>Due Date</th></tr>
         </thead>
         <tbody>
           ${tickets
-            .slice(0, 200)
+            .slice(0, 300)
             .map(({ t, gap }) => {
               const assignedCount = new Set(rmAssignmentsForTicket(t.key).map((a) => a.resourceId)).size;
               const pace = typeof rmComputePace === "function" ? rmComputePace(t) : { est: null, usedHours: 0 };
@@ -490,6 +551,7 @@ function renderRMUnassignedList() {
               return `
             <tr class="clickable-row" data-ticketkey="${t.key}">
               <td class="col-key">${t.key}</td>
+              <td class="col-updated">${escapeHtml(t.projectId || "\u2014")}</td>
               <td>${escapeHtml(t.projectName)}</td>
               <td><span class="rm-pacepill rm-gap-${gap}">${rmGapLabel(gap)}</span></td>
               <td>${assignedCount}</td>
@@ -537,8 +599,8 @@ function renderRMTicketDetail() {
 
   container.innerHTML = `
     <div class="panel-head" style="margin-top:24px;">
-      <h2><span class="col-key">${ticket.key}</span> &middot; ${escapeHtml(ticket.projectName)}</h2>
-      <span class="rm-roster-hint">Hours per day &middot; lives only in this ledger, does not sync back to Jira</span>
+      <h2><span class="col-key">${ticket.key}</span> &middot; ${escapeHtml(ticket.projectName)} <span class="panel-subtitle">Project ID ${escapeHtml(ticket.projectId || "\u2014")}</span></h2>
+      <span class="rm-roster-hint">Hours per day &middot; lives only in this ledger, does not sync back to Jira &middot; <a href="#" id="rm-view-history">View change history</a></span>
     </div>
     <div class="table-wrap">
       <table class="rm-grid">
@@ -581,19 +643,33 @@ function renderRMTicketDetail() {
         </tbody>
       </table>
     </div>
-    <div class="rm-addrow">
-      <select id="rm-new-assignee">
-        ${
-          available.length
-            ? available.map((r) => `<option value="${r.id}">${escapeHtml(r.name)} (${escapeHtml(r.team)})</option>`).join("")
-            : '<option value="">— everyone active is already assigned —</option>'
-        }
-      </select>
-      <button type="button" class="rm-add-btn" id="rm-add-existing">+ Add to this ticket</button>
-      <span class="muted">or</span>
-      <input type="text" class="rm-search" id="rm-new-name" placeholder="New resource name (no Jira account)" />
-      <button type="button" class="rm-add-btn" id="rm-add-new">+ Create and add</button>
+
+    <div class="rm-multiassign">
+      <div class="rm-multiassign-col">
+        <div class="rm-multiassign-label">1. Pick people to add</div>
+        <div class="rm-person-checks" id="rm-person-checks">
+          ${
+            available.length
+              ? available.map((r) => `<label class="rm-person-check"><input type="checkbox" class="rm-person-check-input" value="${r.id}" /> ${escapeHtml(r.name)} <span class="teambadge">${escapeHtml(r.team)}</span></label>`).join("")
+              : '<p class="modal-note">Everyone active is already assigned to this ticket.</p>'
+          }
+        </div>
+        <div class="rm-newperson-row">
+          <input type="text" class="rm-search" id="rm-new-name" placeholder="New resource name (no Jira account)" />
+          <button type="button" class="clear-filters-btn" id="rm-add-new">+ Create &amp; check</button>
+        </div>
+      </div>
+      <div class="rm-multiassign-col">
+        <div class="rm-multiassign-label">2. Hours per weekday, for one or more weeks</div>
+        <div id="rm-week-blocks-container"></div>
+        <button type="button" id="rm-add-week-block" class="clear-filters-btn">+ Add another week</button>
+      </div>
     </div>
+    <div class="rm-apply-row">
+      <button type="button" class="rm-add-btn" id="rm-apply-multiassign">Apply to selected people &amp; weeks</button>
+      <span id="rm-apply-msg" class="rm-apply-msg"></span>
+    </div>
+
     <div class="legend">
       <span><span class="dot" style="background:var(--moss);"></span>Full 8h</span>
       <span><span class="dot" style="background:var(--amber);"></span>Under 8h</span>
@@ -601,7 +677,11 @@ function renderRMTicketDetail() {
       <span><span class="dot" style="background:var(--rm-sat);"></span>Worked weekend (overtime)</span>
       <span><span class="dot" style="background:var(--slate);"></span>Unassigned that day</span>
     </div>
+    <div id="rm-history-panel" class="rm-history-panel" style="display:none;"></div>
   `;
+
+  rmMultiWeekOffsets = [0];
+  renderRMWeekBlocks();
 
   container.querySelectorAll("input[data-assign]").forEach((el) => {
     el.addEventListener("change", (e) => {
@@ -612,39 +692,188 @@ function renderRMTicketDetail() {
   container.querySelectorAll("[data-removeassign]").forEach((el) => {
     el.addEventListener("click", () => removeRMAssignment(el.dataset.removeassign));
   });
-  const addExistingBtn = document.getElementById("rm-add-existing");
-  if (addExistingBtn) {
-    addExistingBtn.addEventListener("click", () => {
-      const sel = document.getElementById("rm-new-assignee");
-      if (!sel.value) return;
-      addRMAssignment(rmSelectedTicketKey, sel.value);
-    });
-  }
   const addNewBtn = document.getElementById("rm-add-new");
   if (addNewBtn) {
     addNewBtn.addEventListener("click", async () => {
       const input = document.getElementById("rm-new-name");
       const name = input.value.trim();
       if (!name) return;
-      const resourceRef = await db.collection("resources").add({
-        name,
-        team: "Other",
-        email: "",
-        level: "Junior",
-        active: true,
-        createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-      });
-      await addRMAssignment(rmSelectedTicketKey, resourceRef.id);
+      try {
+        const resourceRef = await db.collection("resources").add({
+          name,
+          team: "Other",
+          email: "",
+          level: "Junior",
+          active: true,
+          createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+        });
+        input.value = "";
+        input.placeholder = `Added ${name} \u2014 they'll appear in the list above once synced`;
+      } catch (err) {
+        alert(`Could not create resource: ${err.message}`);
+      }
     });
+  }
+  document.getElementById("rm-add-week-block").addEventListener("click", () => {
+    const nextOffset = Math.max(...rmMultiWeekOffsets) + 1;
+    rmMultiWeekOffsets.push(nextOffset);
+    renderRMWeekBlocks();
+  });
+  document.getElementById("rm-apply-multiassign").addEventListener("click", applyRMMultiAssign);
+
+  const historyLink = document.getElementById("rm-view-history");
+  if (historyLink) {
+    historyLink.addEventListener("click", (e) => {
+      e.preventDefault();
+      toggleRMHistoryPanel(rmSelectedTicketKey);
+    });
+  }
+}
+
+// Renders the "2. Hours per weekday" week blocks based on rmMultiWeekOffsets,
+// without touching the rest of the panel (so picking people / adding a week
+// doesn't wipe hours you already typed in another block).
+function renderRMWeekBlocks() {
+  const container = document.getElementById("rm-week-blocks-container");
+  if (!container) return;
+  const WEEKDAY_NAMES = ["Mon", "Tue", "Wed", "Thu", "Fri"];
+
+  container.innerHTML = rmMultiWeekOffsets
+    .map((offset, blockIndex) => {
+      const weekStart = rmAddDays(rmSelectedWeekStart, offset * 7);
+      const weekdayDates = [0, 1, 2, 3, 4].map((i) => rmAddDays(weekStart, i));
+      return `
+        <div class="rm-weekblock">
+          <div class="rm-weekblock-label">${rmWeekRangeLabel(weekStart, rmAddDays(weekStart, 6))}</div>
+          <div class="rm-weekblock-days">
+            ${weekdayDates
+              .map(
+                (d, i) => `
+              <label class="rm-weekblock-day">${WEEKDAY_NAMES[i]}
+                <input type="number" min="0" step="1" value="8" data-date="${d}" data-blockindex="${blockIndex}" />
+              </label>`
+              )
+              .join("")}
+          </div>
+        </div>`;
+    })
+    .join("");
+}
+
+async function applyRMMultiAssign() {
+  const msg = document.getElementById("rm-apply-msg");
+  const checked = Array.from(document.querySelectorAll(".rm-person-check-input:checked")).map((el) => el.value);
+  if (checked.length === 0) {
+    msg.textContent = "Pick at least one person first.";
+    msg.style.color = "#8A2A17";
+    return;
+  }
+
+  const entries = [];
+  document.querySelectorAll("#rm-week-blocks-container input[data-date]").forEach((inp) => {
+    const hours = Math.max(0, parseFloat(inp.value) || 0);
+    if (hours > 0) entries.push({ date: inp.dataset.date, hours });
+  });
+
+  msg.style.color = "var(--slate)";
+  msg.textContent = "Applying\u2026";
+
+  try {
+    for (const resourceId of checked) {
+      let existing = rmAssignmentsForTicket(rmSelectedTicketKey).find((a) => a.resourceId === resourceId);
+      let assignmentId = existing ? existing.id : null;
+      if (!assignmentId) {
+        const ref = await db.collection("assignments").add({
+          ticketKey: rmSelectedTicketKey,
+          resourceId,
+          hours: {},
+        });
+        assignmentId = ref.id;
+      }
+      if (entries.length > 0) {
+        const patch = {};
+        for (const { date, hours } of entries) patch[`hours.${date}`] = hours;
+        await db.collection("assignments").doc(assignmentId).update(patch);
+        for (const { date, hours } of entries) {
+          await logRMAssignmentHistory(rmSelectedTicketKey, resourceId, date, hours);
+        }
+      }
+    }
+    msg.style.color = "#4B7A52";
+    msg.textContent = `Applied to ${checked.length} ${checked.length === 1 ? "person" : "people"} across ${rmMultiWeekOffsets.length} week${rmMultiWeekOffsets.length === 1 ? "" : "s"}.`;
+  } catch (err) {
+    msg.style.color = "#8A2A17";
+    msg.textContent = `Error: ${err.message}`;
   }
 }
 
 async function updateRMAssignmentHour(assignmentId, date, value) {
   try {
+    const assignment = rmAssignments.find((a) => a.id === assignmentId);
     await db.collection("assignments").doc(assignmentId).update({ [`hours.${date}`]: value });
+    if (assignment) {
+      await logRMAssignmentHistory(assignment.ticketKey, assignment.resourceId, date, value);
+    }
   } catch (err) {
     console.error("Failed to update hours:", err);
     alert(`Could not save hours: ${err.message}`);
+  }
+}
+
+// Append-only audit trail: every hour change (single-cell or bulk) gets a
+// row here, and this collection is never edited or deleted. This means the
+// exact plan for any past week can always be reconstructed later, even
+// after people change their hours going forward.
+async function logRMAssignmentHistory(ticketKey, resourceId, date, hours) {
+  try {
+    await db.collection("assignment_history").add({
+      ticketKey,
+      resourceId,
+      date,
+      hours,
+      changedAt: firebase.firestore.FieldValue.serverTimestamp(),
+    });
+  } catch (err) {
+    console.error("Failed to log assignment history:", err);
+  }
+}
+
+async function toggleRMHistoryPanel(ticketKey) {
+  const panel = document.getElementById("rm-history-panel");
+  if (!panel) return;
+  if (panel.style.display === "block") {
+    panel.style.display = "none";
+    return;
+  }
+  panel.style.display = "block";
+  panel.innerHTML = `<p class="modal-note">Loading history\u2026</p>`;
+  try {
+    const snapshot = await db
+      .collection("assignment_history")
+      .where("ticketKey", "==", ticketKey)
+      .orderBy("changedAt", "desc")
+      .limit(100)
+      .get();
+    if (snapshot.empty) {
+      panel.innerHTML = `<p class="modal-note">No changes logged yet for this ticket.</p>`;
+      return;
+    }
+    panel.innerHTML = `
+      <div class="panel-head"><h3 style="font-family:var(--font-display);font-size:0.9rem;margin:0;">Change History</h3></div>
+      <div class="rm-history-list">
+        ${snapshot.docs
+          .map((doc) => {
+            const h = doc.data();
+            const when = h.changedAt ? h.changedAt.toDate().toLocaleString("en-US") : "\u2014";
+            return `<div class="rm-history-row">
+              <span class="rm-history-when">${when}</span>
+              <span>${escapeHtml(rmResourceName(h.resourceId))} \u2192 ${h.date}: <strong>${h.hours}h</strong></span>
+            </div>`;
+          })
+          .join("")}
+      </div>`;
+  } catch (err) {
+    panel.innerHTML = `<p class="modal-note">Could not load history: ${escapeHtml(err.message)}</p>`;
   }
 }
 

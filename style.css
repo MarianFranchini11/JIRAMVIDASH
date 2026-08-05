@@ -901,6 +901,22 @@ h1, h2 { font-family: var(--font-display); margin: 0; }
 
 .rm-remove-btn:hover { border-color: #B3413A; color: #B3413A; }
 
+.rm-inline-edit {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  padding: 6px 7px;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  background: transparent;
+  width: 100%;
+  color: var(--ink-text);
+}
+.rm-inline-edit:hover { border-color: var(--line); }
+.rm-inline-edit:focus { border-color: var(--steel); outline: none; background: var(--paper); }
+.rm-edit-name { font-weight: 600; min-width: 130px; }
+.rm-edit-email { min-width: 200px; }
+.rm-edit-team { min-width: 70px; }
+
 .rm-toggle {
   position: relative;
   display: inline-block;
@@ -946,11 +962,28 @@ h1, h2 { font-family: var(--font-display); margin: 0; }
 .rm-subnav-link:hover { color: var(--steel); }
 
 /* ---- Projects sub-tab: week nav ---- */
+.rm-week-nav-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 4px 0 14px;
+  padding: 10px 14px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+}
+
+.rm-week-nav-caption {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.8rem;
+  color: var(--slate);
+}
+
 .rm-week-nav {
   display: flex;
   align-items: center;
   gap: 8px;
-  margin-left: auto;
 }
 
 .rm-week-navbtn {
@@ -1231,6 +1264,158 @@ h1, h2 { font-family: var(--font-display); margin: 0; }
 .rm-gap-unstaffed { background: #F6D9D0; color: #8A2A17; }
 .rm-gap-understaffed { background: #FBEDD8; color: var(--amber); }
 .rm-gap-no-estimate { background: var(--canvas); color: var(--slate); }
+.rm-gap-none { background: #E4F4EC; color: var(--moss); }
+
+/* ---- Multi-assign (Projects sub-tab) ---- */
+.rm-multiassign {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 20px;
+  padding: 14px 16px;
+  background: var(--canvas);
+  border: 1px dashed var(--line);
+  border-radius: 4px;
+  margin-top: 10px;
+}
+
+.rm-multiassign-label {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.72rem;
+  color: var(--slate);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: 8px;
+}
+
+.rm-person-checks {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 220px;
+  overflow-y: auto;
+}
+
+.rm-person-check {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.rm-weekblock {
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+  background: var(--paper);
+}
+
+.rm-weekblock-label {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--steel-dark);
+  margin-bottom: 8px;
+}
+
+.rm-weekblock-days {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.rm-weekblock-day {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  color: var(--slate);
+  text-align: center;
+}
+
+.rm-weekblock-day input {
+  display: block;
+  width: 48px;
+  margin-top: 3px;
+  padding: 5px;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.rm-newperson-row {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.rm-apply-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.rm-apply-msg {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--slate);
+}
+
+.inactive-row { opacity: 0.55; }
+
+/* ---- Change history panel ---- */
+.rm-history-panel {
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 12px 14px;
+  margin-top: 10px;
+  background: var(--canvas);
+}
+
+.rm-history-list {
+  max-height: 260px;
+  overflow-y: auto;
+}
+
+.rm-history-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.8rem;
+}
+.rm-history-row:last-child { border-bottom: none; }
+
+.rm-history-when {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--slate);
+  white-space: nowrap;
+}
+
+/* ---- Week filter caption above the assignment grid ---- */
+.rm-week-nav-bar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 20px 0 10px;
+}
+
+.rm-week-nav-caption {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.78rem;
+  color: var(--slate);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+@media (max-width: 700px) {
+  .rm-multiassign { grid-template-columns: 1fr; }
+}
 
 .rm-turnfill-within { background: var(--moss); }
 .rm-turnfill-near { background: var(--amber); }

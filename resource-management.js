@@ -169,6 +169,7 @@ function renderRoster() {
             <tr>
               <th>Name</th>
               <th>Email</th>
+              <th>Team</th>
               <th>Level</th>
               <th>Active</th>
               <th></th>
@@ -177,8 +178,9 @@ function renderRoster() {
           <tbody>
             ${members.map((r) => `
               <tr>
-                <td>${escapeHtml(r.name)}</td>
-                <td>${escapeHtml(r.email)}</td>
+                <td><input type="text" class="rm-inline-edit rm-edit-name" data-id="${r.id}" data-field="name" value="${escapeHtml(r.name)}" /></td>
+                <td><input type="email" class="rm-inline-edit rm-edit-email" data-id="${r.id}" data-field="email" value="${escapeHtml(r.email)}" /></td>
+                <td><input type="text" class="rm-inline-edit rm-edit-team" data-id="${r.id}" data-field="team" value="${escapeHtml(r.team)}" /></td>
                 <td>
                   <select class="rm-level-select" data-id="${r.id}">
                     ${["Junior", "Mid", "Senior", "Lead"].map((lvl) => `<option value="${lvl}" ${r.level === lvl ? "selected" : ""}>${lvl}</option>`).join("")}
@@ -201,6 +203,17 @@ function renderRoster() {
     `)
     .join("");
 
+  container.querySelectorAll(".rm-inline-edit").forEach((el) => {
+    el.addEventListener("change", () => {
+      const value = el.value.trim();
+      if (!value) {
+        alert("This field can't be empty.");
+        renderRoster();
+        return;
+      }
+      updateResourceField(el.dataset.id, el.dataset.field, value);
+    });
+  });
   container.querySelectorAll(".rm-level-select").forEach((el) => {
     el.addEventListener("change", () => updateResourceField(el.dataset.id, "level", el.value));
   });

@@ -137,11 +137,6 @@
               <label for="rm-week-search">Find a ticket</label>
               <input type="text" id="rm-week-search" class="rm-search" placeholder="Search by key, project name...&hellip;" style="min-width:280px;" />
             </div>
-            <div class="rm-week-nav">
-              <button type="button" id="rm-week-prev" class="rm-week-navbtn" aria-label="Previous week">&lsaquo;</button>
-              <span id="rm-week-label" class="rm-week-label"></span>
-              <button type="button" id="rm-week-next" class="rm-week-navbtn" aria-label="Next week">&rsaquo;</button>
-            </div>
           </section>
 
           <section class="kpi-section">
@@ -157,10 +152,11 @@
             </div>
 
             <div class="rm-chip-group" style="margin-bottom:14px;">
-              <button type="button" class="rm-chip active" data-gap="">All Gaps</button>
+              <button type="button" class="rm-chip active" data-gap="">All</button>
               <button type="button" class="rm-chip" data-gap="unstaffed">Unstaffed</button>
               <button type="button" class="rm-chip" data-gap="understaffed">Understaffed (behind pace)</button>
               <button type="button" class="rm-chip" data-gap="no-estimate">No Estimate</button>
+              <button type="button" class="rm-chip" data-gap="none">On Track</button>
             </div>
 
             <div class="filter-bar" style="margin-bottom:14px;">
@@ -196,6 +192,15 @@
             <!-- search results injected by rm-projects.js -->
           </section>
 
+          <div class="rm-week-nav-bar">
+            <span class="rm-week-nav-caption">Assigning hours for:</span>
+            <div class="rm-week-nav">
+              <button type="button" id="rm-week-prev" class="rm-week-navbtn" aria-label="Previous week">&lsaquo;</button>
+              <span id="rm-week-label" class="rm-week-label"></span>
+              <button type="button" id="rm-week-next" class="rm-week-navbtn" aria-label="Next week">&rsaquo;</button>
+            </div>
+          </div>
+
           <section id="rm-ticket-detail">
             <!-- selected ticket's hour grid injected by rm-projects.js -->
           </section>
@@ -210,7 +215,17 @@
               <span id="rm-ov-week-label" class="rm-week-label"></span>
               <button type="button" id="rm-ov-week-next" class="rm-week-navbtn" aria-label="Next week">&rsaquo;</button>
             </div>
+            <div class="filter-group">
+              <label for="rm-ov-team">Team</label>
+              <select id="rm-ov-team"><option value="">All</option></select>
+            </div>
           </section>
+
+          <div class="rm-chip-group" id="rm-ov-chips" style="margin-bottom:16px;">
+            <button type="button" class="rm-chip active" data-ov="">All <span id="rm-ov-count-all"></span></button>
+            <button type="button" class="rm-chip" data-ov="assigned">Assigned this week <span id="rm-ov-count-assigned"></span></button>
+            <button type="button" class="rm-chip" data-ov="unassigned">Unassigned this week <span id="rm-ov-count-unassigned"></span></button>
+          </div>
 
           <section class="rm-roster-section">
             <div class="panel-head">
@@ -236,7 +251,7 @@
               <select id="rm-tl-territory"><option value="">All</option></select>
             </div>
             <div class="filter-group">
-              <label for="rm-tl-assignee">Assigned To</label>
+              <label for="rm-tl-assignee">Assignee (Manager)</label>
               <select id="rm-tl-assignee"><option value="">All</option></select>
             </div>
             <div class="filter-group">

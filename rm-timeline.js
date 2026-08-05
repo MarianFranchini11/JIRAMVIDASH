@@ -69,16 +69,13 @@ function populateRMTimelineFilters() {
     '<option value="">All</option>' +
     Array.from(territories).sort().map((t) => `<option value="${escapeHtml(t)}">${escapeHtml(t)}</option>`).join("");
 
+  // "Assigned To" here means Jira's native Assignee field (the manager on
+  // the ticket), not our internal Resource Management hour assignments.
   const assigneeSelect = document.getElementById("rm-tl-assignee");
-  const assignedResourceIds = new Set(
-    base.flatMap((t) => rmAssignmentsForTicket(t.key).map((a) => a.resourceId))
-  );
-  const assignedResources = allResources
-    .filter((r) => assignedResourceIds.has(r.id))
-    .sort((a, b) => a.name.localeCompare(b.name));
+  const assignees = new Set(base.map((t) => t.assignee).filter(Boolean));
   assigneeSelect.innerHTML =
     '<option value="">All</option>' +
-    assignedResources.map((r) => `<option value="${r.id}">${escapeHtml(r.name)}</option>`).join("");
+    Array.from(assignees).sort().map((a) => `<option value="${escapeHtml(a)}">${escapeHtml(a)}</option>`).join("");
 }
 
 function rmTicketsForTimeline() {
@@ -93,14 +90,17 @@ function rmFilteredTimelineTickets() {
 
   if (rmTlSearch) {
     tickets = tickets.filter(
-      (t) => t.key.toLowerCase().includes(rmTlSearch) || (t.projectName || "").toLowerCase().includes(rmTlSearch)
+      (t) =>
+        t.key.toLowerCase().includes(rmTlSearch) ||
+        (t.projectId || "").toLowerCase().includes(rmTlSearch) ||
+        (t.projectName || "").toLowerCase().includes(rmTlSearch)
     );
   }
   if (rmTlTerritory) {
     tickets = tickets.filter((t) => (t.territory || "Unassigned") === rmTlTerritory);
   }
   if (rmTlAssignee) {
-    tickets = tickets.filter((t) => rmAssignmentsForTicket(t.key).some((a) => a.resourceId === rmTlAssignee));
+    tickets = tickets.filter((t) => t.assignee === rmTlAssignee);
   }
   if (rmTlUrgency) {
     tickets = tickets.filter((t) => rmUrgency(rmDaysBetween(today, t.dueDate)) === rmTlUrgency);
@@ -178,25 +178,28 @@ function rmMonthLabel(iso) {
   return d.toLocaleDateString("en-US", { month: "short", year: "2-digit", timeZone: "UTC" });
 }
 
-// "Quoted Turnaround" is a Jira field: the quoted number of *business* days
-// to produce the deliverable, counted from when the ticket went In Progress.
+// "Quoted Turnaround" is a Jira field: the quoted number of *business*
+// days to produce the deliverable, counted from when the scan data was
+// validated (i.e. the ticket entered the "S2S Backlog" status) -- not from
+// when it first went In Progress.
 function rmComputeTurnaround(ticket) {
   const quoted = ticket.quotedTurnaround;
-  const started = ticket.inProgressDate;
+  const started = ticket.dataValidatedDate;
   const today = rmToISO(new Date());
-  if (!started) return { quoted, elapsed: 0, status: "not-started" };
+  if (!started) return { quoted, elapsed: 0, status: "not-started", estimatedDelivery: null };
+  if (!quoted) return { quoted: null, elapsed: rmBusinessDaysBetween(started, today), status: "no-data", estimatedDelivery: null };
   const elapsed = rmBusinessDaysBetween(started, today);
-  if (!quoted) return { quoted: null, elapsed, status: "no-data" };
+  const estimatedDelivery = rmAddBusinessDays(started, quoted);
   const usedPct = elapsed / quoted;
   const status = elapsed > quoted ? "over" : usedPct >= 0.85 ? "near" : "within";
-  return { quoted, elapsed, status };
+  return { quoted, elapsed, status, estimatedDelivery };
 }
 function rmTurnaroundLabel(status) {
   return {
     over: "Over quoted turnaround",
     near: "Near turnaround limit",
     within: "Within quoted turnaround",
-    "not-started": "Not started yet",
+    "not-started": "Data not validated yet (no S2S Backlog date)",
     "no-data": "No Quoted Turnaround set",
   }[status];
 }
@@ -287,9 +290,9 @@ function renderRMGantt() {
             const startLabel = t.inProgressDate || "Not started";
 
             let markerHtml = "";
-            if (t.inProgressDate && t.quotedTurnaround) {
+            if (t.dataValidatedDate && t.quotedTurnaround) {
               const turnaround = rmComputeTurnaround(t);
-              const deadlineIso = rmAddBusinessDays(t.inProgressDate, t.quotedTurnaround);
+              const deadlineIso = turnaround.estimatedDelivery;
               const markerPct = pct(deadlineIso);
               const passed = turnaround.status === "over";
               markerHtml = `<div class="rm-turnaroundmarker ${passed ? "passed" : ""}" style="left:${markerPct}%;" title="Quoted turnaround deadline: ${deadlineIso}${passed ? " (passed)" : ""}"></div>`;
@@ -353,13 +356,13 @@ function renderRMDeadlines() {
         turnaround.status === "no-data"
           ? `<p class="modal-note" style="margin:6px 0 0;">No Quoted Turnaround set for this ticket.</p>`
           : turnaround.status === "not-started"
-          ? `<p class="modal-note" style="margin:6px 0 0;">Turnaround clock hasn't started (still To Do).</p>`
+          ? `<p class="modal-note" style="margin:6px 0 0;">Turnaround clock hasn't started (data not validated / no S2S Backlog date yet).</p>`
           : `<div class="rm-pacewrap">
               <div class="rm-pacebar">
                 <div class="rm-pacefill rm-turnfill-${turnaround.status}" style="width:${Math.min(100, Math.round((turnaround.elapsed / turnaround.quoted) * 100))}%;"></div>
               </div>
               <div class="rm-pacetext">
-                <span>${turnaround.elapsed} business days elapsed of ${turnaround.quoted} quoted</span>
+                <span>${turnaround.elapsed} business days elapsed of ${turnaround.quoted} quoted \u00b7 est. delivery ${turnaround.estimatedDelivery}</span>
                 <span class="rm-pacepill rm-turn-${turnaround.status}">${rmTurnaroundLabel(turnaround.status)}</span>
               </div>
             </div>`;
