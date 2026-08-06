@@ -1,17 +1,960 @@
 {
-  "generatedAt": "2026-08-05T15:51:04.101Z",
+  "generatedAt": "2026-08-06T10:31:39.402Z",
   "domain": "multivista.atlassian.net",
   "projects": [
     {
       "key": "SCAN",
       "name": "SCAN",
-      "totalIssues": 2996,
+      "totalIssues": 3000,
       "statusSummary": {
-        "To Do": 23,
-        "In Progress": 42,
-        "Done": 2931
+        "To Do": 26,
+        "In Progress": 41,
+        "Done": 2933
       },
       "issues": [
+        {
+          "key": "SCAN-6181",
+          "summary": "Scan to Services - GBR02 - 501734 - HartDixon - 45 Charles Street",
+          "status": "Backlog",
+          "statusCategory": "To Do",
+          "assignee": "Scan to Services",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-08-06T02:08:22.948-0700",
+          "dueDate": null,
+          "created": "2026-08-06T02:08:19.698-0700",
+          "resolutionDate": null,
+          "deliveryStatus": null,
+          "territory": "GBR02",
+          "serviceType": "Scan to Plan (plans only)",
+          "price": null,
+          "squareFootage": null,
+          "projectName": null,
+          "projectType": null,
+          "ftpFolderPath": null,
+          "mapLink": null,
+          "salesforceLink": "https://mds.lightning.force.com/lightning/r/Opportunity/0064Q00001l2HlJQAU/view",
+          "quotedTurnaround": null,
+          "projectId": "501734",
+          "components": [],
+          "inProgressDate": null,
+          "dataValidatedDate": null,
+          "comments": [
+            {
+              "author": "Multivista",
+              "created": "2026-08-06T02:08:22.840-0700",
+              "body": "(204 kB)"
+            }
+          ]
+        },
+        {
+          "key": "SCAN-6176",
+          "summary": "Scan to Services - TX03 - 89556 - Morse Studio - 1611 South Blvd",
+          "status": "S2S Queue",
+          "statusCategory": "In Progress",
+          "assignee": "sirajudheen",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-08-06T02:06:15.607-0700",
+          "dueDate": "2026-08-17",
+          "created": "2026-08-04T15:40:01.267-0700",
+          "resolutionDate": null,
+          "deliveryStatus": null,
+          "territory": "TX03",
+          "serviceType": "Scan to Plan (plans only)",
+          "price": 1975.52,
+          "squareFootage": 6400,
+          "projectName": " 1611 South Blvd",
+          "projectType": "Single-family",
+          "ftpFolderPath": "/mv-s3-ftps-transfer/tx03/89556/3D Point Clouds",
+          "mapLink": "https://maps.app.goo.gl/73YmvnNxyzbCvdiz8",
+          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ00000xfEQ1YAM/view",
+          "quotedTurnaround": 8,
+          "projectId": "89556",
+          "components": [],
+          "inProgressDate": "2026-08-05",
+          "dataValidatedDate": "2026-08-05",
+          "comments": [
+            {
+              "author": "Martin Isola",
+              "created": "2026-08-05T11:58:17.971-0700",
+              "body": ""
+            },
+            {
+              "author": "Multivista",
+              "created": "2026-08-04T15:40:03.897-0700",
+              "body": "(198 kB)"
+            }
+          ]
+        },
+        {
+          "key": "SCAN-6142",
+          "summary": "Scan to Services - GBR02 - 503071 - Berkeley Estate Asset Management - 50 Stratton St",
+          "status": "Validation",
+          "statusCategory": "In Progress",
+          "assignee": "Rojes Malachi",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-08-06T01:55:52.633-0700",
+          "dueDate": "2026-08-17",
+          "created": "2026-07-24T03:25:20.438-0700",
+          "resolutionDate": null,
+          "deliveryStatus": null,
+          "territory": "GBR02",
+          "serviceType": "Scan to BIM (model and extracted plans)",
+          "price": 8667.97,
+          "squareFootage": 107748,
+          "projectName": "Berkeley Estate Asset Management - 50 Stratton St",
+          "projectType": "Office",
+          "ftpFolderPath": "/mv-s3-ftps-transfer-london/gbr02/503071/3D Point Clouds/Jul-2026",
+          "mapLink": "https://maps.app.goo.gl/5WMbU5tw1jnhM2FF9",
+          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ00000xHte2YAC/view",
+          "quotedTurnaround": 15,
+          "projectId": "503071",
+          "components": [
+            "Scan Data Missing"
+          ],
+          "inProgressDate": "2026-07-24",
+          "dataValidatedDate": "2026-07-27",
+          "comments": [
+            {
+              "author": "Martin Isola",
+              "created": "2026-08-03T05:54:44.769-0700",
+              "body": "Hi ,\nWe have been checking the new point cloud provided, and we found the same issues. Could you please check that?\nThanks,"
+            },
+            {
+              "author": "Rojes Malachi",
+              "created": "2026-07-31T23:32:09.127-0700",
+              "body": "Hi   The same issue is still there in the new point cloud i donot think the point cloud is updated"
+            },
+            {
+              "author": "Martin Isola",
+              "created": "2026-07-29T05:59:36.870-0700",
+              "body": "Please review the new point clouds for this project.\nThanks"
+            },
+            {
+              "author": "Martin Isola",
+              "created": "2026-07-29T05:58:55.351-0700",
+              "body": "Thanks"
+            },
+            {
+              "author": "Alvin Chan",
+              "created": "2026-07-29T05:14:09.589-0700",
+              "body": "Hi Martin,\nPlease find the updated point cloud and basepoint file available on ftp. Any further issues, please let us know.\n[cid:c1b763f6-893c-4567-b57a-62c9ef03e2cc]\n[cid:2f72bd4e-a9e9-4ba0-a400-1c946f0dbd21]\nBest Regards,Alvin ChanReality Capture Operations ManagerOffice +44 (0)2086 109 869Mobile +44 (0)7946 632 567\nmultivista.com<https://www.multivista.com/>3 Scrutton Street, London EC2A 4HF\n[Multivista - Part of Hexagon]<http://www.multivista.com/>\n–The contents of this communication, including any attachment(s), are confidential and may be privileged. If you are not the intended recipient (or are not receiving this communication on behalf of the intended recipient), please notify the sender immediately and delete or destroy this communication without reading it, and without making, forwarding or retaining any copy or record of it or its contents. Thank you. Note: We have taken precautions against viruses, but take no responsibility for loss or damage caused by any virus present. The above-named person proudly represents an independent contractor and licensed vendor of the MULTIVISTA® brand services and products in the location or region indicated. Titles such as principal, managing principal, regional partner or senior regional partner do not indicate affiliation with Multivista Systems, LLC, but rather the licensees status as a licensed vendor. For more information on the licensee structure, visit www.multivista.com/licensedvendors<https://www.multivista.com/licensedvendors>–\n________________________________From: Alvin Chan - Multivista <a.chan@multivista.com>Sent: 28 July 2026 17:05To: scantoservices@multivista.atlassian.net <scantoservices@multivista.atlassian.net>Subject: Re:  Scan to Services - GBR02 - 503071 - Berkeley Estate Asset Management - 50 Stratton St\nHi Martin,\nMany thanks for letting me know.\nThe team is reviewing it now.\nBest Regards,Alvin ChanReality Capture Operations ManagerOffice +44 (0)2086 109 869Mobile +44 (0)7946 632 567\nmultivista.com<https://www.multivista.com/>3 Scrutton Street, London EC2A 4HF[Multivista - Part of Hexagon]<http://www.multivista.com/>\n–The contents of this communication, including any attachment(s), are confidential and may be privileged. If you are not the intended recipient (or are not receiving this communication on behalf of the intended recipient), please notify the sender immediately and delete or destroy this communication without reading it, and without making, forwarding or retaining any copy or record of it or its contents. Thank you. Note: We have taken precautions against viruses, but take no responsibility for loss or damage caused by any virus present. The above-named person proudly represents an independent contractor and licensed vendor of the MULTIVISTA® brand services and products in the location or region indicated. Titles such as principal, managing principal, regional partner or senior regional partner do not indicate affiliation with Multivista Systems, LLC, but rather the licensees status as a licensed vendor. For more information on the licensee structure, visit www.multivista.com/licensedvendors<https://www.multivista.com/licensedvendors>–\n________________________________From: Martin Isola <jira@multivista.atlassian.net>Sent: 28 July 2026 16:06To: Alvin Chan - Multivista <a.chan@multivista.com>Subject:  Scan to Services - GBR02 - 503071 - Berkeley Estate Asset Management - 50 Stratton St\n—-—-—-—Reply above this line.\nMartin Isola commented:\nHi Alvin,\nAs we started setting up the models and preparing for the model update work, we noticed that the new point cloud does not match the existing model in many areas, including locations where no changes or modifications were made. For example, we found discrepancies in structural columns that should remain unchanged.\nThis seemed unusual, so we performed a comparison between the new and previous point clouds. The review clearly shows that the new point cloud is not aligning in the same way as the original dataset. We are seeing significant differences that should be investigated before we proceed.\nI have attached several screenshots illustrating these discrepancies for reference.\nRed -OldBlue -NewLevel 4\n[image-20260728-132103.png]\nLevel 3\n[image-20260728-132202.png]\nLevel 2\n[image-20260728-132248.png]\nLevel 1\n[image-20260728-132408.png]\nGround Floor\n[image-20260728-132512.png]\nBasement\n[image-20260728-132558.png]\n[image-20260728-132706.png]\n[image-20260728-132727.png]\nMy recommendation is to have the point clouds reviewed and re-aligned so that they match the original coordinate system and positioning. Once we receive corrected datasets, we can continue with the agreed scope as planned.\nAn alternative approach, which I personally would not recommend, would be to work with the current point clouds only to identify removed elements and update the Revit model accordingly. However, the resulting model would contain considerable geometric discrepancies, which would likely generate client comments and concerns regarding accuracy, and any rework will be considered as an upsell.\nPlease let us know your thoughts.\nBest regards,\nMartin\nRespectfully yours,\nHexagon Scan to Servicesscantoservices@multivista.com<scantoservices@multivista.com>\nView request<https://multivista.atlassian.net/servicedesk/customer/portal/5/SCAN-6142?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0Z3QiOiJhbm9ueW1vdXMtbGluayIsInFzaCI6IjY3YzRjODU2Nzg2MmYzNTBiNDRjODE5NjViM2Y2MTc4ZjNiMGRiYTIxYTM3MjE4YWQ1YzZhNjQ2YTQxNjk2YTciLCJpc3MiOiJzZXJ2aWNlZGVzay1qd3QtdG9rZW4taXNzdWVyIiwiY29udGV4dCI6eyJ1c2VyIjoiMTMyNzAiLCJpc3N1ZSI6IlNDQU4tNjE0MiJ9LCJleHAiOjE3ODc2NzAzOTYsImlhdCI6MTc4NTI1MTE5Nn0.wh35--t93arMrrhhGIFrwp0uFs4zWB0hJKxf1Dwnb0E&sda_source=notification-email> · Turn off this request's notifications<https://multivista.atlassian.net/servicedesk/customer/portal/5/SCAN-6142/unsubscribe?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0Z3QiOiJhbm9ueW1vdXMtbGluayIsInFzaCI6IjE3MDk5MzNiYzJkMzdlYjcxYzc5YzNhNjllM2U2MjQ0ZGQyM2Y2MWU0ZWU4YzhjOGE4YTQ2MmIwNzliNmUyYjMiLCJpc3MiOiJzZXJ2aWNlZGVzay1qd3QtdG9rZW4taXNzdWVyIiwiY29udGV4dCI6eyJ1c2VyIjoidWc6M2NlMmEyNzAtNzY2YS00NDg5LTlkMWQtYThiZTBmZTJlNDNkIiwiaXNzdWUiOiJTQ0FOLTYxNDIifSwiZXhwIjoxNzg3NjcwMzk2LCJpYXQiOjE3ODUyNTExOTZ9.yEz98sY-Y-7HSMBs2cjP26zw4v9rp8XiBDAXCw2tACY>\nThis is shared with Alvin Chan, Sam Ross, and j.Frewin@multivista.com.\nPowered by Jira Service Management<https://www.atlassian.com/software/jira/service-desk/powered-by?utm_medium=jira-in-product&utm_source=jira_service_desk_email_footer&utm_content=multivista>\nSent on July 28, 2026 8:06:36 AM PDThttps://use1-track.atlassian.com/CI0/0100019fa943797c-5b1be864-b16f-4826-a03c-058483279b04-000000/5ttuRQesD0zg_v4LA4qcDoW4v5xrsDLK-R7cp0QQEYk=452"
+            },
+            {
+              "author": "Alvin Chan",
+              "created": "2026-07-28T09:06:29.422-0700",
+              "body": "Hi Martin,\nMany thanks for letting me know.\nThe team is reviewing it now.\nBest Regards,Alvin ChanReality Capture Operations ManagerOffice +44 (0)2086 109 869Mobile +44 (0)7946 632 567\nmultivista.com<https://www.multivista.com/>3 Scrutton Street, London EC2A 4HF\n[Multivista - Part of Hexagon]<http://www.multivista.com/>\n–The contents of this communication, including any attachment(s), are confidential and may be privileged. If you are not the intended recipient (or are not receiving this communication on behalf of the intended recipient), please notify the sender immediately and delete or destroy this communication without reading it, and without making, forwarding or retaining any copy or record of it or its contents. Thank you. Note: We have taken precautions against viruses, but take no responsibility for loss or damage caused by any virus present. The above-named person proudly represents an independent contractor and licensed vendor of the MULTIVISTA® brand services and products in the location or region indicated. Titles such as principal, managing principal, regional partner or senior regional partner do not indicate affiliation with Multivista Systems, LLC, but rather the licensees status as a licensed vendor. For more information on the licensee structure, visit www.multivista.com/licensedvendors<https://www.multivista.com/licensedvendors>–\n________________________________From: Martin Isola <jira@multivista.atlassian.net>Sent: 28 July 2026 16:06To: Alvin Chan - Multivista <a.chan@multivista.com>Subject:  Scan to Services - GBR02 - 503071 - Berkeley Estate Asset Management - 50 Stratton St\n—-—-—-—Reply above this line.\nMartin Isola commented:\nHi Alvin,\nAs we started setting up the models and preparing for the model update work, we noticed that the new point cloud does not match the existing model in many areas, including locations where no changes or modifications were made. For example, we found discrepancies in structural columns that should remain unchanged.\nThis seemed unusual, so we performed a comparison between the new and previous point clouds. The review clearly shows that the new point cloud is not aligning in the same way as the original dataset. We are seeing significant differences that should be investigated before we proceed.\nI have attached several screenshots illustrating these discrepancies for reference.\nRed -OldBlue -NewLevel 4\n[image-20260728-132103.png]\nLevel 3\n[image-20260728-132202.png]\nLevel 2\n[image-20260728-132248.png]\nLevel 1\n[image-20260728-132408.png]\nGround Floor\n[image-20260728-132512.png]\nBasement\n[image-20260728-132558.png]\n[image-20260728-132706.png]\n[image-20260728-132727.png]\nMy recommendation is to have the point clouds reviewed and re-aligned so that they match the original coordinate system and positioning. Once we receive corrected datasets, we can continue with the agreed scope as planned.\nAn alternative approach, which I personally would not recommend, would be to work with the current point clouds only to identify removed elements and update the Revit model accordingly. However, the resulting model would contain considerable geometric discrepancies, which would likely generate client comments and concerns regarding accuracy, and any rework will be considered as an upsell.\nPlease let us know your thoughts.\nBest regards,\nMartin\nRespectfully yours,\nHexagon Scan to Servicesscantoservices@multivista.com<scantoservices@multivista.com>\nView request<https://multivista.atlassian.net/servicedesk/customer/portal/5/SCAN-6142?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0Z3QiOiJhbm9ueW1vdXMtbGluayIsInFzaCI6IjY3YzRjODU2Nzg2MmYzNTBiNDRjODE5NjViM2Y2MTc4ZjNiMGRiYTIxYTM3MjE4YWQ1YzZhNjQ2YTQxNjk2YTciLCJpc3MiOiJzZXJ2aWNlZGVzay1qd3QtdG9rZW4taXNzdWVyIiwiY29udGV4dCI6eyJ1c2VyIjoiMTMyNzAiLCJpc3N1ZSI6IlNDQU4tNjE0MiJ9LCJleHAiOjE3ODc2NzAzOTYsImlhdCI6MTc4NTI1MTE5Nn0.wh35--t93arMrrhhGIFrwp0uFs4zWB0hJKxf1Dwnb0E&sda_source=notification-email> · Turn off this request's notifications<https://multivista.atlassian.net/servicedesk/customer/portal/5/SCAN-6142/unsubscribe?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0Z3QiOiJhbm9ueW1vdXMtbGluayIsInFzaCI6IjE3MDk5MzNiYzJkMzdlYjcxYzc5YzNhNjllM2U2MjQ0ZGQyM2Y2MWU0ZWU4YzhjOGE4YTQ2MmIwNzliNmUyYjMiLCJpc3MiOiJzZXJ2aWNlZGVzay1qd3QtdG9rZW4taXNzdWVyIiwiY29udGV4dCI6eyJ1c2VyIjoidWc6M2NlMmEyNzAtNzY2YS00NDg5LTlkMWQtYThiZTBmZTJlNDNkIiwiaXNzdWUiOiJTQ0FOLTYxNDIifSwiZXhwIjoxNzg3NjcwMzk2LCJpYXQiOjE3ODUyNTExOTZ9.yEz98sY-Y-7HSMBs2cjP26zw4v9rp8XiBDAXCw2tACY>\nThis is shared with Alvin Chan, Sam Ross, and j.Frewin@multivista.com.\nPowered by Jira Service Management<https://www.atlassian.com/software/jira/service-desk/powered-by?utm_medium=jira-in-product&utm_source=jira_service_desk_email_footer&utm_content=multivista>\nSent on July 28, 2026 8:06:36 AM PDThttps://use1-track.atlassian.com/CI0/0100019fa943797c-5b1be864-b16f-4826-a03c-058483279b04-000000/5ttuRQesD0zg_v4LA4qcDoW4v5xrsDLK-R7cp0QQEYk=452"
+            },
+            {
+              "author": "Martin Isola",
+              "created": "2026-07-28T08:05:50.786-0700",
+              "body": "Hi Alvin,\nAs we started setting up the models and preparing for the model update work, we noticed that the new point cloud does not match the existing model in many areas, including locations where no changes or modifications were made. For example, we found discrepancies in structural columns that should remain unchanged.\nThis seemed unusual, so we performed a comparison between the new and previous point clouds. The review clearly shows that the new point cloud is not aligning in the same way as the original dataset. We are seeing significant differences that should be investigated before we proceed.\nI have attached several screenshots illustrating these discrepancies for reference.\nRed -Old Blue -New Level 4\nLevel 3\nLevel 2\nLevel 1\nGround Floor\nBasement \nMy recommendation is to have the point clouds reviewed and re-aligned so that they match the original coordinate system and positioning. Once we receive corrected datasets, we can continue with the agreed scope as planned.\nAn alternative approach, which I personally would not recommend, would be to work with the current point clouds only to identify removed elements and update the Revit model accordingly. However, the resulting model would contain considerable geometric discrepancies, which would likely generate client comments and concerns regarding accuracy, and any rework will be considered as an upsell.\nPlease let us know your thoughts.\nBest regards,\nMartin"
+            },
+            {
+              "author": "Rojes Malachi",
+              "created": "2026-07-28T06:27:37.409-0700",
+              "body": "Hi  Please find the differences between the old data and new data , we cannot start the model with these issues please confirm us on this Red -Old Blue -New Level 4\nLevel 3\nLevel 2\nLevel 1\nGround Floor\nBasement"
+            },
+            {
+              "author": "Alvin Chan",
+              "created": "2026-07-24T03:27:16.179-0700",
+              "body": "Hi Team,\nPlease find the closed SF link below:\nhttps://hmv.lightning.force.com/lightning/r/Opportunity/006JQ00000xHte2YAC/view\nBest Regards,Alvin ChanReality Capture Operations ManagerOffice +44 (0)2086 109 869Mobile +44 (0)7946 632 567\nmultivista.com<https://www.multivista.com/>3 Scrutton Street, London EC2A 4HF\n[Multivista - Part of Hexagon]<http://www.multivista.com/>\n–The contents of this communication, including any attachment(s), are confidential and may be privileged. If you are not the intended recipient (or are not receiving this communication on behalf of the intended recipient), please notify the sender immediately and delete or destroy this communication without reading it, and without making, forwarding or retaining any copy or record of it or its contents. Thank you. Note: We have taken precautions against viruses, but take no responsibility for loss or damage caused by any virus present. The above-named person proudly represents an independent contractor and licensed vendor of the MULTIVISTA® brand services and products in the location or region indicated. Titles such as principal, managing principal, regional partner or senior regional partner do not indicate affiliation with Multivista Systems, LLC, but rather the licensees status as a licensed vendor. For more information on the licensee structure, visit www.multivista.com/licensedvendors<https://www.multivista.com/licensedvendors>–\n________________________________From: Multivista <jira@multivista.atlassian.net>Sent: 24 July 2026 11:26To: Alvin Chan - Multivista <a.chan@multivista.com>Subject:  Scan to Services - GBR02 - 503071 - Berkeley Estate Asset Management - 50 Stratton St\n—-—-—-—Reply above this line.\nHi Alvin Chan,\nThis is an automated response to let you know that we have received your Scan to Services request and will advise if further information is required or when the request is complete.\nRespectfully yours,\nHexagon Scan to Servicesscantoservices@multivista.com<scantoservices@multivista.com>\nView request<https://multivista.atlassian.net/servicedesk/customer/portal/5/SCAN-6142?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0Z3QiOiJhbm9ueW1vdXMtbGluayIsInFzaCI6IjY3YzRjODU2Nzg2MmYzNTBiNDRjODE5NjViM2Y2MTc4ZjNiMGRiYTIxYTM3MjE4YWQ1YzZhNjQ2YTQxNjk2YTciLCJpc3MiOiJzZXJ2aWNlZGVzay1qd3QtdG9rZW4taXNzdWVyIiwiY29udGV4dCI6eyJ1c2VyIjoiMTMyNzAiLCJpc3N1ZSI6IlNDQU4tNjE0MiJ9LCJleHAiOjE3ODczMDc5ODIsImlhdCI6MTc4NDg4ODc4Mn0.OSqEhlAOJDMzQaSyq5OvgQW__t43Hpd-qrDacXm25Do&sda_source=notification-email> · Turn off this request's notifications<https://multivista.atlassian.net/servicedesk/customer/portal/5/SCAN-6142/unsubscribe?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0Z3QiOiJhbm9ueW1vdXMtbGluayIsInFzaCI6IjE3MDk5MzNiYzJkMzdlYjcxYzc5YzNhNjllM2U2MjQ0ZGQyM2Y2MWU0ZWU4YzhjOGE4YTQ2MmIwNzliNmUyYjMiLCJpc3MiOiJzZXJ2aWNlZGVzay1qd3QtdG9rZW4taXNzdWVyIiwiY29udGV4dCI6eyJ1c2VyIjoidWc6M2NlMmEyNzAtNzY2YS00NDg5LTlkMWQtYThiZTBmZTJlNDNkIiwiaXNzdWUiOiJTQ0FOLTYxNDIifSwiZXhwIjoxNzg3MzA3OTgyLCJpYXQiOjE3ODQ4ODg3ODJ9.uBQs_TRvrXuDhOTIYWkq2kvsQihRlGjmN9fMDZAcKqI>\nThis is shared with Alvin Chan, Sam Ross, and j.Frewin@multivista.com.\nPowered by Jira Service Management<https://www.atlassian.com/software/jira/service-desk/powered-by?utm_medium=jira-in-product&utm_source=jira_service_desk_email_footer&utm_content=multivista>\nSent on July 24, 2026 3:26:22 AM PDThttps://usw2-track.atlassian.com/CI0/0101019f93a9730f-dbe3ceff-b010-4d07-b0bb-a25c740aa669-000000/NzRiIkSTZz0gj-8TQWAY12DtfK4vgmOKckza1XCaKTY=452"
+            },
+            {
+              "author": "Multivista",
+              "created": "2026-07-24T03:25:23.682-0700",
+              "body": "(223 kB)"
+            }
+          ]
+        },
+        {
+          "key": "SCAN-6053",
+          "summary": "Scan to Services - GBR01 - 503552 - Ayrshire College - Kilwinning Campus",
+          "status": "S2S Production",
+          "statusCategory": "In Progress",
+          "assignee": "Rojes Malachi",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-08-06T00:13:47.088-0700",
+          "dueDate": "2026-08-11",
+          "created": "2026-06-23T02:26:42.997-0700",
+          "resolutionDate": null,
+          "deliveryStatus": null,
+          "territory": "GBR01",
+          "serviceType": "Scan to BIM (model and extracted plans)",
+          "price": 15517.75,
+          "squareFootage": 115000,
+          "projectName": "Ayrshire college Kilwinning Campus",
+          "projectType": "Education",
+          "ftpFolderPath": "/mv-s3-ftps-transfer-london/gbr01/503552",
+          "mapLink": "https://maps.app.goo.gl/7K8ykFCutEWvgrRn9",
+          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ00000pbrAwYAI/viewhttps://mds.lightning.force.com/lightning/r/Quote/0Q0JQ0000042bqn0AA/view",
+          "quotedTurnaround": 28,
+          "projectId": "503552",
+          "components": [
+            "Scan Data Missing"
+          ],
+          "inProgressDate": "2026-06-23",
+          "dataValidatedDate": "2026-07-02",
+          "comments": [
+            {
+              "author": "Markk Donnelly",
+              "created": "2026-07-02T10:30:15.225-0700",
+              "body": "Appreciate the comments Mark.\nIt is still extremely frustrating.\nOur clients don’t really care if its Leica's fault if its Cyclone, if its RCS files - the reputation is ours.\nWe have said as much of this as we can to clients. They are just stopping paying us and we have lost considerable future work off the back of a combination of QC issues and delays in production. The delays in production have been compounded by this issue - i understand the limitations scan2 are experiencing and you are describing - but it is systemic across smaller projects too (not just the 'we can't handle this point cloud size' issue). That is what we are discussing here however, i digress.\nWe have run out of things to tell the client.\nI appreciate you had a solution in play back in 2020-2024 but that is what i would expect from a BIM team of this scale working in 2026. Being able to handle large files. At this point, we are just being told its too big, go fix it.\nI have asked the question 3 or 4 times of what limits of point cloud size are we capable of handling at this time and had zero responses. We are in the dark. We have spent time chopping up point clouds. As best we can to be sub 600 scans at a time.\nI really hope the new release solves the issue too. Then we sort the QC. Then we sort the long production times.\nThen we see what clients remain...\nRichard, note on the 10mm decimation moving forward.\nMarkk Donnelly\nRegional Director\nMultivista, part of HexagonM: 07711994345multivista.com<https://www.multivista.com/>\n________________________________From: Mark King <jira@multivista.atlassian.net>Sent: Thursday, July 2, 2026 6:58 pmTo: Markk Donnelly - Multivista <m.donnelly@multivista.com>Subject:  Scan to Services - GBR01 - 503552 - Ayrshire College - Kilwinning Campus\n—-—-—-—Reply above this line.\nMark King commented:\nHi Markk,\nI just wanted to step in. I would unfortunately lie the blame for this current situation at Leica. The 2026 versions inability to decimate has caused issues for many franchises.\nRevit does not handle these large 100Gb+ files very well, as it is also trying to render complex 3D models at the same time. Just like you guys get loading screens sometimes moving between tools, the modelling team get that all the time during the modelling process. The smaller the point cloud the more efficient the software runs.\nIf you provided large files in the past, we likely used another software to reduce the file size.\nWith the new version of REG360 and its ability to decimate at 10mm this will drastically reduce the file sizes. For instance the Kilwinning Campus went from 144Gb undecimated to 27Gb when decimated. This just makes it easier all round to upload/download and use.\nApologies for the delay in starting this project but S2S took on the task of using another piece of software, Recap Pro to decimate the point cloud from 144Gb down to 27Gb. This however takes time to download, open, export decimated and then re-upload.\nI am really hopeful that this new REG version will allow your teams to export much smaller files, making all our lives easier. Remember with the new version use 10mm decimation. If you have any further issues please reach out to 3D laser support.\nMany thanks\nMark K\nRespectfully yours,\nHexagon Scan to Servicesscantoservices@multivista.com<scantoservices@multivista.com>\nView request<https://multivista.atlassian.net/servicedesk/customer/portal/5/SCAN-6053?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0Z3QiOiJhbm9ueW1vdXMtbGluayIsInFzaCI6ImM1ZjJmY2QyMjllYTg0MzdmMDZjZTM0NWE4YTQ5ODU1MDE5M2FmYjA0NWFlOGI3MTY1NWYzNTY0MWNmZDRkMTgiLCJpc3MiOiJzZXJ2aWNlZGVzay1qd3QtdG9rZW4taXNzdWVyIiwiY29udGV4dCI6eyJ1c2VyIjoiMTM0NjkiLCJpc3N1ZSI6IlNDQU4tNjA1MyJ9LCJleHAiOjE3ODU0MzA0MTQsImlhdCI6MTc4MzAxMTIxNH0.7GQh3CY8ov8aB2PociOMbfXO43rTae9E8qTOhPCPsMg&sda_source=notification-email> · Turn off this request's notifications<https://multivista.atlassian.net/servicedesk/customer/portal/5/SCAN-6053/unsubscribe?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0Z3QiOiJhbm9ueW1vdXMtbGluayIsInFzaCI6IjI4MjM0MjM3MThjNmM4ZGZjNzhlYTg0MDZjZWZlMjBjN2ZkM2U0YWQyNDIyZjA2MDM3Zjc3MzgyZWRlZTUxZDIiLCJpc3MiOiJzZXJ2aWNlZGVzay1qd3QtdG9rZW4taXNzdWVyIiwiY29udGV4dCI6eyJ1c2VyIjoidWc6MjY3NTY1ZDYtYmE5Zi00NjMzLWFjYWYtZGRjM2YzZjk2YzVmIiwiaXNzdWUiOiJTQ0FOLTYwNTMifSwiZXhwIjoxNzg1NDMwNDE0LCJpYXQiOjE3ODMwMTEyMTR9.2ju-k3cUbESR0l9EXqv6vZ2prFVJuxgy8z7-mDbWuJI>\nThis is shared with Markk Donnelly, Paul McLaughlin, and Rich Carrington.\nPowered by Jira Service Management<https://www.atlassian.com/software/jira/service-desk/powered-by?utm_medium=jira-in-product&utm_source=jira_service_desk_email_footer&utm_content=multivista>"
+            },
+            {
+              "author": "Mark King",
+              "created": "2026-07-02T09:52:32.926-0700",
+              "body": "Hi Markk,\nI just wanted to step in. I would unfortunately lie the blame for this current situation at Leica. The 2026 versions inability to decimate has caused issues for many franchises.\nRevit does not handle these large 100Gb+ files very well, as it is also trying to render complex 3D models at the same time. Just like you guys get loading screens sometimes moving between tools, the modelling team get that all the time during the modelling process. The smaller the point cloud the more efficient the software runs.\nIf you provided large files in the past, we likely used another software to reduce the file size.\nWith the new version of REG360 and its ability to decimate at 10mm this will drastically reduce the file sizes. For instance the Kilwinning Campus went from 144Gb undecimated to 27Gb when decimated. This just makes it easier all round to upload/download and use.\nApologies for the delay in starting this project but S2S took on the task of using another piece of software, Recap Pro to decimate the point cloud from 144Gb down to 27Gb. This however takes time to download, open, export decimated and then re-upload. \nI am really hopeful that this new REG version will allow your teams to export much smaller files, making all our lives easier. Remember with the new version use 10mm decimation. If you have any further issues please reach out to 3D laser support.\nMany thanks\nMark K"
+            },
+            {
+              "author": "Markk Donnelly",
+              "created": "2026-07-02T08:22:11.302-0700",
+              "body": "Hi Martin\nWe need limits to work to.\nThese files are not that large in general. 750 scan points is an average university building. We have dealt with files at 250Gb in the past with scan 2. This is half of that!\nI appreciate the decimation is causing an issue but i would still expect you to have machines to manage these. It's literally what we do.\nWe run a £12k spec computer to run these point clouds.\nWhat are your limits?\nWe cannot keep having this huge downtime in production moving files around. We are far too busy with constant work to get through.\nMarkk Donnelly\nRegional Director\nMultivista, part of HexagonM: 07711994345multivista.com<https://www.multivista.com/>\n________________________________From: Martin Isola <jira@multivista.atlassian.net>Sent: Thursday, July 2, 2026 4:51 pmTo: Markk Donnelly - Multivista <m.donnelly@multivista.com>Subject:  Scan to Services - GBR01 - 503552 - Ayrshire College - Kilwinning Campus\n—-—-—-—Reply above this line.\nMartin Isola commented:\nHi Rich,\nYes, for sure, that will help us a lot. We are working on the RCS, so you can focus on the LGSx files.\nThanks\nRespectfully yours,\nHexagon Scan to Servicesscantoservices@multivista.com<scantoservices@multivista.com>\nView request<https://multivista.atlassian.net/servicedesk/customer/portal/5/SCAN-6053?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0Z3QiOiJhbm9ueW1vdXMtbGluayIsInFzaCI6ImM1ZjJmY2QyMjllYTg0MzdmMDZjZTM0NWE4YTQ5ODU1MDE5M2FmYjA0NWFlOGI3MTY1NWYzNTY0MWNmZDRkMTgiLCJpc3MiOiJzZXJ2aWNlZGVzay1qd3QtdG9rZW4taXNzdWVyIiwiY29udGV4dCI6eyJ1c2VyIjoiMTM0NjkiLCJpc3N1ZSI6IlNDQU4tNjA1MyJ9LCJleHAiOjE3ODU0MjMwNzcsImlhdCI6MTc4MzAwMzg3N30.s0az2XhYI2wk2uVFuh5oZKUxH5a6_Vd7RboqMii5CEA&sda_source=notification-email> · Turn off this request's notifications<https://multivista.atlassian.net/servicedesk/customer/portal/5/SCAN-6053/unsubscribe?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0Z3QiOiJhbm9ueW1vdXMtbGluayIsInFzaCI6IjI4MjM0MjM3MThjNmM4ZGZjNzhlYTg0MDZjZWZlMjBjN2ZkM2U0YWQyNDIyZjA2MDM3Zjc3MzgyZWRlZTUxZDIiLCJpc3MiOiJzZXJ2aWNlZGVzay1qd3QtdG9rZW4taXNzdWVyIiwiY29udGV4dCI6eyJ1c2VyIjoidWc6MjY3NTY1ZDYtYmE5Zi00NjMzLWFjYWYtZGRjM2YzZjk2YzVmIiwiaXNzdWUiOiJTQ0FOLTYwNTMifSwiZXhwIjoxNzg1NDIzMDc3LCJpYXQiOjE3ODMwMDM4Nzd9.yWHop4EGwgRM2d8lJWo3-u8xmWGwvu-A5jO4NUc01LI>\nThis is shared with Markk Donnelly, Paul McLaughlin, and Rich Carrington.\nPowered by Jira Service Management<https://www.atlassian.com/software/jira/service-desk/powered-by?utm_medium=jira-in-product&utm_source=jira_service_desk_email_footer&utm_content=multivista>"
+            },
+            {
+              "author": "Martin Isola",
+              "created": "2026-07-02T07:50:34.187-0700",
+              "body": "Hi Rich, \nYes, for sure, that will help us a lot. We are working on the RCS, so you can focus on the LGSx files.\nThanks"
+            },
+            {
+              "author": "Rich Carrington",
+              "created": "2026-07-02T07:35:31.760-0700",
+              "body": "Good Afternoon,\nIf this is too much of an issue, I can try the new Cyclone version to get you some files that aren't so big.\nKind Regards\nRichard CarringtonSenior Documentation SpecialistOperations\nMultivista, part of HexagonT: 07814493811E: r.dudley@multivista.com<r.dudley@multivista.com>multivista.com<https://www.multivista.com/> | LinkedIn<https://www.linkedin.com/company/multivista/>\n________________________________From: Martin Isola <jira@multivista.atlassian.net>Sent: 02 July 2026 14:47To: Richard Carrington - Multivista <r.dudley@multivista.com>Subject:  Scan to Services - GBR01 - 503552 - Ayrshire College - Kilwinning Campus\n—-—-—-—Reply above this line.\nMartin Isola commented:\nHi team,\nWe are working with the 3D laser scanning team to reduce the point cloud size, as you know this process it is taking some time. I will let you know when the project is ready in production\nAdditionally, could you please confirm the SF links is the correct one?\nhttps://mds.lightning.force.com/lightning/r/Quote/0Q0JQ0000042bqn0AA/view\nThanks\nRespectfully yours,\nHexagon Scan to Servicesscantoservices@multivista.com<scantoservices@multivista.com>\nView request<https://multivista.atlassian.net/servicedesk/customer/portal/5/SCAN-6053?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0Z3QiOiJhbm9ueW1vdXMtbGluayIsInFzaCI6ImM1ZjJmY2QyMjllYTg0MzdmMDZjZTM0NWE4YTQ5ODU1MDE5M2FmYjA0NWFlOGI3MTY1NWYzNTY0MWNmZDRkMTgiLCJpc3MiOiJzZXJ2aWNlZGVzay1qd3QtdG9rZW4taXNzdWVyIiwiY29udGV4dCI6eyJ1c2VyIjoiMTM0NTIiLCJpc3N1ZSI6IlNDQU4tNjA1MyJ9LCJleHAiOjE3ODU0MTkyNjIsImlhdCI6MTc4MzAwMDA2Mn0.Ra_vRXDzOjAO8rUQPt176cVMTgZolxkXQlOHSvwN85U&sda_source=notification-email> · Turn off this request's notifications<https://multivista.atlassian.net/servicedesk/customer/portal/5/SCAN-6053/unsubscribe?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0Z3QiOiJhbm9ueW1vdXMtbGluayIsInFzaCI6IjI4MjM0MjM3MThjNmM4ZGZjNzhlYTg0MDZjZWZlMjBjN2ZkM2U0YWQyNDIyZjA2MDM3Zjc3MzgyZWRlZTUxZDIiLCJpc3MiOiJzZXJ2aWNlZGVzay1qd3QtdG9rZW4taXNzdWVyIiwiY29udGV4dCI6eyJ1c2VyIjoidWc6MGNmYmI3MmYtNzkxNS00MjFmLTk4OTgtNGViN2U4MmYyMGUwIiwiaXNzdWUiOiJTQ0FOLTYwNTMifSwiZXhwIjoxNzg1NDE5MjYyLCJpYXQiOjE3ODMwMDAwNjJ9.7VK5CkyM7IMh4m6QsP1ziNwrgwgSJYEOCv8wURmPgOM>\nThis is shared with Markk Donnelly, Paul McLaughlin, and Rich Carrington.\nPowered by Jira Service Management<https://www.atlassian.com/software/jira/service-desk/powered-by?utm_medium=jira-in-product&utm_source=jira_service_desk_email_footer&utm_content=multivista>\nSent on 02 July 2026 14:47:42 BSThttps://use1-track.atlassian.com/CI0/0100019f2315e0eb-d38cd833-ac50-48ec-a1e3-9cfca1fc083a-000000/C6K1unDlwOU4oDU3XeRPdc3dJIg0wwuCdRMkSjk0JcE=452"
+            },
+            {
+              "author": "Martin Isola",
+              "created": "2026-07-02T06:47:11.785-0700",
+              "body": "Hi team,\nWe are working with the 3D laser scanning team to reduce the point cloud size, as you know this process it is taking some time. I will let you know when the project is ready in production\nAdditionally, could you please confirm the SF links is the correct one?\nhttps://mds.lightning.force.com/lightning/r/Quote/0Q0JQ0000042bqn0AA/view\nThanks"
+            },
+            {
+              "author": "Martin Isola",
+              "created": "2026-07-01T07:58:46.775-0700",
+              "body": "Drone Data is available on the FTP"
+            },
+            {
+              "author": "Automation for Jira",
+              "created": "2026-06-30T05:00:25.843-0700",
+              "body": "Email sent to customer notifying that the given scan data delivery date has passed."
+            },
+            {
+              "author": "Martin Isola",
+              "created": "2026-06-25T09:26:44.070-0700",
+              "body": "Hi  could please check if this SF link is the correct one. https://mds.lightning.force.com/lightning/r/Quote/0Q0JQ0000042bqn0AA/view It was approved on the old salesforce.\nTHanks"
+            },
+            {
+              "author": "Multivista",
+              "created": "2026-06-23T02:26:45.494-0700",
+              "body": "(264 kB)"
+            }
+          ]
+        },
+        {
+          "key": "SCAN-6162",
+          "summary": "Scan to Services - WA01 - 89524 - Jeff Heiser - Heiser Apartments",
+          "status": "S2S Production",
+          "statusCategory": "In Progress",
+          "assignee": "sirajudheen",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-08-05T23:34:04.366-0700",
+          "dueDate": "2026-08-13",
+          "created": "2026-07-30T16:32:27.127-0700",
+          "resolutionDate": null,
+          "deliveryStatus": null,
+          "territory": "WA01",
+          "serviceType": "Scan to BIM (model and extracted plans)",
+          "price": 2515.35,
+          "squareFootage": 4680,
+          "projectName": "Heiser Apartments",
+          "projectType": "Multi-familty",
+          "ftpFolderPath": "/mv-s3-ftps-transfer/wa01/89524/Point Clouds",
+          "mapLink": "https://maps.app.goo.gl/UZWJoLmLkyCFTtx8A",
+          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ00000xoRmDYAU/view",
+          "quotedTurnaround": 9,
+          "projectId": "89524",
+          "components": [
+            "Point Cloud Orientation Issue",
+            "Salesforce/Checklist discrepancies",
+            "Scan Data Missing"
+          ],
+          "inProgressDate": "2026-07-31",
+          "dataValidatedDate": "2026-07-31",
+          "comments": [
+            {
+              "author": "Martin Isola",
+              "created": "2026-07-31T09:33:40.787-0700",
+              "body": "Hi Team,\nPlease note that the point cloud orientation does not match the orientation requested in the checklist.\nWe can proceed with it for this project, but for future projects this will need to be corrected. If the point cloud is not delivered in the requested orientation, it may be rejected.\nThanks,"
+            },
+            {
+              "author": "Martin Isola",
+              "created": "2026-07-31T09:29:19.340-0700",
+              "body": ""
+            },
+            {
+              "author": "Martin Isola",
+              "created": "2026-07-31T06:26:33.360-0700",
+              "body": "Hi  \nCould you please provide an SF Quote link with S2S product lines?\nThis is just for laser scanning\nAdditionally, the point clouds are not uploaded to the FTP; please confirm.\nThanks"
+            },
+            {
+              "author": "Multivista",
+              "created": "2026-07-30T16:32:29.294-0700",
+              "body": "(213 kB)"
+            }
+          ]
+        },
+        {
+          "key": "SCAN-6149",
+          "summary": "Scan to Services - NE01 - 89532 - SKM - Greater Omaha Packing - North Freezer",
+          "status": "S2S Final QC",
+          "statusCategory": "In Progress",
+          "assignee": "sirajudheen",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-08-05T23:30:14.138-0700",
+          "dueDate": "2026-08-06",
+          "created": "2026-07-27T12:18:58.927-0700",
+          "resolutionDate": null,
+          "deliveryStatus": null,
+          "territory": "NE01",
+          "serviceType": "Scan to BIM (model only)",
+          "price": 1141.61,
+          "squareFootage": 7296,
+          "projectName": "North Freezer",
+          "projectType": "Manufacturing & Warehouse",
+          "ftpFolderPath": "/mv-s3-ftps-transfer/ne01/89532",
+          "mapLink": "https://maps.app.goo.gl/rBzAvYaPprE8LZRy6",
+          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ00000xe7YfYAI/view",
+          "quotedTurnaround": 7,
+          "projectId": "89532",
+          "components": [
+            "Point Cloud Orientation Issue"
+          ],
+          "inProgressDate": "2026-07-28",
+          "dataValidatedDate": "2026-07-28",
+          "comments": [
+            {
+              "author": "Russell Bollig",
+              "created": "2026-07-28T13:09:32.995-0700",
+              "body": "This is my fault. Sorry Martin and thank you for your help here!\n-Russ\nRuss BolligDirectorConstruction Software & Services Division\nMultivista, part of HexagonM: (515) 441-0448<tel:(515)%20441-0448>\nmultivistaservices.hexagon.com<https://multivistaservices.hexagon.com/> | LinkedIn<https://www.linkedin.com/company/multivista/> | Facebook<https://facebook.com/multivista> | X<https://x.com/multivista> | Instagram<https://www.instagram.com/multivista>6818 Grover Street, Suite 405, Omaha, NE 68106\n–\nThe contents of this communication, including any attachment(s), are confidential and may be privileged. If you are not the intended recipient (or are not receiving this communication on behalf of the intended recipient), please notify the sender immediately and delete or destroy this communication without reading it, and without making, forwarding or retaining any copy or record of it or its contents. Thank you. Note: We have taken precautions against viruses, but take no responsibility for loss or damage caused by any virus present. The above-named person proudly represents an independent contractor and licensed vendor of the MULTIVISTA® brand services and products in the location or region indicated. Titles such as principal, managing principal, regional partner or senior regional partner do not indicate affiliation with Multivista Systems, LLC, but rather the licensees status as a licensed vendor. For more information on the licensee structure, visit www.multivista.com/licensedvendors<https://www.multivista.com/licensedvendors>–\nFrom: Martin Isola <jira@multivista.atlassian.net>Sent: Tuesday, July 28, 2026 2:52 PMTo: Russ Bollig <r.bollig@multivista.com>Subject:  Scan to Services - NE01 - 89532 - SKM - Greater Omaha Packing - North Freezer\nThis email is not from Hexagon's Office 365 instance. Please be careful while clicking links, opening attachments, or replying to this email.\n-------Reply above this line.\nMartin Isola commented:\nHi Russ and Jon,\nNote that the point cloud orientation doesn´t match with the checklist.\n[cid:image001.png@01DD1EA3.10995650]\n[cid:image002.png@01DD1EA3.10995650]\nWe can work with now, but for future projects PC with this issue will be rejected.\nThanks\nRespectfully yours,\nHexagon Scan to Servicesscantoservices@multivista.com<scantoservices@multivista.com>\nView request<https://multivista.atlassian.net/servicedesk/customer/portal/5/SCAN-6149?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0Z3QiOiJhbm9ueW1vdXMtbGluayIsInFzaCI6ImMwMDU4NGNkZjJhYzYxMDE5NTQzMGZkMGM0YWI0MTBjMDU4YjI1MjM0ZDQ5OWFhYTc3MTAxZDBlYmM1YTg0NzQiLCJpc3MiOiJzZXJ2aWNlZGVzay1qd3QtdG9rZW4taXNzdWVyIiwiY29udGV4dCI6eyJ1c2VyIjoiMTE2OTciLCJpc3N1ZSI6IlNDQU4tNjE0OSJ9LCJleHAiOjE3ODc2ODc0OTEsImlhdCI6MTc4NTI2ODI5MX0.4cJgvGoimhC98SzMroFyngGnT8Bb5b3BrePg05JcYh4&sda_source=notification-email> · Turn off this request's notifications<https://multivista.atlassian.net/servicedesk/customer/portal/5/SCAN-6149/unsubscribe?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0Z3QiOiJhbm9ueW1vdXMtbGluayIsInFzaCI6IjU1NzY0NjQxYjRjMDkzMTRmYjM4YzJkNTZlMWMzZWI2OGFjN2VlYTFjNjNhZGQwZDUzYjQ3ZTJmMGEyMDMwYjgiLCJpc3MiOiJzZXJ2aWNlZGVzay1qd3QtdG9rZW4taXNzdWVyIiwiY29udGV4dCI6eyJ1c2VyIjoicms6MGRlMzk5YmEtNmZiNi00ZjM3LWE2NzItMmVhY2YwMWE4NzFjIiwiaXNzdWUiOiJTQ0FOLTYxNDkifSwiZXhwIjoxNzg3Njg3NDkxLCJpYXQiOjE3ODUyNjgyOTF9.AmWQiIL9OwaIcFhJ8g7ovkj-GQ3sr1w-BzGBzNk7dbQ>\nThis is shared with Russ Bollig and Jon Weber.\nPowered by Jira Service Management<https://www.atlassian.com/software/jira/service-desk/powered-by?utm_medium=jira-in-product&utm_source=jira_service_desk_email_footer&utm_content=multivista>Sent on July 28, 2026 12:51:31 PM PDT"
+            },
+            {
+              "author": "Martin Isola",
+              "created": "2026-07-28T12:50:30.281-0700",
+              "body": "Hi Russ and Jon,\nNote that the point cloud orientation doesn´t match with the checklist.\nWe can work with now, but for future projects PC with this issue will be rejected.\nThanks"
+            },
+            {
+              "author": "Martin Isola",
+              "created": "2026-07-28T12:47:13.735-0700",
+              "body": ""
+            },
+            {
+              "author": "Multivista",
+              "created": "2026-07-27T12:19:02.208-0700",
+              "body": "(1.36 MB)\n (235 kB)"
+            }
+          ]
+        },
+        {
+          "key": "SCAN-6174",
+          "summary": "Scan to Services - TX03 - 89489 - Morse Studio - 15 Cedarwing Lane",
+          "status": "S2S Production",
+          "statusCategory": "In Progress",
+          "assignee": "Rojes Malachi",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-08-05T22:53:15.202-0700",
+          "dueDate": "2026-08-14",
+          "created": "2026-08-03T14:27:34.840-0700",
+          "resolutionDate": null,
+          "deliveryStatus": null,
+          "territory": "TX03",
+          "serviceType": "Scan to Plan (plans only)",
+          "price": 1140.02,
+          "squareFootage": 4000,
+          "projectName": "15 Cedarwing Lane",
+          "projectType": "Single-family",
+          "ftpFolderPath": "/mv-s3-ftps-transfer/tx03/89489/3D Point Clouds",
+          "mapLink": "https://maps.app.goo.gl/3P8aLCc4XQjXnABu8",
+          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Quote/0Q0JQ000007oi9t0AA/view",
+          "quotedTurnaround": 8,
+          "projectId": "89489",
+          "components": [],
+          "inProgressDate": "2026-08-04",
+          "dataValidatedDate": "2026-08-04",
+          "comments": [
+            {
+              "author": "Martin Isola",
+              "created": "2026-08-04T12:12:26.314-0700",
+              "body": ""
+            },
+            {
+              "author": "Multivista",
+              "created": "2026-08-03T14:27:37.042-0700",
+              "body": "(198 kB)"
+            }
+          ]
+        },
+        {
+          "key": "SCAN-6172",
+          "summary": "Scan to Services - PA01 - 88886 - Susquehanna International Group, LLP - 401 City Ave",
+          "status": "S2S Backlog",
+          "statusCategory": "To Do",
+          "assignee": "sirajudheen",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-08-05T21:45:38.823-0700",
+          "dueDate": "2026-09-02",
+          "created": "2026-08-03T12:06:44.687-0700",
+          "resolutionDate": null,
+          "deliveryStatus": null,
+          "territory": "PA01",
+          "serviceType": "Scan to BIM (model only)",
+          "price": 26013.75,
+          "squareFootage": 50000,
+          "projectName": "401 City Ave",
+          "projectType": "Office",
+          "ftpFolderPath": "/mv-s3-ftps-transfer/pa01/88886/3D Point Clouds/pt 2",
+          "mapLink": "https://maps.app.goo.gl/bNu2jW1M28YFk9Ab7",
+          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Quote/0Q0JQ000007vFvx0AE/view",
+          "quotedTurnaround": 20,
+          "projectId": "88886",
+          "components": [
+            "Scan Data Missing"
+          ],
+          "inProgressDate": "2026-08-04",
+          "dataValidatedDate": "2026-08-05",
+          "comments": [
+            {
+              "author": "Martin Isola",
+              "created": "2026-08-05T11:18:07.735-0700",
+              "body": "Thanks Michael,\nAre we expecting new point cloud for this project? Or does this package cover the entire scope?\nBest Regards,"
+            },
+            {
+              "author": "Martin Isola",
+              "created": "2026-08-05T11:16:11.727-0700",
+              "body": "Just 2 sample.Please generate one model per point cloud."
+            },
+            {
+              "author": "Michael Wileczek",
+              "created": "2026-08-04T13:47:05.949-0700",
+              "body": "Currently uploading the new unified rcs"
+            },
+            {
+              "author": "Michael Wileczek",
+              "created": "2026-08-04T11:33:40.011-0700",
+              "body": "I'll get those re-exported for you and have them in a separate folder"
+            },
+            {
+              "author": "Martin Isola",
+              "created": "2026-08-04T11:25:20.520-0700",
+              "body": "Hi Michael,\nAs I mentioned, they just include the structured RCP files. I need the unified RCS to work in Revit.\nTake a look at the screenshot.\nMultiple RCS files (structure version) for the RCP version. All the individual scans are included.\nThanks"
+            },
+            {
+              "author": "Michael Wileczek",
+              "created": "2026-08-04T11:19:54.219-0700",
+              "body": "Just had my team check on the FTP I'm still in the field. They said the rcs files are there inside the part 2 folder along with the relevant support folder."
+            },
+            {
+              "author": "Martin Isola",
+              "created": "2026-08-04T11:14:29.504-0700",
+              "body": "Hi Michael,\nCould you help me with the RCS?\nThanks"
+            },
+            {
+              "author": "Michael Wileczek",
+              "created": "2026-08-04T11:07:56.491-0700",
+              "body": "All these floors will be separate models. Yes all the floors you listed are a part of this project"
+            },
+            {
+              "author": "Martin Isola",
+              "created": "2026-08-04T11:03:56.149-0700",
+              "body": "Hi Michael,\nWe just checked the FTP, and the unified RCS files are missing for this project. You only included the Structured RCP files.Could you please upload them?\nFinally, are 2nd, 5th, 6th, 7th, 8th and 9th levels all for this project?\nThanks,"
+            },
+            {
+              "author": "Multivista",
+              "created": "2026-08-03T12:06:46.805-0700",
+              "body": "(264 kB)"
+            }
+          ]
+        },
+        {
+          "key": "SCAN-6170",
+          "summary": "Scan to Services - TN01 - 89499 - Merrill Construction - 2312 Hampton",
+          "status": "S2S Backlog",
+          "statusCategory": "To Do",
+          "assignee": "sirajudheen",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-08-05T21:44:48.460-0700",
+          "dueDate": "2026-08-17",
+          "created": "2026-08-03T09:57:20.636-0700",
+          "resolutionDate": null,
+          "deliveryStatus": null,
+          "territory": "TN01",
+          "serviceType": "Scan to BIM (model only)",
+          "price": 1383.6,
+          "squareFootage": 4068,
+          "projectName": "Hampton_Galbierz",
+          "projectType": "Single-family",
+          "ftpFolderPath": "/mv-s3-ftps-transfer/tn01/89499/3D Point Cloud",
+          "mapLink": "https://maps.app.goo.gl/q8ZRxLjvhE3fQ3Y6A",
+          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Quote/0Q0JQ0000083nKY0AY/view",
+          "quotedTurnaround": 8,
+          "projectId": "89499",
+          "components": [
+            "Point Cloud Orientation Issue",
+            "Salesforce/Checklist discrepancies"
+          ],
+          "inProgressDate": "2026-08-04",
+          "dataValidatedDate": "2026-08-05",
+          "comments": [
+            {
+              "author": "Daniel Ryan",
+              "created": "2026-08-05T05:01:00.185-0700",
+              "body": "I submitted the quote yesterday afternoon thanks! \nGet Outlook for iOS"
+            },
+            {
+              "author": "Automation for Jira",
+              "created": "2026-08-05T05:00:13.330-0700",
+              "body": "Email sent to customer asking for clarification."
+            },
+            {
+              "author": "Martin Isola",
+              "created": "2026-08-04T10:56:22.030-0700",
+              "body": "Hi Daniel,\nPlease note that the point cloud is not aligned with the updated project requirements.\nWe can work with the current delivery for this project, but please ensure future point clouds are properly aligned in accordance with the requested orientation and coordinate requirements.\nThank you."
+            },
+            {
+              "author": "Martin Isola",
+              "created": "2026-08-04T10:45:01.327-0700",
+              "body": ""
+            },
+            {
+              "author": "Daniel Ryan",
+              "created": "2026-08-04T08:39:39.332-0700",
+              "body": "I’ll handle this \nGet Outlook for iOS"
+            },
+            {
+              "author": "Martin Isola",
+              "created": "2026-08-04T08:37:48.754-0700",
+              "body": "Hi Kevin,\nCould you please provide a SF link with a quote associated with this project?\nThanks"
+            },
+            {
+              "author": "Multivista",
+              "created": "2026-08-03T09:57:22.690-0700",
+              "body": "(478 kB)"
+            }
+          ]
+        },
+        {
+          "key": "SCAN-5506",
+          "summary": "Scan to Services - NA32 - 87082 - Cortland Design - Aertson Midtown Apartments",
+          "status": "Done",
+          "statusCategory": "Done",
+          "assignee": "Rocio Ferreyra",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-08-05T12:43:02.827-0700",
+          "dueDate": "2026-02-10",
+          "created": "2026-01-16T16:58:20.278-0800",
+          "resolutionDate": "2026-02-10T09:00:53.996-0800",
+          "deliveryStatus": "On time",
+          "territory": "NA32",
+          "serviceType": "Scan to BIM (model and extracted plans)",
+          "price": 6736.42,
+          "squareFootage": 25976,
+          "projectName": "Aertson Midtown Apartments",
+          "projectType": "Multi-familty",
+          "ftpFolderPath": "/mv-s3-ftps-transfer/na32/87082",
+          "mapLink": "https://maps.app.goo.gl/WUii3Y5fJsnrLZUb7",
+          "salesforceLink": "https://mds.lightning.force.com/lightning/r/Opportunity/006JQ00000mFhIjYAK/view",
+          "quotedTurnaround": 16,
+          "projectId": "87082",
+          "components": [],
+          "inProgressDate": null,
+          "dataValidatedDate": null,
+          "comments": []
+        },
+        {
+          "key": "SCAN-6165",
+          "summary": "Scan to Services - NA20 - 82660 - Blue Projects - Barry Callebaut CAN - Brantford",
+          "status": "S2S Production",
+          "statusCategory": "In Progress",
+          "assignee": "Brian Nahuel Aduco",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-08-05T12:18:55.632-0700",
+          "dueDate": "2026-08-13",
+          "created": "2026-07-31T12:42:59.250-0700",
+          "resolutionDate": null,
+          "deliveryStatus": null,
+          "territory": "NA20",
+          "serviceType": "Floor Flatness Report",
+          "price": 1260,
+          "squareFootage": 13722,
+          "projectName": "NA20 - 82660 - Blue Projects - Barry Callebaut CAN",
+          "projectType": "Manufacturing & Warehouse",
+          "ftpFolderPath": "/mv-s3-ftps-transfer/na20/82660",
+          "mapLink": "https://maps.app.goo.gl/rPuL435SD8XDicEJ6",
+          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ00000xnc29YAA/view",
+          "quotedTurnaround": 8,
+          "projectId": "82660",
+          "components": [
+            "Checklist Missing"
+          ],
+          "inProgressDate": "2026-08-03",
+          "dataValidatedDate": "2026-08-03",
+          "comments": [
+            {
+              "author": "Brian Nahuel Aduco",
+              "created": "2026-08-05T12:18:55.632-0700",
+              "body": "Hi we have everything we need to work with, and we are currently finishing up the report. Thank you so much for asking!"
+            },
+            {
+              "author": "Meghan McPherson",
+              "created": "2026-08-05T08:03:11.778-0700",
+              "body": "Hi Brian, did you receive what you need to proceed or are you still waiting on info?  \nMeghan McPherson \nNational Accounts, Hexagon Multivista \nConstruction Software & Services Division \nHexagon \nM:604-323-6561 \nwww.HexagonMultivista.com"
+            },
+            {
+              "author": "Russell Bollig",
+              "created": "2026-08-03T07:33:39.162-0700",
+              "body": "Hello Brian, \nPlease see the attached floor flatness checklist. Please note, I added a page 2 plan that shows the area highlighted. \nPlease reach out with any questions. \nThanks again and have a great day! \n-Russ ||Russ Bollig Director Construction Software & Services Division |\n>Multivista, part of Hexagon \nM: (515) 441-0448 \nmultivistaservices.hexagon.com | LinkedIn | Facebook | X | Instagram \n6818 Grover Street, Suite 405, Omaha, NE 68106 \n-- \nThe contents of this communication, including any attachment(s), are confidential and may be privileged. If you are not the intended recipient (or are not receiving this communication on behalf of the intended recipient), please notify the sender immediately and delete or destroy this communication without reading it, and without making, forwarding or retaining any copy or record of it or its contents. Thank you. Note: We have taken precautions against viruses, but take no responsibility for loss or damage caused by any virus present. The above-named person proudly represents an independent contractor and licensed vendor of the MULTIVISTA® brand services and products in the location or region indicated. Titles such as principal, managing principal, regional partner or senior regional partner do not indicate affiliation with Multivista Systems, LLC, but rather the licensees status as a licensed vendor. For more information on the licensee structure, visit www.multivista.com/licensedvendors -- \nFrom: Brian Nahuel Aduco <jira@multivista.atlassian.net> Sent: Monday, August 3, 2026 9:15 AMTo: Russ Bollig <r.bollig@multivista.com>Subject:  Scan to Services - NA20 - 82660 - Blue Projects - Barry Callebaut CAN - Brantford   \nThis email is not from Hexagon’s Office 365 instance. Please be careful while clicking links, opening attachments, or replying to this email.  \n—-—-—-—   \nReply above this line.    \nBrian Nahuel Aduco commented: \nHi Russ, \nCould you please share the checklist with us whenever you get a chance? That way we can get started on this Floor Flatness Report. \nThanks in advance! \nBest regards, \nRespectfully yours, \nHexagon Scan to Servicesscantoservices@multivista.com  \nView request · Turn off this request's notifications \nThis is shared with Russ Bollig and Meghan McPherson. \nPowered by Jira Service Management  \nSent on August 3, 2026 7:15:24 AM PDT   \n (1.17 MB)"
+            },
+            {
+              "author": "Brian Nahuel Aduco",
+              "created": "2026-08-03T07:14:22.266-0700",
+              "body": "Hi Russ,\nCould you please share the checklist with us whenever you get a chance? That way we can get started on this Floor Flatness Report.\nThanks in advance!\nBest regards,"
+            },
+            {
+              "author": "Automation for Jira",
+              "created": "2026-08-03T07:11:55.746-0700",
+              "body": "Email sent to customer requesting checklist."
+            },
+            {
+              "author": "Multivista",
+              "created": "2026-07-31T12:43:01.537-0700",
+              "body": "(1011 kB)"
+            }
+          ]
+        },
+        {
+          "key": "SCAN-6081",
+          "summary": "Scan to Services - AL01 - 79933 - Montgomery Public Schools - MLK Elementary - Facility Management",
+          "status": "Done",
+          "statusCategory": "Done",
+          "assignee": "Yasmin Soria",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-08-05T12:00:14.310-0700",
+          "dueDate": "2026-08-07",
+          "created": "2026-07-01T11:03:07.443-0700",
+          "resolutionDate": "2026-08-05T12:00:06.824-0700",
+          "deliveryStatus": "On time",
+          "territory": "AL01",
+          "serviceType": "Scan to Plan (plans only)",
+          "price": 5025.66,
+          "squareFootage": 58033,
+          "projectName": "MLK Elementary",
+          "projectType": "Education",
+          "ftpFolderPath": "/mv-s3-ftps-transfer/al01/79933/3D POINT CLOUDS",
+          "mapLink": "https://maps.app.goo.gl/uYskwavBcdFxEj4c6",
+          "salesforceLink": "https://mds.lightning.force.com/lightning/r/opportunity/0064q00001%7C2cq9qaa/view",
+          "quotedTurnaround": 14,
+          "projectId": "79933",
+          "components": [
+            "Checklist Missing",
+            "Corporate Delay",
+            "Registration Error"
+          ],
+          "inProgressDate": null,
+          "dataValidatedDate": null,
+          "comments": []
+        },
+        {
+          "key": "SCAN-6140",
+          "summary": "Scan to Services - TX02 - 89455 - InTown Golf Club - Westchester Golf",
+          "status": "Done",
+          "statusCategory": "Done",
+          "assignee": "Rocio Ferreyra",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-08-05T11:41:02.921-0700",
+          "dueDate": "2026-08-06",
+          "created": "2026-07-23T11:48:44.468-0700",
+          "resolutionDate": "2026-08-05T11:40:56.187-0700",
+          "deliveryStatus": "On time",
+          "territory": "TX02",
+          "serviceType": "Scan to BIM (model and extracted plans)",
+          "price": 1916.25,
+          "squareFootage": 13000,
+          "projectName": "Westchester Golf",
+          "projectType": "Retail",
+          "ftpFolderPath": "/mv-s3-ftps-transfer/tx02/89455",
+          "mapLink": "https://maps.app.goo.gl/5BzR3uY92T15cHPS8",
+          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ00000pbsLBYAY/view",
+          "quotedTurnaround": 8,
+          "projectId": "89455",
+          "components": [
+            "Checklist Missing",
+            "Scan Data Delivery Prompt",
+            "Scan Data Missing"
+          ],
+          "inProgressDate": null,
+          "dataValidatedDate": null,
+          "comments": []
+        },
+        {
+          "key": "SCAN-6098",
+          "summary": "Scan to Services - TX02 - 89183 - Eagle Surveying - Colonnade - 15301 Dallas Pkwy",
+          "status": "S2S Production",
+          "statusCategory": "In Progress",
+          "assignee": "Rojes Malachi",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-08-05T11:28:51.174-0700",
+          "dueDate": "2026-08-06",
+          "created": "2026-07-08T12:19:16.141-0700",
+          "resolutionDate": null,
+          "deliveryStatus": null,
+          "territory": "TX02",
+          "serviceType": "Scan to BIM (model and extracted plans)",
+          "price": 14217,
+          "squareFootage": 52000,
+          "projectName": "15301 Dallas Pkwy",
+          "projectType": "Other",
+          "ftpFolderPath": "/mv-s3-ftps-transfer/tx02/89183/3D Point Clouds",
+          "mapLink": "https://maps.app.goo.gl/gLaNvAeStRv4UF3R9",
+          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ00000sdHwMYAU/view",
+          "quotedTurnaround": 20,
+          "projectId": "89183",
+          "components": [],
+          "inProgressDate": "2026-07-09",
+          "dataValidatedDate": "2026-07-09",
+          "comments": [
+            {
+              "author": "Rocio Ferreyra",
+              "created": "2026-08-03T09:44:31.438-0700",
+              "body": "Hi Team,\nThe deliverables for the Garage area are now available on the FTP.\nBest regards,"
+            },
+            {
+              "author": "Martin Isola",
+              "created": "2026-07-30T05:42:34.125-0700",
+              "body": "Hi Rojes,\nThis is the RCP for the last area I sent, building 3. You already have the RCS for this sector.\nWhen can you have the garage ready? It was priority one. Please let me know.\nThanks"
+            },
+            {
+              "author": "Rojes Malachi",
+              "created": "2026-07-30T02:06:08.676-0700",
+              "body": "Hi   why are we receiving new data ?the scope of the project is to model the stairs which we have already received please confirm what these data are"
+            },
+            {
+              "author": "Martin Isola",
+              "created": "2026-07-29T07:12:45.118-0700",
+              "body": "Hi  The RCP is Uploaded Thanks"
+            },
+            {
+              "author": "Martin Isola",
+              "created": "2026-07-27T06:08:58.765-0700",
+              "body": "Hi  here you will find the last point cloud.\nI am uploading now the RCP, but you can start with the RCS.\nThanks"
+            },
+            {
+              "author": "Martin Isola",
+              "created": "2026-07-17T05:07:29.004-0700",
+              "body": "Hi \nYes, you are correct, just the stairs. 3 Revit models is Ok.\nThanks"
+            },
+            {
+              "author": "Rojes Malachi",
+              "created": "2026-07-17T03:11:35.488-0700",
+              "body": "Hi   From the scan it looks like only the stairs are scanned are we only modelling the stair portions ?\nand we will be modelling all three data sets in different revit files hope this is okey ?"
+            },
+            {
+              "author": "Martin Isola",
+              "created": "2026-07-09T07:33:31.955-0700",
+              "body": "Team, please review the point clouds. You have to generate separated models\nOnce you get the models, we will need to review the extracted plans. Let me know when you are ready to discuss it,\nThanks"
+            },
+            {
+              "author": "Multivista",
+              "created": "2026-07-08T12:19:18.567-0700",
+              "body": "(264 kB)"
+            }
+          ]
+        },
+        {
+          "key": "SCAN-6180",
+          "summary": "Scan to Services - GA02 - 89609 - Array Design - Nelson Residence",
+          "status": "Backlog",
+          "statusCategory": "To Do",
+          "assignee": "Scan to Services",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-08-05T09:23:53.471-0700",
+          "dueDate": null,
+          "created": "2026-08-05T09:23:53.310-0700",
+          "resolutionDate": null,
+          "deliveryStatus": null,
+          "territory": "GA02",
+          "serviceType": "Scan to BIM (model and extracted plans)",
+          "price": null,
+          "squareFootage": null,
+          "projectName": null,
+          "projectType": null,
+          "ftpFolderPath": null,
+          "mapLink": null,
+          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ00000xqrO3YAI/view",
+          "quotedTurnaround": null,
+          "projectId": "89609",
+          "components": [],
+          "inProgressDate": null,
+          "dataValidatedDate": null,
+          "comments": []
+        },
+        {
+          "key": "SCAN-6179",
+          "summary": "Scan to Services - GA02 - 89609 - Array Design - Nelson Residence",
+          "status": "Backlog",
+          "statusCategory": "To Do",
+          "assignee": "Scan to Services",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-08-05T09:23:41.981-0700",
+          "dueDate": null,
+          "created": "2026-08-05T09:23:41.820-0700",
+          "resolutionDate": null,
+          "deliveryStatus": null,
+          "territory": "GA02",
+          "serviceType": "Scan to BIM (model and extracted plans)",
+          "price": null,
+          "squareFootage": null,
+          "projectName": null,
+          "projectType": null,
+          "ftpFolderPath": null,
+          "mapLink": null,
+          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ00000xqrO3YAI/view",
+          "quotedTurnaround": null,
+          "projectId": "89609",
+          "components": [],
+          "inProgressDate": null,
+          "dataValidatedDate": null,
+          "comments": []
+        },
+        {
+          "key": "SCAN-6178",
+          "summary": "Scan to Services - GA02 - 89538 - Town of Bluffton - Rotary Community Center",
+          "status": "Backlog",
+          "statusCategory": "To Do",
+          "assignee": "Scan to Services",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-08-05T09:21:10.190-0700",
+          "dueDate": null,
+          "created": "2026-08-05T09:21:07.767-0700",
+          "resolutionDate": null,
+          "deliveryStatus": null,
+          "territory": "GA02",
+          "serviceType": "Scan to BIM (model and extracted plans)",
+          "price": null,
+          "squareFootage": null,
+          "projectName": null,
+          "projectType": null,
+          "ftpFolderPath": null,
+          "mapLink": null,
+          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ00000xKMgkYAG/view",
+          "quotedTurnaround": null,
+          "projectId": "89538",
+          "components": [],
+          "inProgressDate": null,
+          "dataValidatedDate": null,
+          "comments": [
+            {
+              "author": "Multivista",
+              "created": "2026-08-05T09:21:10.081-0700",
+              "body": "(200 kB)"
+            }
+          ]
+        },
+        {
+          "key": "SCAN-6041",
+          "summary": "Scan to Services - ON01 - 87803 - Matheson Constructors - NT 08 - T3 - HBS Replacement",
+          "status": "S2S Production",
+          "statusCategory": "In Progress",
+          "assignee": "Rojes Malachi",
+          "priority": "Unprioritized",
+          "type": "ScanTo",
+          "updated": "2026-08-05T09:10:24.604-0700",
+          "dueDate": "2026-08-07",
+          "created": "2026-06-18T11:25:16.918-0700",
+          "resolutionDate": null,
+          "deliveryStatus": null,
+          "territory": "ON01",
+          "serviceType": "Scan to BIM (model only)",
+          "price": 14139.82,
+          "squareFootage": 36194,
+          "projectName": "Pearson Airport - NT 08 - T3 - HBS Replacement",
+          "projectType": "Infrastructure",
+          "ftpFolderPath": "/mv-s3-ftps-transfer/on01/87803/3D Point Clouds",
+          "mapLink": "https://maps.app.goo.gl/KFZdkgVWEJDU24a56",
+          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Quote/0Q0JQ000007SjZF0A0/view",
+          "quotedTurnaround": 35,
+          "projectId": "87803",
+          "components": [
+            "Checklist Missing",
+            "Scan Data Missing"
+          ],
+          "inProgressDate": "2026-06-18",
+          "dataValidatedDate": "2026-06-19",
+          "comments": [
+            {
+              "author": "Rojes Malachi",
+              "created": "2026-07-13T05:05:33.830-0700",
+              "body": "Hi   There is a different type of Conveyor which is running in this dataset this does not have any motors or start and end knobs  , can you please confirm how it needs to be done  as soon as possible ."
+            },
+            {
+              "author": "Martin Isola",
+              "created": "2026-06-23T10:59:57.236-0700",
+              "body": ""
+            },
+            {
+              "author": "Martin Isola",
+              "created": "2026-06-22T09:43:15.759-0700",
+              "body": ""
+            },
+            {
+              "author": "Martin Isola",
+              "created": "2026-06-19T13:17:04.215-0700",
+              "body": ""
+            },
+            {
+              "author": "Robert Calvert",
+              "created": "2026-06-19T10:40:06.285-0700",
+              "body": "The Pointcloud is has been uploaded to the FTP."
+            },
+            {
+              "author": "Robert Calvert",
+              "created": "2026-06-19T10:28:04.223-0700",
+              "body": "Hello, We have just revived the new closed Salesforce link: https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ00000vEcqzYAC/view"
+            },
+            {
+              "author": "Robert Calvert",
+              "created": "2026-06-18T12:06:50.506-0700",
+              "body": ""
+            },
+            {
+              "author": "Martin Isola",
+              "created": "2026-06-18T11:49:27.412-0700",
+              "body": "Hi  \nSame situation here, you only include the laser scanning checklist, the scan to bim one is missing.\nAnd the quote link has the same issue; the quotes are in draft phase.\nThanks,"
+            },
+            {
+              "author": "Automation for Jira",
+              "created": "2026-06-18T11:47:44.962-0700",
+              "body": "Email sent to customer requesting checklist."
+            },
+            {
+              "author": "Multivista",
+              "created": "2026-06-18T11:25:21.199-0700",
+              "body": "(237 kB)\n (13.12 MB)"
+            }
+          ]
+        },
         {
           "key": "SCAN-6164",
           "summary": "Upsell - Scan to Services - NE01 - 89450 - Hoar Construction - Avenue One Building R-2 - CAD Aligment",
@@ -85,46 +1028,6 @@
           "inProgressDate": null,
           "dataValidatedDate": null,
           "comments": []
-        },
-        {
-          "key": "SCAN-6174",
-          "summary": "Scan to Services - TX03 - 89489 - Morse Studio - 15 Cedarwing Lane",
-          "status": "S2S Queue",
-          "statusCategory": "In Progress",
-          "assignee": "Rojes Malachi",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-08-05T08:11:51.850-0700",
-          "dueDate": "2026-08-14",
-          "created": "2026-08-03T14:27:34.840-0700",
-          "resolutionDate": null,
-          "deliveryStatus": null,
-          "territory": "TX03",
-          "serviceType": "Scan to Plan (plans only)",
-          "price": 1140.02,
-          "squareFootage": 4000,
-          "projectName": "15 Cedarwing Lane",
-          "projectType": "Single-family",
-          "ftpFolderPath": "/mv-s3-ftps-transfer/tx03/89489/3D Point Clouds",
-          "mapLink": "https://maps.app.goo.gl/3P8aLCc4XQjXnABu8",
-          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Quote/0Q0JQ000007oi9t0AA/view",
-          "quotedTurnaround": 8,
-          "projectId": "89489",
-          "components": [],
-          "inProgressDate": "2026-08-04",
-          "dataValidatedDate": "2026-08-04",
-          "comments": [
-            {
-              "author": "Martin Isola",
-              "created": "2026-08-04T12:12:26.314-0700",
-              "body": ""
-            },
-            {
-              "author": "Multivista",
-              "created": "2026-08-03T14:27:37.042-0700",
-              "body": "(198 kB)"
-            }
-          ]
         },
         {
           "key": "SCAN-6059",
@@ -210,63 +1113,6 @@
           ]
         },
         {
-          "key": "SCAN-6165",
-          "summary": "Scan to Services - NA20 - 82660 - Blue Projects - Barry Callebaut CAN - Brantford",
-          "status": "S2S Production",
-          "statusCategory": "In Progress",
-          "assignee": "Brian Nahuel Aduco",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-08-05T08:03:11.778-0700",
-          "dueDate": "2026-08-13",
-          "created": "2026-07-31T12:42:59.250-0700",
-          "resolutionDate": null,
-          "deliveryStatus": null,
-          "territory": "NA20",
-          "serviceType": "Floor Flatness Report",
-          "price": 1260,
-          "squareFootage": 13722,
-          "projectName": "NA20 - 82660 - Blue Projects - Barry Callebaut CAN",
-          "projectType": "Manufacturing & Warehouse",
-          "ftpFolderPath": "/mv-s3-ftps-transfer/na20/82660",
-          "mapLink": "https://maps.app.goo.gl/rPuL435SD8XDicEJ6",
-          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ00000xnc29YAA/view",
-          "quotedTurnaround": 8,
-          "projectId": "82660",
-          "components": [
-            "Checklist Missing"
-          ],
-          "inProgressDate": "2026-08-03",
-          "dataValidatedDate": "2026-08-03",
-          "comments": [
-            {
-              "author": "Meghan McPherson",
-              "created": "2026-08-05T08:03:11.778-0700",
-              "body": "Hi Brian, did you receive what you need to proceed or are you still waiting on info?  \nMeghan McPherson \nNational Accounts, Hexagon Multivista \nConstruction Software & Services Division \nHexagon \nM:604-323-6561 \nwww.HexagonMultivista.com"
-            },
-            {
-              "author": "Russell Bollig",
-              "created": "2026-08-03T07:33:39.162-0700",
-              "body": "Hello Brian, \nPlease see the attached floor flatness checklist. Please note, I added a page 2 plan that shows the area highlighted. \nPlease reach out with any questions. \nThanks again and have a great day! \n-Russ ||Russ Bollig Director Construction Software & Services Division |\n>Multivista, part of Hexagon \nM: (515) 441-0448 \nmultivistaservices.hexagon.com | LinkedIn | Facebook | X | Instagram \n6818 Grover Street, Suite 405, Omaha, NE 68106 \n-- \nThe contents of this communication, including any attachment(s), are confidential and may be privileged. If you are not the intended recipient (or are not receiving this communication on behalf of the intended recipient), please notify the sender immediately and delete or destroy this communication without reading it, and without making, forwarding or retaining any copy or record of it or its contents. Thank you. Note: We have taken precautions against viruses, but take no responsibility for loss or damage caused by any virus present. The above-named person proudly represents an independent contractor and licensed vendor of the MULTIVISTA® brand services and products in the location or region indicated. Titles such as principal, managing principal, regional partner or senior regional partner do not indicate affiliation with Multivista Systems, LLC, but rather the licensees status as a licensed vendor. For more information on the licensee structure, visit www.multivista.com/licensedvendors -- \nFrom: Brian Nahuel Aduco <jira@multivista.atlassian.net> Sent: Monday, August 3, 2026 9:15 AMTo: Russ Bollig <r.bollig@multivista.com>Subject:  Scan to Services - NA20 - 82660 - Blue Projects - Barry Callebaut CAN - Brantford   \nThis email is not from Hexagon’s Office 365 instance. Please be careful while clicking links, opening attachments, or replying to this email.  \n—-—-—-—   \nReply above this line.    \nBrian Nahuel Aduco commented: \nHi Russ, \nCould you please share the checklist with us whenever you get a chance? That way we can get started on this Floor Flatness Report. \nThanks in advance! \nBest regards, \nRespectfully yours, \nHexagon Scan to Servicesscantoservices@multivista.com  \nView request · Turn off this request's notifications \nThis is shared with Russ Bollig and Meghan McPherson. \nPowered by Jira Service Management  \nSent on August 3, 2026 7:15:24 AM PDT   \n (1.17 MB)"
-            },
-            {
-              "author": "Brian Nahuel Aduco",
-              "created": "2026-08-03T07:14:22.266-0700",
-              "body": "Hi Russ,\nCould you please share the checklist with us whenever you get a chance? That way we can get started on this Floor Flatness Report.\nThanks in advance!\nBest regards,"
-            },
-            {
-              "author": "Automation for Jira",
-              "created": "2026-08-03T07:11:55.746-0700",
-              "body": "Email sent to customer requesting checklist."
-            },
-            {
-              "author": "Multivista",
-              "created": "2026-07-31T12:43:01.537-0700",
-              "body": "(1011 kB)"
-            }
-          ]
-        },
-        {
           "key": "SCAN-6129",
           "summary": "Scan to Services - GBR01 - 503665 - Rigg Tech Ltd - Haddington Place",
           "status": "Done",
@@ -297,88 +1143,6 @@
           "inProgressDate": null,
           "dataValidatedDate": null,
           "comments": []
-        },
-        {
-          "key": "SCAN-6053",
-          "summary": "Scan to Services - GBR01 - 503552 - Ayrshire College - Kilwinning Campus",
-          "status": "S2S Production",
-          "statusCategory": "In Progress",
-          "assignee": "Rojes Malachi",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-08-05T07:02:12.681-0700",
-          "dueDate": "2026-08-11",
-          "created": "2026-06-23T02:26:42.997-0700",
-          "resolutionDate": null,
-          "deliveryStatus": null,
-          "territory": "GBR01",
-          "serviceType": "Scan to BIM (model and extracted plans)",
-          "price": 15517.75,
-          "squareFootage": 115000,
-          "projectName": "Ayrshire college Kilwinning Campus",
-          "projectType": "Education",
-          "ftpFolderPath": "/mv-s3-ftps-transfer-london/gbr01/503552",
-          "mapLink": "https://maps.app.goo.gl/7K8ykFCutEWvgrRn9",
-          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ00000pbrAwYAI/viewhttps://mds.lightning.force.com/lightning/r/Quote/0Q0JQ0000042bqn0AA/view",
-          "quotedTurnaround": 28,
-          "projectId": "503552",
-          "components": [
-            "Scan Data Missing"
-          ],
-          "inProgressDate": "2026-06-23",
-          "dataValidatedDate": "2026-07-02",
-          "comments": [
-            {
-              "author": "Markk Donnelly",
-              "created": "2026-07-02T10:30:15.225-0700",
-              "body": "Appreciate the comments Mark.\nIt is still extremely frustrating.\nOur clients don’t really care if its Leica's fault if its Cyclone, if its RCS files - the reputation is ours.\nWe have said as much of this as we can to clients. They are just stopping paying us and we have lost considerable future work off the back of a combination of QC issues and delays in production. The delays in production have been compounded by this issue - i understand the limitations scan2 are experiencing and you are describing - but it is systemic across smaller projects too (not just the 'we can't handle this point cloud size' issue). That is what we are discussing here however, i digress.\nWe have run out of things to tell the client.\nI appreciate you had a solution in play back in 2020-2024 but that is what i would expect from a BIM team of this scale working in 2026. Being able to handle large files. At this point, we are just being told its too big, go fix it.\nI have asked the question 3 or 4 times of what limits of point cloud size are we capable of handling at this time and had zero responses. We are in the dark. We have spent time chopping up point clouds. As best we can to be sub 600 scans at a time.\nI really hope the new release solves the issue too. Then we sort the QC. Then we sort the long production times.\nThen we see what clients remain...\nRichard, note on the 10mm decimation moving forward.\nMarkk Donnelly\nRegional Director\nMultivista, part of HexagonM: 07711994345multivista.com<https://www.multivista.com/>\n________________________________From: Mark King <jira@multivista.atlassian.net>Sent: Thursday, July 2, 2026 6:58 pmTo: Markk Donnelly - Multivista <m.donnelly@multivista.com>Subject:  Scan to Services - GBR01 - 503552 - Ayrshire College - Kilwinning Campus\n—-—-—-—Reply above this line.\nMark King commented:\nHi Markk,\nI just wanted to step in. I would unfortunately lie the blame for this current situation at Leica. The 2026 versions inability to decimate has caused issues for many franchises.\nRevit does not handle these large 100Gb+ files very well, as it is also trying to render complex 3D models at the same time. Just like you guys get loading screens sometimes moving between tools, the modelling team get that all the time during the modelling process. The smaller the point cloud the more efficient the software runs.\nIf you provided large files in the past, we likely used another software to reduce the file size.\nWith the new version of REG360 and its ability to decimate at 10mm this will drastically reduce the file sizes. For instance the Kilwinning Campus went from 144Gb undecimated to 27Gb when decimated. This just makes it easier all round to upload/download and use.\nApologies for the delay in starting this project but S2S took on the task of using another piece of software, Recap Pro to decimate the point cloud from 144Gb down to 27Gb. This however takes time to download, open, export decimated and then re-upload.\nI am really hopeful that this new REG version will allow your teams to export much smaller files, making all our lives easier. Remember with the new version use 10mm decimation. If you have any further issues please reach out to 3D laser support.\nMany thanks\nMark K\nRespectfully yours,\nHexagon Scan to Servicesscantoservices@multivista.com<scantoservices@multivista.com>\nView request<https://multivista.atlassian.net/servicedesk/customer/portal/5/SCAN-6053?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0Z3QiOiJhbm9ueW1vdXMtbGluayIsInFzaCI6ImM1ZjJmY2QyMjllYTg0MzdmMDZjZTM0NWE4YTQ5ODU1MDE5M2FmYjA0NWFlOGI3MTY1NWYzNTY0MWNmZDRkMTgiLCJpc3MiOiJzZXJ2aWNlZGVzay1qd3QtdG9rZW4taXNzdWVyIiwiY29udGV4dCI6eyJ1c2VyIjoiMTM0NjkiLCJpc3N1ZSI6IlNDQU4tNjA1MyJ9LCJleHAiOjE3ODU0MzA0MTQsImlhdCI6MTc4MzAxMTIxNH0.7GQh3CY8ov8aB2PociOMbfXO43rTae9E8qTOhPCPsMg&sda_source=notification-email> · Turn off this request's notifications<https://multivista.atlassian.net/servicedesk/customer/portal/5/SCAN-6053/unsubscribe?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0Z3QiOiJhbm9ueW1vdXMtbGluayIsInFzaCI6IjI4MjM0MjM3MThjNmM4ZGZjNzhlYTg0MDZjZWZlMjBjN2ZkM2U0YWQyNDIyZjA2MDM3Zjc3MzgyZWRlZTUxZDIiLCJpc3MiOiJzZXJ2aWNlZGVzay1qd3QtdG9rZW4taXNzdWVyIiwiY29udGV4dCI6eyJ1c2VyIjoidWc6MjY3NTY1ZDYtYmE5Zi00NjMzLWFjYWYtZGRjM2YzZjk2YzVmIiwiaXNzdWUiOiJTQ0FOLTYwNTMifSwiZXhwIjoxNzg1NDMwNDE0LCJpYXQiOjE3ODMwMTEyMTR9.2ju-k3cUbESR0l9EXqv6vZ2prFVJuxgy8z7-mDbWuJI>\nThis is shared with Markk Donnelly, Paul McLaughlin, and Rich Carrington.\nPowered by Jira Service Management<https://www.atlassian.com/software/jira/service-desk/powered-by?utm_medium=jira-in-product&utm_source=jira_service_desk_email_footer&utm_content=multivista>"
-            },
-            {
-              "author": "Mark King",
-              "created": "2026-07-02T09:52:32.926-0700",
-              "body": "Hi Markk,\nI just wanted to step in. I would unfortunately lie the blame for this current situation at Leica. The 2026 versions inability to decimate has caused issues for many franchises.\nRevit does not handle these large 100Gb+ files very well, as it is also trying to render complex 3D models at the same time. Just like you guys get loading screens sometimes moving between tools, the modelling team get that all the time during the modelling process. The smaller the point cloud the more efficient the software runs.\nIf you provided large files in the past, we likely used another software to reduce the file size.\nWith the new version of REG360 and its ability to decimate at 10mm this will drastically reduce the file sizes. For instance the Kilwinning Campus went from 144Gb undecimated to 27Gb when decimated. This just makes it easier all round to upload/download and use.\nApologies for the delay in starting this project but S2S took on the task of using another piece of software, Recap Pro to decimate the point cloud from 144Gb down to 27Gb. This however takes time to download, open, export decimated and then re-upload. \nI am really hopeful that this new REG version will allow your teams to export much smaller files, making all our lives easier. Remember with the new version use 10mm decimation. If you have any further issues please reach out to 3D laser support.\nMany thanks\nMark K"
-            },
-            {
-              "author": "Markk Donnelly",
-              "created": "2026-07-02T08:22:11.302-0700",
-              "body": "Hi Martin\nWe need limits to work to.\nThese files are not that large in general. 750 scan points is an average university building. We have dealt with files at 250Gb in the past with scan 2. This is half of that!\nI appreciate the decimation is causing an issue but i would still expect you to have machines to manage these. It's literally what we do.\nWe run a £12k spec computer to run these point clouds.\nWhat are your limits?\nWe cannot keep having this huge downtime in production moving files around. We are far too busy with constant work to get through.\nMarkk Donnelly\nRegional Director\nMultivista, part of HexagonM: 07711994345multivista.com<https://www.multivista.com/>\n________________________________From: Martin Isola <jira@multivista.atlassian.net>Sent: Thursday, July 2, 2026 4:51 pmTo: Markk Donnelly - Multivista <m.donnelly@multivista.com>Subject:  Scan to Services - GBR01 - 503552 - Ayrshire College - Kilwinning Campus\n—-—-—-—Reply above this line.\nMartin Isola commented:\nHi Rich,\nYes, for sure, that will help us a lot. We are working on the RCS, so you can focus on the LGSx files.\nThanks\nRespectfully yours,\nHexagon Scan to Servicesscantoservices@multivista.com<scantoservices@multivista.com>\nView request<https://multivista.atlassian.net/servicedesk/customer/portal/5/SCAN-6053?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0Z3QiOiJhbm9ueW1vdXMtbGluayIsInFzaCI6ImM1ZjJmY2QyMjllYTg0MzdmMDZjZTM0NWE4YTQ5ODU1MDE5M2FmYjA0NWFlOGI3MTY1NWYzNTY0MWNmZDRkMTgiLCJpc3MiOiJzZXJ2aWNlZGVzay1qd3QtdG9rZW4taXNzdWVyIiwiY29udGV4dCI6eyJ1c2VyIjoiMTM0NjkiLCJpc3N1ZSI6IlNDQU4tNjA1MyJ9LCJleHAiOjE3ODU0MjMwNzcsImlhdCI6MTc4MzAwMzg3N30.s0az2XhYI2wk2uVFuh5oZKUxH5a6_Vd7RboqMii5CEA&sda_source=notification-email> · Turn off this request's notifications<https://multivista.atlassian.net/servicedesk/customer/portal/5/SCAN-6053/unsubscribe?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0Z3QiOiJhbm9ueW1vdXMtbGluayIsInFzaCI6IjI4MjM0MjM3MThjNmM4ZGZjNzhlYTg0MDZjZWZlMjBjN2ZkM2U0YWQyNDIyZjA2MDM3Zjc3MzgyZWRlZTUxZDIiLCJpc3MiOiJzZXJ2aWNlZGVzay1qd3QtdG9rZW4taXNzdWVyIiwiY29udGV4dCI6eyJ1c2VyIjoidWc6MjY3NTY1ZDYtYmE5Zi00NjMzLWFjYWYtZGRjM2YzZjk2YzVmIiwiaXNzdWUiOiJTQ0FOLTYwNTMifSwiZXhwIjoxNzg1NDIzMDc3LCJpYXQiOjE3ODMwMDM4Nzd9.yWHop4EGwgRM2d8lJWo3-u8xmWGwvu-A5jO4NUc01LI>\nThis is shared with Markk Donnelly, Paul McLaughlin, and Rich Carrington.\nPowered by Jira Service Management<https://www.atlassian.com/software/jira/service-desk/powered-by?utm_medium=jira-in-product&utm_source=jira_service_desk_email_footer&utm_content=multivista>"
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-07-02T07:50:34.187-0700",
-              "body": "Hi Rich, \nYes, for sure, that will help us a lot. We are working on the RCS, so you can focus on the LGSx files.\nThanks"
-            },
-            {
-              "author": "Rich Carrington",
-              "created": "2026-07-02T07:35:31.760-0700",
-              "body": "Good Afternoon,\nIf this is too much of an issue, I can try the new Cyclone version to get you some files that aren't so big.\nKind Regards\nRichard CarringtonSenior Documentation SpecialistOperations\nMultivista, part of HexagonT: 07814493811E: r.dudley@multivista.com<r.dudley@multivista.com>multivista.com<https://www.multivista.com/> | LinkedIn<https://www.linkedin.com/company/multivista/>\n________________________________From: Martin Isola <jira@multivista.atlassian.net>Sent: 02 July 2026 14:47To: Richard Carrington - Multivista <r.dudley@multivista.com>Subject:  Scan to Services - GBR01 - 503552 - Ayrshire College - Kilwinning Campus\n—-—-—-—Reply above this line.\nMartin Isola commented:\nHi team,\nWe are working with the 3D laser scanning team to reduce the point cloud size, as you know this process it is taking some time. I will let you know when the project is ready in production\nAdditionally, could you please confirm the SF links is the correct one?\nhttps://mds.lightning.force.com/lightning/r/Quote/0Q0JQ0000042bqn0AA/view\nThanks\nRespectfully yours,\nHexagon Scan to Servicesscantoservices@multivista.com<scantoservices@multivista.com>\nView request<https://multivista.atlassian.net/servicedesk/customer/portal/5/SCAN-6053?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0Z3QiOiJhbm9ueW1vdXMtbGluayIsInFzaCI6ImM1ZjJmY2QyMjllYTg0MzdmMDZjZTM0NWE4YTQ5ODU1MDE5M2FmYjA0NWFlOGI3MTY1NWYzNTY0MWNmZDRkMTgiLCJpc3MiOiJzZXJ2aWNlZGVzay1qd3QtdG9rZW4taXNzdWVyIiwiY29udGV4dCI6eyJ1c2VyIjoiMTM0NTIiLCJpc3N1ZSI6IlNDQU4tNjA1MyJ9LCJleHAiOjE3ODU0MTkyNjIsImlhdCI6MTc4MzAwMDA2Mn0.Ra_vRXDzOjAO8rUQPt176cVMTgZolxkXQlOHSvwN85U&sda_source=notification-email> · Turn off this request's notifications<https://multivista.atlassian.net/servicedesk/customer/portal/5/SCAN-6053/unsubscribe?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0Z3QiOiJhbm9ueW1vdXMtbGluayIsInFzaCI6IjI4MjM0MjM3MThjNmM4ZGZjNzhlYTg0MDZjZWZlMjBjN2ZkM2U0YWQyNDIyZjA2MDM3Zjc3MzgyZWRlZTUxZDIiLCJpc3MiOiJzZXJ2aWNlZGVzay1qd3QtdG9rZW4taXNzdWVyIiwiY29udGV4dCI6eyJ1c2VyIjoidWc6MGNmYmI3MmYtNzkxNS00MjFmLTk4OTgtNGViN2U4MmYyMGUwIiwiaXNzdWUiOiJTQ0FOLTYwNTMifSwiZXhwIjoxNzg1NDE5MjYyLCJpYXQiOjE3ODMwMDAwNjJ9.7VK5CkyM7IMh4m6QsP1ziNwrgwgSJYEOCv8wURmPgOM>\nThis is shared with Markk Donnelly, Paul McLaughlin, and Rich Carrington.\nPowered by Jira Service Management<https://www.atlassian.com/software/jira/service-desk/powered-by?utm_medium=jira-in-product&utm_source=jira_service_desk_email_footer&utm_content=multivista>\nSent on 02 July 2026 14:47:42 BSThttps://use1-track.atlassian.com/CI0/0100019f2315e0eb-d38cd833-ac50-48ec-a1e3-9cfca1fc083a-000000/C6K1unDlwOU4oDU3XeRPdc3dJIg0wwuCdRMkSjk0JcE=452"
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-07-02T06:47:11.785-0700",
-              "body": "Hi team,\nWe are working with the 3D laser scanning team to reduce the point cloud size, as you know this process it is taking some time. I will let you know when the project is ready in production\nAdditionally, could you please confirm the SF links is the correct one?\nhttps://mds.lightning.force.com/lightning/r/Quote/0Q0JQ0000042bqn0AA/view\nThanks"
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-07-01T07:58:46.775-0700",
-              "body": "Drone Data is available on the FTP"
-            },
-            {
-              "author": "Automation for Jira",
-              "created": "2026-06-30T05:00:25.843-0700",
-              "body": "Email sent to customer notifying that the given scan data delivery date has passed."
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-06-25T09:26:44.070-0700",
-              "body": "Hi  could please check if this SF link is the correct one. https://mds.lightning.force.com/lightning/r/Quote/0Q0JQ0000042bqn0AA/view It was approved on the old salesforce.\nTHanks"
-            },
-            {
-              "author": "Multivista",
-              "created": "2026-06-23T02:26:45.494-0700",
-              "body": "(264 kB)"
-            }
-          ]
         },
         {
           "key": "SCAN-6087",
@@ -533,153 +1297,6 @@
               "author": "Multivista",
               "created": "2026-05-29T04:58:22.195-0700",
               "body": "(259 kB)\n (1.09 MB)\n (3.19 MB)"
-            }
-          ]
-        },
-        {
-          "key": "SCAN-6041",
-          "summary": "Scan to Services - ON01 - 87803 - Matheson Constructors - NT 08 - T3 - HBS Replacement",
-          "status": "S2S Production",
-          "statusCategory": "In Progress",
-          "assignee": "Rojes Malachi",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-08-05T05:30:32.430-0700",
-          "dueDate": "2026-08-07",
-          "created": "2026-06-18T11:25:16.918-0700",
-          "resolutionDate": null,
-          "deliveryStatus": null,
-          "territory": "ON01",
-          "serviceType": "Scan to BIM (model only)",
-          "price": 14139.82,
-          "squareFootage": 36194,
-          "projectName": "Pearson Airport - NT 08 - T3 - HBS Replacement",
-          "projectType": "Infrastructure",
-          "ftpFolderPath": "/mv-s3-ftps-transfer/on01/87803/3D Point Clouds",
-          "mapLink": "https://maps.app.goo.gl/KFZdkgVWEJDU24a56",
-          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Quote/0Q0JQ000007SjZF0A0/view",
-          "quotedTurnaround": 35,
-          "projectId": "87803",
-          "components": [
-            "Checklist Missing",
-            "Scan Data Missing"
-          ],
-          "inProgressDate": "2026-06-18",
-          "dataValidatedDate": "2026-06-19",
-          "comments": [
-            {
-              "author": "Rojes Malachi",
-              "created": "2026-07-13T05:05:33.830-0700",
-              "body": "Hi   There is a different type of Conveyor which is running in this dataset this does not have any motors or start and end knobs  , can you please confirm how it needs to be done  as soon as possible ."
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-06-23T10:59:57.236-0700",
-              "body": ""
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-06-22T09:43:15.759-0700",
-              "body": ""
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-06-19T13:17:04.215-0700",
-              "body": ""
-            },
-            {
-              "author": "Robert Calvert",
-              "created": "2026-06-19T10:40:06.285-0700",
-              "body": "The Pointcloud is has been uploaded to the FTP."
-            },
-            {
-              "author": "Robert Calvert",
-              "created": "2026-06-19T10:28:04.223-0700",
-              "body": "Hello, We have just revived the new closed Salesforce link: https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ00000vEcqzYAC/view"
-            },
-            {
-              "author": "Robert Calvert",
-              "created": "2026-06-18T12:06:50.506-0700",
-              "body": ""
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-06-18T11:49:27.412-0700",
-              "body": "Hi  \nSame situation here, you only include the laser scanning checklist, the scan to bim one is missing.\nAnd the quote link has the same issue; the quotes are in draft phase.\nThanks,"
-            },
-            {
-              "author": "Automation for Jira",
-              "created": "2026-06-18T11:47:44.962-0700",
-              "body": "Email sent to customer requesting checklist."
-            },
-            {
-              "author": "Multivista",
-              "created": "2026-06-18T11:25:21.199-0700",
-              "body": "(237 kB)\n (13.12 MB)"
-            }
-          ]
-        },
-        {
-          "key": "SCAN-6081",
-          "summary": "Scan to Services - AL01 - 79933 - Montgomery Public Schools - MLK Elementary - Facility Management",
-          "status": "S2S Final QC",
-          "statusCategory": "In Progress",
-          "assignee": "Yasmin Soria",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-08-05T05:30:32.020-0700",
-          "dueDate": "2026-08-07",
-          "created": "2026-07-01T11:03:07.443-0700",
-          "resolutionDate": null,
-          "deliveryStatus": null,
-          "territory": "AL01",
-          "serviceType": "Scan to Plan (plans only)",
-          "price": 5025.66,
-          "squareFootage": 58033,
-          "projectName": "MLK Elementary",
-          "projectType": "Education",
-          "ftpFolderPath": "/mv-s3-ftps-transfer/al01/79933/3D POINT CLOUDS",
-          "mapLink": "https://maps.app.goo.gl/uYskwavBcdFxEj4c6",
-          "salesforceLink": "https://mds.lightning.force.com/lightning/r/opportunity/0064q00001%7C2cq9qaa/view",
-          "quotedTurnaround": 14,
-          "projectId": "79933",
-          "components": [
-            "Checklist Missing",
-            "Corporate Delay",
-            "Registration Error"
-          ],
-          "inProgressDate": "2026-07-02",
-          "dataValidatedDate": "2026-07-08",
-          "comments": [
-            {
-              "author": "Rocio Ferreyra",
-              "created": "2026-07-28T07:35:01.840-0700",
-              "body": "Hi , Following up on Yasmin's previous message, will it be possible to adjust that area of the point cloud?\nWe'd appreciate it if this could be done as soon as possible to avoid impacting the delivery date, as this adjustment will directly affect the ceiling plan deliverable required for this phase.\nThanks!"
-            },
-            {
-              "author": "Yasmin Soria",
-              "created": "2026-07-24T11:38:07.757-0700",
-              "body": "Hi Brandon,\n \nWe found some inconsistencies in the point cloud compared to the previous one we used for modeling.\nThe affected area is highlighted in the image attached. The previous point cloud is shown in red, and the current one in cyan.\nFor now, we are continuing to progress on the other areas, but ideally, we would need the point cloud corrected for this section.\n \nThanks"
-            },
-            {
-              "author": "Brandon Colvin",
-              "created": "2026-07-07T15:33:43.025-0700",
-              "body": "Brandon ColvinDirect: 205.218.8836\nFrom: Jira automation <automation@multivista.atlassian.net>Sent: Monday, July 6, 2026 7:02 AMTo: Brandon Colvin - Multivista <b.colvin@multivista.com>Subject: Waiting on Checklist -  - Scan to Services - AL01 - 79933 - Montgomery Public Schools - MLK Elementary - Facility Management\nHi Team,\nThis is an automated REMINDER to let you know that your Scan to Services ticket is still ON HOLD as we are still ‘Waiting on Checklist'.\nYou should have received a communication with further details of the issue and corrective action required previously.\nPlease respond directly to this ticket/email/message with the fully completed, correct checklist for this project. Failure to do so will delay the start of your project further.\nRespectfully yours,\nHexagon Scan to Servicesscantoservices@multivista.com<scantoservices@multivista.com>\n (715 kB)"
-            },
-            {
-              "author": "Automation for Jira",
-              "created": "2026-07-06T05:01:27.246-0700",
-              "body": "Follow-up email sent to customer requesting checklist."
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-07-03T05:25:04.494-0700",
-              "body": "Scope - Ceiling plans and above ceiling."
-            },
-            {
-              "author": "Automation for Jira",
-              "created": "2026-07-03T05:11:32.950-0700",
-              "body": "Email sent to customer requesting checklist."
             }
           ]
         },
@@ -839,74 +1456,6 @@
           ]
         },
         {
-          "key": "SCAN-6170",
-          "summary": "Scan to Services - TN01 - 89499 - Merrill Construction - 2312 Hampton",
-          "status": "S2S Backlog",
-          "statusCategory": "To Do",
-          "assignee": null,
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-08-05T05:25:56.754-0700",
-          "dueDate": "2026-08-17",
-          "created": "2026-08-03T09:57:20.636-0700",
-          "resolutionDate": null,
-          "deliveryStatus": null,
-          "territory": "TN01",
-          "serviceType": "Scan to BIM (model only)",
-          "price": 1383.6,
-          "squareFootage": 4068,
-          "projectName": "Hampton_Galbierz",
-          "projectType": "Single-family",
-          "ftpFolderPath": "/mv-s3-ftps-transfer/tn01/89499/3D Point Cloud",
-          "mapLink": "https://maps.app.goo.gl/q8ZRxLjvhE3fQ3Y6A",
-          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Quote/0Q0JQ0000083nKY0AY/view",
-          "quotedTurnaround": 8,
-          "projectId": "89499",
-          "components": [
-            "Point Cloud Orientation Issue",
-            "Salesforce/Checklist discrepancies"
-          ],
-          "inProgressDate": "2026-08-04",
-          "dataValidatedDate": "2026-08-05",
-          "comments": [
-            {
-              "author": "Daniel Ryan",
-              "created": "2026-08-05T05:01:00.185-0700",
-              "body": "I submitted the quote yesterday afternoon thanks! \nGet Outlook for iOS"
-            },
-            {
-              "author": "Automation for Jira",
-              "created": "2026-08-05T05:00:13.330-0700",
-              "body": "Email sent to customer asking for clarification."
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-08-04T10:56:22.030-0700",
-              "body": "Hi Daniel,\nPlease note that the point cloud is not aligned with the updated project requirements.\nWe can work with the current delivery for this project, but please ensure future point clouds are properly aligned in accordance with the requested orientation and coordinate requirements.\nThank you."
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-08-04T10:45:01.327-0700",
-              "body": ""
-            },
-            {
-              "author": "Daniel Ryan",
-              "created": "2026-08-04T08:39:39.332-0700",
-              "body": "I’ll handle this \nGet Outlook for iOS"
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-08-04T08:37:48.754-0700",
-              "body": "Hi Kevin,\nCould you please provide a SF link with a quote associated with this project?\nThanks"
-            },
-            {
-              "author": "Multivista",
-              "created": "2026-08-03T09:57:22.690-0700",
-              "body": "(478 kB)"
-            }
-          ]
-        },
-        {
           "key": "SCAN-6169",
           "summary": "Scan to Services - MO01 - 89286 - HTK Architects - East High School PAC Scanning",
           "status": "S2S Backlog",
@@ -1015,60 +1564,6 @@
               "author": "Multivista",
               "created": "2026-08-03T10:01:14.920-0700",
               "body": "(216 kB)"
-            }
-          ]
-        },
-        {
-          "key": "SCAN-6162",
-          "summary": "Scan to Services - WA01 - 89524 - Jeff Heiser - Heiser Apartments",
-          "status": "S2S Queue",
-          "statusCategory": "In Progress",
-          "assignee": "sirajudheen",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-08-05T05:01:24.400-0700",
-          "dueDate": "2026-08-13",
-          "created": "2026-07-30T16:32:27.127-0700",
-          "resolutionDate": null,
-          "deliveryStatus": null,
-          "territory": "WA01",
-          "serviceType": "Scan to BIM (model and extracted plans)",
-          "price": 2515.35,
-          "squareFootage": 4680,
-          "projectName": "Heiser Apartments",
-          "projectType": "Multi-familty",
-          "ftpFolderPath": "/mv-s3-ftps-transfer/wa01/89524/Point Clouds",
-          "mapLink": "https://maps.app.goo.gl/UZWJoLmLkyCFTtx8A",
-          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ00000xoRmDYAU/view",
-          "quotedTurnaround": 9,
-          "projectId": "89524",
-          "components": [
-            "Point Cloud Orientation Issue",
-            "Salesforce/Checklist discrepancies",
-            "Scan Data Missing"
-          ],
-          "inProgressDate": "2026-07-31",
-          "dataValidatedDate": "2026-07-31",
-          "comments": [
-            {
-              "author": "Martin Isola",
-              "created": "2026-07-31T09:33:40.787-0700",
-              "body": "Hi Team,\nPlease note that the point cloud orientation does not match the orientation requested in the checklist.\nWe can proceed with it for this project, but for future projects this will need to be corrected. If the point cloud is not delivered in the requested orientation, it may be rejected.\nThanks,"
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-07-31T09:29:19.340-0700",
-              "body": ""
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-07-31T06:26:33.360-0700",
-              "body": "Hi  \nCould you please provide an SF Quote link with S2S product lines?\nThis is just for laser scanning\nAdditionally, the point clouds are not uploaded to the FTP; please confirm.\nThanks"
-            },
-            {
-              "author": "Multivista",
-              "created": "2026-07-30T16:32:29.294-0700",
-              "body": "(213 kB)"
             }
           ]
         },
@@ -1582,252 +2077,6 @@
               "author": "Multivista",
               "created": "2026-07-28T10:52:47.543-0700",
               "body": "(241 kB)"
-            }
-          ]
-        },
-        {
-          "key": "SCAN-6176",
-          "summary": "Scan to Services - TX03 - 89556 - Morse Studio - 1611 South Blvd",
-          "status": "Backlog",
-          "statusCategory": "To Do",
-          "assignee": "Scan to Services",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-08-04T15:40:04.013-0700",
-          "dueDate": null,
-          "created": "2026-08-04T15:40:01.267-0700",
-          "resolutionDate": null,
-          "deliveryStatus": null,
-          "territory": "TX03",
-          "serviceType": "Scan to Plan (plans only)",
-          "price": null,
-          "squareFootage": null,
-          "projectName": null,
-          "projectType": null,
-          "ftpFolderPath": null,
-          "mapLink": null,
-          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ00000xfEQ1YAM/view",
-          "quotedTurnaround": null,
-          "projectId": "89556",
-          "components": [],
-          "inProgressDate": null,
-          "dataValidatedDate": null,
-          "comments": [
-            {
-              "author": "Multivista",
-              "created": "2026-08-04T15:40:03.897-0700",
-              "body": "(198 kB)"
-            }
-          ]
-        },
-        {
-          "key": "SCAN-6172",
-          "summary": "Scan to Services - PA01 - 88886 - Susquehanna International Group, LLP - 401 City Ave",
-          "status": "Validation",
-          "statusCategory": "In Progress",
-          "assignee": "Scan to Services",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-08-04T13:47:08.091-0700",
-          "dueDate": null,
-          "created": "2026-08-03T12:06:44.687-0700",
-          "resolutionDate": null,
-          "deliveryStatus": null,
-          "territory": "PA01",
-          "serviceType": "Scan to BIM (model only)",
-          "price": 26013.75,
-          "squareFootage": 50000,
-          "projectName": "401 City Ave",
-          "projectType": "Office",
-          "ftpFolderPath": "/mv-s3-ftps-transfer/pa01/88886/3D Point Clouds/pt 2",
-          "mapLink": "https://maps.app.goo.gl/bNu2jW1M28YFk9Ab7",
-          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Quote/0Q0JQ000007vFvx0AE/view",
-          "quotedTurnaround": 30,
-          "projectId": "88886",
-          "components": [
-            "Scan Data Missing"
-          ],
-          "inProgressDate": "2026-08-04",
-          "dataValidatedDate": null,
-          "comments": [
-            {
-              "author": "Michael Wileczek",
-              "created": "2026-08-04T13:47:05.949-0700",
-              "body": "Currently uploading the new unified rcs"
-            },
-            {
-              "author": "Michael Wileczek",
-              "created": "2026-08-04T11:33:40.011-0700",
-              "body": "I'll get those re-exported for you and have them in a separate folder"
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-08-04T11:25:20.520-0700",
-              "body": "Hi Michael,\nAs I mentioned, they just include the structured RCP files. I need the unified RCS to work in Revit.\nTake a look at the screenshot.\nMultiple RCS files (structure version) for the RCP version. All the individual scans are included.\nThanks"
-            },
-            {
-              "author": "Michael Wileczek",
-              "created": "2026-08-04T11:19:54.219-0700",
-              "body": "Just had my team check on the FTP I'm still in the field. They said the rcs files are there inside the part 2 folder along with the relevant support folder."
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-08-04T11:14:29.504-0700",
-              "body": "Hi Michael,\nCould you help me with the RCS?\nThanks"
-            },
-            {
-              "author": "Michael Wileczek",
-              "created": "2026-08-04T11:07:56.491-0700",
-              "body": "All these floors will be separate models. Yes all the floors you listed are a part of this project"
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-08-04T11:03:56.149-0700",
-              "body": "Hi Michael,\nWe just checked the FTP, and the unified RCS files are missing for this project. You only included the Structured RCP files.Could you please upload them?\nFinally, are 2nd, 5th, 6th, 7th, 8th and 9th levels all for this project?\nThanks,"
-            },
-            {
-              "author": "Multivista",
-              "created": "2026-08-03T12:06:46.805-0700",
-              "body": "(264 kB)"
-            }
-          ]
-        },
-        {
-          "key": "SCAN-6142",
-          "summary": "Scan to Services - GBR02 - 503071 - Berkeley Estate Asset Management - 50 Stratton St",
-          "status": "S2S Backlog",
-          "statusCategory": "To Do",
-          "assignee": "Rojes Malachi",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-08-04T13:08:08.415-0700",
-          "dueDate": "2026-08-17",
-          "created": "2026-07-24T03:25:20.438-0700",
-          "resolutionDate": null,
-          "deliveryStatus": null,
-          "territory": "GBR02",
-          "serviceType": "Scan to BIM (model and extracted plans)",
-          "price": 8667.97,
-          "squareFootage": 107748,
-          "projectName": "Berkeley Estate Asset Management - 50 Stratton St",
-          "projectType": "Office",
-          "ftpFolderPath": "/mv-s3-ftps-transfer-london/gbr02/503071/3D Point Clouds/Jul-2026",
-          "mapLink": "https://maps.app.goo.gl/5WMbU5tw1jnhM2FF9",
-          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ00000xHte2YAC/view",
-          "quotedTurnaround": 15,
-          "projectId": "503071",
-          "components": [],
-          "inProgressDate": "2026-07-24",
-          "dataValidatedDate": "2026-07-27",
-          "comments": [
-            {
-              "author": "Martin Isola",
-              "created": "2026-08-03T05:54:44.769-0700",
-              "body": "Hi ,\nWe have been checking the new point cloud provided, and we found the same issues. Could you please check that?\nThanks,"
-            },
-            {
-              "author": "Rojes Malachi",
-              "created": "2026-07-31T23:32:09.127-0700",
-              "body": "Hi   The same issue is still there in the new point cloud i donot think the point cloud is updated"
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-07-29T05:59:36.870-0700",
-              "body": "Please review the new point clouds for this project.\nThanks"
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-07-29T05:58:55.351-0700",
-              "body": "Thanks"
-            },
-            {
-              "author": "Alvin Chan",
-              "created": "2026-07-29T05:14:09.589-0700",
-              "body": "Hi Martin,\nPlease find the updated point cloud and basepoint file available on ftp. Any further issues, please let us know.\n[cid:c1b763f6-893c-4567-b57a-62c9ef03e2cc]\n[cid:2f72bd4e-a9e9-4ba0-a400-1c946f0dbd21]\nBest Regards,Alvin ChanReality Capture Operations ManagerOffice +44 (0)2086 109 869Mobile +44 (0)7946 632 567\nmultivista.com<https://www.multivista.com/>3 Scrutton Street, London EC2A 4HF\n[Multivista - Part of Hexagon]<http://www.multivista.com/>\n–The contents of this communication, including any attachment(s), are confidential and may be privileged. If you are not the intended recipient (or are not receiving this communication on behalf of the intended recipient), please notify the sender immediately and delete or destroy this communication without reading it, and without making, forwarding or retaining any copy or record of it or its contents. Thank you. Note: We have taken precautions against viruses, but take no responsibility for loss or damage caused by any virus present. The above-named person proudly represents an independent contractor and licensed vendor of the MULTIVISTA® brand services and products in the location or region indicated. Titles such as principal, managing principal, regional partner or senior regional partner do not indicate affiliation with Multivista Systems, LLC, but rather the licensees status as a licensed vendor. For more information on the licensee structure, visit www.multivista.com/licensedvendors<https://www.multivista.com/licensedvendors>–\n________________________________From: Alvin Chan - Multivista <a.chan@multivista.com>Sent: 28 July 2026 17:05To: scantoservices@multivista.atlassian.net <scantoservices@multivista.atlassian.net>Subject: Re:  Scan to Services - GBR02 - 503071 - Berkeley Estate Asset Management - 50 Stratton St\nHi Martin,\nMany thanks for letting me know.\nThe team is reviewing it now.\nBest Regards,Alvin ChanReality Capture Operations ManagerOffice +44 (0)2086 109 869Mobile +44 (0)7946 632 567\nmultivista.com<https://www.multivista.com/>3 Scrutton Street, London EC2A 4HF[Multivista - Part of Hexagon]<http://www.multivista.com/>\n–The contents of this communication, including any attachment(s), are confidential and may be privileged. If you are not the intended recipient (or are not receiving this communication on behalf of the intended recipient), please notify the sender immediately and delete or destroy this communication without reading it, and without making, forwarding or retaining any copy or record of it or its contents. Thank you. Note: We have taken precautions against viruses, but take no responsibility for loss or damage caused by any virus present. The above-named person proudly represents an independent contractor and licensed vendor of the MULTIVISTA® brand services and products in the location or region indicated. Titles such as principal, managing principal, regional partner or senior regional partner do not indicate affiliation with Multivista Systems, LLC, but rather the licensees status as a licensed vendor. For more information on the licensee structure, visit www.multivista.com/licensedvendors<https://www.multivista.com/licensedvendors>–\n________________________________From: Martin Isola <jira@multivista.atlassian.net>Sent: 28 July 2026 16:06To: Alvin Chan - Multivista <a.chan@multivista.com>Subject:  Scan to Services - GBR02 - 503071 - Berkeley Estate Asset Management - 50 Stratton St\n—-—-—-—Reply above this line.\nMartin Isola commented:\nHi Alvin,\nAs we started setting up the models and preparing for the model update work, we noticed that the new point cloud does not match the existing model in many areas, including locations where no changes or modifications were made. For example, we found discrepancies in structural columns that should remain unchanged.\nThis seemed unusual, so we performed a comparison between the new and previous point clouds. The review clearly shows that the new point cloud is not aligning in the same way as the original dataset. We are seeing significant differences that should be investigated before we proceed.\nI have attached several screenshots illustrating these discrepancies for reference.\nRed -OldBlue -NewLevel 4\n[image-20260728-132103.png]\nLevel 3\n[image-20260728-132202.png]\nLevel 2\n[image-20260728-132248.png]\nLevel 1\n[image-20260728-132408.png]\nGround Floor\n[image-20260728-132512.png]\nBasement\n[image-20260728-132558.png]\n[image-20260728-132706.png]\n[image-20260728-132727.png]\nMy recommendation is to have the point clouds reviewed and re-aligned so that they match the original coordinate system and positioning. Once we receive corrected datasets, we can continue with the agreed scope as planned.\nAn alternative approach, which I personally would not recommend, would be to work with the current point clouds only to identify removed elements and update the Revit model accordingly. However, the resulting model would contain considerable geometric discrepancies, which would likely generate client comments and concerns regarding accuracy, and any rework will be considered as an upsell.\nPlease let us know your thoughts.\nBest regards,\nMartin\nRespectfully yours,\nHexagon Scan to Servicesscantoservices@multivista.com<scantoservices@multivista.com>\nView request<https://multivista.atlassian.net/servicedesk/customer/portal/5/SCAN-6142?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0Z3QiOiJhbm9ueW1vdXMtbGluayIsInFzaCI6IjY3YzRjODU2Nzg2MmYzNTBiNDRjODE5NjViM2Y2MTc4ZjNiMGRiYTIxYTM3MjE4YWQ1YzZhNjQ2YTQxNjk2YTciLCJpc3MiOiJzZXJ2aWNlZGVzay1qd3QtdG9rZW4taXNzdWVyIiwiY29udGV4dCI6eyJ1c2VyIjoiMTMyNzAiLCJpc3N1ZSI6IlNDQU4tNjE0MiJ9LCJleHAiOjE3ODc2NzAzOTYsImlhdCI6MTc4NTI1MTE5Nn0.wh35--t93arMrrhhGIFrwp0uFs4zWB0hJKxf1Dwnb0E&sda_source=notification-email> · Turn off this request's notifications<https://multivista.atlassian.net/servicedesk/customer/portal/5/SCAN-6142/unsubscribe?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0Z3QiOiJhbm9ueW1vdXMtbGluayIsInFzaCI6IjE3MDk5MzNiYzJkMzdlYjcxYzc5YzNhNjllM2U2MjQ0ZGQyM2Y2MWU0ZWU4YzhjOGE4YTQ2MmIwNzliNmUyYjMiLCJpc3MiOiJzZXJ2aWNlZGVzay1qd3QtdG9rZW4taXNzdWVyIiwiY29udGV4dCI6eyJ1c2VyIjoidWc6M2NlMmEyNzAtNzY2YS00NDg5LTlkMWQtYThiZTBmZTJlNDNkIiwiaXNzdWUiOiJTQ0FOLTYxNDIifSwiZXhwIjoxNzg3NjcwMzk2LCJpYXQiOjE3ODUyNTExOTZ9.yEz98sY-Y-7HSMBs2cjP26zw4v9rp8XiBDAXCw2tACY>\nThis is shared with Alvin Chan, Sam Ross, and j.Frewin@multivista.com.\nPowered by Jira Service Management<https://www.atlassian.com/software/jira/service-desk/powered-by?utm_medium=jira-in-product&utm_source=jira_service_desk_email_footer&utm_content=multivista>\nSent on July 28, 2026 8:06:36 AM PDThttps://use1-track.atlassian.com/CI0/0100019fa943797c-5b1be864-b16f-4826-a03c-058483279b04-000000/5ttuRQesD0zg_v4LA4qcDoW4v5xrsDLK-R7cp0QQEYk=452"
-            },
-            {
-              "author": "Alvin Chan",
-              "created": "2026-07-28T09:06:29.422-0700",
-              "body": "Hi Martin,\nMany thanks for letting me know.\nThe team is reviewing it now.\nBest Regards,Alvin ChanReality Capture Operations ManagerOffice +44 (0)2086 109 869Mobile +44 (0)7946 632 567\nmultivista.com<https://www.multivista.com/>3 Scrutton Street, London EC2A 4HF\n[Multivista - Part of Hexagon]<http://www.multivista.com/>\n–The contents of this communication, including any attachment(s), are confidential and may be privileged. If you are not the intended recipient (or are not receiving this communication on behalf of the intended recipient), please notify the sender immediately and delete or destroy this communication without reading it, and without making, forwarding or retaining any copy or record of it or its contents. Thank you. Note: We have taken precautions against viruses, but take no responsibility for loss or damage caused by any virus present. The above-named person proudly represents an independent contractor and licensed vendor of the MULTIVISTA® brand services and products in the location or region indicated. Titles such as principal, managing principal, regional partner or senior regional partner do not indicate affiliation with Multivista Systems, LLC, but rather the licensees status as a licensed vendor. For more information on the licensee structure, visit www.multivista.com/licensedvendors<https://www.multivista.com/licensedvendors>–\n________________________________From: Martin Isola <jira@multivista.atlassian.net>Sent: 28 July 2026 16:06To: Alvin Chan - Multivista <a.chan@multivista.com>Subject:  Scan to Services - GBR02 - 503071 - Berkeley Estate Asset Management - 50 Stratton St\n—-—-—-—Reply above this line.\nMartin Isola commented:\nHi Alvin,\nAs we started setting up the models and preparing for the model update work, we noticed that the new point cloud does not match the existing model in many areas, including locations where no changes or modifications were made. For example, we found discrepancies in structural columns that should remain unchanged.\nThis seemed unusual, so we performed a comparison between the new and previous point clouds. The review clearly shows that the new point cloud is not aligning in the same way as the original dataset. We are seeing significant differences that should be investigated before we proceed.\nI have attached several screenshots illustrating these discrepancies for reference.\nRed -OldBlue -NewLevel 4\n[image-20260728-132103.png]\nLevel 3\n[image-20260728-132202.png]\nLevel 2\n[image-20260728-132248.png]\nLevel 1\n[image-20260728-132408.png]\nGround Floor\n[image-20260728-132512.png]\nBasement\n[image-20260728-132558.png]\n[image-20260728-132706.png]\n[image-20260728-132727.png]\nMy recommendation is to have the point clouds reviewed and re-aligned so that they match the original coordinate system and positioning. Once we receive corrected datasets, we can continue with the agreed scope as planned.\nAn alternative approach, which I personally would not recommend, would be to work with the current point clouds only to identify removed elements and update the Revit model accordingly. However, the resulting model would contain considerable geometric discrepancies, which would likely generate client comments and concerns regarding accuracy, and any rework will be considered as an upsell.\nPlease let us know your thoughts.\nBest regards,\nMartin\nRespectfully yours,\nHexagon Scan to Servicesscantoservices@multivista.com<scantoservices@multivista.com>\nView request<https://multivista.atlassian.net/servicedesk/customer/portal/5/SCAN-6142?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0Z3QiOiJhbm9ueW1vdXMtbGluayIsInFzaCI6IjY3YzRjODU2Nzg2MmYzNTBiNDRjODE5NjViM2Y2MTc4ZjNiMGRiYTIxYTM3MjE4YWQ1YzZhNjQ2YTQxNjk2YTciLCJpc3MiOiJzZXJ2aWNlZGVzay1qd3QtdG9rZW4taXNzdWVyIiwiY29udGV4dCI6eyJ1c2VyIjoiMTMyNzAiLCJpc3N1ZSI6IlNDQU4tNjE0MiJ9LCJleHAiOjE3ODc2NzAzOTYsImlhdCI6MTc4NTI1MTE5Nn0.wh35--t93arMrrhhGIFrwp0uFs4zWB0hJKxf1Dwnb0E&sda_source=notification-email> · Turn off this request's notifications<https://multivista.atlassian.net/servicedesk/customer/portal/5/SCAN-6142/unsubscribe?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0Z3QiOiJhbm9ueW1vdXMtbGluayIsInFzaCI6IjE3MDk5MzNiYzJkMzdlYjcxYzc5YzNhNjllM2U2MjQ0ZGQyM2Y2MWU0ZWU4YzhjOGE4YTQ2MmIwNzliNmUyYjMiLCJpc3MiOiJzZXJ2aWNlZGVzay1qd3QtdG9rZW4taXNzdWVyIiwiY29udGV4dCI6eyJ1c2VyIjoidWc6M2NlMmEyNzAtNzY2YS00NDg5LTlkMWQtYThiZTBmZTJlNDNkIiwiaXNzdWUiOiJTQ0FOLTYxNDIifSwiZXhwIjoxNzg3NjcwMzk2LCJpYXQiOjE3ODUyNTExOTZ9.yEz98sY-Y-7HSMBs2cjP26zw4v9rp8XiBDAXCw2tACY>\nThis is shared with Alvin Chan, Sam Ross, and j.Frewin@multivista.com.\nPowered by Jira Service Management<https://www.atlassian.com/software/jira/service-desk/powered-by?utm_medium=jira-in-product&utm_source=jira_service_desk_email_footer&utm_content=multivista>\nSent on July 28, 2026 8:06:36 AM PDThttps://use1-track.atlassian.com/CI0/0100019fa943797c-5b1be864-b16f-4826-a03c-058483279b04-000000/5ttuRQesD0zg_v4LA4qcDoW4v5xrsDLK-R7cp0QQEYk=452"
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-07-28T08:05:50.786-0700",
-              "body": "Hi Alvin,\nAs we started setting up the models and preparing for the model update work, we noticed that the new point cloud does not match the existing model in many areas, including locations where no changes or modifications were made. For example, we found discrepancies in structural columns that should remain unchanged.\nThis seemed unusual, so we performed a comparison between the new and previous point clouds. The review clearly shows that the new point cloud is not aligning in the same way as the original dataset. We are seeing significant differences that should be investigated before we proceed.\nI have attached several screenshots illustrating these discrepancies for reference.\nRed -Old Blue -New Level 4\nLevel 3\nLevel 2\nLevel 1\nGround Floor\nBasement \nMy recommendation is to have the point clouds reviewed and re-aligned so that they match the original coordinate system and positioning. Once we receive corrected datasets, we can continue with the agreed scope as planned.\nAn alternative approach, which I personally would not recommend, would be to work with the current point clouds only to identify removed elements and update the Revit model accordingly. However, the resulting model would contain considerable geometric discrepancies, which would likely generate client comments and concerns regarding accuracy, and any rework will be considered as an upsell.\nPlease let us know your thoughts.\nBest regards,\nMartin"
-            },
-            {
-              "author": "Rojes Malachi",
-              "created": "2026-07-28T06:27:37.409-0700",
-              "body": "Hi  Please find the differences between the old data and new data , we cannot start the model with these issues please confirm us on this Red -Old Blue -New Level 4\nLevel 3\nLevel 2\nLevel 1\nGround Floor\nBasement"
-            },
-            {
-              "author": "Alvin Chan",
-              "created": "2026-07-24T03:27:16.179-0700",
-              "body": "Hi Team,\nPlease find the closed SF link below:\nhttps://hmv.lightning.force.com/lightning/r/Opportunity/006JQ00000xHte2YAC/view\nBest Regards,Alvin ChanReality Capture Operations ManagerOffice +44 (0)2086 109 869Mobile +44 (0)7946 632 567\nmultivista.com<https://www.multivista.com/>3 Scrutton Street, London EC2A 4HF\n[Multivista - Part of Hexagon]<http://www.multivista.com/>\n–The contents of this communication, including any attachment(s), are confidential and may be privileged. If you are not the intended recipient (or are not receiving this communication on behalf of the intended recipient), please notify the sender immediately and delete or destroy this communication without reading it, and without making, forwarding or retaining any copy or record of it or its contents. Thank you. Note: We have taken precautions against viruses, but take no responsibility for loss or damage caused by any virus present. The above-named person proudly represents an independent contractor and licensed vendor of the MULTIVISTA® brand services and products in the location or region indicated. Titles such as principal, managing principal, regional partner or senior regional partner do not indicate affiliation with Multivista Systems, LLC, but rather the licensees status as a licensed vendor. For more information on the licensee structure, visit www.multivista.com/licensedvendors<https://www.multivista.com/licensedvendors>–\n________________________________From: Multivista <jira@multivista.atlassian.net>Sent: 24 July 2026 11:26To: Alvin Chan - Multivista <a.chan@multivista.com>Subject:  Scan to Services - GBR02 - 503071 - Berkeley Estate Asset Management - 50 Stratton St\n—-—-—-—Reply above this line.\nHi Alvin Chan,\nThis is an automated response to let you know that we have received your Scan to Services request and will advise if further information is required or when the request is complete.\nRespectfully yours,\nHexagon Scan to Servicesscantoservices@multivista.com<scantoservices@multivista.com>\nView request<https://multivista.atlassian.net/servicedesk/customer/portal/5/SCAN-6142?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0Z3QiOiJhbm9ueW1vdXMtbGluayIsInFzaCI6IjY3YzRjODU2Nzg2MmYzNTBiNDRjODE5NjViM2Y2MTc4ZjNiMGRiYTIxYTM3MjE4YWQ1YzZhNjQ2YTQxNjk2YTciLCJpc3MiOiJzZXJ2aWNlZGVzay1qd3QtdG9rZW4taXNzdWVyIiwiY29udGV4dCI6eyJ1c2VyIjoiMTMyNzAiLCJpc3N1ZSI6IlNDQU4tNjE0MiJ9LCJleHAiOjE3ODczMDc5ODIsImlhdCI6MTc4NDg4ODc4Mn0.OSqEhlAOJDMzQaSyq5OvgQW__t43Hpd-qrDacXm25Do&sda_source=notification-email> · Turn off this request's notifications<https://multivista.atlassian.net/servicedesk/customer/portal/5/SCAN-6142/unsubscribe?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0Z3QiOiJhbm9ueW1vdXMtbGluayIsInFzaCI6IjE3MDk5MzNiYzJkMzdlYjcxYzc5YzNhNjllM2U2MjQ0ZGQyM2Y2MWU0ZWU4YzhjOGE4YTQ2MmIwNzliNmUyYjMiLCJpc3MiOiJzZXJ2aWNlZGVzay1qd3QtdG9rZW4taXNzdWVyIiwiY29udGV4dCI6eyJ1c2VyIjoidWc6M2NlMmEyNzAtNzY2YS00NDg5LTlkMWQtYThiZTBmZTJlNDNkIiwiaXNzdWUiOiJTQ0FOLTYxNDIifSwiZXhwIjoxNzg3MzA3OTgyLCJpYXQiOjE3ODQ4ODg3ODJ9.uBQs_TRvrXuDhOTIYWkq2kvsQihRlGjmN9fMDZAcKqI>\nThis is shared with Alvin Chan, Sam Ross, and j.Frewin@multivista.com.\nPowered by Jira Service Management<https://www.atlassian.com/software/jira/service-desk/powered-by?utm_medium=jira-in-product&utm_source=jira_service_desk_email_footer&utm_content=multivista>\nSent on July 24, 2026 3:26:22 AM PDThttps://usw2-track.atlassian.com/CI0/0101019f93a9730f-dbe3ceff-b010-4d07-b0bb-a25c740aa669-000000/NzRiIkSTZz0gj-8TQWAY12DtfK4vgmOKckza1XCaKTY=452"
-            },
-            {
-              "author": "Multivista",
-              "created": "2026-07-24T03:25:23.682-0700",
-              "body": "(223 kB)"
-            }
-          ]
-        },
-        {
-          "key": "SCAN-6140",
-          "summary": "Scan to Services - TX02 - 89455 - InTown Golf Club - Westchester Golf",
-          "status": "S2S QC",
-          "statusCategory": "In Progress",
-          "assignee": "Rocio Ferreyra",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-08-04T12:30:56.577-0700",
-          "dueDate": "2026-08-06",
-          "created": "2026-07-23T11:48:44.468-0700",
-          "resolutionDate": null,
-          "deliveryStatus": null,
-          "territory": "TX02",
-          "serviceType": "Scan to BIM (model and extracted plans)",
-          "price": 1916.25,
-          "squareFootage": 13000,
-          "projectName": "Westchester Golf",
-          "projectType": "Retail",
-          "ftpFolderPath": "/mv-s3-ftps-transfer/tx02/89455",
-          "mapLink": "https://maps.app.goo.gl/5BzR3uY92T15cHPS8",
-          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ00000pbsLBYAY/view",
-          "quotedTurnaround": 8,
-          "projectId": "89455",
-          "components": [
-            "Checklist Missing",
-            "Scan Data Delivery Prompt",
-            "Scan Data Missing"
-          ],
-          "inProgressDate": "2026-07-23",
-          "dataValidatedDate": "2026-07-27",
-          "comments": [
-            {
-              "author": "Martin Isola",
-              "created": "2026-07-27T08:09:40.845-0700",
-              "body": ""
-            },
-            {
-              "author": "Automation for Jira",
-              "created": "2026-07-24T05:00:23.348-0700",
-              "body": "Email sent to customer notifying that the given scan data delivery date has passed."
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-07-23T13:28:23.135-0700",
-              "body": "Hi, I have the checklist, just waiting for the point cloud. Disregards the previous email.\nThanks"
-            },
-            {
-              "author": "Automation for Jira",
-              "created": "2026-07-23T13:23:21.520-0700",
-              "body": "Email sent to customer requesting checklist."
-            },
-            {
-              "author": "Multivista",
-              "created": "2026-07-23T11:48:46.556-0700",
-              "body": "(259 kB)"
             }
           ]
         },
@@ -2413,133 +2662,6 @@
               "author": "Multivista",
               "created": "2026-07-31T03:00:01.056-0700",
               "body": "(203 kB)"
-            }
-          ]
-        },
-        {
-          "key": "SCAN-6098",
-          "summary": "Scan to Services - TX02 - 89183 - Eagle Surveying - Colonnade",
-          "status": "S2S Production",
-          "statusCategory": "In Progress",
-          "assignee": "Rojes Malachi",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-08-04T05:30:20.078-0700",
-          "dueDate": "2026-08-06",
-          "created": "2026-07-08T12:19:16.141-0700",
-          "resolutionDate": null,
-          "deliveryStatus": null,
-          "territory": "TX02",
-          "serviceType": "Scan to BIM (model and extracted plans)",
-          "price": 14217,
-          "squareFootage": 52000,
-          "projectName": "15301 Dallas Pkwy",
-          "projectType": "Other",
-          "ftpFolderPath": "/mv-s3-ftps-transfer/tx02/89183/3D Point Clouds",
-          "mapLink": "https://maps.app.goo.gl/gLaNvAeStRv4UF3R9",
-          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ00000sdHwMYAU/view",
-          "quotedTurnaround": 20,
-          "projectId": "89183",
-          "components": [],
-          "inProgressDate": "2026-07-09",
-          "dataValidatedDate": "2026-07-09",
-          "comments": [
-            {
-              "author": "Rocio Ferreyra",
-              "created": "2026-08-03T09:44:31.438-0700",
-              "body": "Hi Team,\nThe deliverables for the Garage area are now available on the FTP.\nBest regards,"
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-07-30T05:42:34.125-0700",
-              "body": "Hi Rojes,\nThis is the RCP for the last area I sent, building 3. You already have the RCS for this sector.\nWhen can you have the garage ready? It was priority one. Please let me know.\nThanks"
-            },
-            {
-              "author": "Rojes Malachi",
-              "created": "2026-07-30T02:06:08.676-0700",
-              "body": "Hi   why are we receiving new data ?the scope of the project is to model the stairs which we have already received please confirm what these data are"
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-07-29T07:12:45.118-0700",
-              "body": "Hi  The RCP is Uploaded Thanks"
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-07-27T06:08:58.765-0700",
-              "body": "Hi  here you will find the last point cloud.\nI am uploading now the RCP, but you can start with the RCS.\nThanks"
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-07-17T05:07:29.004-0700",
-              "body": "Hi \nYes, you are correct, just the stairs. 3 Revit models is Ok.\nThanks"
-            },
-            {
-              "author": "Rojes Malachi",
-              "created": "2026-07-17T03:11:35.488-0700",
-              "body": "Hi   From the scan it looks like only the stairs are scanned are we only modelling the stair portions ?\nand we will be modelling all three data sets in different revit files hope this is okey ?"
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-07-09T07:33:31.955-0700",
-              "body": "Team, please review the point clouds. You have to generate separated models\nOnce you get the models, we will need to review the extracted plans. Let me know when you are ready to discuss it,\nThanks"
-            },
-            {
-              "author": "Multivista",
-              "created": "2026-07-08T12:19:18.567-0700",
-              "body": "(264 kB)"
-            }
-          ]
-        },
-        {
-          "key": "SCAN-6149",
-          "summary": "Scan to Services - NE01 - 89532 - SKM - Greater Omaha Packing - North Freezer",
-          "status": "S2S QC",
-          "statusCategory": "In Progress",
-          "assignee": "sirajudheen",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-08-04T05:30:19.280-0700",
-          "dueDate": "2026-08-06",
-          "created": "2026-07-27T12:18:58.927-0700",
-          "resolutionDate": null,
-          "deliveryStatus": null,
-          "territory": "NE01",
-          "serviceType": "Scan to BIM (model only)",
-          "price": 1141.61,
-          "squareFootage": 7296,
-          "projectName": "North Freezer",
-          "projectType": "Manufacturing & Warehouse",
-          "ftpFolderPath": "/mv-s3-ftps-transfer/ne01/89532",
-          "mapLink": "https://maps.app.goo.gl/rBzAvYaPprE8LZRy6",
-          "salesforceLink": "https://hmv.lightning.force.com/lightning/r/Opportunity/006JQ00000xe7YfYAI/view",
-          "quotedTurnaround": 7,
-          "projectId": "89532",
-          "components": [
-            "Point Cloud Orientation Issue"
-          ],
-          "inProgressDate": "2026-07-28",
-          "dataValidatedDate": "2026-07-28",
-          "comments": [
-            {
-              "author": "Russell Bollig",
-              "created": "2026-07-28T13:09:32.995-0700",
-              "body": "This is my fault. Sorry Martin and thank you for your help here!\n-Russ\nRuss BolligDirectorConstruction Software & Services Division\nMultivista, part of HexagonM: (515) 441-0448<tel:(515)%20441-0448>\nmultivistaservices.hexagon.com<https://multivistaservices.hexagon.com/> | LinkedIn<https://www.linkedin.com/company/multivista/> | Facebook<https://facebook.com/multivista> | X<https://x.com/multivista> | Instagram<https://www.instagram.com/multivista>6818 Grover Street, Suite 405, Omaha, NE 68106\n–\nThe contents of this communication, including any attachment(s), are confidential and may be privileged. If you are not the intended recipient (or are not receiving this communication on behalf of the intended recipient), please notify the sender immediately and delete or destroy this communication without reading it, and without making, forwarding or retaining any copy or record of it or its contents. Thank you. Note: We have taken precautions against viruses, but take no responsibility for loss or damage caused by any virus present. The above-named person proudly represents an independent contractor and licensed vendor of the MULTIVISTA® brand services and products in the location or region indicated. Titles such as principal, managing principal, regional partner or senior regional partner do not indicate affiliation with Multivista Systems, LLC, but rather the licensees status as a licensed vendor. For more information on the licensee structure, visit www.multivista.com/licensedvendors<https://www.multivista.com/licensedvendors>–\nFrom: Martin Isola <jira@multivista.atlassian.net>Sent: Tuesday, July 28, 2026 2:52 PMTo: Russ Bollig <r.bollig@multivista.com>Subject:  Scan to Services - NE01 - 89532 - SKM - Greater Omaha Packing - North Freezer\nThis email is not from Hexagon's Office 365 instance. Please be careful while clicking links, opening attachments, or replying to this email.\n-------Reply above this line.\nMartin Isola commented:\nHi Russ and Jon,\nNote that the point cloud orientation doesn´t match with the checklist.\n[cid:image001.png@01DD1EA3.10995650]\n[cid:image002.png@01DD1EA3.10995650]\nWe can work with now, but for future projects PC with this issue will be rejected.\nThanks\nRespectfully yours,\nHexagon Scan to Servicesscantoservices@multivista.com<scantoservices@multivista.com>\nView request<https://multivista.atlassian.net/servicedesk/customer/portal/5/SCAN-6149?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0Z3QiOiJhbm9ueW1vdXMtbGluayIsInFzaCI6ImMwMDU4NGNkZjJhYzYxMDE5NTQzMGZkMGM0YWI0MTBjMDU4YjI1MjM0ZDQ5OWFhYTc3MTAxZDBlYmM1YTg0NzQiLCJpc3MiOiJzZXJ2aWNlZGVzay1qd3QtdG9rZW4taXNzdWVyIiwiY29udGV4dCI6eyJ1c2VyIjoiMTE2OTciLCJpc3N1ZSI6IlNDQU4tNjE0OSJ9LCJleHAiOjE3ODc2ODc0OTEsImlhdCI6MTc4NTI2ODI5MX0.4cJgvGoimhC98SzMroFyngGnT8Bb5b3BrePg05JcYh4&sda_source=notification-email> · Turn off this request's notifications<https://multivista.atlassian.net/servicedesk/customer/portal/5/SCAN-6149/unsubscribe?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0Z3QiOiJhbm9ueW1vdXMtbGluayIsInFzaCI6IjU1NzY0NjQxYjRjMDkzMTRmYjM4YzJkNTZlMWMzZWI2OGFjN2VlYTFjNjNhZGQwZDUzYjQ3ZTJmMGEyMDMwYjgiLCJpc3MiOiJzZXJ2aWNlZGVzay1qd3QtdG9rZW4taXNzdWVyIiwiY29udGV4dCI6eyJ1c2VyIjoicms6MGRlMzk5YmEtNmZiNi00ZjM3LWE2NzItMmVhY2YwMWE4NzFjIiwiaXNzdWUiOiJTQ0FOLTYxNDkifSwiZXhwIjoxNzg3Njg3NDkxLCJpYXQiOjE3ODUyNjgyOTF9.AmWQiIL9OwaIcFhJ8g7ovkj-GQ3sr1w-BzGBzNk7dbQ>\nThis is shared with Russ Bollig and Jon Weber.\nPowered by Jira Service Management<https://www.atlassian.com/software/jira/service-desk/powered-by?utm_medium=jira-in-product&utm_source=jira_service_desk_email_footer&utm_content=multivista>Sent on July 28, 2026 12:51:31 PM PDT"
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-07-28T12:50:30.281-0700",
-              "body": "Hi Russ and Jon,\nNote that the point cloud orientation doesn´t match with the checklist.\nWe can work with now, but for future projects PC with this issue will be rejected.\nThanks"
-            },
-            {
-              "author": "Martin Isola",
-              "created": "2026-07-28T12:47:13.735-0700",
-              "body": ""
-            },
-            {
-              "author": "Multivista",
-              "created": "2026-07-27T12:19:02.208-0700",
-              "body": "(1.36 MB)\n (235 kB)"
             }
           ]
         },
@@ -19220,35 +19342,6 @@
             "Scan Data Delivery Prompt",
             "Scan Data Missing"
           ],
-          "inProgressDate": null,
-          "dataValidatedDate": null,
-          "comments": []
-        },
-        {
-          "key": "SCAN-5506",
-          "summary": "Scan to Services - NA32 - 87082 - Cortland Design - Aertson Midtown Apartments",
-          "status": "Done",
-          "statusCategory": "Done",
-          "assignee": "Rocio Ferreyra",
-          "priority": "Unprioritized",
-          "type": "ScanTo",
-          "updated": "2026-04-17T13:30:44.418-0700",
-          "dueDate": "2026-02-10",
-          "created": "2026-01-16T16:58:20.278-0800",
-          "resolutionDate": "2026-02-10T09:00:53.996-0800",
-          "deliveryStatus": "On time",
-          "territory": "NA32",
-          "serviceType": "Scan to BIM (model and extracted plans)",
-          "price": 6736.42,
-          "squareFootage": 25976,
-          "projectName": "Aertson Midtown Apartments",
-          "projectType": "Multi-familty",
-          "ftpFolderPath": "/mv-s3-ftps-transfer/na32/87082",
-          "mapLink": "https://maps.app.goo.gl/WUii3Y5fJsnrLZUb7",
-          "salesforceLink": "https://mds.lightning.force.com/lightning/r/Opportunity/006JQ00000mFhIjYAK/view",
-          "quotedTurnaround": 16,
-          "projectId": "87082",
-          "components": [],
           "inProgressDate": null,
           "dataValidatedDate": null,
           "comments": []
